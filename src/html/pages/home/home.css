@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*首页-slogan*/
+.m-content-box {
+  padding: 50px 0;
+  border-bottom: 1px solid #f1f1f1; }
+
+.slogan-info ul:after {
+  content: "";
+  font-size: 0;
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+.slogan-info .msi-item {
+  width: 229px;
+  float: left;
+  margin-left: 6px; }
+  .slogan-info .msi-item:first-child {
+    margin-left: 0; }
+  .slogan-info .msi-item:first-child .msi-txt, .slogan-info .msi-item:last-child .msi-txt {
+    padding: 14px 0 0; }
+.slogan-info .msi-pic {
+  width: 229px;
+  height: 229px; }
+  .slogan-info .msi-pic img {
+    width: 100%;
+    height: 100%;
+    display: block; }
+.slogan-info .msi-txt {
+  color: #252525;
+  font-size: 20px;
+  line-height: 1.3;
+  padding: 14px 40px 0 18px; }
+
+/*# sourceMappingURL=home.css.map */

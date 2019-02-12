@@ -1,0 +1,55 @@
+.m-slider-banner {
+  position: relative;
+  width: 100%;
+  height: 450px; }
+  .m-slider-banner .swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 2; }
+  .m-slider-banner img {
+    width: 100%;
+    display: block;
+    height: 100%; }
+  .m-slider-banner .swiper-wrapper {
+    width: 100%;
+    height: 100%; }
+    .m-slider-banner .swiper-wrapper .swiper-slide {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-align: center;
+      margin: 0 auto; }
+    .m-slider-banner .swiper-wrapper a,
+    .m-slider-banner .swiper-wrapper .oper-pic {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto 100%; }
+  .m-slider-banner .swiper-pagination {
+    width: 100%;
+    text-align: center;
+    bottom: 18px; }
+  .m-slider-banner .swiper-pagination-bullet {
+    width: 70px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #fff;
+    opacity: 1;
+    margin: 0 8px; }
+  .m-slider-banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #46da98; }
+  .m-slider-banner .swiper-container-horizontal > .swiper-pagination-bullets,
+  .m-slider-banner .swiper-pagination-custom,
+  .m-slider-banner .swiper-pagination-fraction {
+    bottom: 18px; }
+
+/*# sourceMappingURL=banner.css.map */

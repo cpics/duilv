@@ -1,0 +1,103 @@
+/*弹框 start*/
+.shadow-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 109;
+  display: none;
+  overflow: hidden;
+  .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    background: rgba(0, 0, 0, .5);
+  }
+  &.show {
+    display: block;
+    .mask {
+      display: block;
+    }
+    .bomb-box {
+      transform-origin: center center;
+      animation: pulsePop .5s ease-in-out forwards;
+    }
+    .bomb-bottom {
+      animation: bounceInDown .3s ease-in-out forwards;
+    }
+  }
+  &.bottom-fixed {
+    .bomb-box {
+      transform-origin: 50% 50% 0;
+      animation: none;
+    }
+  }
+}
+
+@-webkit-keyframes pulsePop {
+  0% {
+    -webkit-transform: scale3d(.85, .85, .85);
+    transform: scale3d(.85, .85, .85);
+  }
+  50% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+@keyframes pulsePop {
+  0% {
+    -webkit-transform: scale3d(.85, .85, .85);
+    -moz-transform: scale3d(.85, .85, .85);
+    transform: scale3d(.85, .85, .85);
+  }
+  50% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    -ms-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+@mixin center($width, $height) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 12;
+  width: $width;
+  height: $height;
+  margin: (-$height / 2) 0 0 (-$width / 2);
+}
+
+.bomb-mv-box {
+  background: #fff;
+  @include center(576px, 678px);
+}
+
+.bomb-close-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 4;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: inline-block;
+  background: url("images/close.png") no-repeat center center;
+  &:hover{
+    opacity: .8;
+  }
+}

@@ -1,0 +1,164 @@
+/*header*/
+.top-tab-box {
+  height: 90px;
+  line-height: 90px;
+  color: #fff;
+  font-size: 18px;
+  background: #001c10;
+  .m-width {
+    position: relative;
+    z-index: 3;
+  }
+  a,
+  a:visited {
+    color: #fff;
+  }
+  .top-logo {
+    width: 147px;
+    height: 90px;
+    display: block;
+    float: left;
+    background: url("images/logo.png") no-repeat center center;
+  }
+  .top-menu {
+    float: left;
+    margin-left: 32px;
+  }
+  .top-menu-list {
+    &:after {
+      clear: both;
+      content: '';
+      display: block;
+      height: 0;
+      line-height: 0;
+      overflow: hidden;
+    }
+    li {
+      float: left;
+      margin: 0 18px;
+      .top-m-item {
+        position: relative;
+        display: block;
+        opacity: .7;
+      }
+      &.active,
+      &:hover {
+        .top-m-item {
+          opacity: 1;
+          &:after {
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+            content: "";
+            width: 12px;
+            height: 8px;
+            margin-left: -6px;
+            background: url("images/triangle.png") no-repeat center center;
+          }
+        }
+        .second-menu {
+          display: block;
+        }
+      }
+    }
+  }
+  .second-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 110px;
+    display: none;
+    z-index: -1;
+    &.active {
+      display: block;
+    }
+  }
+  .second-menu-inner {
+    width: 1170px;
+    color: #666;
+    font-size: 16px;
+    line-height: 34px;
+    background: #fff;
+    padding: 15px 30px 20px 55px;
+    box-sizing: border-box;
+    box-shadow: 0 0 29px 0 #e4e4e4;
+    *border: 1px solid #f1f1f1;
+    .second-m-row {
+      &:after {
+        clear: both;
+        content: '';
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+      }
+    }
+    h4 {
+      color: #252525;
+      font-size: 18px;
+      font-weight: bold;
+      float: left;
+      padding: 12px 0 8px;
+    }
+    .second-arrow-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      background: url("images/arrow.png") no-repeat center center;
+    }
+    .second-info {
+      padding: 12px 0 8px;
+      margin-left: 130px;
+      border-bottom: 1px solid #f1f1f1;
+      .second-item {
+        margin-right: 50px;
+        width: 176px;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        word-break: keep-all;
+        text-overflow: ellipsis;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:hover,
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+    a,
+    a:visited {
+      color: #666;
+    }
+  }
+  .second-button {
+    text-align: right;
+    padding-top: 20px;
+  }
+  .top-about {
+    float: right;
+    text-align: right;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    a{
+      line-height: 90px;
+      display: inline-block;
+    }
+    .is-login {
+      display: inline-block;
+      margin-left: 65px;
+      vertical-align: top;
+      a {
+        max-width: 180px;
+        overflow: hidden;
+        white-space: nowrap;
+        word-break: keep-all;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

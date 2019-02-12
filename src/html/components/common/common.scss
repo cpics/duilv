@@ -1,0 +1,104 @@
+@charset "utf-8";
+body {
+  color: #252525;
+  background: #fff;
+}
+
+.mod-wrapper {
+  width: 100%;
+  min-width: 1170px;
+}
+
+.mod-wrap {
+  min-width: 1170px;
+}
+
+.m-width {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.o-hidden {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a:active,
+a:visited {
+  color: #555;
+}
+
+.c-red {
+  color: #e23a3a;
+}
+
+.c-blue {
+  color: #4493eb;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.pl-6 {
+  padding-left: 6px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.u-hide {
+  display: none;
+}
+
+.clearfix {
+  display: block;
+  zoom: 1;
+  &:after {
+    content: "";
+    font-size: 0;
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.dm-btn {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 0 20px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  &.dm-btn-default {
+    background: #4bde9e;
+    &:hover {
+      background: rgba(75, 222, 158, .8);
+    }
+  }
+  &.dm-btn-info {
+    background: #bebebe;
+    &:hover {
+      background: rgba(190, 190, 190, .8);
+    }
+  }
+}

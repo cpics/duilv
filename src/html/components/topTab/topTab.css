@@ -1,0 +1,131 @@
+/*header*/
+.top-tab-box {
+  height: 90px;
+  line-height: 90px;
+  color: #fff;
+  font-size: 18px;
+  background: #001c10; }
+  .top-tab-box .m-width {
+    position: relative;
+    z-index: 3; }
+  .top-tab-box a,
+  .top-tab-box a:visited {
+    color: #fff; }
+  .top-tab-box .top-logo {
+    width: 147px;
+    height: 90px;
+    display: block;
+    float: left;
+    background: url("images/logo.png") no-repeat center center; }
+  .top-tab-box .top-menu {
+    float: left;
+    margin-left: 32px; }
+  .top-tab-box .top-menu-list:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+  .top-tab-box .top-menu-list li {
+    float: left;
+    margin: 0 18px; }
+    .top-tab-box .top-menu-list li .top-m-item {
+      position: relative;
+      display: block;
+      opacity: .7; }
+    .top-tab-box .top-menu-list li.active .top-m-item, .top-tab-box .top-menu-list li:hover .top-m-item {
+      opacity: 1; }
+      .top-tab-box .top-menu-list li.active .top-m-item:after, .top-tab-box .top-menu-list li:hover .top-m-item:after {
+        position: absolute;
+        left: 50%;
+        bottom: 18px;
+        content: "";
+        width: 12px;
+        height: 8px;
+        margin-left: -6px;
+        background: url("images/triangle.png") no-repeat center center; }
+    .top-tab-box .top-menu-list li.active .second-menu, .top-tab-box .top-menu-list li:hover .second-menu {
+      display: block; }
+  .top-tab-box .second-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 110px;
+    display: none;
+    z-index: -1; }
+    .top-tab-box .second-menu.active {
+      display: block; }
+  .top-tab-box .second-menu-inner {
+    width: 1170px;
+    color: #666;
+    font-size: 16px;
+    line-height: 34px;
+    background: #fff;
+    padding: 15px 30px 20px 55px;
+    box-sizing: border-box;
+    box-shadow: 0 0 29px 0 #e4e4e4;
+    *border: 1px solid #f1f1f1; }
+    .top-tab-box .second-menu-inner .second-m-row:after {
+      clear: both;
+      content: '';
+      display: block;
+      height: 0;
+      line-height: 0;
+      overflow: hidden; }
+    .top-tab-box .second-menu-inner h4 {
+      color: #252525;
+      font-size: 18px;
+      font-weight: bold;
+      float: left;
+      padding: 12px 0 8px; }
+    .top-tab-box .second-menu-inner .second-arrow-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      background: url("images/arrow.png") no-repeat center center; }
+    .top-tab-box .second-menu-inner .second-info {
+      padding: 12px 0 8px;
+      margin-left: 130px;
+      border-bottom: 1px solid #f1f1f1; }
+      .top-tab-box .second-menu-inner .second-info .second-item {
+        margin-right: 50px;
+        width: 176px;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        word-break: keep-all;
+        text-overflow: ellipsis; }
+        .top-tab-box .second-menu-inner .second-info .second-item:last-child {
+          margin-right: 0; }
+        .top-tab-box .second-menu-inner .second-info .second-item:hover, .top-tab-box .second-menu-inner .second-info .second-item.active {
+          text-decoration: underline; }
+    .top-tab-box .second-menu-inner a,
+    .top-tab-box .second-menu-inner a:visited {
+      color: #666; }
+  .top-tab-box .second-button {
+    text-align: right;
+    padding-top: 20px; }
+  .top-tab-box .top-about {
+    float: right;
+    text-align: right;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold; }
+    .top-tab-box .top-about a {
+      line-height: 90px;
+      display: inline-block; }
+    .top-tab-box .top-about .is-login {
+      display: inline-block;
+      margin-left: 65px;
+      vertical-align: top; }
+      .top-tab-box .top-about .is-login a {
+        max-width: 180px;
+        overflow: hidden;
+        white-space: nowrap;
+        word-break: keep-all;
+        text-overflow: ellipsis; }
+
+/*# sourceMappingURL=topTab.css.map */
