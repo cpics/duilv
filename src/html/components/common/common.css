@@ -13,6 +13,9 @@ body {
   width: 1170px;
   margin: 0 auto; }
 
+.g-container {
+  padding-top: 90px; }
+
 .o-hidden {
   width: 100%;
   height: 100%;
@@ -24,7 +27,7 @@ a:hover {
 
 a:active,
 a:visited {
-  color: #555; }
+  color: #333; }
 
 .c-red {
   color: #e23a3a; }
@@ -50,16 +53,38 @@ a:visited {
 .u-hide {
   display: none; }
 
+.clearfix:after, .common-tit-h2:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  overflow: hidden; }
+
 .clearfix {
   display: block;
   zoom: 1; }
-  .clearfix:after {
-    content: "";
-    font-size: 0;
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
+
+.common-tit-h1 {
+  color: #999;
+  font-size: 16px; }
+  .common-tit-h1 b {
+    color: #000;
+    font-size: 30px;
+    padding-right: 15px; }
+
+.common-tit-h2 {
+  color: #333;
+  font-size: 14px;
+  line-height: 45px; }
+  .common-tit-h2 b {
+    font-size: 18px; }
+  .common-tit-h2 .more-tit-btn {
+    color: #333;
+    float: right;
+    display: inline-block; }
+    .common-tit-h2 .more-tit-btn:hover {
+      text-decoration: underline; }
 
 .dm-btn {
   color: #fff;
@@ -79,5 +104,23 @@ a:visited {
     background: #bebebe; }
     .dm-btn.dm-btn-info:hover {
       background: rgba(190, 190, 190, 0.8); }
+
+.star-icon {
+  width: 61px;
+  height: 11px;
+  display: inline-block;
+  background: url("images/star.png") no-repeat 0 0; }
+  .star-icon.no-star {
+    background-position: 0 -55px; }
+  .star-icon.one-star {
+    background-position: 0 0; }
+  .star-icon.two-star {
+    background-position: 0 -11px; }
+  .star-icon.three-star {
+    background-position: 0 -22px; }
+  .star-icon.four-star {
+    background-position: 0 -33px; }
+  .star-icon.five-star {
+    background-position: 0 -44px; }
 
 /*# sourceMappingURL=common.css.map */

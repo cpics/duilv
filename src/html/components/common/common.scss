@@ -18,6 +18,10 @@ body {
   margin: 0 auto;
 }
 
+.g-container {
+  padding-top: 90px;
+}
+
 .o-hidden {
   width: 100%;
   height: 100%;
@@ -31,7 +35,7 @@ a:hover {
 
 a:active,
 a:visited {
-  color: #555;
+  color: #333;
 }
 
 .c-red {
@@ -65,17 +69,47 @@ a:visited {
 .u-hide {
   display: none;
 }
-
+%clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
 .clearfix {
   display: block;
   zoom: 1;
-  &:after {
-    content: "";
-    font-size: 0;
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+  @extend %clearfix;
+}
+
+.common-tit-h1 {
+  color: #999;
+  font-size: 16px;
+  b {
+    color: #000;
+    font-size: 30px;
+    padding-right: 15px;
+  }
+}
+
+.common-tit-h2 {
+  color: #333;
+  font-size: 14px;
+  line-height: 45px;
+  @extend %clearfix;
+  b {
+    font-size: 18px;
+  }
+  .more-tit-btn {
+    color: #333;
+    float: right;
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -101,4 +135,35 @@ a:visited {
       background: rgba(190, 190, 190, .8);
     }
   }
+}
+
+.star-icon {
+  width: 61px;
+  height: 11px;
+  display: inline-block;
+  background: url("images/star.png") no-repeat 0 0;
+  &.no-star {
+    background-position: 0 -55px;
+  }
+  &.one-star {
+    background-position: 0 0;
+  }
+  &.two-star {
+    background-position: 0 -11px;
+  }
+  &.three-star {
+    background-position: 0 -22px;
+  }
+  &.four-star {
+    background-position: 0 -33px;
+  }
+  &.five-star {
+    background-position: 0 -44px;
+  }
+}
+.address-icon,
+.address-icon,
+.address-icon,
+.address-icon{
+
 }

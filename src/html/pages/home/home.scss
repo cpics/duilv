@@ -1,19 +1,40 @@
-/*首页-slogan*/
-.m-content-box {
-  padding: 50px 0;
-  border-bottom: 1px solid #f1f1f1;
+%clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
 }
 
-.slogan-info {
+//单行&多行省略
+//@include ellipsis;
+//@include ellipsis(3);
+@mixin ellipsis($lines: 1, $substract: 0) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100% - $substract;
+    overflow: hidden;
+  } @else {
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+  }
+}
+
+/*首页-slogan*/
+.mh-slogan-content {
+  padding: 50px 0;
+  border-bottom: 1px solid #f1f1f1;
   ul {
-    &:after {
-      content: "";
-      font-size: 0;
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden;
-    }
+    @extend %clearfix;
   }
   .msi-item {
     width: 229px;
@@ -43,5 +64,443 @@
     font-size: 20px;
     line-height: 1.3;
     padding: 14px 40px 0 18px;
+  }
+}
+
+/*热门案例+常用方案*/
+.mh-column-content {
+  padding: 50px 0;
+  border-bottom: 1px solid #f1f1f1;
+  @extend %clearfix;
+  &.border-none {
+    border-bottom: 0;
+  }
+}
+
+.mh-left-main {
+  float: left;
+  width: 966px;
+}
+
+.mh-right-main {
+  width: 188px;
+  float: right;
+}
+
+/*热门案例*/
+.mt-main {
+  margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.case-column {
+  padding: 20px 0 10px;
+  @extend %clearfix;
+  border-bottom: 1px solid #f1f1f1;
+  .case-item {
+    width: 302px;
+    float: left;
+    display: block;
+    cursor: pointer;
+    margin: 0 20px 30px 0;
+  }
+  .case-pic {
+    position: relative;
+    width: 302px;
+    height: 206px;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .case-tag {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 0 10px;
+    }
+    .tag-view {
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      font-size: 16px;
+      padding: 0 16px;
+      text-align: center;
+      display: inline-block;
+      margin-right: 10px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      max-width: 120px;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      background: rgba(0, 0, 0, .7);
+    }
+  }
+  .case-tit {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  .case-describe {
+    font-size: 16px;
+    padding-top: 10px;
+    height: 48px;
+    @include ellipsis(2);
+  }
+  .case-handle {
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 18px;
+    @extend %clearfix;
+    .star-icon {
+      margin-top: 4px;
+      float: right;
+    }
+  }
+}
+
+.news-column {
+  padding: 20px 0 0;
+  @extend %clearfix;
+  .news-item {
+    width: 440px;
+    float: left;
+    &:nth-child(2n) {
+      margin-left: 85px;
+    }
+  }
+  .u-news-hd {
+    cursor: pointer;
+    font-size: 20px;
+    @extend %clearfix;
+    &:hover {
+      .u-news-txt {
+        color: #4bde9e;
+        text-decoration: underline;
+      }
+    }
+  }
+  .u-news-pic {
+    width: 148px;
+    height: 100px;
+    float: left;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .u-news-txt {
+    margin-left: 170px;
+    max-height: 90px;
+    @include ellipsis(3);
+  }
+  .u-news-list {
+    padding: 16px 0 0;
+    li {
+      position: relative;
+      font-size: 18px;
+      padding: 5px 0 5px 8px;
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        content: "";
+        width: 4px;
+        height: 4px;
+        margin-top: -2px;
+        border-radius: 50%;
+        background: #febb50;
+      }
+      a {
+        display: inline-block;
+        @include ellipsis(1);
+      }
+      &:hover,
+      &.active {
+        a {
+          color: #4bde9e;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/*首页右侧常用方案+产品课程*/
+.petite-box {
+  padding-top: 5px;
+  border-bottom: 1px solid #f1f1f1;
+  &:last-child {
+    border-bottom-color: transparent;
+  }
+}
+
+.petite-item {
+  width: 188px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 20px;
+  .petite-pic {
+    width: 100%;
+    height: 129px;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .petite-describe {
+    line-height: 1.57;
+    padding-top: 6px;
+  }
+  .petite-tit {
+    font-size: 20px;
+    font-weight: normal;
+    padding-top: 10px;
+    @include ellipsis(1);
+  }
+  .petite-circle {
+    position: relative;
+    top: -1px;
+    font-size: 0;
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+    background: #666;
+    border-radius: 50%;
+  }
+  .petite-course {
+    color: #666;
+  }
+  .petite-handle {
+    padding-top: 8px;
+    @extend %clearfix;
+    .star-icon {
+      float: right;
+      margin-top: 7px;
+    }
+  }
+  .petite-money {
+    color: #ff0000;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 1.2;
+  }
+}
+
+/*匠心记*/
+.mh-ingenuity-content {
+  padding: 50px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.ing-main,
+.ing-hd {
+  @extend %clearfix;
+}
+
+.ing-main {
+  padding-top: 25px;
+}
+
+.ing-information {
+  width: 558px;
+  float: left;
+}
+
+.ing-roll {
+  position: relative;
+  width: 582px;
+  height: 380px;
+  float: right;
+  background: #f1f1f1;
+  overflow: hidden;
+  ul {
+    padding: 0 28px;
+    //animation: 10s rollUp linear infinite both;
+  }
+  li {
+    color: #252525;
+    padding: 7px 0;
+    line-height: 28px;
+    a {
+      display: block;
+      @include ellipsis(1);
+    }
+    span, b {
+      font-size: 14px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .roll-name {
+      margin-left: 10px;
+    }
+    b {
+      margin: 0 6px 0 14px;
+    }
+  }
+  .roll-face {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: top;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
+
+.ing-face {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.ing-info {
+  margin-left: 68px;
+  .ing-tit {
+    font-size: 20px;
+  }
+  .ing-status {
+    color: #666;
+  }
+  .ing-sta-col {
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.ing-article {
+  font-size: 16px;
+  line-height: 2;
+  padding-top: 25px;
+}
+
+.ing-art-pic {
+  font-size: 0;
+  padding-top: 18px;
+  img {
+    display: inline-block;
+    width: 174px;
+    height: 118px;
+    margin-right: 18px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@keyframes rollUp {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+/*合作企业*/
+.ad-item {
+  width: 188px;
+  margin-bottom: 14px;
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+/*圈子*/
+.u-group-list {
+  li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f1f1;
+    @extend %clearfix;
+  }
+  .group-left {
+    width: 556px;
+    float: left;
+    a {
+      display: block;
+    }
+  }
+  .group-right {
+    width: 374px;
+    float: right;
+  }
+  .company-info {
+    padding: 30px 26px;
+    background: #f1f1f1;
+    @extend %clearfix;
+  }
+  .company-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    float: left;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .company-name {
+    color: #666;
+    margin-left: 66px;
+    h4 {
+      color: #333;
+      font-size: 16px;
+      padding-bottom: 6px;
+    }
+  }
+  .cp-column {
+    padding-top: 15px;
+    @extend %clearfix;
+  }
+  .cp-item {
+    width: 176px;
+    height: 120px;
+    float: left;
+    display: block;
+    overflow: hidden;
+    margin-left: 14px;
+    &:first-child {
+      margin-left: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .group-article {
+    color: #333;
+    font-size: 16px;
+    line-height: 2;
+    display: block;
+    @include ellipsis(5);
+  }
+  .group-address {
+    color: #999;
+    font-size: 16px;
+    padding-top: 6px;
   }
 }

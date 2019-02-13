@@ -1,10 +1,27 @@
+%clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
 /*header*/
 .top-tab-box {
+  width: 100%;
   height: 90px;
   line-height: 90px;
   color: #fff;
   font-size: 18px;
   background: #001c10;
+  &.fixation{
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+  }
   .m-width {
     position: relative;
     z-index: 3;
@@ -25,14 +42,7 @@
     margin-left: 32px;
   }
   .top-menu-list {
-    &:after {
-      clear: both;
-      content: '';
-      display: block;
-      height: 0;
-      line-height: 0;
-      overflow: hidden;
-    }
+    @extend %clearfix;
     li {
       float: left;
       margin: 0 18px;
@@ -73,6 +83,10 @@
       display: block;
     }
   }
+  .second-m-box {
+    max-height: 360px;
+    overflow-y: auto;
+  }
   .second-menu-inner {
     width: 1170px;
     color: #666;
@@ -84,14 +98,7 @@
     box-shadow: 0 0 29px 0 #e4e4e4;
     *border: 1px solid #f1f1f1;
     .second-m-row {
-      &:after {
-        clear: both;
-        content: '';
-        display: block;
-        height: 0;
-        line-height: 0;
-        overflow: hidden;
-      }
+      @extend %clearfix;
     }
     h4 {
       color: #252525;
@@ -144,7 +151,7 @@
     font-size: 20px;
     color: #fff;
     font-weight: bold;
-    a{
+    a {
       line-height: 90px;
       display: inline-block;
     }
