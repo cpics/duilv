@@ -1,0 +1,58 @@
+.m-footer-links .foot-link-hd {
+  zoom: 1; }
+  .m-footer-links .foot-link-hd:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*footer links*/
+.m-footer-links {
+  width: 100%;
+  color: #f1f1f1;
+  background: #313131; }
+  .m-footer-links .foot-link-hd {
+    padding: 35px 0 10px 75px; }
+  .m-footer-links .links-col {
+    width: 170px;
+    float: left;
+    line-height: 30px; }
+    .m-footer-links .links-col a,
+    .m-footer-links .links-col a:visited {
+      color: #f1f1f1; }
+    .m-footer-links .links-col a:hover {
+      text-decoration: underline; }
+  .m-footer-links .links-list {
+    padding: 18px 0 30px; }
+  .m-footer-links .links-code {
+    position: relative;
+    width: 120px;
+    padding-left: 110px;
+    float: left; }
+  .m-footer-links .links-code-txt {
+    text-align: center;
+    padding-top: 10px; }
+  .m-footer-links .fly-icon {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    z-index: 2;
+    display: block;
+    width: 109px;
+    height: 121px;
+    background: url("images/fly.png") no-repeat center center; }
+  .m-footer-links .links-code-pic img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; }
+  .m-footer-links .footer-copyright {
+    padding: 13px 0;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid #171111; }
+
+/*# sourceMappingURL=footer.css.map */

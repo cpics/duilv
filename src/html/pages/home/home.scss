@@ -1,4 +1,5 @@
 %clearfix {
+  zoom: 1;
   &:after {
     clear: both;
     content: '';
@@ -100,6 +101,7 @@
   @extend %clearfix;
   border-bottom: 1px solid #f1f1f1;
   .case-item {
+    color: #333;
     width: 302px;
     float: left;
     display: block;
@@ -173,8 +175,10 @@
     }
   }
   .u-news-hd {
+    color: #333;
     cursor: pointer;
     font-size: 20px;
+    display: block;
     @extend %clearfix;
     &:hover {
       .u-news-txt {
@@ -219,6 +223,9 @@
         display: inline-block;
         @include ellipsis(1);
       }
+      a, a:visited {
+        color: #333;
+      }
       &:hover,
       &.active {
         a {
@@ -240,6 +247,7 @@
 }
 
 .petite-item {
+  color: #333;
   width: 188px;
   display: block;
   cursor: pointer;
@@ -302,7 +310,11 @@
 
 .ing-main,
 .ing-hd {
+  display: block;
   @extend %clearfix;
+}
+.ing-hd{
+  color: #333;
 }
 
 .ing-main {
@@ -315,6 +327,9 @@
 }
 
 .ing-roll {
+  a {
+    color: #333;
+  }
   position: relative;
   width: 582px;
   height: 380px;
@@ -390,9 +405,11 @@
 }
 
 .ing-article {
+  color: #333;
   font-size: 16px;
   line-height: 2;
   padding-top: 25px;
+  display: block;
 }
 
 .ing-art-pic {
@@ -431,7 +448,7 @@
 /*圈子*/
 .u-group-list {
   li {
-    padding: 20px 0;
+    padding: 34px 0;
     border-bottom: 1px solid #f1f1f1;
     @extend %clearfix;
   }
@@ -449,6 +466,7 @@
   .company-info {
     padding: 30px 26px;
     background: #f1f1f1;
+    display: block;
     @extend %clearfix;
   }
   .company-pic {
@@ -472,35 +490,65 @@
       padding-bottom: 6px;
     }
   }
-  .cp-column {
-    padding-top: 15px;
-    @extend %clearfix;
-  }
-  .cp-item {
-    width: 176px;
-    height: 120px;
-    float: left;
-    display: block;
-    overflow: hidden;
-    margin-left: 14px;
-    &:first-child {
-      margin-left: 0;
-    }
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
   .group-article {
     color: #333;
     font-size: 16px;
     line-height: 2;
     display: block;
+    min-height: 160px;
     @include ellipsis(5);
   }
   .group-address {
     color: #999;
     font-size: 16px;
-    padding-top: 6px;
+    padding-top: 10px;
+  }
+  .group-handle {
+    line-height: 24px;
+    text-align: right;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #666;
+    .gh-col {
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.active {
+        //color: #4bde9e;
+        .like-icon {
+          background-position: 0 -81px;
+        }
+      }
+    }
+  }
+  .cp-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 15px;
+    display: block;
+  }
+}
+
+.cp-column {
+  padding-top: 15px;
+  @extend %clearfix;
+}
+
+.cp-item {
+  width: 176px;
+  height: 120px;
+  float: left;
+  display: block;
+  overflow: hidden;
+  margin-left: 14px;
+  &:first-child {
+    margin-left: 0;
+  }
+  img {
+    display: block;
+    width: 100%;
   }
 }

@@ -1,0 +1,16 @@
+/*crumbs*/
+.crumbs-box {
+  color: #333;
+  font-size: 16px;
+  padding: 20px 0; }
+  .crumbs-box .c-crumbs {
+    color: #333;
+    cursor: pointer; }
+    .crumbs-box .c-crumbs:hover {
+      color: #4bde9e; }
+  .crumbs-box .c-sep {
+    padding: 0 5px; }
+  .crumbs-box .c-current {
+    text-decoration: underline; }
+
+/*# sourceMappingURL=crumbs.css.map */

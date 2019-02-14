@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../html/components/topTab/topTab.css"/>
     <link rel="stylesheet" type="text/css" href="../../../html/components/banner/banner.css"/>
-
+    <link rel="stylesheet" type="text/css" href="../../../html/components/footer/footer.css"/>
 
     <link rel="stylesheet" type="text/css" href="../../../html/pages/home/home.css"/>
 
@@ -23,8 +23,9 @@
 <div id="app">
     <div class="mod-wrapper">
         <div class="mod-wrap">
+            <!--页面头部-->
             <div class="top-tab-box fixation">
-                <div class="m-width clearfix" style="display:none;">
+                <div class="m-width clearfix">
                     <i class="top-logo"></i>
                     <div class="top-menu">
                         <ul class="top-menu-list">
@@ -84,8 +85,10 @@
                     </div>
                 </div>
             </div>
+            <!--页面主体-->
             <div class="g-container">
-                <div class="m-slider-banner" style="display:none;">
+                <!--轮播-banner-->
+                <div class="m-slider-banner">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -103,8 +106,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="m-width">
-                    <div class="mh-slogan-content" style="display:none;">
+                <!--首页正文内容-->
+                <div class="m-container m-width">
+                    <!---->
+                    <div class="mh-slogan-content">
                         <ul>
                             <li class="msi-item">
                                 <div class="msi-pic">
@@ -138,8 +143,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="mh-column-content" style="display:none;">
+                    <div class="mh-column-content">
                         <div class="mh-left-main">
+                            <!--热门案例-->
                             <div class="mt-main">
                                 <div class="common-tit-h1">
                                     <b>热门案例</b>
@@ -244,6 +250,7 @@
                                     </a>
                                 </div>
                             </div>
+                            <!--绿建要闻-->
                             <div class="mt-main">
                                 <div class="common-tit-h1">
                                     <b>绿建要闻</b>
@@ -306,9 +313,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="mh-right-main">
+                            <!--常用方案-->
                             <div class="petite-box">
                                 <div class="common-tit-h2">
                                     <b>常用方案</b>
@@ -341,6 +348,7 @@
                                     </a>
                                 </div>
                             </div>
+                            <!--产品课程-->
                             <div class="petite-box">
                                 <div class="common-tit-h2">
                                     <b>产品课程</b>
@@ -381,14 +389,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mh-ingenuity-content" style="display:none;">
+                    <!--匠心记-->
+                    <div class="mh-ingenuity-content">
                         <div class="common-tit-h1">
                             <b>匠心记</b>
                             <span>现场经验分享，线下施工，线上体验</span>
                         </div>
                         <div class="ing-main">
                             <div class="ing-information">
-                                <div class="ing-hd">
+                                <a href="" class="ing-hd">
                                     <div class="ing-face">
                                         <img src="../../../html/pages/home/images/demo.png" alt=""/>
                                     </div>
@@ -399,17 +408,22 @@
                                             <span class="ing-sta-col">12小时前</span>
                                         </div>
                                     </div>
-                                </div>
-                                <article class="ing-article">
+                                </a>
+                                <a href="" class="ing-article">
                                     <p>
                                         “他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭，「世界早已精致得只等毁灭」──他像一个孤证，像空谷跫音，有时嘿笑如恶童，有时演奏起那绝美故事，销魂忘我；有时险峻刻诮，有时伤怀绵绵...</p>
-
-                                    <div class="ing-art-pic">
+                                </a>
+                                <div class="cp-column">
+                                    <a class="cp-item" href="">
                                         <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                    </a>
+                                    <a class="cp-item" href="">
                                         <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                    </a>
+                                    <a class="cp-item" href="">
                                         <img src="../../../html/pages/home/images/demo.png" alt=""/>
-                                    </div>
-                                </article>
+                                    </a>
+                                </div>
                             </div>
                             <div class="ing-roll">
                                 <ul>
@@ -518,6 +532,7 @@
                         </div>
                     </div>
                     <div class="mh-column-content border-none">
+                        <!--圈子-->
                         <div class="mh-left-main">
                             <div class="common-tit-h1">
                                 <b>圈子</b>
@@ -536,6 +551,7 @@
                                                     <p>12小时前</p>
                                                 </div>
                                             </a>
+                                            <!--<a href="" class="cp-title">水性EAU丙烯酸高环保塑胶跑道鉴赏</a>-->
                                             <div class="cp-column">
                                                 <a class="cp-item" href="">
                                                     <img src="../../../html/pages/home/images/demo.png" alt=""/>
@@ -552,31 +568,261 @@
                                             <a href="" class="group-article">
                                                 不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...
                                             </a>
-                                            <div class="group-address"><i class="address-icon"></i>苏州市乐嘉汇商务广场</div>
-
+                                            <div class="group-address">
+                                                <i class="address-icon"></i>
+                                                <span>苏州市乐嘉汇商务广场</span>
+                                            </div>
+                                            <div class="group-handle">
+                                                <span class="gh-col">
+                                                    <i class="like-icon"></i>
+                                                    <span>16</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="msg-icon"></i>
+                                                    <span>101</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="share-icon"></i>
+                                                    <span>分享</span>
+                                                </span>
+                                            </div>
                                         </div>
+                                    </li>
+                                    <li>
+                                        <div class="group-left">
+                                            <a href="" class="company-info">
+                                                <div class="company-pic">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </div>
+                                                <div class="company-name">
+                                                    <h4>苏州海的大姐软件有限公司</h4>
+                                                    <p>12小时前</p>
+                                                </div>
+                                            </a>
+                                            <!--<a href="" class="cp-title">水性EAU丙烯酸高环保塑胶跑道鉴赏</a>-->
+                                            <div class="cp-column">
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="group-right">
+                                            <a href="" class="group-article">
+                                                不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...
+                                            </a>
+                                            <div class="group-address">
+                                                <i class="address-icon"></i>
+                                                <span>苏州市乐嘉汇商务广场</span>
+                                            </div>
+                                            <div class="group-handle">
+                                                <span class="gh-col">
+                                                    <i class="like-icon"></i>
+                                                    <span>16</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="msg-icon"></i>
+                                                    <span>101</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="share-icon"></i>
+                                                    <span>分享</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="group-left">
+                                            <a href="" class="company-info">
+                                                <div class="company-pic">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </div>
+                                                <div class="company-name">
+                                                    <h4>苏州海的大姐软件有限公司</h4>
+                                                    <p>12小时前</p>
+                                                </div>
+                                            </a>
+                                            <!--<a href="" class="cp-title">水性EAU丙烯酸高环保塑胶跑道鉴赏</a>-->
+                                            <div class="cp-column">
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="group-right">
+                                            <a href="" class="group-article">
+                                                不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...
+                                            </a>
+                                            <div class="group-address">
+                                                <i class="address-icon"></i>
+                                                <span>苏州市乐嘉汇商务广场</span>
+                                            </div>
+                                            <div class="group-handle">
+                                                <span class="gh-col">
+                                                    <i class="like-icon"></i>
+                                                    <span>16</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="msg-icon"></i>
+                                                    <span>101</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="share-icon"></i>
+                                                    <span>分享</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="group-left">
+                                            <a href="" class="company-info">
+                                                <div class="company-pic">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </div>
+                                                <div class="company-name">
+                                                    <h4>苏州海的大姐软件有限公司</h4>
+                                                    <p>12小时前</p>
+                                                </div>
+                                            </a>
+                                            <!--<a href="" class="cp-title">水性EAU丙烯酸高环保塑胶跑道鉴赏</a>-->
+                                            <div class="cp-column">
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                                <a class="cp-item" href="">
+                                                    <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="group-right">
+                                            <a href="" class="group-article">
+                                                不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...
+                                            </a>
+                                            <div class="group-address">
+                                                <i class="address-icon"></i>
+                                                <span>苏州市乐嘉汇商务广场</span>
+                                            </div>
+                                            <div class="group-handle">
+                                                <span class="gh-col">
+                                                    <i class="like-icon"></i>
+                                                    <span>16</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="msg-icon"></i>
+                                                    <span>101</span>
+                                                </span>
+                                                <span class="gh-col">
+                                                    <i class="share-icon"></i>
+                                                    <span>分享</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="prompt-txt">加载更多...</div>
+                            </div>
+                        </div>
+                        <!--广告-->
+                        <div class="mh-right-main">
+                            <div class="ad-list">
+                                <div class="ad-item">
+                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
+                                </div>
+                                <div class="ad-item">
+                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
+                                </div>
+                                <div class="ad-item">
+                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
+                                </div>
+                                <div class="ad-item">
+                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
+                                </div>
+                                <div class="ad-item">
+                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--页面底部-->
+                <div class="m-footer-links">
+                    <div class="foot-link-hd m-width">
+                        <div class="links-col">
+                            <h2>关于我们</h2>
+                            <div class="links-list">
+                                <ul>
+                                    <li>
+                                        <a href="">关于我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="">联系我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="">商务合作</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="mh-right-main">
-                            <div class="ad-list" style="display: none">
-                                <div class="ad-item">
-                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
-                                </div>
-                                <div class="ad-item">
-                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
-                                </div>
-                                <div class="ad-item">
-                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
-                                </div>
-                                <div class="ad-item">
-                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
-                                </div>
-                                <div class="ad-item">
-                                    <img src="../../../html/pages/home/images/ad.png" alt=""/>
-                                </div>
+                        <div class="links-col">
+                            <h2>关注我们</h2>
+                            <div class="links-list">
+                                <ul>
+                                    <li>
+                                        <a href="">微信公众号</a>
+                                    </li>
+                                    <li>
+                                        <a href="">新浪微博</a>
+                                    </li>
+                                    <li>
+                                        <a href="">百家号</a>
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
+                        <div class="links-col">
+                            <h2>友情链接</h2>
+                            <div class="links-list">
+                                <ul>
+                                    <li>
+                                        <a href="">苏州大乘</a>
+                                    </li>
+                                    <li>
+                                        <a href="">xxxxxxx</a>
+                                    </li>
+                                    <li>
+                                        <a href="">xxxxxx</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="links-code">
+                            <div class="links-code-pic">
+                                <img src="../../../html/components/footer/images/code.png" alt=""/>
+                            </div>
+                            <div class="links-code-txt">
+                                <p>扫描二维码</p>
+                                <p>关注堆绿公众号</p>
+                            </div>
+                            <i class="fly-icon"></i>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="m-width">
+                            2017 堆绿网 Copyright www.duilv.com All rights reserved 苏ICP备13002314号
                         </div>
                     </div>
                 </div>

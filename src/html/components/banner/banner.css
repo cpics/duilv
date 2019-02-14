@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .m-slider-banner {
   position: relative;
   width: 100%;
@@ -51,5 +52,26 @@
   .m-slider-banner .swiper-pagination-custom,
   .m-slider-banner .swiper-pagination-fraction {
     bottom: 18px; }
+
+.m-norm-banner {
+  width: 100%;
+  height: 300px; }
+  .m-norm-banner img {
+    width: 100%;
+    height: 100%;
+    display: block; }
+  .m-norm-banner video {
+    object-fit: fill; }
+  .m-norm-banner .video-area {
+    width: 100%;
+    height: 100%; }
+  .m-norm-banner .video-box video::-internal-media-controls-download-button {
+    display: none; }
+  .m-norm-banner .video-box video::-webkit-media-controls-enclosure {
+    overflow: hidden; }
+  .m-norm-banner .video-box video::-webkit-media-controls-panel {
+    width: calc(100% + 40px); }
+
+/*视频 开始*/
 
 /*# sourceMappingURL=banner.css.map */

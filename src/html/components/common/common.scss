@@ -62,6 +62,10 @@ a:visited {
   padding-left: 20px;
 }
 
+.pt-20 {
+  padding-top: 20px;
+}
+
 .pr-10 {
   padding-right: 10px;
 }
@@ -69,6 +73,7 @@ a:visited {
 .u-hide {
   display: none;
 }
+
 %clearfix {
   &:after {
     clear: both;
@@ -79,10 +84,15 @@ a:visited {
     overflow: hidden;
   }
 }
+
 .clearfix {
   display: block;
   zoom: 1;
   @extend %clearfix;
+}
+
+.com-container {
+  padding: 20px 0 50px;
 }
 
 .common-tit-h1 {
@@ -99,9 +109,12 @@ a:visited {
   color: #333;
   font-size: 14px;
   line-height: 45px;
+  zoom: 1;
   @extend %clearfix;
   b {
     font-size: 18px;
+    display: inline-block;
+    float: left;
   }
   .more-tit-btn {
     color: #333;
@@ -111,6 +124,16 @@ a:visited {
       text-decoration: underline;
     }
   }
+}
+
+.common-title {
+  height: 40px;
+  line-height: 40px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 15px;
+  border-left: 10px solid #e8e7e7;
 }
 
 .dm-btn {
@@ -161,9 +184,43 @@ a:visited {
     background-position: 0 -44px;
   }
 }
-.address-icon,
-.address-icon,
-.address-icon,
-.address-icon{
 
+.address-icon,
+.msg-icon,
+.like-icon,
+.share-icon {
+  position: relative;
+  top: -2px;
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+  background: url("images/icon.png") no-repeat 0 0;
+}
+
+.address-icon {
+  background-position: 0 0;
+}
+
+.like-icon {
+  background-position: 0 -21px;
+  &.active {
+    background-position: 0 -76px;
+  }
+}
+
+.msg-icon {
+  background-position: 0 -40px;
+}
+
+.share-icon {
+  background-position: 0 -60px;
+}
+
+.prompt-txt {
+  color: #ccc;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0;
 }
