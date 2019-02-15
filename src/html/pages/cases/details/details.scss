@@ -21,3 +21,35 @@
     padding: 5px 0;
   }
 }
+
+.case-common-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.case-title-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 5px;
+  background: url("images/case_icon.png") no-repeat 0 0;
+  &.project {
+    background-position: 0 0;
+  }
+  &.quality {
+    background-position: 0 -30px;
+  }
+  &.project {
+    background-position: 0 -60px;
+  }
+  &.quality1 {
+    background-position: 0 -90px;
+  }
+  &.review {
+    background-position: 0 -120px;
+  }
+  &.trace {
+    background-position: 0 -150px;
+  }
+}
