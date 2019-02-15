@@ -1,0 +1,23 @@
+/*案例详情*/
+.g-case-detail {
+  color: #333;
+  padding: 5px;
+  margin-bottom: 50px;
+  border: 1px solid #e8e7e7;
+}
+
+.case-detail-cols {
+  padding: 35px;
+  border-bottom: 1px solid #e8e7e7;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.case-detail-txt {
+  padding-top: 25px;
+  font-size: 16px;
+  p {
+    padding: 5px 0;
+  }
+}

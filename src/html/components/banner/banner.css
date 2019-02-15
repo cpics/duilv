@@ -54,12 +54,20 @@
     bottom: 18px; }
 
 .m-norm-banner {
-  width: 100%;
-  height: 300px; }
+  width: 1170px;
+  height: 300px;
+  padding-top: 20px;
+  margin: 0 auto; }
+  .m-norm-banner .pic-banner,
+  .m-norm-banner .video-box {
+    width: 100%;
+    height: 100%; }
   .m-norm-banner img {
     width: 100%;
     height: 100%;
     display: block; }
+  .m-norm-banner .video-box {
+    position: relative; }
   .m-norm-banner video {
     object-fit: fill; }
   .m-norm-banner .video-area {
@@ -71,6 +79,21 @@
     overflow: hidden; }
   .m-norm-banner .video-box video::-webkit-media-controls-panel {
     width: calc(100% + 40px); }
+
+.video-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 104px;
+  height: 103px;
+  display: none;
+  margin-left: -52px;
+  margin-top: -52px;
+  cursor: pointer;
+  background: url("images/video.png") no-repeat center center; }
+  .video-icon.show {
+    display: block; }
 
 /*视频 开始*/
 

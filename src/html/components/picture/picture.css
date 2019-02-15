@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.cp-column {
+  zoom: 1; }
+  .cp-column:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*多图 176*120*/
+.cp-column {
+  padding-top: 15px; }
+  .cp-column.hover-scale .cp-item:hover {
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: all .4s ease-in-out; }
+  .cp-column.big-pic .cp-item {
+    width: 300px;
+    height: 204px; }
+  .cp-column.h-auto .cp-item {
+    height: auto; }
+
+.cp-item {
+  width: 176px;
+  height: 120px;
+  float: left;
+  display: block;
+  overflow: hidden;
+  margin-left: 14px; }
+  .cp-item:first-child {
+    margin-left: 0; }
+  .cp-item img {
+    display: block;
+    width: 100%; }
+
+/*# sourceMappingURL=picture.css.map */

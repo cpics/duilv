@@ -14,7 +14,11 @@
     <link rel="stylesheet" type="text/css" href="../../../../html/components/footer/footer.css"/>
     <link rel="stylesheet" type="text/css" href="../../../../html/components/crumbs/crumbs.css"/>
 
-    <link rel="stylesheet" type="text/css" href="../../../../html/pages/cloud/cloud/cloud.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../html/components/slideBar/slideBar.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../html/pages/cases/cases/cases.css"/>
+    <!--相关案例-->
+    <link rel="stylesheet" type="text/css" href="../../../../html/components/cases/cases.css"/>
 </head>
 <body>
 <div id="app">
@@ -29,7 +33,9 @@
                             <li>
                                 <a class="top-m-item" href="../../../../html/pages/home/home.html">首页</a>
                             </li>
-                            <li><a class="top-m-item" href="../../../../html/pages/home/home.html">案例库</a></li>
+                            <li class="active">
+                                <a class="top-m-item" href="../../../../html/pages/cases/cases/cases.html">案例库</a>
+                            </li>
                             <li>
                                 <a class="top-m-item" href="../../../../html/pages/home/home.html">匠心记</a>
                                 <div class="second-menu">
@@ -93,143 +99,123 @@
                         <img src="../../../../html/components/banner/images/banner.png" alt=""/>
                     </div>
                 </div>
-                <!--视频banner-->
-                <div class="m-norm-banner" style="display: none">
-                    <div class="video-box">
-                        <video class="video-area"
-                               poster="../../../../html/components/banner/images/banner.png" controls="true">
-                            <source src="https://fdfs.jdd.com/group1/M00/05/0A/CgoLd1joc0GALES9AGxS2-4V2t4550.mp4"
-                                    type="video/mp4"/>
-                        </video>
-                        <!--播放按钮 显示 +show-->
-                        <i class="video-icon"></i>
-                    </div>
-                </div>
                 <div class="m-container m-width">
                     <!--面包屑-->
                     <div class="crumbs-box">
                         <a class="c-crumbs" href="">首页</a>
                         <span class="c-sep">&gt;</span>
-                        <span class="c-current">云智库</span>
+                        <span class="c-current">案例库</span>
                     </div>
-                    <!--绿色校园-->
-                    <div class="grn-box">
-                        <div class="common-title">绿色校园</div>
-                        <div class="grn-list">
-                            <a href="../details/details.html" class="grn-item">
-                                <div class="grn-item-inner">
-                                    <div class="grn-pic">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                    </div>
-                                    <div class="grn-hd">
-                                        <h2>高环保多功能跑道系统解决方案</h2>
-                                        <div class="grn-hd-tip">
-                                            <span>渗水型（XC-RT2110S）</span>
-                                            <span>复合型（XC-RT2210S）</span>
-                                        </div>
-                                    </div>
-                                    <div class="grn-info">
-                                        产品优势：1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                                        10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="../details/details.html" class="grn-item">
-                                <div class="grn-item-inner">
-                                    <div class="grn-pic">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                    </div>
-                                    <div class="grn-hd">
-                                        <h2>高环保多功能跑道系统解决方案</h2>
-                                        <div class="grn-hd-tip">
-                                            <span>渗水型（XC-RT2110S）</span>
-                                            <span>复合型（XC-RT2210S）</span>
-                                        </div>
-                                    </div>
-                                    <div class="grn-info">
-                                        产品优势：1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                                        10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="../details/details.html" class="grn-item">
-                                <div class="grn-item-inner">
-                                    <div class="grn-pic">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                    </div>
-                                    <div class="grn-hd">
-                                        <h2>高环保多功能跑道系统解决方案</h2>
-                                        <div class="grn-hd-tip">
-                                            <span>渗水型（XC-RT2110S）</span>
-                                            <span>复合型（XC-RT2210S）</span>
-                                        </div>
-                                    </div>
-                                    <div class="grn-info">
-                                        产品优势：1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                                        10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                                    </div>
-                                </div>
-                            </a>
+                    <!--详情-->
+                    <!--参考 https://hao.uisdc.com/#inspiration-->
+                    <div class="m-cases-content">
+                        <!--滚动固定时 +fixation-->
+                        <div class="m-slide-left ">
+                            <div class="ml-slide-inner">
+                                <i class="ml-line-icon" style="transform:translateY(29px)"></i>
+                                <ul>
+                                    <li class="active">
+                                        <a href="#runway" class="ml-slide-tit">塑胶跑道</a>
+                                    </li>
+                                    <li>
+                                        <a href="#floor" class="ml-slide-tit">球场地坪</a>
+                                    </li>
+                                    <li>
+                                        <a href="#coating" class="ml-slide-tit">外墙涂料</a>
+                                    </li>
+                                    <li>
+                                        <a href="#protect" class="ml-slide-tit">外墙保</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <!--绿色建材-->
-                    <div class="grn-box">
-                        <div class="common-title">绿色建材</div>
-                        <div class="grn-list">
-                            <a href="../details/details.html" class="grn-item">
-                                <div class="grn-item-inner">
-                                    <div class="grn-pic">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                    </div>
-                                    <div class="grn-hd">
-                                        <h2>高环保多功能跑道系统解决方案</h2>
-                                        <div class="grn-hd-tip">
-                                            <span>渗水型（XC-RT2110S）</span>
-                                            <span>复合型（XC-RT2210S）</span>
+                        <!--详情内容-->
+                        <div class="g-cases">
+                            <!--选中 +current-->
+                            <div id="runway" class="related-list">
+                                <ul>
+                                    <li>
+                                        <div class="related-pic">
+                                            <img src="../../../../html/pages/home/images/demo.png"
+                                                 alt=""/>
                                         </div>
-                                    </div>
-                                    <div class="grn-info">
-                                        产品优势：1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                                        10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="../details/details.html" class="grn-item">
-                                <div class="grn-item-inner">
-                                    <div class="grn-pic">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                    </div>
-                                    <div class="grn-hd">
-                                        <h2>高环保多功能跑道系统解决方案</h2>
-                                        <div class="grn-hd-tip">
-                                            <span>渗水型（XC-RT2110S）</span>
-                                            <span>复合型（XC-RT2210S）</span>
+                                        <div class="related-info">
+                                            <h2>1建发高铁新城（泱誉）</h2>
+                                            <div class="related-txt">
+                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工
+                                                |
+                                            </div>
+                                            <div class="related-tipper">
+                                                <span class="related-tip">质量检测报告</span>
+                                                <span class="related-tip">联合质保书</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="grn-info">
-                                        产品优势：1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                                        10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="../details/details.html" class="grn-item">
-                                <div class="grn-item-inner">
-                                    <div class="grn-pic">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                    </div>
-                                    <div class="grn-hd">
-                                        <h2>高环保多功能跑道系统解决方案</h2>
-                                        <div class="grn-hd-tip">
-                                            <span>渗水型（XC-RT2110S）</span>
-                                            <span>复合型（XC-RT2210S）</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="floor" class="related-list">
+                                <ul>
+                                    <li>
+                                        <div class="related-pic">
+                                            <img src="../../../../html/pages/home/images/demo.png"
+                                                 alt=""/>
                                         </div>
-                                    </div>
-                                    <div class="grn-info">
-                                        产品优势：1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                                        10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                                    </div>
-                                </div>
-                            </a>
+                                        <div class="related-info">
+                                            <h2>2建发高铁新城（泱誉）</h2>
+                                            <div class="related-txt">
+                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工
+                                                |
+                                            </div>
+                                            <div class="related-tipper">
+                                                <span class="related-tip">质量检测报告</span>
+                                                <span class="related-tip">质量检测报告</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="coating" class="related-list">
+                                <ul>
+                                    <li>
+                                        <div class="related-pic">
+                                            <img src="../../../../html/pages/home/images/demo.png"
+                                                 alt=""/>
+                                        </div>
+                                        <div class="related-info">
+                                            <h2>3建发高铁新城（泱誉）</h2>
+                                            <div class="related-txt">
+                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工
+                                                |
+                                            </div>
+                                            <div class="related-tipper">
+                                                <span class="related-tip">质量检测报告</span>
+                                                <span class="related-tip">质量检测报告</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="protect" class="related-list">
+                                <ul>
+                                    <li>
+                                        <div class="related-pic">
+                                            <img src="../../../../html/pages/home/images/demo.png"
+                                                 alt=""/>
+                                        </div>
+                                        <div class="related-info">
+                                            <h2>4建发高铁新城（泱誉）</h2>
+                                            <div class="related-txt">
+                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工
+                                                |
+                                            </div>
+                                            <div class="related-tipper">
+                                                <span class="related-tip">质量检测报告</span>
+                                                <span class="related-tip">质量检测报告</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

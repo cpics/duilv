@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*底部固定浮动*/
+.m-fix-bar {
+  position: fixed;
+  bottom: 312px;
+  z-index: 4;
+  right: 50%;
+  margin-right: -690px;
+  width: 90px; }
+  .m-fix-bar .u-fix-item {
+    width: 88px;
+    height: 88px;
+    text-align: center;
+    font-size: 16px;
+    color: #b4b4b4;
+    display: block;
+    cursor: pointer;
+    border: 1px solid #e8e7e7; }
+    .m-fix-bar .u-fix-item.scroll-top {
+      background: #7ae0b2;
+      border: 1px solid #7ae0b2; }
+      .m-fix-bar .u-fix-item.scroll-top:hover {
+        background: rgba(122, 224, 178, 0.8); }
+  .m-fix-bar .comment-icon {
+    width: 33px;
+    height: 28px;
+    display: block;
+    margin: 22px auto 0;
+    background: url("images/comment.png") no-repeat center center; }
+  .m-fix-bar .scroll-top-icon {
+    width: 88px;
+    height: 88px;
+    display: block;
+    margin: 0 auto;
+    background: url("images/up.png") no-repeat center center; }
+
+/*# sourceMappingURL=fixBar.css.map */

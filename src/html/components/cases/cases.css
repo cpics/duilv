@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.related-list li {
+  zoom: 1; }
+  .related-list li:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*案例列表*/
+.related-list li {
+  padding: 25px 0;
+  border-bottom: 1px solid #e8e7e7; }
+  .related-list li:last-child {
+    border-bottom: 0; }
+.related-list .related-pic {
+  width: 300px;
+  height: 204px;
+  float: left; }
+  .related-list .related-pic img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto; }
+.related-list .related-info {
+  margin-left: 335px; }
+  .related-list .related-info h2 {
+    font-size: 24px;
+    padding-bottom: 5px; }
+.related-list .related-txt {
+  font-size: 16px;
+  min-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; }
+.related-list .related-tipper {
+  padding-top: 16px; }
+.related-list .related-tip {
+  font-size: 16px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 10px;
+  min-width: 40px;
+  text-align: center;
+  display: inline-block;
+  color: #ff5601;
+  border-radius: 3px;
+  margin-right: 10px;
+  border: 1px solid #ff5601; }
+
+/*# sourceMappingURL=cases.css.map */
