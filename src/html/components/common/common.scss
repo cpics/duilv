@@ -224,3 +224,27 @@ a:visited {
   text-align: center;
   padding: 40px 0;
 }
+
+.n-small-icon{
+  position: relative;
+  top: -1px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  background: url("images/news.png") no-repeat 0 0;
+  &.comment-icon{
+    background-position: 0 0;
+  }
+  &.eye-icon{
+    background-position: 0 -20px;
+  }
+  &.edit-icon{
+    background-position: 0 -40px;
+  }
+  &.time-icon{
+    background-position: 0 -60px;
+  }
+}
+

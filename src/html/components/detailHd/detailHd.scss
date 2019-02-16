@@ -1,0 +1,90 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+%pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/*详情头部*/
+.com-detail-hd {
+  padding: 20px 0;
+  .com-hd-inner {
+    width: 1170px;
+    height: 140px;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 auto;
+    padding-top: 105px;
+    background: url("images/hd.png") no-repeat top center;
+    background-size: 100% auto;
+    @extend %clearfix;
+  }
+  .com-hd-info {
+    width: 60%;
+    float: left;
+    padding: 0 48px;
+    @extend %clearfix;
+  }
+  .com-hd-face {
+    width: 136px;
+    height: 136px;
+    float: left;
+    border-radius: 6px;
+    border: 3px solid #fff;
+    img {
+      @extend %pic;
+      border-radius: 4px;
+    }
+  }
+  .com-hd-name {
+    font-weight: normal;
+    margin-left: 170px;
+    display: table;
+    .hd-name-row {
+      padding: 3px 0;
+      span {
+        padding-right: 20px;
+      }
+    }
+  }
+  .com-hd-handle {
+    width: 22%;
+    padding-right: 30px;
+    display: table;
+    text-align: right;
+    float: right;
+  }
+  .hd-bottom-td {
+    height: 83px;
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 20px;
+  }
+  .cm-sign-btn {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .u-wechat-icon{
+    position: relative;
+    top: -2px;
+    width: 36px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("images/wechat.png") no-repeat center center;
+  }
+  .share-wechat-btn{
+    display: inline-block;
+  }
+}

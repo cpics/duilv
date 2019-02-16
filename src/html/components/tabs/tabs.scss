@@ -1,0 +1,23 @@
+/*tabs*/
+.m-second-tabs{
+  color: #333;
+  font-size: 18px;
+  text-align: right;
+  padding: 20px 0;
+  span{
+    cursor: pointer;
+    display: inline-block;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .u-line{
+    color: #b4b4b4;
+    padding: 0 20px;
+    cursor: default;
+  }
+  &.active{
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

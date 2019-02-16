@@ -1,4 +1,19 @@
 @charset "UTF-8";
+.quality-pic-list, .case-pro-list li, .quality-list-box, .comment-box .comment-list li, .trace-d-list ul {
+  zoom: 1; }
+  .quality-pic-list:after, .case-pro-list li:after, .quality-list-box:after, .comment-box .comment-list li:after, .trace-d-list ul:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+.qua-pic-item img, .case-pro-list .case-pro-pic img, .comment-box .comment-list .comment-face img, .trace-d-list .trace-pic img {
+  width: 100%;
+  height: 100%;
+  display: block; }
+
 /*案例详情*/
 .g-case-detail {
   color: #333;
@@ -19,27 +34,215 @@
     padding: 5px 0; }
 
 .case-common-title {
+  position: relative;
   font-size: 20px;
   font-weight: bold;
   color: #333; }
 
+.more-case-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #333; }
+  .more-case-btn:hover {
+    text-decoration: underline; }
+
 .case-title-icon {
+  position: relative;
+  top: -1px;
   width: 30px;
   height: 30px;
   display: inline-block;
   margin-right: 5px;
+  vertical-align: middle;
   background: url("images/case_icon.png") no-repeat 0 0; }
   .case-title-icon.project {
     background-position: 0 0; }
   .case-title-icon.quality {
     background-position: 0 -30px; }
-  .case-title-icon.project {
+  .case-title-icon.product {
     background-position: 0 -60px; }
   .case-title-icon.quality1 {
     background-position: 0 -90px; }
   .case-title-icon.review {
-    background-position: 0 -120px; }
+    background-position: 0 -122px; }
   .case-title-icon.trace {
     background-position: 0 -150px; }
+
+.quality-pic-list {
+  padding-top: 28px; }
+
+.qua-pic-item {
+  width: 195px;
+  height: 244px;
+  text-align: center;
+  float: left;
+  margin-left: 28px;
+  overflow: hidden; }
+  .qua-pic-item:first-child {
+    margin-left: 0; }
+  .qua-pic-item img:hover {
+    box-shadow: 0 0 20px rgba(17, 17, 17, 0.2); }
+
+.case-pro-list li {
+  color: #333;
+  padding-top: 25px; }
+.case-pro-list .case-pro-pic {
+  width: 174px;
+  height: 118px;
+  float: left; }
+.case-pro-list .case-pro-info {
+  font-size: 16px;
+  margin-left: 200px; }
+  .case-pro-list .case-pro-info h2 {
+    font-size: 20px;
+    font-weight: normal;
+    padding-top: 6px; }
+  .case-pro-list .case-pro-info .case-pro-txt {
+    padding-top: 20px; }
+
+.quality-list-box {
+  height: 204px;
+  padding-bottom: 22px;
+  margin-left: -28px;
+  overflow: hidden; }
+  .quality-list-box.h-auto {
+    height: auto; }
+  .quality-list-box .quality-item {
+    width: 158px;
+    height: 52px;
+    line-height: 26px;
+    padding: 14px 0;
+    text-align: center;
+    margin-left: 28px;
+    margin-top: 22px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    float: left; }
+    .quality-list-box .quality-item h2,
+    .quality-list-box .quality-item p {
+      display: block;
+      font-weight: normal;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 100%;
+      overflow: hidden; }
+    .quality-list-box .quality-item.bg-pink {
+      background: #f06292; }
+    .quality-list-box .quality-item.bg-blue {
+      background: #64b5f6; }
+    .quality-list-box .quality-item.bg-yellow {
+      background: #ffd54f; }
+    .quality-list-box .quality-item.bg-purple {
+      background: #9575cd; }
+    .quality-list-box .quality-item.bg-green {
+      background: #81c784; }
+    .quality-list-box .quality-item.bg-cyan {
+      background: #4dd0e1; }
+    .quality-list-box .quality-item h2 {
+      font-size: 20px;
+      font-weight: bold; }
+
+.view-more-btn {
+  cursor: pointer;
+  text-align: center; }
+  .view-more-btn:hover .arrow-double-down {
+    opacity: .8; }
+  .view-more-btn.pack-up {
+    transform: rotate(-180deg); }
+
+.arrow-double-down {
+  width: 24px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  background: url("images/next.png") no-repeat center center; }
+
+.review-content {
+  color: #333;
+  font-size: 16px; }
+  .review-content .review-tit {
+    font-size: 16px;
+    font-weight: bold; }
+  .review-content .cp-column {
+    padding-top: 0;
+    margin-left: -12px; }
+    .review-content .cp-column .cp-item {
+      width: 260px;
+      height: 180px;
+      margin-top: 20px;
+      margin-left: 12px; }
+  .review-content .review-box-items {
+    padding: 25px 0;
+    border-top: 1px solid #e8e7e7; }
+    .review-content .review-box-items:first-child {
+      border-top: 0; }
+
+/*最新评论*/
+.comment-box {
+  padding-top: 30px; }
+  .comment-box .comment-title {
+    font-size: 16px;
+    color: #666;
+    padding-bottom: 15px; }
+  .comment-box .comment-list li {
+    padding: 15px 0; }
+  .comment-box .comment-list .comment-face {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left; }
+  .comment-box .comment-list .comment-info {
+    margin-left: 60px; }
+  .comment-box .comment-list .comment-name {
+    color: #3f5a93;
+    font-size: 14px; }
+  .comment-box .comment-list .comment-msg {
+    color: #333;
+    font-size: 16px;
+    padding-top: 2px; }
+
+/*后续追踪*/
+.trace-d-list ul {
+  margin-left: -15px; }
+.trace-d-list li {
+  width: 260px;
+  float: left;
+  margin-left: 15px;
+  margin-top: 25px; }
+  .trace-d-list li a {
+    display: block; }
+.trace-d-list .trace-pic {
+  width: 100%;
+  height: 176px; }
+.trace-d-list .trace-tit {
+  height: 48px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical; }
+.trace-d-list .trace-handle {
+  color: #666;
+  padding-top: 5px;
+  font-size: 16px; }
+  .trace-d-list .trace-handle a.th-col {
+    display: inline-block; }
+  .trace-d-list .trace-handle .th-col {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 20px; }
+    .trace-d-list .trace-handle .th-col:last-child {
+      margin-right: 0; }
 
 /*# sourceMappingURL=details.css.map */

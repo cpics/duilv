@@ -11,6 +11,11 @@
     line-height: 0;
     overflow: hidden; }
 
+.mh-slogan-content .msi-pic img, .case-column .case-pic img, .news-column .u-news-pic img, .petite-item .petite-pic img, .ing-roll .roll-face img, .ing-face img, .u-group-list .company-pic img {
+  width: 100%;
+  height: 100%;
+  display: block; }
+
 /*首页-slogan*/
 .mh-slogan-content {
   padding: 50px 0;
@@ -26,10 +31,6 @@
   .mh-slogan-content .msi-pic {
     width: 229px;
     height: 229px; }
-    .mh-slogan-content .msi-pic img {
-      width: 100%;
-      height: 100%;
-      display: block; }
   .mh-slogan-content .msi-txt {
     color: #252525;
     font-size: 20px;
@@ -71,10 +72,6 @@
     position: relative;
     width: 302px;
     height: 206px; }
-    .case-column .case-pic img {
-      width: 100%;
-      height: 100%;
-      display: block; }
     .case-column .case-pic .case-tag {
       position: absolute;
       left: 0;
@@ -138,10 +135,6 @@
     width: 148px;
     height: 100px;
     float: left; }
-    .news-column .u-news-pic img {
-      width: 100%;
-      height: 100%;
-      display: block; }
   .news-column .u-news-txt {
     margin-left: 170px;
     max-height: 90px;
@@ -196,10 +189,6 @@
   .petite-item .petite-pic {
     width: 100%;
     height: 129px; }
-    .petite-item .petite-pic img {
-      width: 100%;
-      height: 100%;
-      display: block; }
   .petite-item .petite-describe {
     line-height: 1.57;
     padding-top: 6px; }
@@ -290,10 +279,6 @@
     border-radius: 50%;
     overflow: hidden;
     vertical-align: top; }
-    .ing-roll .roll-face img {
-      width: 100%;
-      height: 100%;
-      display: block; }
 
 .ing-face {
   width: 50px;
@@ -301,10 +286,6 @@
   border-radius: 50%;
   overflow: hidden;
   float: left; }
-  .ing-face img {
-    width: 100%;
-    height: 100%;
-    display: block; }
 
 .ing-info {
   margin-left: 68px; }
@@ -359,10 +340,6 @@
   border-radius: 5px;
   overflow: hidden;
   float: left; }
-  .u-group-list .company-pic img {
-    width: 100%;
-    height: 100%;
-    display: block; }
 .u-group-list .company-name {
   color: #666;
   margin-left: 66px; }
