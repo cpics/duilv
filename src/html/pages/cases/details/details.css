@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.quality-pic-list, .case-pro-list li, .quality-list-box, .comment-box .comment-list li, .trace-d-list ul {
+.quality-pic-list, .case-pro-list li, .quality-list-box, .trace-d-list ul {
   zoom: 1; }
-  .quality-pic-list:after, .case-pro-list li:after, .quality-list-box:after, .comment-box .comment-list li:after, .trace-d-list ul:after {
+  .quality-pic-list:after, .case-pro-list li:after, .quality-list-box:after, .trace-d-list ul:after {
     clear: both;
     content: '';
     display: block;
@@ -9,7 +9,7 @@
     line-height: 0;
     overflow: hidden; }
 
-.qua-pic-item img, .case-pro-list .case-pro-pic img, .comment-box .comment-list .comment-face img, .trace-d-list .trace-pic img {
+.qua-pic-item img, .case-pro-list .case-pro-pic img, .trace-d-list .trace-pic img {
   width: 100%;
   height: 100%;
   display: block; }
@@ -181,31 +181,6 @@
     border-top: 1px solid #e8e7e7; }
     .review-content .review-box-items:first-child {
       border-top: 0; }
-
-/*最新评论*/
-.comment-box {
-  padding-top: 30px; }
-  .comment-box .comment-title {
-    font-size: 16px;
-    color: #666;
-    padding-bottom: 15px; }
-  .comment-box .comment-list li {
-    padding: 15px 0; }
-  .comment-box .comment-list .comment-face {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    overflow: hidden;
-    float: left; }
-  .comment-box .comment-list .comment-info {
-    margin-left: 60px; }
-  .comment-box .comment-list .comment-name {
-    color: #3f5a93;
-    font-size: 14px; }
-  .comment-box .comment-list .comment-msg {
-    color: #333;
-    font-size: 16px;
-    padding-top: 2px; }
 
 /*后续追踪*/
 .trace-d-list ul {

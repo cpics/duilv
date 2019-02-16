@@ -1,0 +1,252 @@
+@charset "UTF-8";
+.comment-box .comment-list li, .comment-publish, .fixation-bottom .fix-bot-inner, .fixation-bottom .fix-bot-publish, .fixation-bottom .fix-is-show {
+  zoom: 1; }
+  .comment-box .comment-list li:after, .comment-publish:after, .fixation-bottom .fix-bot-inner:after, .fixation-bottom .fix-bot-publish:after, .fixation-bottom .fix-is-show:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+.comment-box .comment-list .comment-face img, .comment-publish .publish-face img {
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+/*评论*/
+.comment-box {
+  padding-top: 30px; }
+  .comment-box.pt-small {
+    padding-top: 10px; }
+  .comment-box .comment-title {
+    font-size: 16px;
+    color: #666;
+    padding-bottom: 15px; }
+  .comment-box .comment-list li {
+    padding: 15px 0; }
+  .comment-box .comment-list .comment-face {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left; }
+  .comment-box .comment-list .comment-info {
+    margin-left: 60px; }
+  .comment-box .comment-list .comment-name {
+    color: #3f5a93;
+    font-size: 14px; }
+    .comment-box .comment-list .comment-name .name-tipper {
+      color: #666;
+      padding-left: 15px; }
+    .comment-box .comment-list .comment-name .report-btn {
+      cursor: pointer;
+      text-decoration: underline; }
+  .comment-box .comment-list .comment-msg {
+    color: #333;
+    font-size: 16px;
+    padding-top: 2px; }
+
+.comment-publish .publish-face {
+  width: 50px;
+  height: 50px;
+  float: left;
+  border-radius: 50%;
+  overflow: hidden; }
+.comment-publish .comment-textarea {
+  height: 80px;
+  background: #f1f1f1;
+  margin-left: 68px; }
+  .comment-publish .comment-textarea textarea {
+    outline: none;
+    border: 0;
+    background: #f1f1f1;
+    resize: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    color: #333;
+    font-size: 16px;
+    padding: 15px 30px;
+    box-sizing: border-box; }
+  .comment-publish .comment-textarea ::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #333; }
+  .comment-publish .comment-textarea :-moz-placeholder {
+    font-size: 16px;
+    color: #333; }
+  .comment-publish .comment-textarea ::-moz-placeholder {
+    font-size: 16px;
+    color: #333; }
+  .comment-publish .comment-textarea :-ms-input-placeholder {
+    font-size: 16px;
+    color: #333; }
+
+.comment-publish-btn {
+  text-align: right;
+  padding-top: 17px; }
+  .comment-publish-btn .publish-btn {
+    cursor: pointer;
+    padding: 0 20px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    background: #7ae0b2;
+    margin-left: 20px; }
+    .comment-publish-btn .publish-btn:first-child {
+      margin-left: 0; }
+    .comment-publish-btn .publish-btn:hover {
+      background: rgba(122, 224, 178, 0.8); }
+
+/*评论底部浮动*/
+.fixation-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  background: #fff;
+  padding: 14px 0;
+  border-top: 1px solid #e8e7e7; }
+  .fixation-bottom .fix-bot-inner {
+    width: 1170px;
+    margin: 0 auto; }
+  .fixation-bottom .fix-bot-publish {
+    width: 490px;
+    height: 60px;
+    padding: 12px 16px;
+    float: left;
+    background: #f1f1f1;
+    box-sizing: border-box; }
+    .fixation-bottom .fix-bot-publish input {
+      display: block;
+      width: 75%;
+      height: 36px;
+      line-height: 36px;
+      float: left;
+      border: 0;
+      font-size: 18px;
+      background: #f1f1f1;
+      outline: none; }
+    .fixation-bottom .fix-bot-publish ::-webkit-input-placeholder {
+      font-size: 18px;
+      color: #999; }
+    .fixation-bottom .fix-bot-publish :-moz-placeholder {
+      font-size: 18px;
+      color: #999; }
+    .fixation-bottom .fix-bot-publish ::-moz-placeholder {
+      font-size: 18px;
+      color: #999; }
+    .fixation-bottom .fix-bot-publish :-ms-input-placeholder {
+      font-size: 18px;
+      color: #999; }
+    .fixation-bottom .fix-bot-publish .fix-bot-btn {
+      width: 56px;
+      height: 36px;
+      line-height: 36px;
+      cursor: pointer;
+      background: #7ae0b2;
+      float: right;
+      color: #fff;
+      font-size: 18px;
+      text-align: center; }
+      .fixation-bottom .fix-bot-publish .fix-bot-btn:hover {
+        background: rgba(122, 224, 178, 0.8); }
+  .fixation-bottom .fix-bot-column {
+    float: left; }
+    .fixation-bottom .fix-bot-column dl {
+      display: table;
+      margin-left: 20px; }
+    .fixation-bottom .fix-bot-column dd {
+      color: #b4b4b4;
+      font-size: 16px;
+      height: 60px;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle; }
+      .fixation-bottom .fix-bot-column dd.line-empty {
+        padding: 0; }
+      .fixation-bottom .fix-bot-column dd:first-child {
+        padding: 0 30px; }
+    .fixation-bottom .fix-bot-column .fix-count {
+      padding: 0 5px;
+      min-width: 50px;
+      text-align: center;
+      display: inline-block; }
+    .fixation-bottom .fix-bot-column .c-pointer {
+      cursor: pointer; }
+    .fixation-bottom .fix-bot-column .like-icon,
+    .fixation-bottom .fix-bot-column .comment-icon {
+      display: block;
+      margin: 0 auto; }
+  .fixation-bottom .fix-scan {
+    font-size: 0; }
+    .fixation-bottom .fix-scan:hover .fix-is-show {
+      display: block; }
+  .fixation-bottom .fix-line {
+    width: 1px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #b4b4b4; }
+  .fixation-bottom .fix-wechat-icon {
+    width: 48px;
+    height: 40px;
+    display: inline-block;
+    margin: 0 30px;
+    vertical-align: middle;
+    background: url("images/wex.png") no-repeat center center; }
+  .fixation-bottom .fix-is-show {
+    position: absolute;
+    left: 0;
+    top: -175px;
+    z-index: 2;
+    width: 310px;
+    height: 130px;
+    padding: 10px;
+    display: none;
+    margin-left: 10px;
+    background: #f1f1f1; }
+    .fixation-bottom .fix-is-show .is-show-pic {
+      width: 130px;
+      height: 130px;
+      float: left; }
+      .fixation-bottom .fix-is-show .is-show-pic img {
+        display: block;
+        width: 100%;
+        height: 100%; }
+    .fixation-bottom .fix-is-show .is-show-info {
+      color: #666;
+      font-size: 14px;
+      margin-left: 150px;
+      height: 130px;
+      display: table; }
+      .fixation-bottom .fix-is-show .is-show-info .is-show-txt {
+        text-align: left;
+        display: table-cell;
+        vertical-align: middle; }
+  .fixation-bottom .fix-up-btn {
+    width: 32px;
+    height: 37px;
+    display: block;
+    margin-left: 30px;
+    cursor: pointer;
+    background: url("images/top.png") no-repeat center center; }
+    .fixation-bottom .fix-up-btn:hover {
+      opacity: .8; }
+  .fixation-bottom .fix-scan {
+    position: relative;
+    cursor: pointer; }
+  .fixation-bottom .fix-scan-icon {
+    width: 44px;
+    height: 43px;
+    display: inline-block;
+    margin: 0 30px;
+    vertical-align: middle;
+    background: url("images/scan.png") no-repeat center center; }
+
+/*# sourceMappingURL=comments.css.map */
