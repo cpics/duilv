@@ -1,0 +1,272 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+//单行&多行省略
+//@include ellipsis;
+//@include ellipsis(3);
+@mixin ellipsis($lines: 1, $substract: 0) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100% - $substract;
+    overflow: hidden;
+  } @else {
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+  }
+}
+
+/*页面-左右*/
+.m-structure-content {
+  padding-bottom: 80px;
+  @extend %clearfix;
+  .m-structure-information {
+    width: 940px;
+    float: left;
+    .comment-box {
+      .comment-title {
+        color: #252525;
+        font-weight: bold;
+      }
+    }
+  }
+  .m-structure-quick {
+    width: 188px;
+    float: right;
+  }
+  .common-tit-h2 {
+    margin-bottom: 10px;
+  }
+  .structure-box {
+    margin-bottom: 12px;
+    padding: 5px 12px 12px 20px;
+    border: 1px solid #e8e7e7;
+    &.clock-in {
+      padding: 5px 8px 0 8px;
+    }
+  }
+  .scan-code-quick {
+    padding: 28px;
+    border: 1px solid #e8e7e7;
+    .code-quick-pic {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .code-quick-txt {
+      color: #666;
+      padding-top: 10px;
+      text-align: center;
+    }
+  }
+  .u-news-handle {
+    display: block;
+    color: #666;
+    font-size: 16px;
+    padding-top: 20px;
+    @extend %clearfix;
+    .un-left {
+      float: left;
+    }
+    .un-right {
+      float: right;
+    }
+    .un-col {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.c-grey-9 {
+        color: #999;
+      }
+    }
+  }
+  .c-arrow-up {
+    position: absolute;
+    right: 50%;
+    top: 46px;
+    width: 0;
+    height: 0;
+    margin-right: -20px;
+    display: inline-block;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #f1f1f1;
+  }
+  .structure-btn {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background: #7ae0b2;
+    margin-bottom: 25px;
+    &:hover {
+      background: rgba(122, 224, 178, .8);
+    }
+  }
+  .recommend-item {
+    position: relative;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 15px;
+    max-height: 42px;
+    @include ellipsis(2);
+    &:before {
+      position: absolute;
+      left: -10px;
+      top: 9px;
+      content: "";
+      width: 3px;
+      height: 3px;
+      background: #333;
+      border-radius: 50%;
+    }
+    &:hover {
+      color: #4bde9e;
+      text-decoration: underline;
+    }
+  }
+  .guess-like {
+    .guess-item {
+      display: block;
+      margin-bottom: 12px;
+      @extend %clearfix;
+      &:hover {
+        .guess-info {
+          color: #7ae0b2;
+        }
+      }
+    }
+    .guess-face {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      overflow: hidden;
+      float: left;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .guess-info {
+      color: #333;
+      margin-left: 62px;
+      padding-top: 4px;
+      @include ellipsis(2);
+    }
+  }
+}
+
+/*打卡*/
+.clock-list {
+  .clock-today {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 0;
+    h4 {
+      color: #252525;
+      font-size: 18px;
+      padding-bottom: 5px;
+    }
+  }
+  li {
+    padding: 20px 12px;
+    border-top: 1px solid #e8e7e7;
+  }
+  .s-search-btn {
+    width: 16px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    background: url("images/search.png") no-repeat center center;
+  }
+  .clock-hd {
+    @extend %clearfix;
+  }
+  .clock-face {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-top: 6px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .clock-info {
+    color: #666;
+    font-size: 12px;
+    margin-left: 58px;
+  }
+  .clock-name {
+    color: #3f5a93;
+    font-size: 14px;
+  }
+  .clock-address {
+    color: #999;
+    font-size: 12px;
+    padding-top: 10px;
+  }
+  .clock-search-date {
+    font-size: 0;
+    span {
+      font-size: 16px;
+      height: 30px;
+      line-height: 30px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    input {
+      width: 70%;
+      display: inline-block;
+      border: 0;
+      outline: none;
+      font-size: 16px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  }
+  .sign-handle {
+    text-align: right;
+    padding-top: 5px;
+  }
+  .sign-btn {
+    color: #b4b4b4;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

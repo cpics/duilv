@@ -141,33 +141,6 @@ a:visited {
   .star-icon.five-star {
     background-position: 0 -44px; }
 
-.address-icon,
-.msg-icon,
-.like-icon,
-.share-icon {
-  position: relative;
-  top: -2px;
-  width: 19px;
-  height: 19px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 3px;
-  background: url("images/icon.png") no-repeat 0 0; }
-
-.address-icon {
-  background-position: 0 0; }
-
-.like-icon {
-  background-position: 0 -21px; }
-  .like-icon.active {
-    background-position: 0 -76px; }
-
-.msg-icon {
-  background-position: 0 -40px; }
-
-.share-icon {
-  background-position: 0 -60px; }
-
 .prompt-txt {
   color: #ccc;
   font-size: 20px;
@@ -191,5 +164,53 @@ a:visited {
     background-position: 0 -40px; }
   .n-small-icon.time-icon {
     background-position: 0 -60px; }
+  .n-small-icon.share-s-icon {
+    cursor: pointer;
+    background-position: 0 -80px; }
+
+.address-icon,
+.msg-icon,
+.like-icon,
+.share-icon {
+  position: relative;
+  top: -2px;
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+  background: url("images/icon.png") no-repeat 0 0; }
+
+.like-icon {
+  cursor: pointer; }
+
+.address-icon {
+  background-position: 0 0; }
+
+.like-icon {
+  background-position: 0 -21px; }
+  .like-icon.active {
+    background-position: 0 -81px; }
+
+.msg-icon {
+  background-position: 0 -40px; }
+
+.share-icon {
+  background-position: 0 -60px; }
+
+.fix-editor-btn {
+  position: fixed;
+  bottom: 140px;
+  right: 50%;
+  margin-right: -585px;
+  width: 136px;
+  height: 136px;
+  cursor: pointer;
+  background: url("images/editor.png") no-repeat center center; }
+  .fix-editor-btn:hover {
+    opacity: .8; }
+
+.u-pointer {
+  cursor: pointer; }
 
 /*# sourceMappingURL=common.css.map */

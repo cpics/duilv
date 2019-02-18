@@ -87,6 +87,13 @@
   @include center(576px, 678px);
 }
 
+.bomb-com-box {
+  background: #fff;
+  padding: 30px 60px;
+  @include center(600px, 640px);
+  box-shadow: 0 0 20px rgba(17, 17, 17, .2);
+}
+
 .bomb-close-icon {
   position: absolute;
   right: 16px;
@@ -97,7 +104,35 @@
   cursor: pointer;
   display: inline-block;
   background: url("images/close.png") no-repeat center center;
-  &:hover{
+  &:hover {
     opacity: .8;
+  }
+}
+
+.bomb-bottom-btn {
+  text-align: center;
+  padding: 25px 0 0;
+  border-top: 1px solid #e8e7e7;
+  .bo-pop-btn {
+    min-width: 96px;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 20px;
+    cursor: pointer;
+    display: inline-block;
+    background: #4bde9e;
+    &:hover {
+      background: rgba(75, 555, 158, .8);
+    }
+    &.bg-grey {
+      background: #999;
+      &:hover {
+        background: rgba(153, 153, 153, .8);
+      }
+    }
   }
 }

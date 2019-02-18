@@ -167,7 +167,8 @@
   font-size: 16px; }
   .review-content .review-tit {
     font-size: 16px;
-    font-weight: bold; }
+    font-weight: bold;
+    padding-bottom: 5px; }
   .review-content .cp-column {
     padding-top: 0;
     margin-left: -12px; }

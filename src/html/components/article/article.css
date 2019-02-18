@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*详情*/
+.news-d-article {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e8e7e7; }
+  .news-d-article .u-news-handle {
+    padding-top: 10px; }
+
+.news-article {
+  color: #333;
+  line-height: 2;
+  font-size: 16px;
+  padding-top: 15px; }
+  .news-article p {
+    padding-bottom: 20px; }
+  .news-article img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 20px; }
+
+/*# sourceMappingURL=article.css.map */

@@ -20,6 +20,9 @@
   .cp-column.big-pic .cp-item {
     width: 300px;
     height: 204px; }
+  .cp-column.middle-pic .cp-item {
+    width: 276px;
+    height: 190px; }
   .cp-column.h-auto .cp-item {
     height: auto; }
 

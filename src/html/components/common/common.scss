@@ -185,6 +185,40 @@ a:visited {
   }
 }
 
+.prompt-txt {
+  color: #ccc;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.n-small-icon {
+  position: relative;
+  top: -1px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  background: url("images/news.png") no-repeat 0 0;
+  &.comment-icon {
+    background-position: 0 0;
+  }
+  &.eye-icon {
+    background-position: 0 -20px;
+  }
+  &.edit-icon {
+    background-position: 0 -40px;
+  }
+  &.time-icon {
+    background-position: 0 -60px;
+  }
+  &.share-s-icon {
+    cursor: pointer;
+    background-position: 0 -80px;
+  }
+}
+
 .address-icon,
 .msg-icon,
 .like-icon,
@@ -199,6 +233,10 @@ a:visited {
   background: url("images/icon.png") no-repeat 0 0;
 }
 
+.like-icon {
+  cursor: pointer;
+}
+
 .address-icon {
   background-position: 0 0;
 }
@@ -206,7 +244,7 @@ a:visited {
 .like-icon {
   background-position: 0 -21px;
   &.active {
-    background-position: 0 -76px;
+    background-position: 0 -81px;
   }
 }
 
@@ -218,33 +256,20 @@ a:visited {
   background-position: 0 -60px;
 }
 
-.prompt-txt {
-  color: #ccc;
-  font-size: 20px;
-  text-align: center;
-  padding: 40px 0;
-}
-
-.n-small-icon{
-  position: relative;
-  top: -1px;
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 5px;
-  background: url("images/news.png") no-repeat 0 0;
-  &.comment-icon{
-    background-position: 0 0;
-  }
-  &.eye-icon{
-    background-position: 0 -20px;
-  }
-  &.edit-icon{
-    background-position: 0 -40px;
-  }
-  &.time-icon{
-    background-position: 0 -60px;
+.fix-editor-btn {
+  position: fixed;
+  bottom: 140px;
+  right: 50%;
+  margin-right: -585px;
+  width: 136px;
+  height: 136px;
+  cursor: pointer;
+  background: url("images/editor.png") no-repeat center center;
+  &:hover {
+    opacity: .8;
   }
 }
 
+.u-pointer {
+  cursor: pointer;
+}

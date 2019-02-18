@@ -37,23 +37,7 @@
 }
 
 /*要闻*/
-.m-news-content {
-  padding-bottom: 80px;
-  @extend %clearfix;
-  .m-news-information {
-    width: 940px;
-    float: left;
-    .comment-box{
-      .comment-title{
-        color: #252525;
-        font-weight: bold;
-      }
-    }
-  }
-  .m-news-quick {
-    width: 188px;
-    float: right;
-  }
+.m-structure-content {
   .m-news-list {
     padding: 30px 0;
     li {
@@ -97,100 +81,5 @@
     padding-top: 6px;
     height: 102px;
     @include ellipsis(3);
-  }
-  .news-recommend {
-    margin-bottom: 12px;
-    padding: 20px 12px 12px 20px;
-    border: 1px solid #e8e7e7;
-  }
-  .recommned-tit {
-    font-size: 18px;
-    color: #333;
-    padding-bottom: 15px;
-  }
-  .recommend-item {
-    position: relative;
-    color: #333;
-    font-size: 14px;
-    display: block;
-    margin-bottom: 15px;
-    max-height: 42px;
-    @include ellipsis(2);
-    &:before {
-      position: absolute;
-      left: -10px;
-      top: 9px;
-      content: "";
-      width: 3px;
-      height: 3px;
-      background: #333;
-      border-radius: 50%;
-    }
-    &:hover {
-      color: #4bde9e;
-      text-decoration: underline;
-    }
-  }
-  .scan-code-quick {
-    padding: 28px;
-    border: 1px solid #e8e7e7;
-    .code-quick-pic {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto;
-      img {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-    }
-    .code-quick-txt {
-      color: #666;
-      padding-top: 10px;
-      text-align: center;
-    }
-  }
-  .u-news-handle {
-    display: block;
-    color: #666;
-    font-size: 16px;
-    padding-top: 20px;
-    @extend %clearfix;
-    .un-left {
-      float: left;
-    }
-    .un-right {
-      float: right;
-    }
-    .un-col {
-      display: inline-block;
-      margin-left: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
-  /*详情*/
-  .news-d-article {
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e8e7e7;
-    .u-news-handle {
-      padding-top: 10px;
-    }
-  }
-  .news-article {
-    color: #333;
-    line-height: 2;
-    font-size: 16px;
-    padding-top: 15px;
-
-    p {
-      padding-bottom: 20px;
-    }
-    img {
-      display: block;
-      max-width: 100%;
-      margin-bottom: 20px;
-    }
   }
 }

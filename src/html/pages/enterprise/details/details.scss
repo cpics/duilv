@@ -1,0 +1,128 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*信息管理*/
+.info-msg-manage {
+  position: relative;
+  padding: 20px 0;
+  @extend %clearfix;
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 4%;
+    content: "";
+    width: 1px;
+    height: 92%;
+    background: #e8e7e7;
+  }
+  .info-msg-row {
+    color: #333;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 8px 0;
+  }
+  .info-msg-col {
+    width: 50%;
+    float: left;
+    padding-left: 110px;
+    box-sizing: border-box;
+  }
+  .i-company-name {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  label {
+    display: inline-block;
+  }
+  input {
+    &.i-company-name {
+      line-height: 26px;
+      border: 0;
+      outline: none;
+      font-size: 18px;
+      background: #f1f1f1;
+      padding: 0 10px;
+    }
+  }
+  .i-company-face {
+    position: relative;
+    top: -1px;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 15px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .i-msg-btn {
+    color: #996999;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline;
+  }
+  .i-msg-tipper {
+    color: #999;
+    font-size: 12px;
+  }
+  .i-member-list {
+    h2 {
+      color: #333;
+      font-size: 20px;
+      padding-bottom: 12px;
+    }
+    li {
+      padding: 10px 0;
+      line-height: 46px;
+      @extend %clearfix;
+    }
+    .i-member-handle {
+      float: right;
+      width: 160px;
+      em {
+        color: #996999;
+        padding: 0 2px;
+      }
+    }
+    .i-member-face {
+      width: 46px;
+      height: 46px;
+      vertical-align: middle;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      float: left;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .i-member-name {
+      float: left;
+      font-size: 20px;
+      max-width: 160px;
+      display: inline-block;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 20px;
+    }
+  }
+}
