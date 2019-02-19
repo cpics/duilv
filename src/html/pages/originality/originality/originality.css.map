@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,OAAO;AAEL,8BAAe;EACb,WAAW,EAAE,CAAC;AAEhB,oCAAqB;EACnB,WAAW,EAAE,IAAI;EACjB,UAAU,EAAE,iBAAiB;AAG7B,wCAAc;EACZ,UAAU,EAAE,CAAC;AAGjB,kCAAmB;EACjB,WAAW,EAAE,IAAI",
+"sources": ["originality.scss"],
+"names": [],
+"file": "originality.css"
+}

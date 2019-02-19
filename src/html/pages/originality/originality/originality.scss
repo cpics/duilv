@@ -1,0 +1,18 @@
+/*匠心记*/
+.origin-content {
+  .m-second-tabs {
+    padding-top: 0;
+  }
+  .m-structure-content {
+    padding-top: 25px;
+    border-top: 1px solid #f1f1f1;
+  }
+  .e-prise-box {
+    &:first-child {
+      border-top: 0;
+    }
+  }
+  .m-structure-quick {
+    padding-top: 95px;
+  }
+}

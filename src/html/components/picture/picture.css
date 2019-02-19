@@ -26,6 +26,9 @@
   .cp-column.pic-260 .cp-item {
     width: 260px;
     height: 180px; }
+  .cp-column.pic-300 .cp-item {
+    width: 300px;
+    height: 206px; }
   .cp-column.h-auto .cp-item {
     height: auto; }
 

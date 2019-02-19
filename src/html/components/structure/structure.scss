@@ -58,6 +58,9 @@
     &.clock-in {
       padding: 5px 8px 0 8px;
     }
+    &.pd-small {
+      padding: 5px 10px 12px 14px;
+    }
   }
   .scan-code-quick {
     padding: 28px;
@@ -269,4 +272,55 @@
     cursor: pointer;
     text-decoration: underline;
   }
+}
+
+/*项目简述*/
+.project-intro {
+  font-size: 14px;
+}
+
+.com-md-face {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.str-row {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.str-label {
+  margin-right: 5px;
+}
+
+.str-tag-icon {
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  display: inline-block;
+  background: #4bde9e;
+  padding: 0 6px;
+  color: #fff;
+  vertical-align: middle;
+  border-radius: 11px;
+  margin-left: 5px;
+}
+
+.str-name {
+  font-size: 16px;
+  display: inline-block;
+  line-height: 22px;
+  max-width: 64px;
+  word-break: keep-all;
+  white-space: nowrap;
+  vertical-align: middle;
+  overflow: hidden;
 }

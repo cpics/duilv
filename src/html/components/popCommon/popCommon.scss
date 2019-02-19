@@ -94,19 +94,29 @@
   box-shadow: 0 0 20px rgba(17, 17, 17, .2);
 }
 
+.bomb-small-close,
 .bomb-close-icon {
   position: absolute;
   right: 16px;
   top: 16px;
   z-index: 4;
-  width: 34px;
-  height: 34px;
   cursor: pointer;
   display: inline-block;
+}
+
+.bomb-close-icon {
+  width: 34px;
+  height: 34px;
   background: url("images/close.png") no-repeat center center;
   &:hover {
     opacity: .8;
   }
+}
+
+.bomb-small-close {
+  width: 19px;
+  height: 18px;
+  background: url("images/close2.png") no-repeat center center;
 }
 
 .bomb-bottom-btn {

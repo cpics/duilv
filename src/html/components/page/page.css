@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*分页*/
+.m-pages {
+  color: #333;
+  padding: 20px 0;
+  font-size: 0;
+  text-align: right; }
+  .m-pages .btn-prev,
+  .m-pages .btn-next {
+    font-size: 18px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 15px;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    color: #666;
+    outline: none;
+    margin-left: 10px;
+    background: #f1f1f1; }
+    .m-pages .btn-prev:disabled,
+    .m-pages .btn-next:disabled {
+      color: #b4b4b4;
+      cursor: default; }
+  .m-pages .u-pager {
+    font-size: 0;
+    display: inline-block; }
+    .m-pages .u-pager dd {
+      font-size: 18px;
+      min-width: 34px;
+      height: 34px;
+      line-height: 34px;
+      color: #666;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      background: #f1f1f1;
+      margin-left: 10px;
+      padding: 0 5px;
+      box-sizing: border-box; }
+      .m-pages .u-pager dd.active, .m-pages .u-pager dd:hover {
+        color: #fff;
+        background: #4bde9e; }
+      .m-pages .u-pager dd.dots {
+        color: #666;
+        cursor: default;
+        background: transparent; }
+
+/*# sourceMappingURL=page.css.map */
