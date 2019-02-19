@@ -1,0 +1,126 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+%pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+//单行&多行省略
+//@include ellipsis;
+//@include ellipsis(3);
+@mixin ellipsis($lines: 1, $substract: 0) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100% - $substract;
+    overflow: hidden;
+  } @else {
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+  }
+}
+
+/*课程*/
+.course-list {
+  &.dole {
+    @extend %clearfix;
+    .course-item {
+      float: left;
+      width: 226px;
+      margin: 0 20px 40px;
+      .course-pic {
+        height: 154px;
+      }
+    }
+    .course-tit {
+      padding-bottom: 2px;
+    }
+  }
+}
+
+.course-item {
+  position: relative;
+  color: #333;
+  width: 188px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 20px;
+  .course-pic {
+    width: 100%;
+    height: 129px;
+    img {
+      @extend %pic;
+    }
+  }
+  .course-describe {
+    line-height: 1.57;
+    padding-top: 6px;
+  }
+  .course-tit {
+    font-size: 20px;
+    font-weight: normal;
+    padding-top: 10px;
+    @include ellipsis(1);
+  }
+  .course-circle {
+    position: relative;
+    top: -1px;
+    font-size: 0;
+    width: 3px;
+    height: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+    background: #666;
+    border-radius: 50%;
+  }
+  .course-txt {
+    color: #666;
+  }
+  .course-handle {
+    padding-top: 8px;
+    @extend %clearfix;
+    .star-icon {
+      float: right;
+      margin-top: 7px;
+    }
+  }
+  .course-money {
+    color: #ff0000;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 1.2;
+  }
+}
+
+.dole-icon {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  z-index: 2;
+  color: #fff;
+  font-size: 13px;
+  display: none;
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: #ff0000;
+  &.show {
+    display: block;
+  }
+}

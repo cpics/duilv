@@ -126,3 +126,23 @@
     }
   }
 }
+
+.write-complain-btn {
+  text-align: right;
+  .write-btn {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background: #7ae0b2;
+    margin-bottom: 25px;
+    display: inline-block;
+    &:hover {
+      background: rgba(122, 224, 178, .8);
+    }
+  }
+}

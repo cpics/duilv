@@ -67,7 +67,10 @@
     height: 30px;
     display: inline-block;
     vertical-align: middle;
+    cursor: pointer;
     background: url("images/wechat.png") no-repeat center center; }
+    .com-detail-hd .u-wechat-icon:hover {
+      opacity: .9; }
   .com-detail-hd .share-wechat-btn {
     display: inline-block; }
 

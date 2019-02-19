@@ -134,6 +134,10 @@ a:visited {
   font-weight: bold;
   padding-left: 15px;
   border-left: 10px solid #e8e7e7;
+  &.c-orange {
+    color: #ff990f;
+    border-left-color: #ff990f;
+  }
 }
 
 .dm-btn {

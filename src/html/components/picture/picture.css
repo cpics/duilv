@@ -23,6 +23,9 @@
   .cp-column.middle-pic .cp-item {
     width: 276px;
     height: 190px; }
+  .cp-column.pic-260 .cp-item {
+    width: 260px;
+    height: 180px; }
   .cp-column.h-auto .cp-item {
     height: auto; }
 
