@@ -8,6 +8,7 @@
     overflow: hidden;
   }
 }
+
 /*header*/
 .top-tab-box {
   width: 100%;
@@ -16,7 +17,7 @@
   color: #fff;
   font-size: 18px;
   background: #001c10;
-  &.fixation{
+  &.fixation {
     position: fixed;
     z-index: 9;
     left: 0;
@@ -50,10 +51,8 @@
         position: relative;
         display: block;
         opacity: .7;
-      }
-      &.active,
-      &:hover {
-        .top-m-item {
+        &.active,
+        &:hover {
           opacity: 1;
           &:after {
             position: absolute;
@@ -65,9 +64,6 @@
             margin-left: -6px;
             background: url("images/triangle.png") no-repeat center center;
           }
-        }
-        .second-menu {
-          display: block;
         }
       }
     }
@@ -166,6 +162,21 @@
         word-break: keep-all;
         text-overflow: ellipsis;
       }
+    }
+  }
+  .login-top-face {
+    position: relative;
+    top: -2px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
   }
 }
