@@ -168,7 +168,7 @@ a:visited {
   width: 61px;
   height: 11px;
   display: inline-block;
-  background: url("images/star.png") no-repeat 0 0;
+  background: url("./images/star.png") no-repeat 0 0;
   &.no-star {
     background-position: 0 -55px;
   }
@@ -204,7 +204,7 @@ a:visited {
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
-  background: url("images/news.png") no-repeat 0 0;
+  background: url("./images/news.png") no-repeat 0 0;
   &.comment-icon {
     background-position: 0 0;
   }
@@ -234,7 +234,7 @@ a:visited {
   display: inline-block;
   vertical-align: middle;
   margin-right: 3px;
-  background: url("images/icon.png") no-repeat 0 0;
+  background: url("./images/icon.png") no-repeat 0 0;
 }
 
 .like-icon {
@@ -268,7 +268,7 @@ a:visited {
   width: 136px;
   height: 136px;
   cursor: pointer;
-  background: url("images/editor.png") no-repeat center center;
+  background: url("./images/editor.png") no-repeat center center;
   &:hover {
     opacity: .8;
   }
