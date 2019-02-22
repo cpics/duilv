@@ -1,0 +1,55 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*我的发布*/
+.my-publish-list {
+  background: #fff;
+  li {
+    padding: 35px 0;
+    border-top: 1px solid #e8e7e7;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+  .comment-box {
+    padding-top: 25px;
+    .comment-list {
+      .comment-msg {
+        padding-top: 0;
+        font-size: 14px;
+      }
+    }
+  }
+  .my-center-infor {
+    @extend %clearfix;
+  }
+  .my-publish-info {
+    width: 75%;
+    float: left;
+  }
+  .my-publish-handle {
+    width: 20%;
+    float: right;
+    padding-top: 35px;
+  }
+  .pub-title {
+    color: #333;
+    font-size: 18px;
+  }
+  .pub-from {
+    font-size: 14px;
+    padding-top: 12px;
+  }
+  .pub-from {
+    color: #666;
+  }
+}

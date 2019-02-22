@@ -13,6 +13,8 @@
 .cp-column {
   padding-top: 15px;
   margin-left: -14px; }
+  .cp-column.cp-swiper {
+    margin-left: 0; }
   .cp-column.hover-scale .cp-item:hover {
     cursor: pointer;
     transform: scale(1.06);

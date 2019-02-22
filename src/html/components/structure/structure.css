@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.m-structure-content, .m-structure-content .u-news-handle, .m-structure-content .guess-like .guess-item, .clock-list .clock-hd {
+.m-structure-content, .m-structure-content .u-news-handle, .m-structure-content .guess-like .guess-item, .clock-list .clock-hd, .lik-list {
   zoom: 1; }
-  .m-structure-content:after, .m-structure-content .u-news-handle:after, .m-structure-content .guess-like .guess-item:after, .clock-list .clock-hd:after {
+  .m-structure-content:after, .m-structure-content .u-news-handle:after, .m-structure-content .guess-like .guess-item:after, .clock-list .clock-hd:after, .lik-list:after {
     clear: both;
     content: '';
     display: block;
@@ -251,5 +251,58 @@
   white-space: nowrap;
   vertical-align: middle;
   overflow: hidden; }
+
+/*点赞列表*/
+.like-people-like {
+  position: relative;
+  padding: 8px 0; }
+  .like-people-like .lik-more-tipper {
+    position: absolute;
+    right: 4px;
+    bottom: 12px;
+    line-height: 46px;
+    width: 100px;
+    background: #fff;
+    text-align: right;
+    font-size: 14px;
+    color: #252525;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden; }
+
+.lik-list {
+  max-height: 216px;
+  overflow: hidden; }
+  .lik-list .lik-face {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 4px;
+    float: left; }
+    .lik-list .lik-face img {
+      width: 100%;
+      height: 100%;
+      display: block; }
+
+/*历史日报*/
+.his-daily-item {
+  color: #333;
+  font-size: 14px;
+  padding: 8px 0;
+  line-height: 20px; }
+  .his-daily-item:first-child {
+    padding-top: 0; }
+.his-daily .his-time {
+  padding-right: 2px; }
+.his-daily .stroke-tag-circle {
+  color: #ff5601;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+  font-size: 12px;
+  display: inline-block;
+  border: 1px solid #ff5601;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=structure.css.map */

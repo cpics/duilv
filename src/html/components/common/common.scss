@@ -138,6 +138,16 @@ a:visited {
     color: #ff990f;
     border-left-color: #ff990f;
   }
+  .small-txt {
+    color: #333;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 35px;
+  }
+}
+
+.common-tit-space {
+  padding: 20px 0;
 }
 
 .dm-btn {
@@ -221,6 +231,9 @@ a:visited {
     cursor: pointer;
     background-position: 0 -80px;
   }
+  &.read-icon {
+    background-position: 0 -102px;
+  }
 }
 
 .address-icon,
@@ -276,4 +289,65 @@ a:visited {
 
 .u-pointer {
   cursor: pointer;
+}
+
+.stroke-tag {
+  font-size: 12px;
+  padding: 0 8px;
+  line-height: 18px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: middle;
+  &.tag-yellow {
+    color: #f0bc4d;
+    border: 1px solid #f0bc4d;
+  }
+  &.tag-blue {
+    color: #19a0f0;
+    border: 1px solid #19a0f0;
+  }
+  &.tag-green {
+    color: #47c091;
+    border: 1px solid #47c091;
+  }
+}
+
+.load-more-btn {
+  color: #999;
+  font-size: 16px;
+  background: #f5f5f5;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.arrow-stoke-icon {
+  position: relative;
+  top: -1px;
+  width: 14px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/arrow_stoke.png") no-repeat 0 0;
+  &.active {
+    background-position: 0 -8px;
+  }
+}
+
+.cp-swiper {
+  .swiper-container {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 56px;
+      height: 56px;
+      margin-top: -28px;
+    }
+    .swiper-button-next {
+      background: url("images/next.png") no-repeat center center
+    }
+    .swiper-button-prev {
+      background: url("images/prev.png") no-repeat center center
+    }
+  }
 }

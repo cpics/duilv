@@ -22,6 +22,10 @@
   .related-list {
     padding-top: 90px;
     margin-top: -90px;
+    a {
+      color: #333;
+      display: block;
+    }
     &:first-child {
       li {
         &:first-child {
@@ -29,9 +33,9 @@
         }
       }
     }
-    &:last-child{
-      li{
-        &:last-child{
+    &:last-child {
+      li {
+        &:last-child {
           border-bottom: 0;
         }
       }

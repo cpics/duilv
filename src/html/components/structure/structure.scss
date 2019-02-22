@@ -324,3 +324,68 @@
   vertical-align: middle;
   overflow: hidden;
 }
+
+/*点赞列表*/
+.like-people-like {
+  position: relative;
+  padding: 8px 0;
+  .lik-more-tipper {
+    position: absolute;
+    right: 4px;
+    bottom: 12px;
+    line-height: 46px;
+    width: 100px;
+    background: #fff;
+    text-align: right;
+    font-size: 14px;
+    color: #252525;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.lik-list {
+  max-height: 216px;
+  overflow: hidden;
+  @extend %clearfix;
+  .lik-face {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 4px;
+    float: left;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
+
+/*历史日报*/
+.his-daily {
+  &-item {
+    color: #333;
+    font-size: 14px;
+    padding: 8px 0;
+    line-height: 20px;
+    &:first-child{
+      padding-top: 0;
+    }
+  }
+  .his-time{
+    padding-right: 2px;
+  }
+  .stroke-tag-circle {
+    color: #ff5601;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+    font-size: 12px;
+    display: inline-block;
+    border: 1px solid #ff5601;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,282 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*账号信息*/
+
+.center-account-box {
+  padding-bottom: 30px;
+  border-top: 1px solid #e8e7e7;
+  &:first-child{
+    border-top: 0;
+  }
+}
+
+.account-row {
+  line-height: 34px;
+  padding-top: 30px;
+  @extend %clearfix;
+  .account-label {
+    width: 100px;
+    color: #999;
+    font-size: 14px;
+    float: left;
+    text-align: right;
+    padding-right: 35px;
+  }
+  .account-input {
+    margin-left: 115px;
+    input {
+      width: 170px;
+      height: 32px;
+      line-height: 32px;
+      color: #666;
+      font-size: 14px;
+      padding: 0 20px;
+      border: 1px solid #e8e7e7;
+    }
+    ::-webkit-input-placeholder {
+      font-size: 14px;
+      color: #bebebe;
+    }
+    :-moz-placeholder {
+      font-size: 14px;
+      color: #bebebe;
+    }
+    ::-moz-placeholder {
+      font-size: 14px;
+      color: #bebebe;
+    }
+    :-ms-input-placeholder {
+      font-size: 14px;
+      color: #bebebe;
+    }
+  }
+  .account-btn {
+    color: #47c091;
+    font-size: 14px;
+    margin-left: 30px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.select-box {
+  position: relative;
+  width: 100px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.select-box .select-btn {
+  position: relative;
+  width: 78px;
+  height: 32px;
+  line-height: 32px;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  background: #fff;
+  border: 1px solid #e8e7e7;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.select-box .select-btn i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 32px;
+  display: inline-block;
+  background: url("images/triangle.png") no-repeat left center;
+}
+
+.select-box .opts {
+  position: absolute;
+  left: 0;
+  top: 33px;
+  z-index: 4;
+  width: 98px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 5px 0;
+  background: #fff;
+  border: 1px solid #e8e7e7;
+  display: none;
+}
+
+.select-box.active .opts {
+  display: block;
+}
+
+.select-box .opts a {
+  display: block;
+  line-height: 28px;
+  color: #666;
+  font-size: 14px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.select-box .opts a:hover {
+  color: #47c091;
+  text-decoration: none;
+  background: #f6f6f6;
+}
+
+.account-choose-item {
+  display: inline-block;
+  margin-right: 20px;
+  &.active {
+    .b-radio-icon {
+      background-image: url("images/radio_active.png");
+    }
+  }
+  .b-radio-icon {
+    position: relative;
+    top: -1px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: url("images/radio.png") no-repeat center center;
+    &.active {
+      background-image: url("images/radio_active.png");
+    }
+  }
+}
+
+.account-buttons {
+  padding: 30px 0 0 135px;
+  .save-btn {
+    width: 126px;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    background: #47c091;
+    &:hover {
+      background: #4bde9e;
+    }
+  }
+}
+
+.account-upload {
+  padding-top: 30px;
+  @extend %clearfix;
+  .upload-pic {
+    width: 204px;
+    height: 204px;
+    background: #f5f5f5;
+    text-align: center;
+    line-height: 204px;
+    float: left;
+    img {
+      display: inline-block;
+      max-width: 100%;
+      max-height: 100%;
+      vertical-align: middle;
+    }
+  }
+  .upload-btn-txt {
+    position: relative;
+    float: left;
+    margin-left: 30px;
+    margin-top: 170px;
+  }
+  .upload-btn {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    cursor: pointer;
+    color: #666;
+    border: 1px solid #e8e7e7;
+    background: #f2f2f2;
+  }
+  input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 102px;
+    height: 32px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: pointer;
+  }
+  .upload-tips {
+    color: #666;
+    padding: 170px 0 0 20px;
+    float: left;
+    line-height: 32px;
+  }
+}
+
+.binding-list {
+  dd {
+    padding: 30px 0 30px 25px;
+    @extend %clearfix;
+    border-top: 1px solid #e8e7e7;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+  .bind-icon {
+    width: 60px;
+    height: 60px;
+    float: left;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    &.weixin-icon {
+      background-image: url("images/weixin.png");
+    }
+    &.weibo-icon {
+      background-image: url("images/weibo.png");
+    }
+    &.qq-icon {
+      background-image: url("images/qq.png");
+    }
+  }
+  .bind-info {
+    width: 700px;
+    float: left;
+    padding-left: 50px;
+    min-height: 60px;
+    display: table;
+    section {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  .bind-button {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    float: right;
+    color: #fff;
+    text-align: center;
+    background: #47c091;
+    border-radius: 4px;
+    &:hover {
+      background: #4bde9e;
+    }
+  }
+}

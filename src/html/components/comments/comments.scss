@@ -30,43 +30,99 @@
     font-size: 16px;
     color: #666;
     padding-bottom: 15px;
-  }
-  .comment-list {
-    li {
-      padding: 15px 0;
-      @extend %clearfix;
-    }
-    .comment-face {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      overflow: hidden;
-      float: left;
-      img {
-        @extend %pic;
+    .has-arrow-up {
+      position: relative;
+      display: inline-block;
+      .c-arrow-up {
+        top: 30px;
       }
-    }
-    .comment-info {
-      margin-left: 60px;
-    }
-    .comment-name {
-      color: #3f5a93;
-      font-size: 14px;
-      .name-tipper {
-        color: #666;
-        padding-left: 15px;
-      }
-      .report-btn {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
-    .comment-msg {
-      color: #333;
-      font-size: 16px;
-      padding-top: 2px;
     }
   }
+}
+
+.m-structure-content {
+  .has-arrow-up {
+    .c-arrow-up {
+      margin-right: -8px;
+    }
+  }
+}
+
+.comment-list {
+  &.has-bg {
+    padding: 0 30px;
+    background: #f1f1f1;
+  }
+  li {
+    padding: 15px 0;
+    @extend %clearfix;
+  }
+  .comment-face {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    img {
+      @extend %pic;
+    }
+  }
+  .comment-info {
+    margin-left: 60px;
+  }
+  .comment-name {
+    position: relative;
+    color: #3f5a93;
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap: break-word;
+    .name-tipper {
+      color: #666;
+      padding-left: 15px;
+    }
+    .report-btn {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .comment-msg {
+    color: #333;
+    font-size: 16px;
+    padding-top: 2px;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+}
+
+.reply-comment-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 2;
+  line-height: 20px;
+  display: inline-block;
+  margin-top: -10px;
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+  .n-small-icon {
+    top: 0;
+  }
+}
+
+.same-row-msg {
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.comment-time {
+  color: #999;
+  font-size: 14px;
+  padding-top: 2px;
 }
 
 .comment-publish {
@@ -280,9 +336,11 @@
     background: #f1f1f1;
     @extend %clearfix;
     .is-show-pic {
-      width: 130px;
-      height: 130px;
+      width: 116px;
+      height: 116px;
       float: left;
+      padding: 7px;
+      background: #fff;
       img {
         display: block;
         width: 100%;

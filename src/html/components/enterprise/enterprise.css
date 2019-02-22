@@ -64,6 +64,10 @@
     line-height: 2; }
   .e-prise-box .cp-column {
     margin-left: -20px; }
+    .e-prise-box .cp-column.cp-swiper {
+      margin-left: 0; }
+      .e-prise-box .cp-column.cp-swiper .cp-item {
+        margin-left: 0; }
   .e-prise-box .cp-item {
     margin-left: 20px; }
   .e-prise-box .prise-tag-icon {
