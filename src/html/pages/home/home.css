@@ -313,7 +313,8 @@
 /*合作企业*/
 .ad-item {
   width: 188px;
-  margin-bottom: 14px; }
+  margin-bottom: 14px;
+  display: block; }
   .ad-item img {
     width: 100%;
     display: block; }
