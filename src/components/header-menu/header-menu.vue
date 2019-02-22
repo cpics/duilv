@@ -78,14 +78,10 @@ export default {
     name: 'headerMenu',
     data() {
         return {
-            currentRoute: '',
-            menuRouter: menuRouter,
-            homeLink: ''
+            menuRouter: menuRouter
         };
     },
     created() {
-        this.currentRoute = this.$route;
-        console.log(this.currentRoute);
     }
 };
 </script>
