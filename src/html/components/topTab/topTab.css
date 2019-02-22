@@ -133,13 +133,12 @@
     top: -2px;
     width: 40px;
     height: 40px;
-    display: inline-block;
-    border-radius: 50%;
-    overflow: hidden;
-    vertical-align: middle; }
+    display: block;
+    padding-top: 25px; }
     .top-tab-box .login-top-face img {
-      width: 100%;
-      height: 100%;
-      display: block; }
+      width: 40px;
+      height: 40px;
+      display: block;
+      border-radius: 50%; }
 
 /*# sourceMappingURL=topTab.css.map */
