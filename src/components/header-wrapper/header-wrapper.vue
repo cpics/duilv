@@ -1,6 +1,8 @@
 <template>
   <div class="top-tab-box fixation">
-    <slot></slot>
+    <div class="m-width clearfix">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
