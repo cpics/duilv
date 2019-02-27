@@ -1,13 +1,11 @@
 <template>
-    <div>案列库</div>
+    <router-view></router-view>
 </template>
 
 <script>
-export default {
-
-}
+import '../../html/components/crumbs/crumbs.css'
+export default {};
 </script>
 
 <style>
-
 </style>

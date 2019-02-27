@@ -293,7 +293,8 @@ import courseItem from './components/course-item/course-item';
 import groupItem from './components/group-item/group-item';
 import adItem from './components/ad-item/ad-item';
 
-import { home } from '../../api/index';
+import { home, domain } from '../../api/index';
+import fetch from '../../pubilc/fetch/fetch';
 export default {
     name: 'home',
     data() {
@@ -309,12 +310,20 @@ export default {
         };
     },
     methods: {
-        async getHomeInfo() {
-            let res = await home();
-            console.log(res)
+        getHomeInfo() {
+            home().then(function(res) {
+                console.log(res);
+            });
+            // let res = await home();
+            // console.log(res)
         }
     },
-    created(){
+    created() {
+        // fetch
+        //     .post('//pc-api.jdd.com/pc/public/safePcHandler.do')
+        //     .then(res => {
+        //         console.log(res);
+        //     });
         this.getHomeInfo();
     },
     components: {

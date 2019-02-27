@@ -18,7 +18,25 @@ export const menuRouter = [{
     meta: {
         title: '案列库'
     },
-    component: () => import('./views/cases/cases.vue')
+    component: () => import('./views/cases/cases.vue'),
+    redirect:'/cases/index',
+    children: [{
+        path: 'index',
+        name: 'caseIndex',
+        meta: {
+            title: '案列库'
+        },
+        component: () => import('./views/cases/children/index/index.vue')
+    },
+    {
+        path: 'detail',
+        name: 'caseDetal',
+        meta: {
+            title: '案列库详情'
+        },
+        component: () => import('./views/cases/children/detail/detail.vue')
+    }
+    ]
 },
 {
     path: '/originality',
