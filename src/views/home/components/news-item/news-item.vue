@@ -2,9 +2,9 @@
   <div class="news-item">
     <a class="u-news-hd" href>
       <div class="u-news-pic">
-        <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
+        <img :src="info.title" alt>
       </div>
-      <div class="u-news-txt">所有以上绘画，中国水墨，对象一律是自然山水</div>
+      <div class="u-news-txt">{{info.title}}</div>
     </a>
     <div class="u-news-list">
       <ul>
@@ -30,7 +30,10 @@
 
 <script>
 export default {
-    name:'news-item'
+    name:'news-item',
+    props:{
+        info:Object
+    }
 };
 </script>
 

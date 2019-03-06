@@ -1,14 +1,19 @@
 <template>
   <a href class="petite-item">
     <div class="petite-pic">
-      <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
+      <img :src="info.bgImg" alt>
     </div>
-    <div class="petite-describe">高安全、高环保多功能球场系统方案</div>
+    <div class="petite-describe">{{info.title}}</div>
   </a>
 </template>
 
 <script>
-export default {};
+export default {
+    name: 'petite-item',
+    props: {
+        info: Object
+    }
+};
 </script>
 
 <style>

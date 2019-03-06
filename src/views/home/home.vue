@@ -3,26 +3,12 @@
     <div class="m-slider-banner">
       <swiper :options="swiperOption" ref="mySwiper">
         <!-- slides -->
-        <swiper-slide>
+        <swiper-slide v-for="(item,index) in banner" :key="index">
           <a class="oper-pic" href="javascript:;">
-            <img :src="require('../../html/components/banner/images/banner.png')">
+            <img :src="item">
           </a>
         </swiper-slide>
-        <swiper-slide>
-          <a class="oper-pic" href="javascript:;">
-            <img :src="require('../../html/components/banner/images/banner.png')">
-          </a>
-        </swiper-slide>
-        <swiper-slide>
-          <a class="oper-pic" href="javascript:;">
-            <img :src="require('../../html/components/banner/images/banner.png')">
-          </a>
-        </swiper-slide>
-        <swiper-slide>
-          <a class="oper-pic" href="javascript:;">
-            <img :src="require('../../html/components/banner/images/banner.png')">
-          </a>
-        </swiper-slide>
+
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -55,12 +41,7 @@
               <span>专业优秀的教程免费看</span>
             </div>
             <div class="case-column">
-              <case-item></case-item>
-              <case-item></case-item>
-              <case-item></case-item>
-              <case-item></case-item>
-              <case-item></case-item>
-              <case-item></case-item>
+              <case-item :info="item" v-for="(item,index) in rmal" :key="index"></case-item>
             </div>
           </div>
           <div class="mt-main">
@@ -69,8 +50,7 @@
               <span>时下最热门环保建材资讯</span>
             </div>
             <div class="news-column">
-              <news-item></news-item>
-              <news-item></news-item>
+              <news-item :info="item" v-for="(item,index) in ljyw" :key="index"></news-item>
             </div>
           </div>
         </div>
@@ -81,8 +61,7 @@
               <a href class="more-tit-btn">更多&gt;</a>
             </div>
             <div class="petite-list">
-              <petite-item></petite-item>
-              <petite-item></petite-item>
+              <petite-item v-for="(item,index) in cyfa" :info="item" :key="index"></petite-item>
             </div>
             <div class="petite-box">
               <div class="common-tit-h2">
@@ -90,8 +69,8 @@
                 <a href class="more-tit-btn">更多&gt;</a>
               </div>
               <div class="course-list">
-                <course-item></course-item>
-                <course-item></course-item>
+                <course-item v-for="(item,index) in cpkc" :info="item" :key="index"></course-item>
+               
               </div>
             </div>
           </div>
@@ -247,18 +226,10 @@
           </div>
           <div class="u-group-list">
             <ul>
-              <li>
-                <group-item></group-item>
+              <li v-for="(item,index) in qz"  :key="index">
+                <group-item :info="item"></group-item>
               </li>
-              <li>
-                <group-item></group-item>
-              </li>
-              <li>
-                <group-item></group-item>
-              </li>
-              <li>
-                <group-item></group-item>
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -295,10 +266,19 @@ import adItem from './components/ad-item/ad-item';
 
 import { home, domain } from '../../api/index';
 import fetch from '../../pubilc/fetch/fetch';
+
+import stars from '../../pubilc/util/stars';
 export default {
     name: 'home',
     data() {
         return {
+            banner: [], //首页banner
+            cyfa: [], //常用方案
+            rmal: [], //热门案列
+            ljyw: [], //绿建要闻
+            jxj: [], //匠心记
+            qz: [], //圈子
+            cpkc:[],//产品课程
             swiperOption: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -310,20 +290,27 @@ export default {
         };
     },
     methods: {
-        getHomeInfo() {
-            home().then(function(res) {
-                console.log(res);
-            });
-            // let res = await home();
-            // console.log(res)
+        async getHomeInfo() {
+            let res = await home();
+            if (res.Type == 'Success') {
+                this.banner = res.Data.banner;
+                this.cyfa = res.Data.cyfa;
+                this.rmal = res.Data.rmal;
+                this.ljyw = res.Data.ljyw;
+                this.jxj = res.Data.jxj;
+                this.qz = res.Data.qz;
+                this.cpkc = res.Data.cpkc;
+
+                this.rmal.forEach(function(item){
+                    item.stars = stars(item.score);
+                });
+                this.cpkc.forEach(function(item){
+                    item.stars = stars(item.score);
+                })
+            }
         }
     },
     created() {
-        // fetch
-        //     .post('//pc-api.jdd.com/pc/public/safePcHandler.do')
-        //     .then(res => {
-        //         console.log(res);
-        //     });
         this.getHomeInfo();
     },
     components: {

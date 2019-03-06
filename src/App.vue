@@ -24,6 +24,8 @@ import logo from './components/logo/logo';
 import headerMenu from './components/header-menu/header-menu';
 import headerAbout from './components/header-about/header-about';
 import footerComponent from './components/footer/footer';
+
+import { footer } from './api/index';
 export default {
     components: {
         headerWrapper,
@@ -31,6 +33,15 @@ export default {
         headerMenu,
         headerAbout,
         footerComponent
+    },
+    methods: {
+        async getFooter() {
+            let res = await footer();
+            console.log(res);
+        }
+    },
+    created() {
+        this.getFooter();
     }
 };
 </script>
