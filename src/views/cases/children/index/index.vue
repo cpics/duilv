@@ -41,7 +41,7 @@
           <div id="runway" class="related-list">
             <ul>
               <li>
-                <a href="">
+                <a href>
                   <div class="related-pic">
                     <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
                   </div>
@@ -63,9 +63,9 @@
           <div id="floor" class="related-list">
             <ul>
               <li>
-                <a href="">
+                <a href>
                   <div class="related-pic">
-                   <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
+                    <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
                   </div>
                   <div class="related-info">
                     <h2>2建发高铁新城（泱誉）</h2>
@@ -85,7 +85,7 @@
           <div id="coating" class="related-list">
             <ul>
               <li>
-                <a href="">
+                <a href>
                   <div class="related-pic">
                     <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
                   </div>
@@ -107,7 +107,7 @@
           <div id="protect" class="related-list">
             <ul>
               <li>
-                <a href="">
+                <a href>
                   <div class="related-pic">
                     <img :src="require('../../../../html/pages/home/images/demo.png')" alt>
                   </div>
@@ -133,11 +133,22 @@
 </template>
 
 <script>
-
-import '../../../../html/components/slideBar/slideBar.scss'
+import '../../../../html/components/slideBar/slideBar.scss';
 import '../../../../html/pages/cases/cases/cases.scss';
-import '../../../../html/components/cases/cases.scss';
-export default {};
+
+import { getCasesInex } from '../../../../api/index';
+export default {
+    name: 'cases-index',
+    methods: {
+        async init() {
+            let res = await getCasesInex();
+            console.log(res);
+        }
+    },
+    created(){
+        this.init();
+    }
+};
 </script>
 
 <style>

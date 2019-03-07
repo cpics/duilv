@@ -7,11 +7,14 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import layer from 'vue-layer';
 import login from './components/h-login/index';
 
 
 Vue.config.productionTip = false;
 Vue.prototype.$login = login;
+Vue.prototype.$layer = layer(Vue);
+
 
 new Vue({
     router,

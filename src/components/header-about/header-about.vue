@@ -16,7 +16,9 @@ export default {
     methods: {
         showLogin() {
             console.log(1);
-            this.$login.show(1, function() {});
+            this.$login.show(1, function() {
+                this.$layer.alert('hehehe');
+            });
         }
     }
 };

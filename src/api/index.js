@@ -29,3 +29,40 @@ export const getCaseDetail = (params) =>
 //案列库-项目回归
 export const getProjectEnd = (params) =>
     fetch.post(`${domain}/Api/ProjectEnd/Index/`, params)
+
+//个人中心
+export const userCenter = (params) =>
+    fetch.post(`${domain}/Api/User/Index/`, params)
+
+//提交反馈
+export const feedBack = (params) =>
+    fetch.post(`${domain}/Api/User/Feedback/`, params)
+
+//删除帖子
+export const deleteTz = (params) =>
+    fetch.post(`${domain}/Api/User/DeletePost/`, params)
+
+//获取图片验证码
+export const getPicVFL = (params) =>
+    fetch.post(`${domain}/Api/User/PicVerifyForLogin/`, params)
+
+//获取手机验证码
+export const getVerifyForSms = (params) =>
+    fetch.post(`${domain}/Api/User/GetVerifyForSms/`, params)
+
+//注册登录
+export const login = (params) =>
+    fetch.post(`${domain}/Api/User/Login/`, params)
+
+//获取登录信息
+export const getUserInfo = (params) =>
+    fetch.post(`${domain}/Api/User/GetUserInfo/`, params)
+
+//获取案例库首页
+export const getCasesInex = (params) =>
+    fetch.post(`${domain}/Api/Case/Index/`, params)
+
+//获取案例库详情
+export const getCasesDetail = (params) =>
+    fetch.post(`${domain}/Api/Case/Detail/`, params)
+

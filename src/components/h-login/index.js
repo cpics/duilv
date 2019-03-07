@@ -27,8 +27,8 @@ Login.show = (type, callback) => {
     Login({
         type,
         showDir: true
-    }),
-    callback
+    },callback);
+    
 };
 Login.close = () => {
     Vue.nextTick(() => {

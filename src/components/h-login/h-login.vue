@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showDir">
+  <div v-if="showDir">
     <div class="shadow-fixed" :class="{'show':type==1}">
       <div class="mask" @click="close()"></div>
       <div class="bomb-mv-box">
@@ -46,7 +46,7 @@
               微信登录
               <i class="u-wechat-icon"></i>
             </span>
-          </div> -->
+          </div>-->
         </div>
       </div>
     </div>
@@ -68,30 +68,48 @@
 </template>
 
 <script>
-
 import '../../html/components/popCommon/popCommon.scss';
 import '../../html/components/login/login.scss';
+import AsyncValidator from 'async-validator';
+import { getPicVFL } from '../../api/index';
 export default {
     name: 'h-login',
     data() {
         return {
             type: 1, //1代表密码登录，2代表微信登录
             showDir: false,
-            form:{
-              
+            verifyimg: '',
+            form: {
+                phone: '',
+                verifyCode: '',
+                picVerifyCode: ''
             }
         };
     },
     methods: {
         close() {
             this.showDir = false;
+            // this.$destroy('h-login');
         },
         show(type) {
             this.showDir = true;
             if (type) this.type = type;
         },
-        login(){
-          
+        login() {
+            this.$emit('login');
+        },
+        async getPic() {
+            let res = await getPicVFL();
+        }
+    },
+    created() {
+        // this.getPic();
+    },
+    watch: {
+        showDir(newValue) {
+            if (newValue == true) {
+                this.getPic();
+            }
         }
     }
 };
