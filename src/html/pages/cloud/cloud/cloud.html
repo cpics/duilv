@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="../../../../html/components/crumbs/crumbs.css"/>
 
     <link rel="stylesheet" type="text/css" href="../../../../html/pages/cloud/cloud/cloud.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../../html/components/popCommon/popCommon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../../html/components/comments/comments.css"/>
 </head>
 <body>
 <div id="app">
@@ -76,7 +79,8 @@
                                    href="../../../../html/pages/enterprise/enterprise/enterprise.html">行业圈</a>
                             </li>
                             <li><a class="top-m-item " href="../../../../html/pages/news/news/news.html">绿建要闻</a></li>
-                            <li><a class="top-m-item active" href="../../../../html/pages/cloud/cloud/cloud.html">云智库</a></li>
+                            <li><a class="top-m-item active"
+                                   href="../../../../html/pages/cloud/cloud/cloud.html">云智库</a></li>
                             <li><a class="top-m-item" href="../../../../html/pages/mall/mall/mall.html">商城</a></li>
                         </ul>
                     </div>
@@ -93,10 +97,23 @@
             </div>
             <!--页面主体-->
             <div class="g-container">
-                <!--图片banner-->
-                <div class="m-norm-banner">
-                    <div class="pic-banner">
-                        <img src="../../../../html/components/banner/images/banner.png" alt=""/>
+                <!--轮播-banner-->
+                <div class="m-slider-banner m-norm-banner">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a class="oper-pic" href="javascript:;"
+                                   style="background-image: url('../../../../html/components/banner/images/banner.png');"></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="oper-pic" href="javascript:;"
+                                   style="background-image: url('../../../../html/components/banner/images/banner.png');"></a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-bullets">
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                        </div>
                     </div>
                 </div>
                 <!--视频banner-->
@@ -304,6 +321,149 @@
                     <div class="footer-copyright">
                         <div class="m-width">
                             2017 堆绿网 Copyright www.duilv.com All rights reserved 苏ICP备13002314号
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--评论弹框-->
+        <div class="shadow-fixed ">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"></div>
+                <div class="">
+                    <div class="comment-box pt-small">
+                        <div class="comment-title">
+                            发表评论
+                        </div>
+                        <div class="comment-publish">
+                            <div class="publish-face">
+                                <img src="../../../../html/pages/home/images/demo.png" alt="">
+                            </div>
+                            <div class="comment-textarea">
+                                <textarea placeholder="我有话说..."></textarea>
+                            </div>
+                        </div>
+                        <div class="comment-publish-btn">
+                            <span class="publish-btn">发送</span>
+                        </div>
+                    </div>
+                    <div class="comment-box ">
+                        <div class="comment-list has-bg">
+                            <ul>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">20XX-XX-XX  XX:XX:XX</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">10分钟前</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">10分钟前</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">10分钟前</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">10分钟前</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">10分钟前</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="comment-face">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <div class="comment-name">
+                                            <span>我是你大哥</span>
+                                            <span class="name-tipper">
+                                                <span class="comment-time">10分钟前</span>
+                                            </span>
+                                        </div>
+                                        <div class="comment-msg">
+                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

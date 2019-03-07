@@ -103,6 +103,40 @@
       &.c-grey-9 {
         color: #999;
       }
+      &:hover {
+        .share-code-pop {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .share-code-pop {
+    position: absolute;
+    right: 0;
+    top: 23px;
+    display: none;
+    .s-code-pic {
+      position: relative;
+      top: 15px;
+      padding: 12px;
+      background: #fff;
+      display: block;
+      border: 1px solid #e8e7e7;
+      img {
+        width: 120px;
+        height: 120px;
+        display: block;
+      }
+    }
+    .c-arrow-up-border {
+      position: absolute;
+      right: 8px;
+      top: 3px;
+      z-index: 2;
+      display: inline-block;
+      width: 19px;
+      height: 13px;
+      background: url("images/top.png") no-repeat top center;
     }
   }
   .c-arrow-up {
@@ -371,11 +405,11 @@
     font-size: 14px;
     padding: 8px 0;
     line-height: 20px;
-    &:first-child{
+    &:first-child {
       padding-top: 0;
     }
   }
-  .his-time{
+  .his-time {
     padding-right: 2px;
   }
   .stroke-tag-circle {

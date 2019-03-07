@@ -92,6 +92,13 @@
   padding: 30px 60px;
   @include center(600px, 640px);
   box-shadow: 0 0 20px rgba(17, 17, 17, .2);
+  .comment-list {
+    max-height: 380px;
+    overflow-y: auto;
+    .comment-msg{
+      font-size: 14px;
+    }
+  }
 }
 
 .bomb-small-close,
