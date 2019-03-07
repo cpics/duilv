@@ -66,3 +66,14 @@ export const getCasesInex = (params) =>
 export const getCasesDetail = (params) =>
     fetch.post(`${domain}/Api/Case/Detail/`, params)
 
+//获取绿建要闻首页
+export const getNewsIndex = (params) =>
+    fetch.post(`${domain}/Api/News/Index/`, params)
+
+//获取绿建要闻详情
+export const getNewsDetail = (params) =>
+    fetch.post(`${domain}/Api/News/Detail/`, params)
+
+//发表评论
+export const addReplis = (params) =>
+    fetch.post(`${domain}/Api/News/AddReplis/`, params)

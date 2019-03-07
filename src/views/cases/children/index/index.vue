@@ -136,7 +136,7 @@
 import '../../../../html/components/slideBar/slideBar.scss';
 import '../../../../html/pages/cases/cases/cases.scss';
 
-import { getCasesInex } from '../../../../api/index';
+import { getCasesInex, getNewsIndex } from '../../../../api/index';
 export default {
     name: 'cases-index',
     methods: {
@@ -145,7 +145,7 @@ export default {
             console.log(res);
         }
     },
-    created(){
+    created() {
         this.init();
     }
 };
