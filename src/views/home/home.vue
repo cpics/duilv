@@ -14,24 +14,8 @@
       </swiper>
     </div>
     <div class="m-container m-width">
-      <div class="mh-slogan-content">
-        <ul>
-          <li class="msi-item">
-            <slogan-item></slogan-item>
-          </li>
-          <li class="msi-item">
-            <slogan-item></slogan-item>
-          </li>
-          <li class="msi-item">
-            <slogan-item></slogan-item>
-          </li>
-          <li class="msi-item">
-            <slogan-item></slogan-item>
-          </li>
-          <li class="msi-item">
-            <slogan-item></slogan-item>
-          </li>
-        </ul>
+      <div class="ad-slogan-pic">
+        <img :src="bgImg" alt>
       </div>
       <div class="mh-column-content">
         <div class="mh-left-main">
@@ -50,7 +34,21 @@
               <span>时下最热门环保建材资讯</span>
             </div>
             <div class="news-column">
-              <news-item :info="item" v-for="(item,index) in ljyw" :key="index"></news-item>
+              <div class="news-column-hd">
+                <a class="u-news-hd" v-show="index<2" v-for="(item,index) in ljyw" :key="index">
+                  <div class="u-news-pic">
+                    <img :src="item.bgImg" alt>
+                  </div>
+                  <div class="u-news-txt">{{item.title}}</div>
+                </a>
+              </div>
+              <div class="u-news-list">
+                <ul>
+                  <li v-show="index>=2" v-for="(item,index) in ljyw" :key="index">
+                    <a href>{{item.title}}</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -70,7 +68,6 @@
               </div>
               <div class="course-list">
                 <course-item v-for="(item,index) in cpkc" :info="item" :key="index"></course-item>
-               
               </div>
             </div>
           </div>
@@ -226,10 +223,9 @@
           </div>
           <div class="u-group-list">
             <ul>
-              <li v-for="(item,index) in qz"  :key="index">
+              <li v-for="(item,index) in qz" :key="index">
                 <group-item :info="item"></group-item>
               </li>
-              
             </ul>
           </div>
         </div>
@@ -278,7 +274,7 @@ export default {
             ljyw: [], //绿建要闻
             jxj: [], //匠心记
             qz: [], //圈子
-            cpkc:[],//产品课程
+            cpkc: [], //产品课程
             swiperOption: {
                 pagination: {
                     el: '.swiper-pagination'
@@ -294,6 +290,7 @@ export default {
             let res = await home();
             if (res.Type == 'Success') {
                 this.banner = res.Data.banner;
+                this.bgImg = res.Data.bgImg;
                 this.cyfa = res.Data.cyfa;
                 this.rmal = res.Data.rmal;
                 this.ljyw = res.Data.ljyw;
@@ -301,12 +298,12 @@ export default {
                 this.qz = res.Data.qz;
                 this.cpkc = res.Data.cpkc;
 
-                this.rmal.forEach(function(item){
+                this.rmal.forEach(function(item) {
                     item.stars = stars(item.score);
                 });
-                this.cpkc.forEach(function(item){
+                this.cpkc.forEach(function(item) {
                     item.stars = stars(item.score);
-                })
+                });
             }
         }
     },
