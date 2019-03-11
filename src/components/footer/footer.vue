@@ -37,15 +37,10 @@
         <h2>友情链接</h2>
         <div class="links-list">
           <ul>
-            <li>
-              <a href>苏州大乘</a>
+            <li v-for="(item,index) in footData" :key="index">
+              <a :href="item.outLink">{{item.title}}</a>
             </li>
-            <li>
-              <a href>xxxxxxx</a>
-            </li>
-            <li>
-              <a href>xxxxxx</a>
-            </li>
+           
           </ul>
         </div>
       </div>
@@ -67,7 +62,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+    name: 'h-footer',
+    props:{
+        footData:Array
+    }
+};
 </script>
 
 <style>

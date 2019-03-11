@@ -8,7 +8,7 @@
           <header-about/>
         </header-wrapper>
         <router-view/>
-        <footer-component/>
+        <footer-component :footData="footData"/>
       </div>
     </div>
   </div>
@@ -34,9 +34,17 @@ export default {
         headerAbout,
         footerComponent
     },
+    data(){
+        return {
+            footData:[]
+        }
+    },
     methods: {
         async getFooter() {
             let res = await footer();
+            if (res.Type == 'Success') {
+                this.footData = res.Data;
+            }
             console.log(res);
         }
     },
