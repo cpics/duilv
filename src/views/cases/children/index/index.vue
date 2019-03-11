@@ -134,6 +134,7 @@
 
 <script>
 import '../../../../html/components/slideBar/slideBar.scss';
+import '../../../../html/components/cases/cases.scss';
 import '../../../../html/pages/cases/cases/cases.scss';
 
 import { getCasesInex, getNewsIndex } from '../../../../api/index';
