@@ -231,12 +231,7 @@
         </div>
         <div class="mh-right-main">
           <div class="ad-list">
-            <ad-item></ad-item>
-            <ad-item></ad-item>
-            <ad-item></ad-item>
-            <ad-item></ad-item>
-            <ad-item></ad-item>
-            <ad-item></ad-item>
+            <ad-item v-for="(item,index) in hzqy" :key="index" :info="item"></ad-item>
           </div>
         </div>
       </div>
@@ -297,6 +292,7 @@ export default {
                 this.jxj = res.Data.jxj;
                 this.qz = res.Data.qz;
                 this.cpkc = res.Data.cpkc;
+                this.hzqy = res.Data.hzqy;
 
                 this.rmal.forEach(function(item) {
                     item.stars = stars(item.score);

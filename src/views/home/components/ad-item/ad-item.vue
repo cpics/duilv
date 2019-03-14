@@ -1,12 +1,17 @@
 <template>
   <div class="ad-item">
-    <img :src="require('../../../../html/pages/home/images/ad.png')" alt>
+    <a :href="info.outLink">
+      <img :src="info.picPath" alt>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
-    name:'ad-item'
+    name: 'ad-item',
+    props:{
+        info:Object
+    }
 };
 </script>
 
