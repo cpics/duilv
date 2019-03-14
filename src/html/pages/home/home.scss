@@ -27,6 +27,7 @@
     overflow: hidden;
   } @else {
     overflow: hidden;
+    text-overflow:ellipsis;
     display: -webkit-box;
     display: box;
     -webkit-line-clamp: $lines;
@@ -497,7 +498,7 @@
     font-size: 16px;
     line-height: 2;
     display: block;
-    min-height: 160px;
+    height: 160px;
     @include ellipsis(5);
   }
   .group-address {

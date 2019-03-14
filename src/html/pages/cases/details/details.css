@@ -202,6 +202,7 @@
   font-weight: bold;
   padding-top: 15px;
   overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   display: box;
   -webkit-line-clamp: 2;

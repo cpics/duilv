@@ -21,6 +21,7 @@
     overflow: hidden;
   } @else {
     overflow: hidden;
+    text-overflow:ellipsis;
     display: -webkit-box;
     display: box;
     -webkit-line-clamp: $lines;
@@ -216,6 +217,7 @@
       color: #333;
       margin-left: 62px;
       padding-top: 4px;
+      max-height: 46px;
       @include ellipsis(2);
     }
   }

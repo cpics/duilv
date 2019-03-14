@@ -46,6 +46,7 @@
   padding-top: 6px;
   height: 102px;
   overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   display: box;
   -webkit-line-clamp: 3;

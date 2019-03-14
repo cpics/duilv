@@ -112,6 +112,7 @@
     padding-top: 10px;
     height: 48px;
     overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
     display: box;
     -webkit-line-clamp: 2;
@@ -149,6 +150,7 @@
     margin-left: 170px;
     max-height: 90px;
     overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
     display: box;
     -webkit-line-clamp: 3;
@@ -368,8 +370,9 @@
   font-size: 16px;
   line-height: 2;
   display: block;
-  min-height: 160px;
+  height: 160px;
   overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   display: box;
   -webkit-line-clamp: 5;
