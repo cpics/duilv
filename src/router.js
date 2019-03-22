@@ -29,7 +29,7 @@ export const menuRouter = [{
         component: () => import('./views/cases/children/index/index.vue')
     },
     {
-        path: 'detail',
+        path: 'detail/:id',
         name: 'caseDetal',
         meta: {
             title: '案列库详情'

@@ -7,6 +7,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import AsyncValidator from 'async-validator';
+
 import layer from 'vue-layer';
 import login from './components/h-login/index';
 
@@ -14,6 +16,7 @@ import login from './components/h-login/index';
 Vue.config.productionTip = false;
 Vue.prototype.$login = login;
 Vue.prototype.$layer = layer(Vue);
+Vue.prototype.$validator = AsyncValidator;
 
 
 new Vue({

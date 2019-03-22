@@ -431,7 +431,27 @@
 import '../../../../html/pages/cases/details/details.css';
 import '../../../../html/components/picture/picture.css';
 import '../../../../html/components/comments/comments.css';
-export default {};
+
+import { getCaseDetail } from '../../../../api/index';
+export default {
+    name: 'case-detail',
+    data() {
+        return {
+            detail: null
+        };
+    },
+    methods: {
+        async getDetail() {
+            let res = await getCaseDetail({
+                id: this.$route.params.id
+            });
+        }
+    },
+    created() {
+        console.log(1);
+        this.getDetail();
+    }
+};
 </script>
 
 <style>

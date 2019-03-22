@@ -25,6 +25,8 @@ import headerMenu from './components/header-menu/header-menu';
 import headerAbout from './components/header-about/header-about';
 import footerComponent from './components/footer/footer';
 
+import { mapMutations, mapState } from 'vuex';
+
 import { footer } from './api/index';
 export default {
     components: {
@@ -34,12 +36,13 @@ export default {
         headerAbout,
         footerComponent
     },
-    data(){
+    data() {
         return {
-            footData:[]
-        }
+            footData: []
+        };
     },
     methods: {
+        ...mapMutations(['setUserInfo']),
         async getFooter() {
             let res = await footer();
             if (res.Type == 'Success') {
@@ -50,6 +53,8 @@ export default {
     },
     created() {
         this.getFooter();
+        // debugger;
+        this.setUserInfo();
     }
 };
 </script>

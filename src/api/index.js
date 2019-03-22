@@ -42,13 +42,18 @@ export const feedBack = (params) =>
 export const deleteTz = (params) =>
     fetch.post(`${domain}/Api/User/DeletePost/`, params)
 
-//获取图片验证码
-export const getPicVFL = (params) =>
-    fetch.post(`${domain}/Api/User/PicVerifyForLogin/`, params)
+// //获取图片验证码
+// export const getPicVFL = (params) =>
+//     fetch.post(`${domain}/Common/VerifyCode/`, params)
+
+// //获取图片验证码
+// export const checkPicVFL = (params) =>
+//     fetch.post(`${domain}/Common/CheckVerify`, params)
 
 //获取手机验证码
 export const getVerifyForSms = (params) =>
-    fetch.post(`${domain}/Api/User/GetVerifyForSms/`, params)
+    fetch.post(`${domain}/Common/GetSmsVerifyCode/`, params)
+    // fetch.post(`${domain}/Common/GetTestSmsCode/`, params)
 
 //注册登录
 export const login = (params) =>
