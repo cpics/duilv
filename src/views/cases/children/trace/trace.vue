@@ -42,129 +42,37 @@
       <!--项目回顾-->
       <div class="project-trace-content">
         <div class="m-second-tabs">
-          <span>全部</span>
+          <span :class="{'active':params.type=='all'}" @click="getData('all')">全部</span>
           <span class="u-line">|</span>
-          <span class="active">QE报告</span>
+          <span :class="{'active':params.type=='qe'}" @click="getData('qe')">QE报告</span>
           <span class="u-line">|</span>
-          <span>周报</span>
+          <span :class="{'active':params.type=='report'}" @click="getData('report')">周报</span>
         </div>
         <div class="trace-timeline">
           <!--全部-->
           <div class="time-line-box">
-            <div class="time-line-row">
-              <div class="time-line-date">2018.1</div>
+            <div class="time-line-row" v-for="(item,index) in trace" :key="index">
+              <div class="time-line-date">{{item.year}}</div>
               <div class="time-line-info">
-                <i class="time-number">11</i>
+                <i class="time-number">{{item.day}}</i>
                 <div class="time-line-title">
-                  <b>嘉兴世合小镇</b>
-                  <span class="t-tags-icon">日报</span>
+                  <b>{{item.title}}</b>
+                  <span class="t-tags-icon">{{item.postType}}</span>
                   <span class="see-count-number">
                     <i class="n-small-icon eye-icon"></i>
-                    <span>10人看过</span>
+                    <span>{{item.hits}}人看过</span>
                   </span>
                 </div>
                 <div class="time-line-tipper">
-                  <p>拟将悬在纪念馆的几幅匾额，先生几年前就写好了毛笔字。</p>
-                </div>
-                <div class="cp-column big-pic hover-scale">
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="time-line-row">
-              <div class="time-line-date"></div>
-              <div class="time-line-info">
-                <i class="time-number">10</i>
-                <div class="time-line-title">
-                  <b>嘉兴世合小镇</b>
-                  <span class="t-tags-icon">日报</span>
-                  <span class="see-count-number">
-                    <i class="n-small-icon eye-icon"></i>
-                    <span>10人看过</span>
-                  </span>
-                </div>
-                <div class="time-line-tipper">
+                  <p>{{item.content}}</p>
                   <p>
-                    <span class="pr-20">安全状况：正常</span>
-                    <span>天气：晴</span>
+                    <span class="pr-20">安全状况:{{item.safeState}}</span>
+                    <span>天气:{{item.weather}}</span>
                   </p>
                 </div>
                 <div class="cp-column big-pic hover-scale">
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="time-line-row">
-              <div class="time-line-date">2017.1</div>
-              <div class="time-line-info">
-                <i class="time-number">11</i>
-                <div class="time-line-title">
-                  <b>嘉兴世合小镇</b>
-                  <span class="t-tags-icon">日报</span>
-                  <span class="see-count-number">
-                    <i class="n-small-icon eye-icon"></i>
-                    <span>10人看过</span>
-                  </span>
-                </div>
-                <div class="time-line-tipper">
-                  <p>拟将悬在纪念馆的几幅匾额，先生几年前就写好了毛笔字。</p>
-                </div>
-                <div class="cp-column big-pic hover-scale">
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="time-line-row">
-              <div class="time-line-date"></div>
-              <div class="time-line-info">
-                <i class="time-number">2</i>
-                <div class="time-line-title">
-                  <b>嘉兴世合小镇</b>
-                  <span class="t-tags-icon">日报</span>
-                  <span class="see-count-number">
-                    <i class="n-small-icon eye-icon"></i>
-                    <span>10人看过</span>
-                  </span>
-                </div>
-                <div class="time-line-tipper">
-                  <p>
-                    <span class="pr-20">安全状况：正常</span>
-                    <span>天气：晴</span>
-                  </p>
-                </div>
-                <div class="cp-column big-pic hover-scale">
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="cp-item">
-                    <img src="../../../../html/pages/home/images/demo.png" alt>
+                  <div class="cp-item" v-for="(pic,i) in item.images" :key="i">
+                    <img :src="pic" alt>
                   </div>
                 </div>
               </div>
@@ -183,7 +91,45 @@ import '../../../../html/components/detailHd/detailHd.scss';
 import '../../../../html/components/tabs/tabs.scss';
 import '../../../../html/components/picture/picture.scss';
 import '../../../../html/pages/cases/trace/trace.scss';
-export default {};
+
+import { getProjectEnd } from '../../../../api/index';
+export default {
+    name: 'trace',
+    data() {
+        return {
+            params: {
+                id: this.$route.params.id,
+                type: 'all',
+                index: 1,
+                size: 10000
+            },
+            trace: []
+        };
+    },
+    methods: {
+        //获取数据
+        async getData(type) {
+            this.params.type = type;
+            let res = await getProjectEnd(this.params);
+            if (res.Type == 'Success') {
+                this.trace = res.Data;
+                this.trace.forEach(item => {
+                    item.year =
+                        item.createdTime.split(' ')[0].split('-')[0] +
+                        '.' +
+                        item.createdTime.split(' ')[0].split('-')[1];
+                    item.day = item.createdTime.split(' ')[0].split('-')[2];
+                    // console.log(item.year, item.day);
+                });
+            } else {
+                this.$layer.alert(res.Content);
+            }
+        }
+    },
+    created() {
+        this.getData('all');
+    }
+};
 </script>
 
 <style>

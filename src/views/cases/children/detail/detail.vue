@@ -1,10 +1,18 @@
 <template>
   <div class="g-container">
     <!--图片banner-->
-    <div class="m-norm-banner">
-      <div class="pic-banner">
-        <img src="../../../../html/components/banner/images/banner.png" alt>
-      </div>
+    <div class="m-norm-banner m-slider-banner">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <!-- slides -->
+        <swiper-slide v-for="(item,index) in detail.banner" :key="index">
+          <a class="oper-pic" href="javascript:;">
+            <img :src="item">
+          </a>
+        </swiper-slide>
+
+        <!-- Optional controls -->
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
     </div>
     <div class="m-container m-width">
       <!--面包屑-->
@@ -18,10 +26,8 @@
       <!--案例详情-->
       <div class="g-case-detail">
         <div class="case-detail-cols">
-          <div class="common-title">嘉兴世合小镇</div>
-          <div
-            class="case-detail-txt"
-          >工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动将悬在纪念馆的几幅匾额，先生几年前就写好了毛笔字。</div>
+          <div class="common-title">{{detail.title}}</div>
+          <div class="case-detail-txt">{{detail.desc}}</div>
         </div>
         <div class="case-detail-cols">
           <div class="case-common-title">
@@ -29,32 +35,20 @@
             工程概况
           </div>
           <div class="case-detail-txt">
-            <p>工程质量：工程PICC质保</p>
-            <p>工程规模：3000平方景观慢行步道</p>
-            <p>工程周期：25日历天</p>
+            <p>工程质量：{{detail.quality}}</p>
+            <p>工程规模：{{detail.scale}}</p>
+            <p>工程周期：{{detail.cycle}}</p>
           </div>
         </div>
         <!--联合质保书-->
-        <div class="case-detail-cols">
+        <div class="case-detail-cols" v-if="detail.warrantys && detail.warrantys.length>0">
           <div class="case-common-title">
             <i class="case-title-icon quality"></i>
             联合质保书
           </div>
           <div class="quality-pic-list">
-            <div class="qua-pic-item">
-              <img src="../../../../html/pages/home/images/demo.png" alt>
-            </div>
-            <div class="qua-pic-item">
-              <img src="../../../../html/pages/home/images/demo.png" alt>
-            </div>
-            <div class="qua-pic-item">
-              <img src="../../../../html/pages/home/images/demo.png" alt>
-            </div>
-            <div class="qua-pic-item">
-              <img src="../../../../html/pages/home/images/demo.png" alt>
-            </div>
-            <div class="qua-pic-item">
-              <img src="../../../../html/pages/home/images/demo.png" alt>
+            <div class="qua-pic-item" v-for="(item,index) in detail.warrantys" :key="index">
+              <img :src="item" alt>
             </div>
           </div>
         </div>
@@ -66,131 +60,16 @@
           </div>
           <div class="case-pro-list">
             <ul>
-              <li>
+              <li v-for="(item,index) in detail.product" :key="index">
                 <div class="case-pro-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
+                  <img :src="item.picPath" alt>
                 </div>
                 <div class="case-pro-info">
-                  <h2>水性EAU多功能活动场地</h2>
-                  <div class="case-pro-txt">
-                    1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                    10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="case-pro-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="case-pro-info">
-                  <h2>水性EAU多功能活动场地</h2>
-                  <div class="case-pro-txt">
-                    1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                    10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="case-pro-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="case-pro-info">
-                  <h2>水性EAU多功能活动场地</h2>
-                  <div class="case-pro-txt">
-                    1.无毒 2.高环保 3.可用于室内 4.施工周期短 5. 亮丽色差不褪色 6. 受环境温度影响小 7.物理性能高 8.耐候性强 9.使用寿命长
-                    10.超低VOC 11. 不含苯、MDI、TDI和可溶性重金属 12.耐老化性能优异
-                  </div>
+                  <h2>{{item.title}}</h2>
+                  <div class="case-pro-txt">{{item.desc}}</div>
                 </div>
               </li>
             </ul>
-          </div>
-        </div>
-        <!--联合质保书-->
-        <div class="case-detail-cols">
-          <div class="case-common-title">
-            <i class="case-title-icon quality1"></i>
-            联合质保书
-          </div>
-          <div class="quality-block-list">
-            <!--默认显示两行，展开更多 + h-auto-->
-            <div class="quality-list-box h-auto">
-              <div class="quality-item bg-pink">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-blue">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-yellow">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-purple">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-green">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-cyan">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-pink">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-blue">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-yellow">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-purple">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-green">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-cyan">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-pink">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-blue">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-yellow">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-purple">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-green">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-              <div class="quality-item bg-cyan">
-                <h4>聚氨酯胶水</h4>
-                <p>PD17-4565121</p>
-              </div>
-            </div>
-            <!--箭头朝上 + pack-up-->
-            <div class="view-more-btn pack-up">
-              <i class="arrow-double-down"></i>
-            </div>
           </div>
         </div>
         <!--项目回顾-->
@@ -198,27 +77,23 @@
           <div class="case-common-title">
             <i class="case-title-icon review"></i>
             项目回顾
-            <a
+            <!-- <a
               class="more-case-btn"
               href="../../../../html/pages/cases/trace/trace.html"
-            >查看全部&gt;</a>
+            >查看全部&gt;</a>-->
+            <router-link
+              tag="a"
+              class="more-case-btn"
+              :to="{name:'caseTrace',params:{id:detail.id}}"
+            >查看全部&gt;</router-link>
           </div>
           <div class="review-content">
-            <div class="review-box-items">
-              <h2 class="review-tit">质量安全监测报告</h2>
-              <div class="review-txt">抽查1#楼10层石膏内保温施工存在较多质量缺陷，部分墙体二次刮……</div>
+            <div class="review-box-items" v-for="(item,index) in detail.xmhg" :key="index">
+              <h2 class="review-tit">{{item.title}}</h2>
+              <div class="review-txt">{{item.content}}</div>
               <div class="cp-column hover-scale">
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
+                <div class="cp-item" v-for="(pic,i) in item.picPath" :key="i">
+                  <img :src="pic" alt>
                 </div>
               </div>
               <div class="comment-box">
@@ -228,141 +103,13 @@
                 </div>
                 <div class="comment-list">
                   <ul>
-                    <li>
+                    <li v-for="(rep,r) in item.reps" :key="r">
                       <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
+                        <img :src="rep.headImage" alt>
                       </div>
                       <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">真厉害，厉害死了</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="review-box-items">
-              <h2 class="review-tit">质量安全监测报告</h2>
-              <div class="review-txt">抽查1#楼10层石膏内保温施工存在较多质量缺陷，部分墙体二次刮……</div>
-              <div class="cp-column hover-scale">
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-              </div>
-              <div class="comment-box">
-                <div class="comment-title">
-                  <i class="msg-icon"></i>
-                  最新评论
-                </div>
-                <div class="comment-list">
-                  <ul>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">真厉害，厉害死了</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="review-box-items">
-              <h2 class="review-tit">质量安全监测报告</h2>
-              <div class="review-txt">抽查1#楼10层石膏内保温施工存在较多质量缺陷，部分墙体二次刮……</div>
-              <div class="cp-column hover-scale">
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="cp-item">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-              </div>
-              <div class="comment-box">
-                <div class="comment-title">
-                  <i class="msg-icon"></i>
-                  最新评论
-                </div>
-                <div class="comment-list">
-                  <ul>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">真厉害，厉害死了</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comment-face">
-                        <img src="../../../../html/pages/home/images/demo.png" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">我是你大哥</div>
-                        <div class="comment-msg">我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦</div>
+                        <div class="comment-name">{{rep.nickName}}</div>
+                        <div class="comment-msg">{{rep.content}}</div>
                       </div>
                     </li>
                   </ul>
@@ -379,44 +126,14 @@
           </div>
           <div class="trace-d-list">
             <ul>
-              <li>
+              <li v-for="(item,index) in detail.hxzz" :key="index">
                 <a href class="trace-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
+                  <img :src="item.picPath" alt>
                 </a>
-                <a href class="trace-tit">工程规模：4100平方米球层施工 1800平方米儿童笔字。</a>
+                <a href class="trace-tit">{{item.title}}</a>
                 <div class="trace-handle">
-                  <a href class="th-col">游览：110</a>
-                  <a href class="th-col">点赞50</a>
-                </div>
-              </li>
-              <li>
-                <div class="trace-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="trace-tit">工程规模：4100平方米球层施工 1800平方米儿童笔字。</div>
-                <div class="trace-handle">
-                  <span class="th-col">游览：110</span>
-                  <span class="ch-col">点赞50</span>
-                </div>
-              </li>
-              <li>
-                <div class="trace-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="trace-tit">工程规模：4100平方米球层施工 1800平方米儿童笔字。</div>
-                <div class="trace-handle">
-                  <span class="th-col">游览：110</span>
-                  <span class="ch-col">点赞50</span>
-                </div>
-              </li>
-              <li>
-                <div class="trace-pic">
-                  <img src="../../../../html/pages/home/images/demo.png" alt>
-                </div>
-                <div class="trace-tit">工程规模：4100平方米球层施工 1800平方米儿童笔字。</div>
-                <div class="trace-handle">
-                  <span class="th-col">游览：110</span>
-                  <span class="ch-col">点赞50</span>
+                  <a href class="th-col">游览：{{item.hits}}</a>
+                  <a href class="th-col">点赞:{{item.likes}}</a>
                 </div>
               </li>
             </ul>
@@ -428,16 +145,30 @@
 </template>
 
 <script>
-import '../../../../html/pages/cases/details/details.css';
-import '../../../../html/components/picture/picture.css';
-import '../../../../html/components/comments/comments.css';
+import 'swiper/dist/css/swiper.css';
+import '../../../../html/pages/cases/details/details.scss';
+import '../../../../html/components/picture/picture.scss';
+import '../../../../html/components/comments/comments.scss';
 
 import { getCaseDetail } from '../../../../api/index';
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 export default {
     name: 'case-detail',
+    components: {
+        swiper,
+        swiperSlide
+    },
     data() {
         return {
-            detail: null
+            detail: {},
+            swiperOption: {
+                pagination: {
+                    el: '.swiper-pagination'
+                },
+                autoplay: {
+                    delay: 2000
+                }
+            }
         };
     },
     methods: {
@@ -445,6 +176,9 @@ export default {
             let res = await getCaseDetail({
                 id: this.$route.params.id
             });
+            if (res.Type == 'Success') {
+                this.detail = res.Data;
+            }
         }
     },
     created() {

@@ -36,7 +36,7 @@ export const menuRouter = [{
         },
         component: () => import('./views/cases/children/detail/detail.vue')
     },{
-        path:'trace',
+        path:'trace/:id',
         name:'caseTrace',
         meta:{
             title:'案列库-项目回顾'

@@ -247,9 +247,9 @@ import '../../html/components/picture/picture.css';
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
-import sloganItem from './components/slogan-item/slogan-item';
+// import sloganItem from './components/slogan-item/slogan-item';
 import caseItem from './components/case-item/case-item';
-import newsItem from './components/news-item/news-item';
+// import newsItem from './components/news-item/news-item';
 import petiteItem from './components/petite-item/petite-item';
 import courseItem from './components/course-item/course-item';
 import groupItem from './components/group-item/group-item';
@@ -263,6 +263,8 @@ export default {
     name: 'home',
     data() {
         return {
+            hzqy:[],
+            bgImg:null,
             banner: [], //首页banner
             cyfa: [], //常用方案
             rmal: [], //热门案列
@@ -293,6 +295,7 @@ export default {
                 this.qz = res.Data.qz;
                 this.cpkc = res.Data.cpkc;
                 this.hzqy = res.Data.hzqy;
+                // console.log(this.bgImg,this.hzqy);
 
                 this.rmal.forEach(function(item) {
                     item.stars = stars(item.score);
@@ -309,9 +312,9 @@ export default {
     components: {
         swiper,
         swiperSlide,
-        sloganItem,
+        // sloganItem,
         caseItem,
-        newsItem,
+        // newsItem,
         petiteItem,
         courseItem,
         groupItem,
