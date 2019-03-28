@@ -66,6 +66,25 @@
           }
         }
       }
+      &:hover,
+      &:active{
+        .top-m-item {
+          opacity: 1;
+          &:after {
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+            content: "";
+            width: 12px;
+            height: 8px;
+            margin-left: -6px;
+            background: url("images/triangle.png") no-repeat center center;
+          }
+        }
+        .second-menu {
+          display: block;
+        }
+      }
     }
   }
   .second-menu {
