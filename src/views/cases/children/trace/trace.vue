@@ -4,11 +4,11 @@
       <div class="com-hd-inner">
         <div class="com-hd-info">
           <div class="com-hd-face">
-            <img src="../../../../html/pages/home/images/demo.png" alt>
+            <img :src="trace.proIcon" alt>
           </div>
           <div class="com-hd-name">
             <div class="hd-bottom-td">
-              <div class="hd-name-row">嘉兴世合小镇</div>
+              <div class="hd-name-row">{{trace.proName}}</div>
               <!--今日信息-->
               <!--<div class="hd-name-row">-->
               <!--<span>今天</span>-->
@@ -22,8 +22,8 @@
         <!--右侧操作-->
         <div class="com-hd-handle">
           <div class="hd-bottom-td">
-            <!--<span class="cm-sign-btn">签到详情</span>-->
-            <!--<span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span>-->
+            <!-- <span class="cm-sign-btn">签到详情</span> -->
+            <!-- <span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span> -->
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <div class="trace-timeline">
           <!--全部-->
           <div class="time-line-box">
-            <div class="time-line-row" v-for="(item,index) in trace" :key="index">
+            <div class="time-line-row" v-for="(item,index) in projects" :key="index">
               <div class="time-line-date">{{item.year}}</div>
               <div class="time-line-info">
                 <i class="time-number">{{item.day}}</i>
@@ -103,7 +103,8 @@ export default {
                 index: 1,
                 size: 10000
             },
-            trace: []
+            projects: [],
+            trace:{}
         };
     },
     methods: {
@@ -113,7 +114,8 @@ export default {
             let res = await getProjectEnd(this.params);
             if (res.Type == 'Success') {
                 this.trace = res.Data;
-                this.trace.forEach(item => {
+                this.projects = res.Data.projectEnd;
+                this.projects.forEach(item => {
                     item.year =
                         item.createdTime.split(' ')[0].split('-')[0] +
                         '.' +
@@ -121,6 +123,7 @@ export default {
                     item.day = item.createdTime.split(' ')[0].split('-')[2];
                     // console.log(item.year, item.day);
                 });
+                
             } else {
                 this.$layer.alert(res.Content);
             }

@@ -53,7 +53,7 @@ export const deleteTz = (params) =>
 //获取手机验证码
 export const getVerifyForSms = (params) =>
     fetch.post(`${domain}/Common/GetSmsVerifyCode/`, params)
-    // fetch.post(`${domain}/Common/GetTestSmsCode/`, params)
+// fetch.post(`${domain}/Common/GetTestSmsCode/`, params)
 
 //注册登录
 export const login = (params) =>
@@ -79,6 +79,62 @@ export const getNewsIndex = (params) =>
 export const getNewsDetail = (params) =>
     fetch.post(`${domain}/Api/News/Detail/`, params)
 
-//发表评论
+//发表绿建要闻评论
 export const addReplis = (params) =>
     fetch.post(`${domain}/Api/News/AddReplis/`, params)
+
+//匠心记
+//天气接口
+export const getWeather = (params) =>
+    fetch.post(`${domain}/Api/Index/Weather/`, params)
+
+//匠心记列表
+export const getJxjList = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/Index/`, params)
+
+//匠心记详情
+export const getJxjDetail = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/Detail/`, params)
+
+//匠心记项目日志
+export const getJxjLog = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/GetData/`, params)
+
+//匠心记帖子详情
+export const getJxjPostDetail = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/PostDetail/`, params)
+
+//匠心记签到详情
+export const getJxjSignInfos = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/GetSignInfos/`, params)
+
+//匠心记发表评论
+export const jxjAddReplis = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/AddReplis/`, params)
+
+//上传图片
+export const uploadImage = (params) =>
+    fetch.post(`${domain}/Api/Common/UploadImage/`, params)
+
+//上传图片2
+export const uploadImageByBlob = (params) =>
+    fetch.post(`${domain}/Api/Common/UploadImageByBlob/`, params)
+
+//上传图片3
+export const uploadImageByBase = (params) =>
+    fetch.post(`${domain}/Api/Common/UploadImageByBase/`, params)
+
+
+//匠心记获取标签
+export const getJxjTags = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/GetTags/`, params)
+
+
+//匠心记获取人员列表
+export const GetJxjProUsers = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/GetProUsers/`, params)
+
+
+//匠心记申请
+export const jxjAddProjectLog = (params) =>
+    fetch.post(`${domain}/Api/ProjectLog/AddProjectLog/`, params)
