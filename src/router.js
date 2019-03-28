@@ -19,7 +19,7 @@ export const menuRouter = [{
         title: '案列库'
     },
     component: () => import('./views/cases/cases.vue'),
-    redirect:'/cases/index',
+    redirect: '/cases/index',
     children: [{
         path: 'index',
         name: 'caseIndex',
@@ -35,11 +35,11 @@ export const menuRouter = [{
             title: '案列库详情'
         },
         component: () => import('./views/cases/children/detail/detail.vue')
-    },{
-        path:'trace/:id',
-        name:'caseTrace',
-        meta:{
-            title:'案列库-项目回顾'
+    }, {
+        path: 'trace/:id',
+        name: 'caseTrace',
+        meta: {
+            title: '案列库-项目回顾'
         },
         component: () => import('./views/cases/children/trace/trace.vue')
     }
@@ -51,7 +51,22 @@ export const menuRouter = [{
     meta: {
         title: '匠心记'
     },
-    component: () => import('./views/originality/originality.vue')
+    component: () => import('./views/originality/originality.vue'),
+    children: [{
+        path: 'detail/:id',
+        name: 'jxjDetail',
+        meta: {
+            title: '匠心记-详情'
+        },
+        component: () => import('./views/originality/detail/detail.vue')
+    }, {
+        path: 'detail/:id',
+        name: 'jxjImgDetail',
+        meta: {
+            title: '匠心记-图文详情'
+        },
+        component: () => import('./views/originality/detail/detail.vue')
+    }]
 },
 {
     path: '/enterprise',
