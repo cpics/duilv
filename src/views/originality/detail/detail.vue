@@ -5,17 +5,17 @@
       <div class="com-hd-inner">
         <div class="com-hd-info">
           <div class="com-hd-face">
-            <img src="../../../html/pages/home/images/demo.png" alt>
+            <img :src="header.picPath" alt>
           </div>
           <div class="com-hd-name">
             <div class="hd-bottom-td">
-              <div class="hd-name-row">嘉兴世合小镇</div>
+              <div class="hd-name-row">{{header.title}}</div>
               <!--今日信息-->
               <div class="hd-name-row">
                 <span>今天</span>
-                <span>2017年3月18日</span>
-                <span>星期三</span>
-                <span>天气：晴</span>
+                <span>{{header.now}}</span>
+                <span>{{header.dayOfWeek}}</span>
+                <span>天气：{{weather}}</span>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@
               <div class="e-prise-box">
                 <div class="prise-hd">
                   <div class="prise-face f-circle">
-                    <img src="../../../html/pages/home/images/demo.png" alt>
+                    <img src alt>
                   </div>
                   <div class="prise-hd-info">
                     <div class="prise-hd-name">
@@ -249,10 +249,10 @@
                 <b>项目概况简述</b>
               </div>
               <div class="project-intro">
-                <div class="pro-intro-row">入场时间：2018年1月1日</div>
-                <div class="pro-intro-row">项目地点：上海</div>
+                <div class="pro-intro-row">入场时间：{{header.creatTime.split(' ')[0]}}</div>
+                <div class="pro-intro-row">项目地点：{{header.proAddr}}</div>
                 <div class="pro-intro-row">项目简介：</div>
-                <div class="pro-intro-txt">保温挤塑板，外墙拉花中层，涂料，1-3层多彩。保温大概30000方，涂料大概45000方，多彩大概4000方。</div>
+                <div class="pro-intro-txt">{{header.desc}}</div>
               </div>
               <div class="common-tit-h2">
                 <a href class="more-tit-btn">项目详情&gt;</a>
@@ -260,18 +260,18 @@
             </div>
             <div class="structure-box">
               <div class="com-md-face">
-                <img src="../../../html/pages/home/images/demo.png" alt>
+                <img :src="header.projectPartner.headImage" alt>
               </div>
               <div class="str-row">
-                <span class="str-label">项目经理</span>
+                <span class="str-label">{{header.projectPartner.type}}</span>
                 <i class="star-icon three-star"></i>
               </div>
               <div class="str-row">
-                <span class="str-name">周德江</span>
-                <span class="str-tag-icon">堆绿会员</span>
+                <span class="str-name">{{header.projectPartner.nickName}}</span>
+                <!-- <span class="str-tag-icon">堆绿会员</span> -->
               </div>
             </div>
-            <div class="structure-box">
+            <!-- <div class="structure-box">
               <div class="common-tit-h2">
                 <b>类似项目</b>
               </div>
@@ -301,7 +301,7 @@
                   <div class="guess-info">苏州海的大姐软件有限公司</div>
                 </a>
               </div>
-            </div>
+            </div>-->
             <div class="scan-code-quick">
               <div class="code-quick-pic">
                 <img src="../../../html/components/comments/images/code1.png" alt>
@@ -325,22 +325,59 @@ import '../../../html/components/comments/comments.css';
 import '../../../html/components/page/page.css';
 import '../../../html/pages/originality/originality/originality.scss';
 
-import { getJxjDetail } from '../../../api/index.js';
+import { getJxjDetail, getJxjLog, getWeather } from '../../../api/index.js';
 export default {
     name: 'originality',
     data() {
-        return {};
+        return {
+            header: {},
+            list: [],
+            weather: '',
+            type: 'all',
+            pageIndex: 0,
+            count: 0
+        };
     },
     methods: {
-        async getData() {
+        async getHeader() {
             let res = await getJxjDetail({
                 id: this.$route.params.id
             });
+            if (res.Type == 'Success') {
+                this.header = res.Data;
+            }
+        },
+        //获取列表数据
+        async getJxjLog() {
+            let res = await getJxjLog({
+                id: this.$route.params.id,
+                type: this.type,
+                index: this.pageIndex,
+                size: 10
+            });
+            if (res.Type == 'Success') {
+                this.list.concat(res.Data);
+            }
+        },
+        async getWeather() {
+            let res = await getWeather({
+                city: '苏州'
+            });
+            if (res.Type == 'Success') {
+                this.weather = res.Data;
+            }
+        },
+        //加载更多
+        more() {
+            this.pageIndex++;
+            this.getJxjLog();
         }
     },
     created() {
         console.log(this.$route.params.id);
-        this.getData();
+        this.getWeather();
+        this.getHeader();
+        this.getJxjLog();
     }
 };
 </script>
