@@ -124,7 +124,7 @@
               </dl>
               <button type="button" class="btn-next">下一页</button>
             </div>-->
-            <div class="prompt-txt">加载更多...</div>
+            <button type="button" class="prompt-txt">加载更多...</button>
           </div>
           <div class="m-structure-quick">
             <div class="structure-btn">发布内容</div>
