@@ -206,6 +206,20 @@ a:visited {
   padding: 40px 0;
 }
 
+button {
+  &.prompt-txt {
+    display: block;
+    background: transparent;
+    border: 0;
+    outline: none;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  &:hover {
+    color: #4bde9e;
+  }
+}
+
 .n-small-icon {
   position: relative;
   top: -1px;
