@@ -52,21 +52,21 @@
         <div class="m-structure-content">
           <div class="m-structure-information">
             <div class="m-prise-content">
-              <div class="e-prise-box">
+              <div class="e-prise-box" v-for="(item,index) in list" :key="index">
                 <div class="prise-hd">
                   <div class="prise-face f-circle">
-                    <img src alt>
+                    <img :src="item.postUser.headImage">
                   </div>
                   <div class="prise-hd-info">
                     <div class="prise-hd-name">
-                      <span>2019年1月10日</span>
+                      <span>{{item.createdTime.split(' ')[0]}}</span>
                       <span class="prise-tag-icon">日报</span>
                     </div>
-                    <div class="prise-time">项目经理：周德江</div>
+                    <div class="prise-time">{{item.postUser.type}}：{{item.postUser.nickName}}</div>
                   </div>
                   <div class="prise-status">
-                    <span class="prise-status-txt">安全状况：无事故</span>
-                    <span class="prise-status-txt">天气：晴</span>
+                    <span class="prise-status-txt">安全状况：{{item.safeState}}</span>
+                    <span class="prise-status-txt">{{item.weather}}</span>
                   </div>
                 </div>
                 <div class="prise-article">
@@ -74,152 +74,36 @@
                   <!--<b>嘉兴世合小镇</b>-->
                   <!--<span class="art-tips">推广</span>-->
                   <!--</div>-->
-                  <div
-                    class="prise-art-txt"
-                  >不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...</div>
+                  <div class="prise-art-txt">{{item.content}}</div>
                   <div class="cp-column hover-scale pic-300">
-                    <div class="cp-item">
-                      <img src="../../../html/pages/home/images/demo.png" alt>
-                    </div>
-                    <div class="cp-item">
-                      <img src="../../../html/pages/home/images/demo.png" alt>
-                    </div>
-                    <div class="cp-item">
-                      <img src="../../../html/pages/home/images/demo.png" alt>
+                    <div class="cp-item" v-for="(img,i) in item.images" :key="i">
+                      <img :src="img" alt>
                     </div>
                   </div>
                   <div class="u-news-handle">
                     <div class="un-left">
                       <span class="un-col">
                         <i class="n-small-icon comment-icon"></i>
-                        101
+                        {{item.repNum}}
                         <em class="c-arrow-up"></em>
                       </span>
                       <span class="un-col">
                         <i class="n-small-icon eye-icon"></i>
-                        101
+                        {{item.hits}}
                       </span>
                     </div>
                   </div>
-                  <div class="comment-box">
+                  <div class="comment-box" v-if="item.reps.length >0">
                     <div class="prise-comment">
                       <div class="comment-list">
                         <ul>
-                          <li>
+                          <li v-for="(rep,r) in item.reps" :key="r">
                             <div class="comment-face">
-                              <img src="../../../html/pages/home/images/demo.png" alt>
+                              <img :src="rep.headImage" alt>
                             </div>
                             <div class="comment-info">
-                              <div class="comment-name">我是你大哥</div>
-                              <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="comment-face">
-                              <img src="../../../html/pages/home/images/demo.png" alt>
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-name">我是你大哥</div>
-                              <div class="comment-msg">真厉害，厉害死了</div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="comment-face">
-                              <img src="../../../html/pages/home/images/demo.png" alt>
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-name">我是你大哥</div>
-                              <div
-                                class="comment-msg"
-                              >我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦</div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="e-prise-box">
-                <div class="prise-hd">
-                  <div class="prise-face f-circle">
-                    <img src="../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="prise-hd-info">
-                    <div class="prise-hd-name">
-                      <span>2019年1月10日</span>
-                      <span class="prise-tag-icon">日报</span>
-                    </div>
-                    <div class="prise-time">项目经理：周德江</div>
-                  </div>
-                  <div class="prise-status">
-                    <span class="prise-status-txt">安全状况：无事故</span>
-                    <span class="prise-status-txt">天气：晴</span>
-                  </div>
-                </div>
-                <div class="prise-article">
-                  <!--<div class="prise-art-name">-->
-                  <!--<b>嘉兴世合小镇</b>-->
-                  <!--<span class="art-tips">推广</span>-->
-                  <!--</div>-->
-                  <div
-                    class="prise-art-txt"
-                  >不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...</div>
-                  <div class="cp-column hover-scale pic-300">
-                    <div class="cp-item">
-                      <img src="../../../html/pages/home/images/demo.png" alt>
-                    </div>
-                    <div class="cp-item">
-                      <img src="../../../html/pages/home/images/demo.png" alt>
-                    </div>
-                    <div class="cp-item">
-                      <img src="../../../html/pages/home/images/demo.png" alt>
-                    </div>
-                  </div>
-                  <div class="u-news-handle">
-                    <div class="un-left">
-                      <span class="un-col">
-                        <i class="n-small-icon comment-icon"></i>
-                        101
-                        <em class="c-arrow-up"></em>
-                      </span>
-                      <span class="un-col">
-                        <i class="n-small-icon eye-icon"></i>
-                        101
-                      </span>
-                    </div>
-                  </div>
-                  <div class="comment-box">
-                    <div class="prise-comment">
-                      <div class="comment-list">
-                        <ul>
-                          <li>
-                            <div class="comment-face">
-                              <img src="../../../html/pages/home/images/demo.png" alt>
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-name">我是你大哥</div>
-                              <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="comment-face">
-                              <img src="../../../html/pages/home/images/demo.png" alt>
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-name">我是你大哥</div>
-                              <div class="comment-msg">真厉害，厉害死了</div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="comment-face">
-                              <img src="../../../html/pages/home/images/demo.png" alt>
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-name">我是你大哥</div>
-                              <div
-                                class="comment-msg"
-                              >我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦</div>
+                              <div class="comment-name">{{rep.nickName}}</div>
+                              <div class="comment-msg">{{item.content}}</div>
                             </div>
                           </li>
                         </ul>
@@ -229,7 +113,7 @@
                 </div>
               </div>
             </div>
-            <div class="m-pages">
+            <!-- <div class="m-pages">
               <button type="button" disabled="disabled" class="btn-prev">上一页</button>
               <dl class="u-pager">
                 <dd class="active">1</dd>
@@ -239,8 +123,8 @@
                 <dd>8</dd>
               </dl>
               <button type="button" class="btn-next">下一页</button>
-            </div>
-            <!--<div class="prompt-txt">加载更多...</div>-->
+            </div>-->
+            <div class="prompt-txt">加载更多...</div>
           </div>
           <div class="m-structure-quick">
             <div class="structure-btn">发布内容</div>
@@ -249,7 +133,7 @@
                 <b>项目概况简述</b>
               </div>
               <div class="project-intro">
-                <div class="pro-intro-row">入场时间：{{header.creatTime.split(' ')[0]}}</div>
+                <!-- <div class="pro-intro-row">入场时间：{{header.creatTime.split(' ')[0]}}</div> -->
                 <div class="pro-intro-row">项目地点：{{header.proAddr}}</div>
                 <div class="pro-intro-row">项目简介：</div>
                 <div class="pro-intro-txt">{{header.desc}}</div>
@@ -259,16 +143,18 @@
               </div>
             </div>
             <div class="structure-box">
-              <div class="com-md-face">
-                <img :src="header.projectPartner.headImage" alt>
-              </div>
-              <div class="str-row">
-                <span class="str-label">{{header.projectPartner.type}}</span>
-                <i class="star-icon three-star"></i>
-              </div>
-              <div class="str-row">
-                <span class="str-name">{{header.projectPartner.nickName}}</span>
-                <!-- <span class="str-tag-icon">堆绿会员</span> -->
+              <div v-for="(item,index) in header.projectPartner" :key="index">
+                <div class="com-md-face">
+                  <img :src="item.headImage" alt>
+                </div>
+                <div class="str-row">
+                  <span class="str-label">{{item.type}}</span>
+                  <i class="star-icon three-star"></i>
+                </div>
+                <div class="str-row">
+                  <span class="str-name">{{item.nickName}}</span>
+                  <span class="str-tag-icon">{{item.tags.join(',')}}</span>
+                </div>
               </div>
             </div>
             <!-- <div class="structure-box">
@@ -345,6 +231,7 @@ export default {
             });
             if (res.Type == 'Success') {
                 this.header = res.Data;
+                // console.log(this.header);
             }
         },
         //获取列表数据
@@ -356,7 +243,8 @@ export default {
                 size: 10
             });
             if (res.Type == 'Success') {
-                this.list.concat(res.Data);
+                this.list = this.list.concat(res.Data.data);
+                this.count = res.Data.count;
             }
         },
         async getWeather() {
