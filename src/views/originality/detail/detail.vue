@@ -41,13 +41,13 @@
       <!--主体-->
       <div class="origin-content">
         <div class="m-second-tabs">
-          <span>全部</span>
+          <span :class="{'active':type=='all'}" @click="changType('all')">全部</span>
           <span class="u-line">|</span>
-          <span class="active">日报</span>
+          <span :class="{'active':type=='daily'}" @click="changType('daily')">日报</span>
           <span class="u-line">|</span>
-          <span>周报</span>
+          <span :class="{'active':type=='qe'}" @click="changType('qe')">周报</span>
           <span class="u-line">|</span>
-          <span>检查报告</span>
+          <span :class="{'active':type=='report'}" @click="changType('report')">检查报告</span>
         </div>
         <div class="m-structure-content">
           <div class="m-structure-information">
@@ -60,7 +60,7 @@
                   <div class="prise-hd-info">
                     <div class="prise-hd-name">
                       <span>{{item.createdTime.split(' ')[0]}}</span>
-                      <span class="prise-tag-icon">日报</span>
+                      <span class="prise-tag-icon">{{item.type}}</span>
                     </div>
                     <div class="prise-time">{{item.postUser.type}}：{{item.postUser.nickName}}</div>
                   </div>
@@ -124,7 +124,7 @@
               </dl>
               <button type="button" class="btn-next">下一页</button>
             </div>-->
-            <button type="button" class="prompt-txt">加载更多...</button>
+            <button v-if="count > list.length" @click="more" type="button" class="prompt-txt">加载更多</button>
           </div>
           <div class="m-structure-quick">
             <div class="structure-btn">发布内容</div>
@@ -257,7 +257,16 @@ export default {
         },
         //加载更多
         more() {
-            this.pageIndex++;
+            if (this.count > this.list.length) {
+                this.pageIndex++;
+                this.getJxjLog();
+            }
+        },
+        changType(type) {
+            this.pageIndex = 0;
+            this.count = 0;
+            this.list = [];
+            this.type = type;
             this.getJxjLog();
         }
     },

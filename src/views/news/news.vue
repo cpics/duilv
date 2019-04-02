@@ -1,14 +1,13 @@
 
 <template>
-    <div>绿建要闻</div>
+  <router-view></router-view>
 </template>
 
 <script>
 export default {
-    name:'news'
-}
+    name: 'news'
+};
 </script>
 
 <style>
-
 </style>

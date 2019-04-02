@@ -60,7 +60,7 @@ export const menuRouter = [{
         },
         component: () => import('./views/originality/detail/detail.vue')
     }, {
-        path: 'detail/:id',
+        path: 'imgDetail/:id',
         name: 'jxjImgDetail',
         meta: {
             title: '匠心记-图文详情'
@@ -76,21 +76,45 @@ export const menuRouter = [{
     },
     component: () => import('./views/enterprise/enterprise.vue')
 },
+// {
+//     path: '/news',
+//     name: 'news',
+//     meta: {
+//         title: '绿建要闻'
+//     },
+//     component: () => import('./views/news/news.vue')
+// },
 {
     path: '/news',
     name: 'news',
     meta: {
         title: '绿建要闻'
     },
-    component: () => import('./views/news/news.vue')
+    component: () => import('./views/news/news.vue'),
+    redirect: '/news/index',
+    children: [{
+        path: 'index',
+        name: 'newsIndex',
+        meta: {
+            title: '绿建要闻-首页'
+        },
+        component: () => import('./views/news/children/index/index.vue')
+    }, {
+        path: 'detail/:id',
+        name: 'newsDdetail',
+        meta: {
+            title: '绿建要闻 - 详情'
+        },
+        component: () => import('./views/news/children/detail/detail.vue')
+    }]
 },
 {
-    path: '/news',
-    name: 'news',
+    path: '/cloud',
+    name: 'cloud',
     meta: {
-        title: '绿建要闻'
+        title: '云智库'
     },
-    component: () => import('./views/news/news.vue')
+    component: () => import('./views/cloud/cloud.vue'),
 }
 ]
 export default new Router({

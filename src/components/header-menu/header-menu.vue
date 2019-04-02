@@ -8,7 +8,12 @@
           class="top-m-item"
           :to="item"
         >{{item.meta.title}}</router-link>
-        <a v-if="item.name=='originality'" class="top-m-item">{{item.meta.title}}</a>
+
+        <a
+          v-if="item.name=='originality'"
+          :class="{'active':originalityDir}"
+          class="top-m-item"
+        >{{item.meta.title}}</a>
         <div v-if="item.name=='originality'" class="second-menu">
           <div class="second-menu-inner">
             <div class="second-m-box">
@@ -47,7 +52,8 @@ export default {
     data() {
         return {
             jxjSubMenu: {},
-            menuRouter: menuRouter
+            menuRouter: menuRouter,
+            originalityDir: 0
         };
     },
     methods: {
@@ -62,6 +68,15 @@ export default {
     },
     created() {
         this.getJxjList();
+    },
+    watch: {
+        $route(to, from) {
+            if (location.href.indexOf('originality') > -1) {
+                this.originalityDir = 1;
+            } else {
+                this.originalityDir = 0;
+            }
+        }
     }
 };
 </script>
