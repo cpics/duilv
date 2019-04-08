@@ -1,5 +1,5 @@
 <template>
-  <a href class="case-item">
+  <router-link tag="a" class="case-item" :to="{name:'caseDetal',params:{id:info.id}}">
     <div class="case-pic">
       <img :src="info.bgImg" alt>
       <div class="case-tag">
@@ -13,7 +13,7 @@
       <!--零星 no-star、 一星 one-star、 二星 two-star、 三星 three-star 、四星 four-star、 五星 five-star -->
       <i class="star-icon" :class="info.stars"></i>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script>

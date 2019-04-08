@@ -12,7 +12,7 @@
         <div class="m-structure-information">
           <div class="m-prise-content">
             <div class="e-prise-box" v-for="(item,index) in list" :key="index">
-              <router-link tag="a" :to="{name:'enterDetail',params:{id:item.id}}">
+              <a @click="gotoDetail(item.id)">
                 <div class="prise-hd">
                   <div class="prise-face">
                     <img :src="item.icon">
@@ -27,7 +27,26 @@
                     <b>{{item.title}}</b>
                     <span class="art-tips">{{item.type}}</span>
                   </div>
-                  <div class="prise-art-txt" v-html="item.content"></div>
+                  <!-- <div class="prise-art-txt" v-html="item.content"></div> -->
+                  <div class="view-more-prise" :class="{'active':!item.zkDir}">
+                    <div class="prise-art-txt" v-html="item.content"></div>
+                    <div
+                      class="view-more-txt unfold"
+                      v-if="!item.zkDir"
+                      @click.stop.prevent="zkFunc(index)"
+                    >
+                      查看更多
+                      <i></i>
+                    </div>
+                    <div
+                      class="view-more-txt fewer"
+                      v-if="item.zkDir"
+                      @click.stop.prevent="zkFunc(index)"
+                    >
+                      首起
+                      <i></i>
+                    </div>
+                  </div>
                   <div class="cp-column hover-scale big-pic">
                     <div class="cp-item" v-for="(img,i) in item.images" :key="i">
                       <img :src="img">>
@@ -71,7 +90,7 @@
                     </div>
                   </div>
                 </div>
-              </router-link>
+              </a>
             </div>
           </div>
         </div>
@@ -153,7 +172,10 @@ export default {
         async enterPriseIndex() {
             let res = await enterPriseIndex(this.params);
             if (res.Type == 'Success') {
-                this.list = res.Data.data;
+                res.Data.data.forEach(item => {
+                    item.zkDir = false;
+                });
+                this.list = this.list.concat(res.Data.data);
                 this.count = res.Data.count;
             }
         },
@@ -162,6 +184,12 @@ export default {
             if (res.Type == 'Success') {
                 this.likeArr = res.Data;
             }
+        },
+        zkFunc(i) {
+            this.list[i].zkDir = !this.list[i].zkDir;
+        },
+        gotoDetail(id) {
+            this.$router.push({ name: 'enterDetail', params: { id: id } });
         }
     },
     created() {

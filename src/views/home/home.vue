@@ -35,17 +35,27 @@
             </div>
             <div class="news-column">
               <div class="news-column-hd">
-                <a class="u-news-hd" v-show="index<2" v-for="(item,index) in ljyw" :key="index">
+                <router-link
+                  tag="a"
+                  class="u-news-hd"
+                  :to="{name:'newsDdetail',params:{id:item.id}}"
+                  v-show="index<2"
+                  v-for="(item,index) in ljyw"
+                  :key="index"
+                >
                   <div class="u-news-pic">
                     <img :src="item.bgImg" alt>
                   </div>
                   <div class="u-news-txt">{{item.title}}</div>
-                </a>
+                </router-link>
               </div>
               <div class="u-news-list">
                 <ul>
                   <li v-show="index>=2" v-for="(item,index) in ljyw" :key="index">
-                    <a href>{{item.title}}</a>
+                    <router-link
+                      tag="a"
+                      :to="{name:'newsDdetail',params:{id:item.id}}"
+                    >{{item.title}}</router-link>
                   </li>
                 </ul>
               </div>
@@ -79,136 +89,44 @@
           <span>现场经验分享，线下施工，线上体验</span>
         </div>
         <div class="ing-main">
-          <div class="ing-information">
-            <a href class="ing-hd">
+          <router-link
+            tag="div"
+            :to="{name:'jxjDetail',params:{id:currentJxj.id}}"
+            class="ing-information"
+          >
+            <a class="ing-hd">
               <div class="ing-face">
-                <img :src="require('../../html/pages/home/images/demo.png')" alt>
+                <img :src="currentJxj.headImage" alt>
               </div>
               <div class="ing-info">
-                <h2 class="ing-tit">无锡世贸 — 时光里</h2>
+                <h2 class="ing-tit">{{currentJxj.projectName}}</h2>
                 <div class="ing-status">
-                  <span class="ing-sta-col">XX雷大爷</span>
-                  <span class="ing-sta-col">12小时前</span>
+                  <span class="ing-sta-col">{{currentJxj.nickName}}</span>
+                  <!-- <span class="ing-sta-col">12小时前</span> -->
                 </div>
               </div>
             </a>
-            <a href class="ing-article">
-              <p>“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭，「世界早已精致得只等毁灭」──他像一个孤证，像空谷跫音，有时嘿笑如恶童，有时演奏起那绝美故事，销魂忘我；有时险峻刻诮，有时伤怀绵绵...</p>
+            <a class="ing-article">
+              <p>{{currentJxj.content}}</p>
             </a>
             <!--鼠标移上图片变大 + hover-scale-->
             <!--图片高度不固定 + h-auto-->
             <div class="cp-column">
-              <a class="cp-item" href>
-                <img :src="require('../../html/pages/home/images/demo.png')" alt>
-              </a>
-              <a class="cp-item" href>
-                <img :src="require('../../html/pages/home/images/demo.png')" alt>
-              </a>
-              <a class="cp-item" href>
-                <img :src="require('../../html/pages/home/images/demo.png')" alt>
+              <a class="cp-item" v-for="(img,i) in currentJxj.images" :key="i">
+                <img :src="img" alt>
               </a>
             </div>
-          </div>
+          </router-link>
           <div class="ing-roll">
             <ul>
-              <li>
-                <a href>
+              <li v-for="(jxjItem,i) in jxj" :key="i" @click="changejxjItem(i)">
+                <a>
                   <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
+                    <img :src="jxjItem.headImage" alt>
                   </span>
-                  <span class="roll-name">***王</span>
-                  <b>在无锡绿地西水东六期</b>
-                  施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在世茂运河城26#地块0#楼</b>
-                  发表了主题：阳台涂料腻子批刮施工中
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
-                </a>
-              </li>
-              <li>
-                <a href>
-                  <span class="roll-face">
-                    <img :src="require('../../html/pages/home/images/demo.png')" alt>
-                  </span>
-                  <span class="roll-name">***王</span>
-                  <b>在怡江城三期上传了份QE报告</b>
-                  施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报施工上传了份日报
+                  <span class="roll-name">{{jxjItem.nickName}}</span>
+                  <b>{{jxjItem.projectName}}</b>
+                  施工上传了{{jxjItem.postName}}
                 </a>
               </li>
             </ul>
@@ -263,13 +181,14 @@ export default {
     name: 'home',
     data() {
         return {
-            hzqy:[],
-            bgImg:null,
+            hzqy: [],
+            bgImg: null,
             banner: [], //首页banner
             cyfa: [], //常用方案
             rmal: [], //热门案列
             ljyw: [], //绿建要闻
             jxj: [], //匠心记
+            currentJxj: {},
             qz: [], //圈子
             cpkc: [], //产品课程
             swiperOption: {
@@ -292,6 +211,7 @@ export default {
                 this.rmal = res.Data.rmal;
                 this.ljyw = res.Data.ljyw;
                 this.jxj = res.Data.jxj;
+                this.currentJxj = this.jxj[0];
                 this.qz = res.Data.qz;
                 this.cpkc = res.Data.cpkc;
                 this.hzqy = res.Data.hzqy;
@@ -304,6 +224,9 @@ export default {
                     item.stars = stars(item.score);
                 });
             }
+        },
+        changejxjItem(i){
+            this.currentJxj = this.jxj[i];
         }
     },
     created() {
