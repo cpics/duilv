@@ -74,7 +74,37 @@ export const menuRouter = [{
     meta: {
         title: '行业圈'
     },
-    component: () => import('./views/enterprise/enterprise.vue')
+    redirect: '/enterprise/index',
+    component: () => import('./views/enterprise/enterprise.vue'),
+    children: [{
+        path: 'index',
+        name: 'enterIndex',
+        meta: {
+            title: '行业圈-首页'
+        },
+        component: () => import('./views/enterprise/children/index/index.vue'),
+    }, {
+        path: 'detail/:id',
+        name: 'enterDetail',
+        meta: {
+            title: '行业圈-详情'
+        },
+        component: () => import('./views/enterprise/children/detail/detail.vue'),
+    }, {
+        path: 'edit',
+        name: 'enterEdit',
+        meta: {
+            title: '行业圈-编辑'
+        },
+        component: () => import('./views/enterprise/children/edit/edit.vue'),
+    }, {
+        path: 'course',
+        name: 'enterCourse',
+        meta: {
+            title: '行业圈-课程'
+        },
+        component: () => import('./views/enterprise/children/course/course.vue'),
+    }]
 },
 // {
 //     path: '/news',

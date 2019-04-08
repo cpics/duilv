@@ -83,6 +83,8 @@ export const getNewsDetail = (params) =>
 export const addReplis = (params) =>
     fetch.post(`${domain}/Api/News/AddReplis/`, params)
 
+export const getReplies = (params) =>
+    fetch.post(`${domain}/Api/Posts/GetReplies/`, params)
 //匠心记
 //天气接口
 export const getWeather = (params) =>
@@ -138,3 +140,28 @@ export const GetJxjProUsers = (params) =>
 //匠心记申请
 export const jxjAddProjectLog = (params) =>
     fetch.post(`${domain}/Api/ProjectLog/AddProjectLog/`, params)
+
+//-----------------行业圈--------------
+//获取全部
+export const getAllEnter = (params) =>
+    fetch.post(`${domain}/Api/EnterPrise/GetAllEnter/`, params)
+
+//猜你想看
+export const getLikeEnter = (params) =>
+    fetch.post(`${domain}/Api/EnterPrise/GetLikeEnter/`, params)
+
+//行业圈首页
+export const enterPriseIndex = (params) =>
+    fetch.post(`${domain}/Api/EnterPrise/Index`, params)
+
+//企业首页
+export const enterCurrentIndex = (params) =>
+    fetch.post(`${domain}/Api/EnterPrise/EnterIndex/`, params)
+
+//企业详情
+export const enterDetail = (params) =>
+    fetch.post(`${domain}/Api/EnterPrise/EnterDetail/`, params)
+
+//发飙评论
+export const enterAddReplis = (params) =>
+    fetch.post(`${domain}/Api/EnterPrise/AddReplis/`, params)

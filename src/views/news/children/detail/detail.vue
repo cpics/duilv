@@ -56,7 +56,7 @@
             <div class="comment-title">最新评论</div>
             <div class="comment-list">
               <ul>
-                <li v-for="(item,index) in info.rep" :key="index">
+                <li v-for="(item,index) in info.reps" :key="index">
                   <div class="comment-face">
                     <img :src="item.headImage">
                   </div>
@@ -114,13 +114,14 @@ import '../../../../html/components/structure/structure.scss';
 import '../../../../html/components/comments/comments.scss';
 import '../../../../html/components/article/article.scss';
 
-import { getNewsDetail, addReplis } from '../../../../api/index';
+import { getNewsDetail, addReplis, getReplies } from '../../../../api/index';
 
 export default {
     name: 'newsDetail',
     data() {
         return {
-            info: {}
+            info: {},
+            repContent: ''
         };
     },
     methods: {
@@ -130,6 +131,16 @@ export default {
             });
             if (res.Type == 'Success') {
                 this.info = res.Data;
+            }
+        },
+        //获取最新评论
+        async getReplies() {
+            let res = await getReplies({
+                id: this.$route.params.id
+            });
+            if (res.Type == 'Success') {
+                this.info.reps = res.Data;
+                console.log(this.info.reps);
             }
         },
         //发表评论
@@ -148,8 +159,12 @@ export default {
                 params.repId = '';
             }
             let res = await addReplis(params);
+
             if (res.Type == 'Success') {
+                // debugger;
                 this.repContent = '';
+                this.$layer.alert(res.Content);
+                this.getReplies();
                 //获取最新的评论列表
             } else {
                 this.$layer.alert(res.Conent);
