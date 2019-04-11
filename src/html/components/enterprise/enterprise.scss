@@ -78,12 +78,13 @@
     width: 100%;
     &.active {
       .prise-art-txt {
-        height: 64px;
+        max-height: 64px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
+        margin-bottom: 0;
       }
       .view-more-txt {
         &.fewer {
@@ -127,6 +128,7 @@
     text-align: center;
     font-size: 16px;
     color: #999;
+    margin-bottom: 10px;
     &:before {
       position: absolute;
       left: 0;

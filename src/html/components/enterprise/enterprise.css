@@ -62,12 +62,13 @@
     position: relative;
     width: 100%; }
     .e-prise-box .view-more-prise.active .prise-art-txt {
-      height: 64px;
+      max-height: 64px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2; }
+      -webkit-line-clamp: 2;
+      margin-bottom: 0; }
     .e-prise-box .view-more-prise.active .view-more-txt.fewer {
       display: none; }
     .e-prise-box .view-more-prise.active .view-more-txt.unfold {
@@ -89,7 +90,8 @@
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    color: #999; }
+    color: #999;
+    margin-bottom: 10px; }
     .e-prise-box .view-more-txt:before {
       position: absolute;
       left: 0;
