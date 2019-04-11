@@ -239,7 +239,7 @@
                   <router-link
                     tag="a"
                     class="guess-item"
-                    :to="{name:'enterDetail',params:{id:item.enterId}}"
+                    :to="{name:'enterDetail',params:{id:item.id}}"
                     v-for="(item,i) in likeArr"
                     :key="i"
                   >

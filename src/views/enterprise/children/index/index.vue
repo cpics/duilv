@@ -108,7 +108,7 @@
                 class="guess-item"
                 v-for="(l,i) in likeArr"
                 :key="i"
-                :to="{name:'enterDetail',params:{id:l.enterId}}"
+                :to="{name:'enterDetail',params:{id:l.id}}"
               >
                 <div class="guess-face">
                   <img :src="l.icon">
@@ -171,7 +171,8 @@ export default {
             },
             list: [],
             likeArr: [],
-            news: []
+            news: [],
+            count:''
         };
     },
     methods: {
