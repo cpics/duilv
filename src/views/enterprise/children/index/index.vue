@@ -12,7 +12,7 @@
         <div class="m-structure-information">
           <div class="m-prise-content">
             <div class="e-prise-box" v-for="(item,index) in list" :key="index">
-              <a @click="gotoDetail(item.id)">
+              <a @click="gotoDetail(item.enterId)">
                 <div class="prise-hd">
                   <div class="prise-face">
                     <img :src="item.icon">
@@ -43,7 +43,7 @@
                       v-if="item.zkDir"
                       @click.stop.prevent="zkFunc(index)"
                     >
-                      首起
+                      收起
                       <i></i>
                     </div>
                   </div>
@@ -92,6 +92,7 @@
                 </div>
               </a>
             </div>
+            <div class="news-more" v-if="list.length<count" @click="more()">加载更多</div>
           </div>
         </div>
         <div class="m-structure-quick">
@@ -107,7 +108,7 @@
                 class="guess-item"
                 v-for="(l,i) in likeArr"
                 :key="i"
-                :to="{name:'enterDetail',params:{id:l.id}}"
+                :to="{name:'enterDetail',params:{id:l.enterId}}"
               >
                 <div class="guess-face">
                   <img :src="l.icon">
@@ -121,13 +122,13 @@
               <b>绿建要闻</b>
             </div>
             <div class="recommend-list">
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
-              <a href class="recommend-item">【要闻】为什么我们遇见一个畸形怪状的身体不。</a>
+              <router-link
+                v-for="(item,i) in news"
+                :key="i"
+                :to="{name:'newsDdetail',params:{id:item.id}}"
+                tag="a"
+                class="recommend-item"
+              >{{item.title}}</router-link>
             </div>
           </div>
           <div class="scan-code-quick">
@@ -155,7 +156,11 @@ import '../../../../html/components/comments/comments.scss';
 import '../../../../html/components/popCommon/popCommon.scss';
 import '../../../../html/components/dynamic/dynamic.scss';
 
-import { enterPriseIndex, getLikeEnter } from '../../../../api/index';
+import {
+    enterPriseIndex,
+    getLikeEnter,
+    getNewsIndex
+} from '../../../../api/index';
 export default {
     name: 'enterInex',
     data() {
@@ -165,10 +170,17 @@ export default {
                 size: 20
             },
             list: [],
-            likeArr: []
+            likeArr: [],
+            news: []
         };
     },
     methods: {
+        async getNewsIndex() {
+            let res = await getNewsIndex();
+            if (res.Type == 'Success') {
+                this.news = res.Data.news;
+            }
+        },
         async enterPriseIndex() {
             let res = await enterPriseIndex(this.params);
             if (res.Type == 'Success') {
@@ -190,14 +202,31 @@ export default {
         },
         gotoDetail(id) {
             this.$router.push({ name: 'enterDetail', params: { id: id } });
+        },
+        more() {
+            this.params.index++;
+            this.enterPriseIndex();
         }
     },
     created() {
         this.enterPriseIndex();
         this.getLikeEnter();
+        this.getNewsIndex();
     }
 };
 </script>
 
-<style>
+<style scoped>
+.news-more {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border: 1px solid blanchedalmond;
+  text-align: center;
+  border-radius: 10px;
+}
 </style>
+

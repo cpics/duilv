@@ -146,8 +146,8 @@ export const menuRouter = [{
     },
     component: () => import('./views/cloud/cloud.vue'),
 }
-]
-export default new Router({
+];
+let router = new Router({
     linkActiveClass: 'active',
     routes: [{
         path: '/',
@@ -158,3 +158,10 @@ export default new Router({
 
     ]
 });
+router.afterEach(route => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
+})
+
+export default router;

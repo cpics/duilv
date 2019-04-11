@@ -3,7 +3,7 @@
     <div class="group-left">
       <a href class="company-info">
         <div class="company-pic">
-          <img :src="info.entName" alt>
+          <img :src="info.entIcon" alt>
         </div>
         <div class="company-name">
           <h4>{{info.title}}</h4>

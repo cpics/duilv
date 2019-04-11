@@ -1,4 +1,5 @@
 module.exports = {
+    publicPath:'pc',
     pluginOptions: {
         'style-resources-loader': {
             preProcessor: 'scss',

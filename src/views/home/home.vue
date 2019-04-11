@@ -4,8 +4,8 @@
       <swiper :options="swiperOption" ref="mySwiper">
         <!-- slides -->
         <swiper-slide v-for="(item,index) in banner" :key="index">
-          <a class="oper-pic" href="javascript:;">
-            <img :src="item">
+          <a class="oper-pic" :href="item.outLink">
+            <img :src="item.picPath">
           </a>
         </swiper-slide>
 
