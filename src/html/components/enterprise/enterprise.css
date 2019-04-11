@@ -90,8 +90,7 @@
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    color: #999;
-    margin-bottom: 10px; }
+    color: #999; }
     .e-prise-box .view-more-txt:before {
       position: absolute;
       left: 0;
@@ -115,7 +114,8 @@
   .e-prise-box .prise-art-txt {
     color: #333;
     font-size: 16px;
-    line-height: 2; }
+    line-height: 2;
+    margin-bottom: 10px; }
   .e-prise-box .cp-column {
     margin-left: -20px; }
     .e-prise-box .cp-column.cp-swiper {
