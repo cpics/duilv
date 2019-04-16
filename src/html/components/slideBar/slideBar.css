@@ -2,7 +2,7 @@
 /*云智库固定菜单*/
 .m-slide-bar {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   left: 50%;
   width: 92px;
   margin-left: -585px; }
