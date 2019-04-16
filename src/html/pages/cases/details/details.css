@@ -204,11 +204,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  display: box;
   -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  box-orient: vertical; }
+  -webkit-box-orient: vertical; }
 .trace-d-list .trace-handle {
   color: #666;
   padding-top: 5px;

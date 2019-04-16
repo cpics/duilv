@@ -48,10 +48,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  display: box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  box-orient: vertical; }
+  -webkit-box-orient: vertical; }
 
 /*# sourceMappingURL=news.css.map */
