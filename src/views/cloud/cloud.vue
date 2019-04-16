@@ -1,5 +1,5 @@
 <template>
-  <div>云智库</div>
+  <router-view></router-view>
 </template>
 
 <script>
