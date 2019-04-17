@@ -30,10 +30,10 @@
                   <i class="n-small-icon edit-icon"></i>
                   {{info.forumName}}
                 </span>
-                <!-- <span class="un-col">
+                <span class="un-col">
                   <i class="n-small-icon time-icon"></i>
-                  3天前
-                </span>-->
+                  {{info.timeago}}
+                </span>
               </div>
             </div>
             <div class="news-article" v-html="info.content"></div>
@@ -115,7 +115,7 @@ import '../../../../html/components/comments/comments.scss';
 import '../../../../html/components/article/article.scss';
 
 import { getNewsDetail, addReplis, getReplies } from '../../../../api/index';
-
+import timeago from '../../../../pubilc/util/timeago';
 export default {
     name: 'newsDetail',
     data() {
@@ -130,6 +130,7 @@ export default {
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
+                res.Data.timeago = timeago(new Date(res.Data.createdTime));
                 this.info = res.Data;
             }
         },

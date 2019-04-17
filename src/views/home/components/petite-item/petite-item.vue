@@ -1,10 +1,10 @@
 <template>
-  <a href class="petite-item">
+  <router-link class="petite-item" tag="a" :to="{name:'cloudDetail',params:{id:info.id}}">
     <div class="petite-pic">
       <img :src="info.bgImg" alt>
     </div>
     <div class="petite-describe">{{info.title}}</div>
-  </a>
+  </router-link>
 </template>
 
 <script>

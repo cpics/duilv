@@ -19,7 +19,7 @@
       </div>
       <div class="mh-column-content">
         <div class="mh-left-main">
-          <div class="mt-main">
+          <div class="mt-main" v-if="rmal.length>0">
             <div class="common-tit-h1">
               <b>热门案例</b>
               <span>专业优秀的教程免费看</span>
@@ -177,6 +177,8 @@ import { home, domain } from '../../api/index';
 import fetch from '../../pubilc/fetch/fetch';
 
 import stars from '../../pubilc/util/stars';
+
+import timeago from '../../pubilc/util/timeago';
 export default {
     name: 'home',
     data() {
@@ -212,6 +214,9 @@ export default {
                 this.ljyw = res.Data.ljyw;
                 this.jxj = res.Data.jxj;
                 this.currentJxj = this.jxj[0];
+                // res.Data.qz.forEach(item => {
+                //     item.timeago = timeago(new Date(item.createdTime));
+                // });
                 this.qz = res.Data.qz;
                 this.cpkc = res.Data.cpkc;
                 this.hzqy = res.Data.hzqy;
@@ -225,7 +230,7 @@ export default {
                 });
             }
         },
-        changejxjItem(i){
+        changejxjItem(i) {
             this.currentJxj = this.jxj[i];
         }
     },

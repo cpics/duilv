@@ -46,10 +46,10 @@
                           <i class="n-small-icon edit-icon"></i>
                           {{item.forumName}}
                         </span>
-                        <!-- <span class="un-col">
+                        <span class="un-col">
                           <i class="n-small-icon time-icon"></i>
-                          3天前
-                        </span>-->
+                          {{item.timeago}}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -95,6 +95,7 @@ import '../../../../html/pages/news/news/news.scss';
 import '../../../../html/components/structure/structure.scss';
 
 import { getNewsIndex } from '../../../../api/index';
+import timeago from '../../../../pubilc/util/timeago';
 export default {
     name: 'news',
     data() {
@@ -108,6 +109,9 @@ export default {
         async getData() {
             let res = await getNewsIndex();
             if (res.Type == 'Success') {
+                res.Data.news.forEach(item => {
+                    item.timeago = timeago(new Date(item.createdTime));
+                });
                 this.picPath = res.Data.picPath;
                 this.news = res.Data.news;
                 this.oldNews = res.Data.oldnew;

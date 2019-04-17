@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <router-link tag="a" :to="{'name':'enterDetail',params:{id:info.id}}">
     <div class="group-left">
-      <a href class="company-info">
+      <a class="company-info">
         <div class="company-pic">
           <img :src="info.entIcon" alt>
         </div>
@@ -14,7 +14,7 @@
       <!--鼠标移上图片变大 + hover-scale-->
       <!--图片高度不固定 + h-auto-->
       <div class="cp-column">
-        <a class="cp-item" href v-for="(item,index) in info.images" :key="index">
+        <a class="cp-item" v-for="(item,index) in info.images" :key="index">
           <img :src="item" alt>
         </a>
       </div>
@@ -39,7 +39,7 @@
         </span>-->
       </div>
     </div>
-  </div>
+  </router-link >
 </template>
 
 <script>

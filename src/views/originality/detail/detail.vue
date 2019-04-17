@@ -12,8 +12,8 @@
               <div class="hd-name-row">{{header.title}}</div>
               <!--今日信息-->
               <div class="hd-name-row">
-                <span>今天</span>
-                <span>{{header.now}}</span>
+                <span>{{header.timeAgo}}</span>
+                <!-- <span>{{header.now}}</span> -->
                 <span>{{header.dayOfWeek}}</span>
                 <span>天气：{{weather}}</span>
               </div>
@@ -212,6 +212,7 @@ import '../../../html/components/page/page.css';
 import '../../../html/pages/originality/originality/originality.scss';
 
 import { getJxjDetail, getJxjLog, getWeather } from '../../../api/index.js';
+import timeago from '../../../pubilc/util/timeago';
 export default {
     name: 'originality',
     data() {
@@ -230,6 +231,7 @@ export default {
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
+                res.Data.timeAgo = timeago(new Date(res.Data.creatTime));
                 this.header = res.Data;
                 // console.log(this.header);
             }
