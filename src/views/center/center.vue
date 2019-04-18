@@ -9,7 +9,10 @@
     <div class="m-container m-width">
       <div class="center-tab mb-20">
         <dl class="center-tab-inner">
-          <dd :class="{'active':index==0}" @click="goto('centerIndex',0)">
+          <router-link tag="dd" :to="item" v-for="(item,i) in centerRouter[0].children" :key="i">
+            <span>{{item.meta.title}}</span>
+          </router-link>
+          <!-- <dd :class="{'active':index==0}" @click="goto('centerIndex',0)">
             <span>账号信息</span>
           </dd>
           <dd :class="{'active':index==1}" @click="goto('myRelease',1)">
@@ -26,7 +29,7 @@
           </dd>
           <dd :class="{'active':index==5}" @click="goto('feedback',5)">
             <span>意见反馈</span>
-          </dd>
+          </dd>-->
         </dl>
       </div>
       <div class="center-content">
@@ -49,23 +52,58 @@ import '../../html/pages/center/history/history.css';
 import '../../html/pages/center/complain/complain.css';
 import '../../html/pages/center/feedback/feedback.css';
 
-// import { centerRouter } from '../../router.js';
+import { centerRouter } from '../../router.js';
+import { getUserInfo, userCenter } from '../../api/index';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
     name: 'centerIndex',
     data() {
         return {
-            index: 0
-            // centerRouter: centerRouter
+            index: 0,
+            centerRouter: centerRouter
         };
     },
+    computed: {
+        ...mapState(['userInfo'])
+    },
     methods: {
+        ...mapMutations(['setUserInfo']),
         goto(name, index) {
             this.$router.push({ name: name });
             this.index = index;
+        },
+        //获取用户信息
+        async getUerInfo() {
+            console.log(this.userInfo);
+            let res = await getUserInfo({
+                token: this.userInfo.token
+            });
+
+            if (res.Type == 'Success') {
+                this.setUserInfo(res.Data.userInfo);
+                this.getUserCenter();
+            } else if (!res.Data.isLogin) {
+                this.$layer.alert(res.Content, index => {
+                    //TODO:删除本地用户信息;
+                    
+                    this.$layer.close(index);
+                    this.$router.push({ name: 'home' });
+                });
+            }
+        },
+        //获取个人中心数据
+        async getUserCenter() {
+            let res = await userCenter({
+                token: this.userInfo.token
+            });
         }
     },
-    created() {}
+    created() {
+        console.log(this.centerRouter);
+        this.getUerInfo();
+        // this.getUserCenter();
+    }
 };
 </script>
 

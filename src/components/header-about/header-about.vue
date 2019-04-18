@@ -3,7 +3,7 @@
     <a href>联系我们</a>
     <span class="is-login">
       <a href="javascript:;" v-if="!isLogined" @click="showLogin">登录</a>
-      <router-link tag="span" class="login-top-face" :to="{name:'centerIndex'}">
+      <router-link v-if="isLogined" tag="span" class="login-top-face" :to="{name:'centerIndex'}">
         <!-- <span v-if="isLogined" class="login-top-face"> -->
         <img :src="userInfo.headImage">
         <!-- </span> -->
