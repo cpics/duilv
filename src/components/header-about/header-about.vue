@@ -3,9 +3,11 @@
     <a href>联系我们</a>
     <span class="is-login">
       <a href="javascript:;" v-if="!isLogined" @click="showLogin">登录</a>
-      <span v-if="isLogined" class="login-top-face">
+      <router-link tag="span" class="login-top-face" :to="{name:'centerIndex'}">
+        <!-- <span v-if="isLogined" class="login-top-face"> -->
         <img :src="userInfo.headImage">
-      </span>
+        <!-- </span> -->
+      </router-link>
     </span>
   </div>
 </template>
@@ -37,7 +39,7 @@ export default {
                 this.setUserInfo(userInfo);
             });
         }
-    },
+    }
 };
 </script>
 

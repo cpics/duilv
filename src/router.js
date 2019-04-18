@@ -192,6 +192,73 @@ export const menuRouter = [
         ],
     },
 ];
+export const centerRouter = [
+    {
+        path: '/center',
+        name: 'center',
+        meta: {
+            title: '个人中心',
+        },
+        component: () => import('./views/center/center.vue'),
+        redirect: '/center/index',
+        children: [
+            {
+                path: 'index',
+                name: 'centerIndex',
+                meta: {
+                    title: '账号信息',
+                },
+                component: () =>
+                    import('./views/center/children/index/index.vue'),
+            },
+            {
+                path: 'myRelease',
+                name: 'myRelease',
+                meta: {
+                    title: '我的发布',
+                },
+                component: () =>
+                    import('./views/center/children/myRelease/myRelease.vue'),
+            },
+            {
+                path: 'myReply',
+                name: 'myReply',
+                meta: {
+                    title: '我的回复',
+                },
+                component: () =>
+                    import('./views/center/children/myReply/myReply.vue'),
+            },
+            {
+                path: 'myHistory',
+                name: 'myHistory',
+                meta: {
+                    title: '历史浏览',
+                },
+                component: () =>
+                    import('./views/center/children/myHistory/myHistory.vue'),
+            },
+            {
+                path: 'myComplaint',
+                name: 'myComplaint',
+                meta: {
+                    title: '投诉中心',
+                },
+                component: () =>
+                    import('./views/center/children/myComplaint/myComplaint.vue'),
+            },
+            {
+                path: 'feedback',
+                name: 'feedback',
+                meta: {
+                    title: '意见反馈',
+                },
+                component: () =>
+                    import('./views/center/children/feedback/feedback.vue'),
+            },
+        ],
+    },
+];
 let router = new Router({
     linkActiveClass: 'active',
     routes: [
@@ -201,6 +268,7 @@ let router = new Router({
             redirect: 'home',
         },
         ...menuRouter,
+        ...centerRouter,
     ],
 });
 router.afterEach(route => {

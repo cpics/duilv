@@ -89,7 +89,8 @@ export default {
             mint: 60,
             form: {
                 phone: '',
-                verifyCode: ''
+                verifyCode: '',
+                token: ''
             },
             loginRule: {
                 phone: [
@@ -135,6 +136,7 @@ export default {
                         verifyToken: ''
                     });
                     if (res.Type == 'Success') {
+                        this.form.token = res.Data.token;
                         this.$layer.alert(res.Content);
                         this.verifyDir = false;
                         this.mint = 60;
