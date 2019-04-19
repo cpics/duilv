@@ -409,10 +409,71 @@ button {
       }
     }
     &.bg-grey {
-      background: #999;
+      background: #ccc;
       &:hover {
-        background: rgba(153, 153, 153, .8);
+        background: rgba(204, 204, 204, .8);
       }
+    }
+  }
+}
+
+.select-box {
+  position: relative;
+  width: 100px;
+  display: inline-block;
+  margin-right: 10px;
+  .select-btn {
+    position: relative;
+    width: 78px;
+    height: 32px;
+    line-height: 32px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+    border: 1px solid #e8e7e7;
+    display: inline-block;
+    cursor: pointer;
+    i {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 32px;
+      display: inline-block;
+      background: url("images/triangle.png") no-repeat left center;
+    }
+  }
+  .opts {
+    position: absolute;
+    left: 0;
+    top: 33px;
+    z-index: 4;
+    width: 98px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding: 5px 0;
+    background: #fff;
+    border: 1px solid #e8e7e7;
+    display: none;
+    a {
+      display: block;
+      line-height: 28px;
+      color: #666;
+      font-size: 14px;
+      padding: 0 10px;
+      text-align: center;
+      &:hover {
+        color: #47c091;
+        text-decoration: none;
+        background: #f6f6f6;
+      }
+    }
+  }
+  &.active {
+    .opts {
+      display: block;
     }
   }
 }

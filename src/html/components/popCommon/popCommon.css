@@ -128,8 +128,8 @@
       .bomb-bottom-btn .bo-pop-btn.bo-btn-border:hover {
         background: #f2f2f2; }
     .bomb-bottom-btn .bo-pop-btn.bg-grey {
-      background: #999; }
+      background: #ccc; }
       .bomb-bottom-btn .bo-pop-btn.bg-grey:hover {
-        background: rgba(153, 153, 153, 0.8); }
+        background: rgba(204, 204, 204, 0.8); }
 
 /*# sourceMappingURL=popCommon.css.map */
