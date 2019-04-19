@@ -150,8 +150,8 @@ a:visited {
   padding: 20px 0;
 }
 
-.qe-title{
-  h2{
+.qe-title {
+  h2 {
     font-size: 20px;
   }
 }
@@ -376,6 +376,43 @@ button {
     }
     .swiper-button-prev {
       background: url("images/prev.png") no-repeat center center
+    }
+  }
+}
+
+.cm-form-btn {
+  text-align: center;
+  padding: 25px 0 40px;
+  border-top: 1px solid #e8e7e7;
+  .cu-form-btn {
+    min-width: 120px;
+    padding: 0 8px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 20px;
+    cursor: pointer;
+    display: inline-block;
+    background: #4bde9e;
+    &:hover {
+      background: rgba(75, 555, 158, .8);
+    }
+    &.cu-btn-border {
+      color: #999;
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid #e8e7e7;
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+    &.bg-grey {
+      background: #999;
+      &:hover {
+        background: rgba(153, 153, 153, .8);
+      }
     }
   }
 }

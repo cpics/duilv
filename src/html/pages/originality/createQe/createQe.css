@@ -189,22 +189,6 @@
     .qe-type-choose .qe-type-col .type-score-icon {
       background: url("images/score.png") no-repeat center center; }
 
-.create-qe-button {
-  text-align: center;
-  padding: 25px 20px 20px; }
-  .create-qe-button .qe-btn {
-    width: 260px;
-    height: 60px;
-    line-height: 60px;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    background: #4cde9f;
-    cursor: pointer;
-    display: inline-block; }
-    .create-qe-button .qe-btn:hover {
-      background: #7ae0b2; }
-
 /*评分弹框*/
 .give-score-form {
   width: 420px;
