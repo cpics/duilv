@@ -21,7 +21,7 @@
     overflow: hidden;
   } @else {
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
@@ -39,6 +39,18 @@
       .comment-title {
         color: #252525;
         font-weight: bold;
+      }
+    }
+  }
+  .structure-border {
+    padding: 40px;
+    border: 1px solid #e8e7e7;
+    margin-bottom: 20px;
+    .cp-column {
+      &.pic-300 {
+        .cp-item {
+          width: 266px;
+        }
       }
     }
   }
@@ -420,5 +432,42 @@
     display: inline-block;
     border: 1px solid #ff5601;
     border-radius: 10px;
+  }
+}
+
+/*最近发布报告*/
+.nearly-report {
+  .nearly-row {
+    color: #999;
+    font-size: 12px;
+    padding: 6px 0;
+    &:first-child {
+      padding-top: 0;
+    }
+    a {
+      position: relative;
+      color: #333;
+      font-size: 14px;
+      display: block;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:before {
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        width: 2px;
+        height: 2px;
+        content: "";
+        margin-top: -1px;
+        border-radius: 50%;
+        background: #333;
+      }
+      &:hover {
+        color: #4bde9e;
+        text-decoration: underline;
+      }
+    }
   }
 }

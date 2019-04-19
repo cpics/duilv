@@ -1,0 +1,296 @@
+@charset "UTF-8";
+.create-form-pic, .qe-type-choose, .give-score-form .gs-row, .upload-photo-count {
+  zoom: 1; }
+  .create-form-pic:after, .qe-type-choose:after, .give-score-form .gs-row:after, .upload-photo-count:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*创建qe*/
+.create-qe-tit {
+  color: #333;
+  font-size: 20px; }
+
+.create-qe-row {
+  width: 860px;
+  padding: 30px 0;
+  border-top: 1px solid #e8e7e7; }
+  .create-qe-row:first-child {
+    border-top: 0; }
+
+.create-qe-input {
+  width: 470px;
+  height: 40px; }
+  .create-qe-input input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 14px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    border: 0;
+    background: #f2f2f2; }
+    .create-qe-input input:focus {
+      box-shadow: 0 1px 2px 0 rgba(177, 177, 177, 0.1); }
+  .create-qe-input ::-webkit-input-placeholder {
+    font-size: 14px;
+    color: #999; }
+  .create-qe-input :-moz-placeholder {
+    font-size: 14px;
+    color: #999; }
+  .create-qe-input ::-moz-placeholder {
+    font-size: 14px;
+    color: #999; }
+  .create-qe-input :-ms-input-placeholder {
+    font-size: 14px;
+    color: #999; }
+
+.create-qe-textarea {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  border: 1px solid #e8e7e7; }
+  .create-qe-textarea ::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #999; }
+  .create-qe-textarea :-moz-placeholder {
+    font-size: 16px;
+    color: #999; }
+  .create-qe-textarea ::-moz-placeholder {
+    font-size: 16px;
+    color: #999; }
+  .create-qe-textarea :-ms-input-placeholder {
+    font-size: 16px;
+    color: #999; }
+  .create-qe-textarea textarea {
+    width: 100%;
+    height: 160px;
+    resize: none;
+    border: 0;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    background: transparent;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
+    overflow-y: auto; }
+
+.create-form-pic {
+  padding: 20px 0;
+  margin-left: -20px; }
+  .create-form-pic .pic-qe-item {
+    position: relative;
+    width: 200px;
+    float: left;
+    margin: 0 0 20px 20px; }
+    .create-form-pic .pic-qe-item img {
+      width: 100%;
+      height: 180px;
+      display: block; }
+    .create-form-pic .pic-qe-item .upload-btn {
+      width: 100%;
+      height: 180px;
+      outline: none;
+      cursor: pointer;
+      font-size: 0;
+      border: 0;
+      background: url("images/pic1.png") no-repeat center center; }
+    .create-form-pic .pic-qe-item input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      cursor: pointer; }
+    .create-form-pic .pic-qe-item .edit-pic-tit {
+      padding: 20px 0 0;
+      font-size: 14px;
+      text-align: center;
+      box-sizing: border-box;
+      display: block; }
+      .create-form-pic .pic-qe-item .edit-pic-tit input {
+        width: 100%;
+        height: 32px;
+        line-height: 32px;
+        display: block;
+        font-size: 16px;
+        padding: 0 10px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #d2d2d2; }
+        .create-form-pic .pic-qe-item .edit-pic-tit input:focus {
+          border: 1px solid #7ae0b2; }
+      .create-form-pic .pic-qe-item .edit-pic-tit ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .create-form-pic .pic-qe-item .edit-pic-tit :-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .create-form-pic .pic-qe-item .edit-pic-tit ::-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .create-form-pic .pic-qe-item .edit-pic-tit :-ms-input-placeholder {
+        font-size: 16px;
+        color: #ccc; }
+  .create-form-pic .qe-del-pic {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("images/del.png") no-repeat center center; }
+
+.create-qe-type {
+  padding: 20px 0; }
+
+.qe-type-choose {
+  padding: 20px 0;
+  margin-left: -15px; }
+  .qe-type-choose .qe-type-col {
+    width: 276px;
+    height: 72px;
+    display: block;
+    float: left;
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    padding: 46px 0;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background: #f2f2f2; }
+    .qe-type-choose .qe-type-col:hover {
+      opacity: .9; }
+    .qe-type-choose .qe-type-col p {
+      line-height: 24px;
+      padding-top: 6px; }
+    .qe-type-choose .qe-type-col .type-txt-icon,
+    .qe-type-choose .qe-type-col .type-pic-icon,
+    .qe-type-choose .qe-type-col .type-photo-icon,
+    .qe-type-choose .qe-type-col .type-score-icon {
+      width: 50px;
+      height: 42px;
+      margin: 0 auto; }
+    .qe-type-choose .qe-type-col .type-txt-icon {
+      background: url("images/text.png") no-repeat center center; }
+    .qe-type-choose .qe-type-col .type-pic-icon {
+      background: url("images/picture.png") no-repeat center center; }
+    .qe-type-choose .qe-type-col .type-photo-icon {
+      background: url("images/photo.png") no-repeat center center; }
+    .qe-type-choose .qe-type-col .type-score-icon {
+      background: url("images/score.png") no-repeat center center; }
+
+.create-qe-button {
+  text-align: center;
+  padding: 25px 20px 20px; }
+  .create-qe-button .qe-btn {
+    width: 260px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    background: #4cde9f;
+    cursor: pointer;
+    display: inline-block; }
+    .create-qe-button .qe-btn:hover {
+      background: #7ae0b2; }
+
+/*评分弹框*/
+.give-score-form {
+  width: 420px;
+  margin: 0 auto;
+  padding: 15px 0;
+  max-height: 500px;
+  overflow-y: auto; }
+  .give-score-form .gs-row {
+    padding: 15px 0; }
+    .give-score-form .gs-row ::-webkit-input-placeholder {
+      font-size: 16px;
+      color: #ccc; }
+    .give-score-form .gs-row :-moz-placeholder {
+      font-size: 16px;
+      color: #ccc; }
+    .give-score-form .gs-row ::-moz-placeholder {
+      font-size: 16px;
+      color: #ccc; }
+    .give-score-form .gs-row :-ms-input-placeholder {
+      font-size: 16px;
+      color: #ccc; }
+  .give-score-form .gs-label {
+    width: 180px;
+    float: left;
+    color: #333;
+    font-size: 16px;
+    line-height: 40px; }
+  .give-score-form .gs-input {
+    width: 200px;
+    height: 40px;
+    float: left; }
+    .give-score-form .gs-input input {
+      width: 100%;
+      height: 38px;
+      line-height: 38px;
+      display: block;
+      font-size: 16px;
+      padding: 0 20px;
+      text-align: center;
+      box-sizing: border-box;
+      border: 1px solid #d2d2d2; }
+      .give-score-form .gs-input input:focus {
+        border: 1px solid #7ae0b2; }
+
+.upload-photo-list {
+  padding-bottom: 20px; }
+  .upload-photo-list .create-form-pic {
+    height: 300px;
+    overflow-y: auto; }
+    .upload-photo-list .create-form-pic .pic-qe-item {
+      width: 172px; }
+      .upload-photo-list .create-form-pic .pic-qe-item img,
+      .upload-photo-list .create-form-pic .pic-qe-item .upload-btn {
+        height: 155px; }
+  .upload-photo-list .create-qe-textarea {
+    font-size: 14px;
+    padding: 10px; }
+    .upload-photo-list .create-qe-textarea textarea {
+      height: 80px;
+      font-size: 14px; }
+
+.upload-photo-count {
+  padding-bottom: 20px; }
+  .upload-photo-count .up-count-num {
+    float: left;
+    line-height: 32px; }
+  .upload-photo-count .up-batch-btn {
+    float: right; }
+    .upload-photo-count .up-batch-btn .upload-btn {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      outline: none;
+      cursor: pointer;
+      color: #666;
+      border: 1px solid #e8e7e7;
+      background: #f2f2f2; }
+    .upload-photo-count .up-batch-btn input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 102px;
+      height: 32px;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      cursor: pointer; }
+
+/*# sourceMappingURL=createQe.css.map */

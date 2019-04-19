@@ -107,10 +107,10 @@
   padding: 25px 0 0;
   border-top: 1px solid #e8e7e7; }
   .bomb-bottom-btn .bo-pop-btn {
-    min-width: 96px;
-    padding: 0 5px;
-    height: 30px;
-    line-height: 30px;
+    min-width: 100px;
+    padding: 0 8px;
+    height: 36px;
+    line-height: 36px;
     color: #fff;
     font-size: 16px;
     text-align: center;
@@ -120,6 +120,13 @@
     background: #4bde9e; }
     .bomb-bottom-btn .bo-pop-btn:hover {
       background: rgba(75, 255, 158, 0.8); }
+    .bomb-bottom-btn .bo-pop-btn.bo-btn-border {
+      color: #999;
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid #e8e7e7; }
+      .bomb-bottom-btn .bo-pop-btn.bo-btn-border:hover {
+        background: #f2f2f2; }
     .bomb-bottom-btn .bo-pop-btn.bg-grey {
       background: #999; }
       .bomb-bottom-btn .bo-pop-btn.bg-grey:hover {

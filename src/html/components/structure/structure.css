@@ -18,6 +18,12 @@
     .m-structure-content .m-structure-information .comment-box .comment-title {
       color: #252525;
       font-weight: bold; }
+  .m-structure-content .structure-border {
+    padding: 40px;
+    border: 1px solid #e8e7e7;
+    margin-bottom: 20px; }
+    .m-structure-content .structure-border .cp-column.pic-300 .cp-item {
+      width: 266px; }
   .m-structure-content .m-structure-quick {
     width: 188px;
     float: right; }
@@ -328,5 +334,35 @@
   display: inline-block;
   border: 1px solid #ff5601;
   border-radius: 10px; }
+
+/*最近发布报告*/
+.nearly-report .nearly-row {
+  color: #999;
+  font-size: 12px;
+  padding: 6px 0; }
+  .nearly-report .nearly-row:first-child {
+    padding-top: 0; }
+  .nearly-report .nearly-row a {
+    position: relative;
+    color: #333;
+    font-size: 14px;
+    display: block;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .nearly-report .nearly-row a:before {
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      width: 2px;
+      height: 2px;
+      content: "";
+      margin-top: -1px;
+      border-radius: 50%;
+      background: #333; }
+    .nearly-report .nearly-row a:hover {
+      color: #4bde9e;
+      text-decoration: underline; }
 
 /*# sourceMappingURL=structure.css.map */
