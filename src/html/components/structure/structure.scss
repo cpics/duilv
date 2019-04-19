@@ -60,6 +60,23 @@
   }
   .common-tit-h2 {
     margin-bottom: 10px;
+    &.has-line {
+      border-bottom: 1px solid #e8e7e7;
+    }
+  }
+  .weekly-icon {
+    position: relative;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+    background: #47c091;
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
   }
   .structure-box {
     margin-bottom: 12px;
@@ -467,6 +484,42 @@
       &:hover {
         color: #4bde9e;
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+/*往期周报*/
+.weekly-item {
+  padding: 5px 0;
+  @extend %clearfix;
+  .weekly-face {
+    width: 30px;
+    height: 30px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .weekly-info {
+    margin-left: 40px;
+    font-size: 12px;
+    color: #999;
+    .weekly-name {
+      display: block;
+      color: #333;
+      font-size: 14px;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover {
+        color: #47c091;
       }
     }
   }

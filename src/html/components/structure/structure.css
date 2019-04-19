@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.m-structure-content, .m-structure-content .u-news-handle, .m-structure-content .guess-like .guess-item, .clock-list .clock-hd, .lik-list {
+.m-structure-content, .m-structure-content .u-news-handle, .m-structure-content .guess-like .guess-item, .clock-list .clock-hd, .lik-list, .weekly-item {
   zoom: 1; }
-  .m-structure-content:after, .m-structure-content .u-news-handle:after, .m-structure-content .guess-like .guess-item:after, .clock-list .clock-hd:after, .lik-list:after {
+  .m-structure-content:after, .m-structure-content .u-news-handle:after, .m-structure-content .guess-like .guess-item:after, .clock-list .clock-hd:after, .lik-list:after, .weekly-item:after {
     clear: both;
     content: '';
     display: block;
@@ -29,6 +29,21 @@
     float: right; }
   .m-structure-content .common-tit-h2 {
     margin-bottom: 10px; }
+    .m-structure-content .common-tit-h2.has-line {
+      border-bottom: 1px solid #e8e7e7; }
+  .m-structure-content .weekly-icon {
+    position: relative;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+    background: #47c091;
+    float: left;
+    display: inline-block;
+    margin-right: 10px; }
   .m-structure-content .structure-box {
     margin-bottom: 12px;
     padding: 5px 12px 12px 20px;
@@ -364,5 +379,34 @@
     .nearly-report .nearly-row a:hover {
       color: #4bde9e;
       text-decoration: underline; }
+
+/*往期周报*/
+.weekly-item {
+  padding: 5px 0; }
+  .weekly-item .weekly-face {
+    width: 30px;
+    height: 30px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 5px; }
+    .weekly-item .weekly-face img {
+      width: 100%;
+      height: 100%;
+      display: block; }
+  .weekly-item .weekly-info {
+    margin-left: 40px;
+    font-size: 12px;
+    color: #999; }
+    .weekly-item .weekly-info .weekly-name {
+      display: block;
+      color: #333;
+      font-size: 14px;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .weekly-item .weekly-info .weekly-name:hover {
+        color: #47c091; }
 
 /*# sourceMappingURL=structure.css.map */
