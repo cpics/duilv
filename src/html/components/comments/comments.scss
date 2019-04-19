@@ -85,6 +85,9 @@
       text-decoration: underline;
     }
   }
+  .c-dark-blue{
+    color: #3f5a93;
+  }
   .comment-msg {
     color: #333;
     font-size: 16px;
@@ -113,6 +116,10 @@
   }
 }
 
+.reply-comment-row{
+  position: relative;
+  min-height: 20px;
+}
 .same-row-msg {
   color: #333;
   word-break: break-all;
