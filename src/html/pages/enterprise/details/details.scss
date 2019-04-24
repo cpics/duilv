@@ -31,10 +31,9 @@
     padding: 8px 0;
   }
   .info-msg-col {
-    width: 50%;
+    width: 440px;
     float: left;
     padding-left: 110px;
-    box-sizing: border-box;
   }
   .i-company-name {
     display: inline-block;
@@ -81,10 +80,35 @@
     font-size: 12px;
   }
   .i-member-list {
+    position: relative;
     h2 {
       color: #333;
       font-size: 20px;
       padding-bottom: 12px;
+    }
+    .member-edit-btn {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      z-index: 2;
+      min-width: 50px;
+      height: 26px;
+      line-height: 26px;
+      color: #996999;
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 15px;
+      cursor: pointer;
+      border-radius: 14px;
+      border: 1px solid #996999;
+      &:hover {
+        background: #f8ecf8;
+      }
+    }
+    ul {
+      max-height: 270px;
+      overflow-y: auto;
     }
     li {
       padding: 10px 0;
@@ -123,6 +147,77 @@
       overflow: hidden;
       text-overflow: ellipsis;
       margin-left: 20px;
+    }
+  }
+  .member-opt-input {
+    padding: 15px 0;
+    input {
+      width: 170px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+      padding: 0 25px;
+      display: inline-block;
+      vertical-align: top;
+      border: 1px solid #e8e7e7;
+    }
+    ::-webkit-input-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+    :-moz-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+    ::-moz-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+    :-ms-input-placeholder {
+      font-size: 16px;
+      color: #ccc
+    }
+    .mem-nike-name{
+      color: #333;
+      font-size: 16px;
+      line-height: 38px;
+      display: inline-block;
+      padding-left: 30px;
+      vertical-align: top;
+    }
+  }
+  .member-opt-bottom {
+    padding: 15px 0 20px;
+    .member-add-btn {
+      text-align: left;
+    }
+    .mem-add-btn {
+      color: #996999;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .member-finish-btn {
+      width: 365px;
+      text-align: right;
+    }
+    .mem-finish-btn {
+      width: 100px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      display: inline-block;
+      background: #996999;
+      cursor: pointer;
+      &:hover {
+        background: #8a5b8a;
+      }
     }
   }
 }
