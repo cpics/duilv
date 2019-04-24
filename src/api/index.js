@@ -154,6 +154,14 @@ export const enterPriseIndex = params =>
 export const enterCurrentIndex = params =>
     fetch.post(`${domain}/Api/EnterPrise/EnterIndex/`, params);
 
+//企业简介
+export const enterDesc = params =>
+    fetch.post(`${domain}/Api/EnterPrise/EnterDesc/`, params);
+
+//获取投诉列表
+export const getEnterComplaint = params =>
+    fetch.post(`${domain}/Api/EnterPrise/GetEnterComplaint/`, params);
+
 //企业详情
 export const enterDetail = params =>
     fetch.post(`${domain}/Api/EnterPrise/EnterDetail/`, params);
@@ -161,6 +169,11 @@ export const enterDetail = params =>
 //发飙评论
 export const enterAddReplis = params =>
     fetch.post(`${domain}/Api/EnterPrise/AddReplis/`, params);
+
+//课程培训
+export const enterCourseIndex = params =>
+    fetch.post(`${domain}/Api/Course/Index/`, params);
+
 
 //-------------云智库------
 //云智库首页

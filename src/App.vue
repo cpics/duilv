@@ -48,7 +48,7 @@ export default {
             if (res.Type == 'Success') {
                 this.footData = res.Data;
             }
-            console.log(res);
+            // console.log(res);
         }
     },
     created() {

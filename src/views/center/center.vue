@@ -2,9 +2,9 @@
   <div class="g-container center-bg">
     <div class="center-head">
       <div class="center-face">
-        <img src alt>
+        <img :src="userInfo.headImage">
       </div>
-      <div class="center-name">苏州海的大姐有限公司</div>
+      <div class="center-name">{{userInfo.nickName}}</div>
     </div>
     <div class="m-container m-width">
       <div class="center-tab mb-20">
@@ -68,25 +68,26 @@ export default {
         ...mapState(['userInfo'])
     },
     methods: {
-        ...mapMutations(['setUserInfo']),
+        ...mapMutations(['setUserInfo', 'delUserInfo']),
         goto(name, index) {
             this.$router.push({ name: name });
             this.index = index;
         },
         //获取用户信息
         async getUerInfo() {
-            console.log(this.userInfo);
+            // console.log(this.userInfo);
             let res = await getUserInfo({
                 token: this.userInfo.token
             });
 
             if (res.Type == 'Success') {
                 this.setUserInfo(res.Data.userInfo);
+                // console.log(this.userInfo);
                 this.getUserCenter();
             } else if (!res.Data.isLogin) {
                 this.$layer.alert(res.Content, index => {
                     //TODO:删除本地用户信息;
-                    
+                    this.delUserInfo();
                     this.$layer.close(index);
                     this.$router.push({ name: 'home' });
                 });
@@ -100,7 +101,7 @@ export default {
         }
     },
     created() {
-        console.log(this.centerRouter);
+        // console.log(this.centerRouter);
         this.getUerInfo();
         // this.getUserCenter();
     }

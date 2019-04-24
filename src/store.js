@@ -7,12 +7,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         userInfo: null,
-        a: 1
+        a: 1,
     },
     mutations: {
         add(state) {
             state.a++;
-            console.log(state.a);
+            // console.log(state.a);
         },
         setUserInfo(state, userInfo) {
             if (userInfo) {
@@ -20,14 +20,18 @@ export default new Vuex.Store({
                 cookies.set('userInfo', userInfo, {
                     path: '/',
                     // domain: document.domain,
-                    expires: 7
+                    expires: 7,
                 });
-                console.log(state.userInfo);
+                // console.log(state.userInfo);
             } else if (cookies.get('userInfo')) {
                 state.userInfo = cookies.get('userInfo');
-                console.log(state.userInfo);
+                // console.log(state.userInfo);
             }
-        }
+        },
+        delUserInfo(state) {
+            cookies.remove('userInfo');
+            state.userInfo = null;
+        },
     },
-    actions: {}
+    actions: {},
 });
