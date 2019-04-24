@@ -111,13 +111,27 @@
       overflow-y: auto;
     }
     li {
+      position: relative;
       padding: 10px 0;
       line-height: 46px;
       @extend %clearfix;
+      .member-opt-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        padding: 10px 0;
+        background: #fff;
+        display: none;
+        &.show {
+          display: block;
+        }
+      }
     }
     .i-member-handle {
       float: right;
-      width: 160px;
+      width: 155px;
       em {
         color: #996999;
         padding: 0 2px;
@@ -151,41 +165,69 @@
   }
   .member-opt-input {
     padding: 15px 0;
+    @extend %clearfix;
     input {
-      width: 170px;
+      width: 140px;
       height: 36px;
       line-height: 36px;
       font-size: 16px;
       color: #333;
       text-align: left;
-      padding: 0 25px;
+      padding: 0 10px;
       display: inline-block;
       vertical-align: top;
       border: 1px solid #e8e7e7;
+      float: left;
     }
     ::-webkit-input-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc;
     }
     :-moz-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc;
     }
     ::-moz-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc;
     }
     :-ms-input-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc
     }
-    .mem-nike-name{
+    .mem-nike-name {
       color: #333;
       font-size: 16px;
       line-height: 38px;
       display: inline-block;
-      padding-left: 30px;
+      width: 100px;
+      padding-left: 15px;
       vertical-align: top;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      float: left;
+    }
+    .i-member-handle {
+      padding-top: 4px;
+      .i-msg-btn {
+        color: #fff;
+        font-size: 16px;
+        min-width: 50px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        padding: 0 10px;
+        text-align: center;
+        margin-left: 10px;
+        background: #996999;
+        border-radius: 15px;
+        text-decoration: none;
+        vertical-align: top;
+        &:hover {
+          background: #8a5b8a;
+        }
+      }
     }
   }
   .member-opt-bottom {

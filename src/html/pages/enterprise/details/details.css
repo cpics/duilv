@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.info-msg-manage, .info-msg-manage .i-member-list li {
+.info-msg-manage, .info-msg-manage .i-member-list li, .info-msg-manage .member-opt-input {
   zoom: 1; }
-  .info-msg-manage:after, .info-msg-manage .i-member-list li:after {
+  .info-msg-manage:after, .info-msg-manage .i-member-list li:after, .info-msg-manage .member-opt-input:after {
     clear: both;
     content: '';
     display: block;
@@ -93,11 +93,23 @@
       max-height: 270px;
       overflow-y: auto; }
     .info-msg-manage .i-member-list li {
+      position: relative;
       padding: 10px 0;
       line-height: 46px; }
+      .info-msg-manage .i-member-list li .member-opt-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        padding: 10px 0;
+        background: #fff;
+        display: none; }
+        .info-msg-manage .i-member-list li .member-opt-input.show {
+          display: block; }
     .info-msg-manage .i-member-list .i-member-handle {
       float: right;
-      width: 160px; }
+      width: 155px; }
       .info-msg-manage .i-member-list .i-member-handle em {
         color: #996999;
         padding: 0 2px; }
@@ -126,35 +138,59 @@
   .info-msg-manage .member-opt-input {
     padding: 15px 0; }
     .info-msg-manage .member-opt-input input {
-      width: 170px;
+      width: 140px;
       height: 36px;
       line-height: 36px;
       font-size: 16px;
       color: #333;
       text-align: left;
-      padding: 0 25px;
+      padding: 0 10px;
       display: inline-block;
       vertical-align: top;
-      border: 1px solid #e8e7e7; }
+      border: 1px solid #e8e7e7;
+      float: left; }
     .info-msg-manage .member-opt-input ::-webkit-input-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc; }
     .info-msg-manage .member-opt-input :-moz-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc; }
     .info-msg-manage .member-opt-input ::-moz-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc; }
     .info-msg-manage .member-opt-input :-ms-input-placeholder {
-      font-size: 16px;
+      font-size: 14px;
       color: #ccc; }
     .info-msg-manage .member-opt-input .mem-nike-name {
       color: #333;
       font-size: 16px;
       line-height: 38px;
       display: inline-block;
-      padding-left: 30px;
-      vertical-align: top; }
+      width: 100px;
+      padding-left: 15px;
+      vertical-align: top;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      float: left; }
+    .info-msg-manage .member-opt-input .i-member-handle {
+      padding-top: 4px; }
+      .info-msg-manage .member-opt-input .i-member-handle .i-msg-btn {
+        color: #fff;
+        font-size: 16px;
+        min-width: 50px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        padding: 0 10px;
+        text-align: center;
+        margin-left: 10px;
+        background: #996999;
+        border-radius: 15px;
+        text-decoration: none;
+        vertical-align: top; }
+        .info-msg-manage .member-opt-input .i-member-handle .i-msg-btn:hover {
+          background: #8a5b8a; }
   .info-msg-manage .member-opt-bottom {
     padding: 15px 0 20px; }
     .info-msg-manage .member-opt-bottom .member-add-btn {
