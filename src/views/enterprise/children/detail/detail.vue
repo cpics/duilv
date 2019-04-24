@@ -57,7 +57,7 @@
           <!--企业简介 显示 +show-->
           <div class="u-normal-main show" v-if="menu[0]">
             <div class="news-article">
-              <p v-html="detail.desc"></p>
+              <p v-html="desc"></p>
             </div>
             <!--编辑按钮-->
             <div class="fix-editor-btn"></div>
@@ -81,7 +81,8 @@
                       <b>{{item.title}}</b>
                       <span class="art-tips">{{item.Type}}</span>
                     </div>
-                    <div class="view-more-prise" :class="{'active':!item.zkDir}">>
+                    <div class="view-more-prise" :class="{'active':!item.zkDir}">
+                      >
                       <div class="prise-art-txt" v-html="item.content"></div>
                       <div
                         class="view-more-txt unfold"
@@ -259,20 +260,20 @@
                 <div class="info-msg-row">
                   <span class="i-label">公司LOGO：</span>
                   <span class="i-company-face">
-                    <img src alt>
+                    <img :src="detail.picPath">
                   </span>
                   <span class="i-msg-btn">更换</span>
                 </div>
                 <div class="info-msg-row">
                   <span class="i-label">公司名称：</span>
-                  <span class="i-company-name">海的大姐有限责任公司</span>
+                  <span class="i-company-name">{{detail.title}}</span>
                   <!--<input class="i-company-name" type="text" placeholder=""-->
                   <!--value="海的大姐有限责任公司"/>-->
                   <span class="i-msg-btn">重命名</span>
                 </div>
                 <div class="info-msg-row">
                   <span class="i-label">项目地址：</span>
-                  <span class="i-company-address">苏州乐嘉汇商务大广场很大</span>
+                  <span class="i-company-address">{{detail.proAddr}}</span>
                 </div>
                 <div class="i-msg-tipper">（用于项目签到显示，请在手机定位修改以及添加）</div>
               </div>
@@ -280,44 +281,11 @@
                 <div class="i-member-list">
                   <h2>负责人：</h2>
                   <ul>
-                    <li>
+                    <li v-for="(item,i) in detail.proUsers" :key="i">
                       <div class="i-member-face">
-                        <img src alt>
+                        <img :src="item.headImage">
                       </div>
-                      <div class="i-member-name">张三</div>
-                      <div class="i-member-handle">
-                        <span class="i-msg-btn">删除</span>
-                        <em>|</em>
-                        <span class="i-msg-btn">更换</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="i-member-face">
-                        <img src alt>
-                      </div>
-                      <div class="i-member-name">张三</div>
-                      <div class="i-member-handle">
-                        <span class="i-msg-btn">删除</span>
-                        <em>|</em>
-                        <span class="i-msg-btn">更换</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="i-member-face">
-                        <img src alt>
-                      </div>
-                      <div class="i-member-name">张三</div>
-                      <div class="i-member-handle">
-                        <span class="i-msg-btn">删除</span>
-                        <em>|</em>
-                        <span class="i-msg-btn">更换</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="i-member-face">
-                        <img src alt>
-                      </div>
-                      <div class="i-member-name">张三</div>
+                      <div class="i-member-name">{{item.nickName}}</div>
                       <div class="i-member-handle">
                         <span class="i-msg-btn">删除</span>
                         <em>|</em>
@@ -522,7 +490,10 @@ import '../../../../html/components/course/course.scss';
 import {
     enterDetail,
     enterCurrentIndex,
-    getLikeEnter
+    enterDesc,
+    getLikeEnter,
+    getEnterComplaint,
+    enterCourseIndex,
 } from '../../../../api/index';
 export default {
     name: 'enterDetail',
@@ -533,6 +504,9 @@ export default {
             list: [],
             count: 0,
             likeArr: [],
+            desc: '',
+            Complaints:[],
+            courseList:[],
             params: {
                 index: 0,
                 size: 10
@@ -544,6 +518,7 @@ export default {
             this.menu = [0, 0, 0, 0, 0];
             this.menu[i] = 1;
         },
+        //企业详情~信息管理
         async enterDetail() {
             let res = await enterDetail({
                 id: this.$route.params.id
@@ -552,6 +527,7 @@ export default {
                 this.detail = res.Data;
             }
         },
+        //企业动态
         async enterCurrentIndex() {
             let res = await enterCurrentIndex({
                 id: this.$route.params.id,
@@ -563,6 +539,31 @@ export default {
                 });
                 this.list = this.list.concat(res.Data.data);
                 this.count = res.Data.count;
+            }
+        },
+        //企业简介
+        async enterDesc() {
+            let res = await enterDesc({
+                id: this.$route.params.id
+            });
+            if (res.Type == 'Success') {
+                this.desc = res.Data.descPc;
+            }
+        },
+        //获取投诉列表
+        async getEnterComplaint() {
+            let res = await getEnterComplaint({
+                id: this.$route.params.id
+            });
+            if (res.Type == 'Success') {
+                this.Complaints = res.Data;
+            }
+        },
+        //获取培训课程
+        async enterCourseIndex(){
+            let res = await enterCourseIndex();
+            if(res.Type == 'Success'){
+                this.courseList = res.Data;
             }
         },
         zkFunc(i) {
@@ -581,8 +582,11 @@ export default {
         },
         init() {
             this.enterDetail();
+            this.enterDesc();
             this.enterCurrentIndex();
             this.getLikeEnter();
+            this.getEnterComplaint();
+            this.enterCourseIndex();
         }
     },
     created() {
