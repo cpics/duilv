@@ -173,24 +173,10 @@
       white-space: nowrap;
       overflow: hidden;
       float: left; }
-    .info-msg-manage .member-opt-input .i-member-handle {
-      padding-top: 4px; }
-      .info-msg-manage .member-opt-input .i-member-handle .i-msg-btn {
-        color: #fff;
-        font-size: 16px;
-        min-width: 50px;
-        height: 30px;
-        line-height: 30px;
-        display: inline-block;
-        padding: 0 10px;
-        text-align: center;
-        margin-left: 10px;
-        background: #996999;
-        border-radius: 15px;
-        text-decoration: none;
-        vertical-align: top; }
-        .info-msg-manage .member-opt-input .i-member-handle .i-msg-btn:hover {
-          background: #8a5b8a; }
+    .info-msg-manage .member-opt-input .i-member-handle .i-msg-btn,
+    .info-msg-manage .member-opt-input .i-member-handle em {
+      line-height: 38px;
+      vertical-align: top; }
   .info-msg-manage .member-opt-bottom {
     padding: 15px 0 20px; }
     .info-msg-manage .member-opt-bottom .member-add-btn {

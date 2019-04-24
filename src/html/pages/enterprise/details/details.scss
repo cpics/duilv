@@ -209,24 +209,10 @@
       float: left;
     }
     .i-member-handle {
-      padding-top: 4px;
-      .i-msg-btn {
-        color: #fff;
-        font-size: 16px;
-        min-width: 50px;
-        height: 30px;
-        line-height: 30px;
-        display: inline-block;
-        padding: 0 10px;
-        text-align: center;
-        margin-left: 10px;
-        background: #996999;
-        border-radius: 15px;
-        text-decoration: none;
+      .i-msg-btn,
+      em{
+        line-height: 38px;
         vertical-align: top;
-        &:hover {
-          background: #8a5b8a;
-        }
       }
     }
   }
