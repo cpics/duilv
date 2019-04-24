@@ -262,14 +262,29 @@
                   <span class="i-company-face">
                     <img :src="detail.picPath">
                   </span>
-                  <span class="i-msg-btn">更换</span>
+                  <span class="i-msg-btn" @click="changeImg()">更换</span>
+                  <input
+                    style="display:none;"
+                    type="file"
+                    id="imgFile"
+                    name="file"
+                    @change="uploadImg()"
+                    ref="imgFileInput"
+                    accept="image/png, image/jpeg, image/gif, image/jpg"
+                  >
                 </div>
                 <div class="info-msg-row">
                   <span class="i-label">公司名称：</span>
-                  <span class="i-company-name">{{detail.title}}</span>
-                  <!--<input class="i-company-name" type="text" placeholder=""-->
-                  <!--value="海的大姐有限责任公司"/>-->
-                  <span class="i-msg-btn">重命名</span>
+                  <span v-show="showRetitle" class="i-company-name">{{detail.title}}</span>
+                  <input
+                    v-show="!showRetitle"
+                    class="i-company-name"
+                    type="text"
+                    placeholder
+                    v-model="reTitle"
+                  >
+                  <span class="i-msg-btn" v-show="showRetitle" @click="showReFunc">重命名</span>
+                  <span class="i-msg-btn" v-show="!showRetitle" @click="saveTitle">保存</span>
                 </div>
                 <div class="info-msg-row">
                   <span class="i-label">项目地址：</span>
@@ -280,19 +295,59 @@
               <div class="info-msg-col">
                 <div class="i-member-list">
                   <h2>负责人：</h2>
-                  <ul>
-                    <li v-for="(item,i) in detail.proUsers" :key="i">
-                      <div class="i-member-face">
-                        <img :src="item.headImage">
-                      </div>
-                      <div class="i-member-name">{{item.nickName}}</div>
+                  <div
+                    class="member-edit-btn"
+                    @click="showEditPersonFunc()"
+                    v-show="!editPersonDir"
+                  >编辑+</div>
+                  <li v-for="(item,i) in detail.proUsers" :key="i">
+                    <div class="i-member-face">
+                      <img :src="item.headImage">
+                    </div>
+                    <div class="i-member-name">{{item.nickName}}</div>
+                    <div class="i-member-handle" v-show="editPersonDir">
+                      <span class="i-msg-btn" @click="delPerson(i)">删除</span>
+                      <em>|</em>
+                      <span class="i-msg-btn" @click="showEidt(i,true)">更换</span>
+                    </div>
+                    <div class="member-opt-input show" v-if="item.showEidt">
+                      <input
+                        type="text"
+                        v-model="item.searchPhone"
+                        v-on:input="getUserByPhone(2,item.searchPhone,item)"
+                        placeholder="请输入更换人的手机号"
+                      >
+                      <span class="mem-nike-name">{{item.searchName}}</span>
                       <div class="i-member-handle">
-                        <span class="i-msg-btn">删除</span>
+                        <span class="i-msg-btn" @click="editPersonFunc(i,item.editPerson)">确定</span>
                         <em>|</em>
-                        <span class="i-msg-btn">更换</span>
+                        <span class="i-msg-btn" @click="showEidt(i,false)">取消</span>
                       </div>
-                    </li>
-                  </ul>
+                    </div>
+                  </li>
+
+                  <div class="member-opt-input" v-show="addPersonDir">
+                    <input
+                      type="text"
+                      v-model="addPersonPhone"
+                      v-on:input="getUserByPhone(1,addPersonPhone)"
+                      placeholder="请输入添加人的手机号"
+                    >
+                    <span class="mem-nike-name">{{addPersonName}}</span>
+                    <div class="i-member-handle">
+                      <span class="i-msg-btn" @click="addPersonFunc()">保存</span>
+                      <em>|</em>
+                      <span class="i-msg-btn" @click="showAddPersonFunc()">取消</span>
+                    </div>
+                  </div>
+                  <div class="member-opt-bottom" v-show="editPersonDir">
+                    <div class="member-add-btn" v-show="!addPersonDir">
+                      <span class="mem-add-btn" @click="showAddPersonFunc()">+添加更多人员</span>
+                    </div>
+                    <div class="member-finish-btn">
+                      <span class="mem-finish-btn" @click="saveAllPerson()">完成</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -494,6 +549,11 @@ import {
     getLikeEnter,
     getEnterComplaint,
     enterCourseIndex,
+    updateEnterName,
+    uploadImage,
+    updateEnterIcon,
+    getUserByPhone,
+    updateEnterUsers
 } from '../../../../api/index';
 export default {
     name: 'enterDetail',
@@ -505,8 +565,15 @@ export default {
             count: 0,
             likeArr: [],
             desc: '',
-            Complaints:[],
-            courseList:[],
+            Complaints: [],
+            courseList: [],
+            showRetitle: true,
+            editPersonDir: false,
+            addPersonDir: false,
+            addPersonPhone: '',
+            addPersonName: '',
+            addPerson: {},
+            reTitle: '',
             params: {
                 index: 0,
                 size: 10
@@ -514,6 +581,181 @@ export default {
         };
     },
     methods: {
+        showReFunc() {
+            this.showRetitle = !this.showRetitle;
+        },
+        //更新公司LOGO
+        changeImg() {
+            document.querySelector('#imgFile').click();
+        },
+        //显示更换的修改input
+        showEidt(i, dir) {
+            this.detail.proUsers[i].showEidt = dir;
+        },
+        clearAddPerson() {
+            this.addPerson = {};
+            this.addPersonPhone = '';
+            this.addPersonName = '';
+        },
+        clearEditPerson(type, i) {
+            //type 1代表全部，2代表单个
+            if (type == 1) {
+                this.detail.proUsers.forEach(item => {
+                    item.searchName = '';
+                    item.searchPhone = '';
+                    item.editPerson = {};
+                });
+            } else {
+                this.detail.proUsers[i].searchName = '';
+                this.detail.searchPhone = '';
+                this.detail.editPerson = {};
+            }
+        },
+        //删除人员
+        delPerson(i){
+            this.detail.proUsers.splice(i,1);
+        },
+        //添加按钮操作
+        addPersonFunc() {
+            this.detail.proUsers.push(this.addPerson);
+            this.clearAddPerson();
+        },
+        //更换人员按钮操作
+        editPersonFunc(i, person) {
+            this.detail.proUsers.splice(i, 1, person);
+            this.showEidt(i, false);
+            this.clearEditPerson(2,i);
+        },
+        //保存所有人员操作
+        async saveAllPerson() {
+            let arr = [];
+            this.detail.proUsers.forEach(item => {
+                arr.push(item.id);
+            });
+            // arr = [1,2,3];
+
+            let res = await updateEnterUsers({
+                id: this.$route.params.id,
+                userIds: arr.join(',')
+            });
+            if (res.Type == 'Success') {
+                this.$layer.alert(res.Content);
+                this.clearAddPerson();
+                this.clearEditPerson(1);
+            } else {
+                this.$layer.alert(res.Content);
+            }
+        },
+        //通过手机号获取用户信息
+        async getUserByPhone(type, phone, item) {
+            console.log(1);
+            //1是添加，2是修改Type
+            if (phone == '') {
+                if (type == 1) {
+                    this.addPersonName = '这里显示昵称';
+                } else {
+                    item.searchName = '这里显示昵称';
+                }
+                return false;
+            }
+            if (!/^1[34578]\d{9}$/.test(phone)) {
+                if (phone.length == 11) {
+                    if (type == 1) {
+                        this.addPersonName = '号码不正确';
+                    } else {
+                        item.searchName = '号码不正确';
+                    }
+                }
+                return false;
+            }
+            let repeatDir = false;
+            this.detail.proUsers.forEach(item => {
+                if (item.phone == phone) {
+                    repeatDir = true;
+                }
+            });
+            if (repeatDir) {
+                if (type == 1) {
+                    this.addPersonName = '已重复';
+                } else {
+                    item.searchName = '已重复';
+                }
+                return false;
+            }
+
+            if (type == 1) {
+                this.addPersonName = '正在查询';
+            } else {
+                item.searchName = '正在查询';
+            }
+
+            let res = await getUserByPhone({
+                phone: phone
+            });
+            if (res.Type == 'Success') {
+                let person = {
+                    id: res.Data.Id,
+                    nickName: res.Data.NickName,
+                    headImage: res.Data.HeadImage,
+                    phone: phone
+                };
+                if (type == 1) {
+                    this.addPerson = person;
+                    this.addPersonName = person.nickName;
+                } else {
+                    item.editPerson = person;
+                    item.searchName = person.nickName;
+                }
+            } else {
+                if (type == 1) {
+                    this.addPersonName = '查无此人';
+                } else {
+                    item.searchName = '查无此人';
+                }
+            }
+        },
+        //更新公司LOGO
+        async uploadImg() {
+            let file = this.$refs.imgFileInput.files[0];
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            let that = this;
+            reader.onload = async function(e) {
+                let res = await uploadImage({
+                    file: file
+                });
+                if (res.Type == 'Success') {
+                    let editRes = updateEnterIcon({
+                        id: that.$route.params.id,
+                        picPath: res.Data
+                    });
+                    if (editRes.Type == 'Success') {
+                        that.detail.picPath = res.Data;
+                    }
+                }
+            };
+        },
+
+        showEditPersonFunc() {
+            this.editPersonDir = !this.editPersonDir;
+        },
+        showAddPersonFunc() {
+            this.addPersonDir = !this.addPersonDir;
+        },
+
+        //保存修改企业名称
+        async saveTitle() {
+            let res = await updateEnterName({
+                id: this.$route.params.id,
+                title: this.reTitle
+            });
+            if (res.Type == 'Success') {
+                this.$layer.alert('修改成功');
+                this.detail.title = this.reTitle;
+                this.showReFunc();
+            }
+        },
+
         showDetail(i) {
             this.menu = [0, 0, 0, 0, 0];
             this.menu[i] = 1;
@@ -524,7 +766,14 @@ export default {
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
+                res.Data.proUsers.forEach(item => {
+                    item.showEidt = false;
+                    item.searchPhone = '';
+                    item.searchName = '这里显示昵称';
+                    item.editPerson = {};
+                });
                 this.detail = res.Data;
+                this.reTitle = this.detail.title;
             }
         },
         //企业动态
@@ -560,9 +809,9 @@ export default {
             }
         },
         //获取培训课程
-        async enterCourseIndex(){
+        async enterCourseIndex() {
             let res = await enterCourseIndex();
-            if(res.Type == 'Success'){
+            if (res.Type == 'Success') {
                 this.courseList = res.Data;
             }
         },

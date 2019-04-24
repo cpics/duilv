@@ -53,7 +53,7 @@ export const deleteTz = params =>
 //获取手机验证码
 export const getVerifyForSms = params =>
     fetch.post(`${domain}/Api/Common/GetSmsVerifyCode/`, params);
-    // fetch.post(`${domain}/Api/Common/GetTestSmsCode/`, params);
+// fetch.post(`${domain}/Api/Common/GetTestSmsCode/`, params);
 
 //注册登录
 export const login = params => fetch.post(`${domain}/Api/User/Login/`, params);
@@ -115,7 +115,7 @@ export const jxjAddReplis = params =>
 
 //上传图片
 export const uploadImage = params =>
-    fetch.post(`${domain}/Api/Common/UploadImage/`, params);
+    fetch.post(`${domain}/Api/Common/UploadImage/`, params, { isUpload: true });
 
 //上传图片2
 export const uploadImageByBlob = params =>
@@ -170,10 +170,26 @@ export const enterDetail = params =>
 export const enterAddReplis = params =>
     fetch.post(`${domain}/Api/EnterPrise/AddReplis/`, params);
 
+//修改企业LOGO
+export const updateEnterName = params =>
+    fetch.post(`${domain}/Api/EnterPrise/UpdateEnterName/`, params);
+
+//修改企业名称
+export const updateEnterIcon = params =>
+    fetch.post(`${domain}/Api/EnterPrise/UpdateEnterIcon/`, params);
+
+//通过手机号获取用户信息
+export const getUserByPhone = params =>
+    fetch.post(`${domain}/Api/EnterPrise/GetUserByPhone/`, params);
+
+//通过手机号获取用户信息
+export const updateEnterUsers = params =>
+    fetch.post(`${domain}/Api/EnterPrise/UpdateEnterUsers/`, params);
+
+
 //课程培训
 export const enterCourseIndex = params =>
     fetch.post(`${domain}/Api/Course/Index/`, params);
-
 
 //-------------云智库------
 //云智库首页

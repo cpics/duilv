@@ -11,6 +11,12 @@ let fetch = axios.create({
 
 fetch.interceptors.request.use(
     config => {
+        if (config.isUpload) {
+            let form = new FormData();
+            form.append('file', config.data.file);
+            config.headers.post['Content-Type'] = 'multipart/form-data';
+            config.data = form;
+        }
         return config;
     },
     error => {
