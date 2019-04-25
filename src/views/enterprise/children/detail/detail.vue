@@ -60,7 +60,7 @@
               <p v-html="desc"></p>
             </div>
             <!--编辑按钮-->
-            <div class="fix-editor-btn"></div>
+            <div class="fix-editor-btn" @click="gotoEdit()"></div>
           </div>
           <!--企业动态 显示 +show-->
           <div class="u-normal-main m-structure-content show" v-if="menu[1]==1">
@@ -583,6 +583,10 @@ export default {
     methods: {
         showReFunc() {
             this.showRetitle = !this.showRetitle;
+        },
+        //去编辑
+        gotoEdit(){
+            this.$router.push({name:'enterEdit',params:{id:this.$route.params.id}});
         },
         //更新公司LOGO
         changeImg() {

@@ -53,7 +53,7 @@ export const deleteTz = params =>
 //获取手机验证码
 export const getVerifyForSms = params =>
     fetch.post(`${domain}/Api/Common/GetSmsVerifyCode/`, params);
-// fetch.post(`${domain}/Api/Common/GetTestSmsCode/`, params);
+    // fetch.post(`${domain}/Api/Common/GetTestSmsCode/`, params);
 
 //注册登录
 export const login = params => fetch.post(`${domain}/Api/User/Login/`, params);
