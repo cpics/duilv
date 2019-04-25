@@ -106,7 +106,7 @@ export const menuRouter = [
                     import('./views/enterprise/children/detail/detail.vue'),
             },
             {
-                path: 'edit',
+                path: 'edit/:id',
                 name: 'enterEdit',
                 meta: {
                     title: '行业圈-编辑',

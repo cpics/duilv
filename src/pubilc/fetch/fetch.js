@@ -1,4 +1,6 @@
 import axios from 'axios';
+import cookies from '../cookies/cookies'
+import { userInfo } from 'os';
 
 let fetch = axios.create({
     timeout: 100 * 1000,
@@ -11,6 +13,16 @@ let fetch = axios.create({
 
 fetch.interceptors.request.use(
     config => {
+        if(cookies.get('userInfo') && cookies.get('userInfo').token){
+            config.data.token = cookies.get('userInfo').token;
+        }
+       
+        if (config.isUpload) {
+            let form = new FormData();
+            form.append('file', config.data.file);
+            config.headers.post['Content-Type'] = 'multipart/form-data';
+            config.data = form;
+        }
         return config;
     },
     error => {
