@@ -178,6 +178,10 @@ export const updateEnterName = params =>
 export const updateEnterIcon = params =>
     fetch.post(`${domain}/Api/EnterPrise/UpdateEnterIcon/`, params);
 
+//修改企业简介
+export const updateEnterDesc = params =>
+    fetch.post(`${domain}/Api/EnterPrise/UpdateEnterDesc/`, params);
+
 //通过手机号获取用户信息
 export const getUserByPhone = params =>
     fetch.post(`${domain}/Api/EnterPrise/GetUserByPhone/`, params);

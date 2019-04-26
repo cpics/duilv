@@ -585,8 +585,11 @@ export default {
             this.showRetitle = !this.showRetitle;
         },
         //去编辑
-        gotoEdit(){
-            this.$router.push({name:'enterEdit',params:{id:this.$route.params.id}});
+        gotoEdit() {
+            this.$router.push({
+                name: 'enterEdit',
+                params: { id: this.$route.params.id }
+            });
         },
         //更新公司LOGO
         changeImg() {
@@ -616,8 +619,8 @@ export default {
             }
         },
         //删除人员
-        delPerson(i){
-            this.detail.proUsers.splice(i,1);
+        delPerson(i) {
+            this.detail.proUsers.splice(i, 1);
         },
         //添加按钮操作
         addPersonFunc() {
@@ -628,7 +631,7 @@ export default {
         editPersonFunc(i, person) {
             this.detail.proUsers.splice(i, 1, person);
             this.showEidt(i, false);
-            this.clearEditPerson(2,i);
+            this.clearEditPerson(2, i);
         },
         //保存所有人员操作
         async saveAllPerson() {
@@ -636,11 +639,11 @@ export default {
             this.detail.proUsers.forEach(item => {
                 arr.push(item.id);
             });
-            // arr = [1,2,3];
+            // arr = [76,15287,15391];
 
             let res = await updateEnterUsers({
                 id: this.$route.params.id,
-                userIds: arr.join(',')
+                userIds: arr
             });
             if (res.Type == 'Success') {
                 this.$layer.alert(res.Content);

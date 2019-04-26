@@ -50,6 +50,10 @@
           <div class="u-editor-tabs">
             <span class="edit-tab-col" :class="{'active':type == 1}" @click="show(1)">电脑页面</span>
             <span class="edit-tab-col" :class="{'active':type == 2}" @click="show(2)">手机页面</span>
+            <div class="edit-save-button">
+              <span class="edit-save-btn" @click="updateEnterDesc()">保存</span>
+              <!--<span class="edit-save-btn bg-grey">取消</span>-->
+            </div>
           </div>
           <div class="u-editor-box">
             <!--电脑页面 显示 +show-->
@@ -76,19 +80,21 @@
               </div>-->
             </div>
             <!--手机页面 显示 +show-->
-            <div class="editor-inner" :class="{'show':type == 1}">
-              <div class="choose-phone-list">
-                <ul>
-                  <li>
-                    <div class="phone-pic">
-                      <img src alt>
-                    </div>
-                    <div class="phone-choose-btn">
-                      <span>手机经典页面</span>
-                      <i class="is-open-icon active"></i>
-                    </div>
-                  </li>
-                </ul>
+            <div class="editor-inner" :class="{'show':type == 2}">
+              <div class="editor-phone-info">
+                <div class="e-phone-textarea">
+                  <textarea v-model="mobileContent" placeholder="正文内容......"></textarea>
+                </div>
+                <div class="e-phone-pic">
+                  <div class="pic-phone-item">
+                    <button class="upload-btn">添加图片</button>
+                    <input @change="uploadImg()" type="file" name="file" ref="imgInput">
+                  </div>
+                  <div class="pic-phone-item" v-for="(item,i) in mobileImgs" :key="i">
+                    <img :src="item">
+                    <i class="phone-del-pic"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -112,7 +118,13 @@ import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 
-import { enterDetail, enterDesc } from '../../../../api/index';
+import {
+    enterDetail,
+    enterDesc,
+    updateEnterDesc,
+    uploadImage
+} from '../../../../api/index';
+import { type } from 'os';
 export default {
     name: 'edit',
     components: {
@@ -123,8 +135,9 @@ export default {
             detail: {},
             type: 1, //1代表电脑 2代表手机
             editorOption: {},
-            PCcontent: '<div>112313123132</div>',
-            mobileContent: ''
+            PCcontent: '',
+            mobileContent: '',
+            mobileImgs: []
         };
     },
     methods: {
@@ -143,10 +156,75 @@ export default {
             });
             if (res.Type == 'Success') {
                 this.PCcontent = res.Data.descPc ? res.Data.descPc : '';
-                this.mobileContent = res.Data.descMobile
-                    ? res.Data.descMobile
-                    : '';
+                this.getMobileInfo(res.Data.descMobile);
             }
+        },
+        getMobileInfo(info) {
+            if (!info || info == '') {
+                this.mobileContent = '';
+            } else {
+                // let m = res.Data.descMobile;
+                let arr = info.split('<div>');
+                if (arr.length == 1) {
+                    this.mobileContent = '';
+                } else {
+                    this.mobileContent = arr[0];
+
+                    let imgStringArr = arr[1].split('</div>')[0].split('" />');
+                    let imgUrlArr = [];
+                    imgStringArr.forEach(item => {
+                        if (item.length > 0) {
+                            imgUrlArr.push(item.split('<img src="')[1]);
+                        }
+                    });
+                    this.mobileImgs = imgUrlArr;
+                    // console.log(imgUrlArr);
+                }
+            }
+        },
+        //修改企业简介
+        async updateEnterDesc() {
+            let params = {
+                id: this.$route.params.id,
+                type: this.type,
+                desc: this.type == 1 ? this.PCcontent : ''
+            };
+            if (this.type == 2) {
+                let content = this.mobileContent;
+                let imgStr = this.splImgs();
+                content += '<div>' + imgStr + '</div>';
+                params.desc = content;
+                console.log(content);
+            }
+
+            // return;
+            let res = await updateEnterDesc(params);
+            if (res.Type == 'Success') {
+                this.$layer.alert(res.Content);
+            }
+        },
+        splImgs() {
+            // console.log(this.mobileImgs);
+            let str = '';
+            this.mobileImgs.forEach(item => {
+                str += '<img src="' + item + '" />';
+            });
+            // console.log(str.toString());
+            return str.toString();
+        },
+        async uploadImg() {
+            let file = this.$refs.imgInput.files[0];
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            let that = this;
+            reader.onload = async function(e) {
+                let res = await uploadImage({
+                    file: file
+                });
+                if (res.Type == 'Success') {
+                    that.mobileImgs.push(res.Data);
+                }
+            };
         },
         show(type) {
             this.type = type;
@@ -160,7 +238,11 @@ export default {
     },
     created() {
         this.enterDetail();
-        // this.enterDesc();
+        // this.updateEnterDesc();
+        this.enterDesc();
+        // this.getMobileInfo(
+        //     '么么么哒么么么哒么么么哒么么么哒<div><img src="/Upload/Image/3b6fd444e97d42b791a97cf6680385c3.png" /><img src="/Upload/Image/f20aff3743714fcea79ca6197a568014.png" /></div>'
+        // );
     }
 };
 </script>
