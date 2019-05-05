@@ -1,18 +1,21 @@
 <template>
-  <div class="g-container center-bg">
-    <div class="center-head">
-      <div class="center-face">
-        <img :src="userInfo.headImage">
-      </div>
-      <div class="center-name">{{userInfo.nickName}}</div>
-    </div>
-    <div class="m-container m-width">
-      <div class="center-tab mb-20">
-        <dl class="center-tab-inner">
-          <router-link tag="dd" :to="item" v-for="(item,i) in centerRouter[0].children" :key="i">
-            <span>{{item.meta.title}}</span>
-          </router-link>
-          <!-- <dd :class="{'active':index==0}" @click="goto('centerIndex',0)">
+    <div class="g-container center-bg">
+        <div class="center-head">
+            <div class="center-face">
+                <img :src="userInfo.headImage">
+            </div>
+            <div class="center-name">{{userInfo.nickName}}</div>
+        </div>
+        <div class="m-container m-width">
+            <div class="center-tab mb-20">
+                <dl class="center-tab-inner">
+                    <router-link tag="dd"
+                                 :to="item"
+                                 v-for="(item,i) in centerRouter[0].children"
+                                 :key="i">
+                        <span>{{item.meta.title}}</span>
+                    </router-link>
+                    <!-- <dd :class="{'active':index==0}" @click="goto('centerIndex',0)">
             <span>账号信息</span>
           </dd>
           <dd :class="{'active':index==1}" @click="goto('myRelease',1)">
@@ -30,13 +33,13 @@
           <dd :class="{'active':index==5}" @click="goto('feedback',5)">
             <span>意见反馈</span>
           </dd>-->
-        </dl>
-      </div>
-      <div class="center-content">
-        <router-view></router-view>
-      </div>
+                </dl>
+            </div>
+            <div class="center-content">
+                <router-view></router-view>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
