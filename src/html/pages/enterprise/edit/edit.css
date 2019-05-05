@@ -63,6 +63,8 @@
     display: block; }
   .editor-inner .quill-editor {
     height: 610px; }
+  .editor-inner .ql-container.ql-snow {
+    height: 520px; }
 
 .choose-phone-list li {
   width: 320px;
