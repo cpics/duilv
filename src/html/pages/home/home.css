@@ -106,7 +106,13 @@
       background: rgba(0, 0, 0, 0.7); }
   .case-column .case-tit {
     font-size: 20px;
-    padding-top: 20px; }
+    padding-top: 20px;
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }
   .case-column .case-describe {
     font-size: 16px;
     padding-top: 10px;

@@ -157,6 +157,8 @@
   .case-tit {
     font-size: 20px;
     padding-top: 20px;
+    height: 60px;
+    @include ellipsis(2);
   }
   .case-describe {
     font-size: 16px;
