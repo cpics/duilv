@@ -26,7 +26,6 @@
       margin-left: 0; }
   .grn-list .grn-item-inner {
     padding: 11px;
-    height: 498px;
     background: #f0f0f0; }
     .grn-list .grn-item-inner:hover {
       background: #fff; }
@@ -46,7 +45,7 @@
     .grn-list .grn-hd h2 {
       font-size: 20px;
       font-weight: bold;
-      max-height: 60px;
+      height: 60px;
       margin-bottom: 4px;
       overflow: hidden;
       text-overflow: ellipsis;
