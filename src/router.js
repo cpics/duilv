@@ -65,7 +65,17 @@ export const menuRouter = [
                     title: '匠心记-详情',
                 },
                 component: () =>
-                    import('./views/originality/detail/detail.vue'),
+                    import('./views/originality/children/detail/detail.vue'),
+            },
+            {
+                path: 'postDetail/:id',
+                name: 'jxjPostDetail',
+                meta: {
+                    title: '匠心记-帖子详情',
+                },
+                component: () =>
+                    import('./views/originality/children/postDetail/postDetail.vue')
+                    // import('./views/originality/children/postDetail/postDetail.vue'),
             },
             {
                 path: 'imgDetail/:id',
@@ -74,7 +84,7 @@ export const menuRouter = [
                     title: '匠心记-图文详情',
                 },
                 component: () =>
-                    import('./views/originality/detail/detail.vue'),
+                    import('./views/originality/children/detail/detail.vue'),
             },
         ],
     },

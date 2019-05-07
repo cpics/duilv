@@ -1,147 +1,147 @@
 <template>
-  <div class="g-container">
-    <!--图片banner-->
-    <div class="m-norm-banner m-slider-banner">
-      <swiper :options="swiperOption" ref="mySwiper">
-        <!-- slides -->
-        <swiper-slide v-for="(item,index) in detail.banner" :key="index">
-          <a class="oper-pic" href="javascript:;">
-            <img :src="item">
-          </a>
-        </swiper-slide>
+    <div class="g-container">
+        <!--图片banner-->
+        <div class="m-norm-banner m-slider-banner">
+            <swiper :options="swiperOption" ref="mySwiper">
+                <!-- slides -->
+                <swiper-slide v-for="(item,index) in detail.banner" :key="index">
+                    <a class="oper-pic" href="javascript:;">
+                        <img :src="item">
+                    </a>
+                </swiper-slide>
 
-        <!-- Optional controls -->
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
-    </div>
-    <div class="m-container m-width">
-      <!--面包屑-->
-      <div class="crumbs-box">
-        <a class="c-crumbs" href>首页</a>
-        <span class="c-sep">&gt;</span>
-        <a class="c-crumbs" href>案例库</a>
-        <span class="c-sep">&gt;</span>
-        <span class="c-current">嘉兴世合小镇</span>
-      </div>
-      <!--案例详情-->
-      <div class="g-case-detail">
-        <div class="case-detail-cols">
-          <div class="common-title">{{detail.title}}</div>
-          <div class="case-detail-txt">{{detail.desc}}</div>
+                <!-- Optional controls -->
+                <div class="swiper-pagination" slot="pagination"></div>
+            </swiper>
         </div>
-        <div class="case-detail-cols">
-          <div class="case-common-title">
-            <i class="case-title-icon project"></i>
-            工程概况
-          </div>
-          <div class="case-detail-txt">
-            <p>工程质量：{{detail.quality}}</p>
-            <p>工程规模：{{detail.scale}}</p>
-            <p>工程周期：{{detail.cycle}}</p>
-          </div>
-        </div>
-        <!--联合质保书-->
-        <div class="case-detail-cols" v-if="detail.warrantys && detail.warrantys.length>0">
-          <div class="case-common-title">
-            <i class="case-title-icon quality"></i>
-            联合质保书
-          </div>
-          <div class="quality-pic-list">
-            <div class="qua-pic-item" v-for="(item,index) in detail.warrantys" :key="index">
-              <img :src="item" alt>
+        <div class="m-container m-width">
+            <!--面包屑-->
+            <div class="crumbs-box">
+                <a class="c-crumbs" href>首页</a>
+                <span class="c-sep">&gt;</span>
+                <a class="c-crumbs" href>案例库</a>
+                <span class="c-sep">&gt;</span>
+                <span class="c-current">嘉兴世合小镇</span>
             </div>
-          </div>
-        </div>
-        <!--产品名称-->
-        <div class="case-detail-cols">
-          <div class="case-common-title">
-            <i class="case-title-icon product"></i>
-            产品名称
-          </div>
-          <div class="case-pro-list">
-            <ul>
-              <li v-for="(item,index) in detail.product" :key="index">
-                <div class="case-pro-pic">
-                  <img :src="item.picPath" alt>
+            <!--案例详情-->
+            <div class="g-case-detail">
+                <div class="case-detail-cols">
+                    <div class="common-title">{{detail.title}}</div>
+                    <div class="case-detail-txt">{{detail.desc}}</div>
                 </div>
-                <div class="case-pro-info">
-                  <h2>{{item.title}}</h2>
-                  <div class="case-pro-txt">{{item.desc}}</div>
+                <div class="case-detail-cols">
+                    <div class="case-common-title">
+                        <i class="case-title-icon project"></i>
+                        工程概况
+                    </div>
+                    <div class="case-detail-txt">
+                        <p>工程质量：{{detail.quality}}</p>
+                        <p>工程规模：{{detail.scale}}</p>
+                        <p>工程周期：{{detail.cycle}}</p>
+                    </div>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!--项目回顾-->
-        <div class="case-detail-cols">
-          <div class="case-common-title">
-            <i class="case-title-icon review"></i>
-            项目回顾
-            <!-- <a
+                <!--联合质保书-->
+                <div class="case-detail-cols" v-if="detail.warrantys && detail.warrantys.length>0">
+                    <div class="case-common-title">
+                        <i class="case-title-icon quality"></i>
+                        联合质保书
+                    </div>
+                    <div class="quality-pic-list">
+                        <div class="qua-pic-item" v-for="(item,index) in detail.warrantys" :key="index">
+                            <img :src="item" alt>
+                        </div>
+                    </div>
+                </div>
+                <!--产品名称-->
+                <div class="case-detail-cols">
+                    <div class="case-common-title">
+                        <i class="case-title-icon product"></i>
+                        产品名称
+                    </div>
+                    <div class="case-pro-list">
+                        <ul>
+                            <li v-for="(item,index) in detail.product" :key="index">
+                                <div class="case-pro-pic">
+                                    <img :src="item.picPath" alt>
+                                </div>
+                                <div class="case-pro-info">
+                                    <h2>{{item.title}}</h2>
+                                    <div class="case-pro-txt">{{item.desc}}</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--项目回顾-->
+                <div class="case-detail-cols">
+                    <div class="case-common-title">
+                        <i class="case-title-icon review"></i>
+                        项目回顾
+                        <!-- <a
               class="more-case-btn"
               href="../../../../html/pages/cases/trace/trace.html"
             >查看全部&gt;</a>-->
-            <router-link
-              tag="a"
-              class="more-case-btn"
-              :to="{name:'caseTrace',params:{id:detail.id}}"
-            >查看全部&gt;</router-link>
-          </div>
-          <div class="review-content">
-            <div class="review-box-items" v-for="(item,index) in detail.xmhg" :key="index">
-              <h2 class="review-tit">{{item.title}}</h2>
-              <div class="review-txt">{{item.content}}</div>
-              <div class="cp-column hover-scale">
-                <div class="cp-item" v-for="(pic,i) in item.picPath" :key="i">
-                  <img :src="pic" alt>
+                        <router-link
+                            tag="a"
+                            class="more-case-btn"
+                            :to="{name:'caseTrace',params:{id:detail.id}}"
+                        >查看全部&gt;</router-link>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-box-items" v-for="(item,index) in detail.xmhg" :key="index">
+                            <h2 class="review-tit">{{item.title}}</h2>
+                            <div class="review-txt">{{item.content}}</div>
+                            <div class="cp-column hover-scale">
+                                <div class="cp-item" v-for="(pic,i) in item.picPath" :key="i">
+                                    <img :src="pic" alt>
+                                </div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-title">
+                                    <i class="msg-icon"></i>
+                                    最新评论
+                                </div>
+                                <div class="comment-list">
+                                    <ul>
+                                        <li v-for="(rep,r) in item.reps" :key="r">
+                                            <div class="comment-face">
+                                                <img :src="rep.headImage" alt>
+                                            </div>
+                                            <div class="comment-info">
+                                                <div class="comment-name">{{rep.nickName}}</div>
+                                                <div class="comment-msg">{{rep.content}}</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="comment-box">
-                <div class="comment-title">
-                  <i class="msg-icon"></i>
-                  最新评论
+                <div class="case-detail-cols">
+                    <div class="case-common-title">
+                        <i class="case-title-icon trace"></i>
+                        后续追踪
+                        <a class="more-case-btn" href>更多&gt;</a>
+                    </div>
+                    <div class="trace-d-list">
+                        <ul>
+                            <li v-for="(item,index) in detail.hxzz" :key="index">
+                                <a href class="trace-pic">
+                                    <img :src="item.picPath" alt>
+                                </a>
+                                <a href class="trace-tit">{{item.title}}</a>
+                                <div class="trace-handle">
+                                    <a href class="th-col">游览：{{item.hits}}</a>
+                                    <a href class="th-col">点赞:{{item.likes}}</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="comment-list">
-                  <ul>
-                    <li v-for="(rep,r) in item.reps" :key="r">
-                      <div class="comment-face">
-                        <img :src="rep.headImage" alt>
-                      </div>
-                      <div class="comment-info">
-                        <div class="comment-name">{{rep.nickName}}</div>
-                        <div class="comment-msg">{{rep.content}}</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="case-detail-cols">
-          <div class="case-common-title">
-            <i class="case-title-icon trace"></i>
-            后续追踪
-            <a class="more-case-btn" href>更多&gt;</a>
-          </div>
-          <div class="trace-d-list">
-            <ul>
-              <li v-for="(item,index) in detail.hxzz" :key="index">
-                <a href class="trace-pic">
-                  <img :src="item.picPath" alt>
-                </a>
-                <a href class="trace-tit">{{item.title}}</a>
-                <div class="trace-handle">
-                  <a href class="th-col">游览：{{item.hits}}</a>
-                  <a href class="th-col">点赞:{{item.likes}}</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
