@@ -40,6 +40,8 @@
   background: #f1f1f1; }
 .comment-list li {
   padding: 15px 0; }
+  .comment-list li.reply-row {
+    padding-top: 0; }
 .comment-list .comment-face {
   width: 46px;
   height: 46px;

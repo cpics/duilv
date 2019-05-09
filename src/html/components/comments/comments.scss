@@ -56,6 +56,9 @@
   li {
     padding: 15px 0;
     @extend %clearfix;
+    &.reply-row {
+      padding-top: 0;
+    }
   }
   .comment-face {
     width: 46px;
@@ -85,7 +88,7 @@
       text-decoration: underline;
     }
   }
-  .c-dark-blue{
+  .c-dark-blue {
     color: #3f5a93;
   }
   .comment-msg {
@@ -108,7 +111,7 @@
   color: #666;
   font-size: 16px;
   cursor: pointer;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
   .n-small-icon {
@@ -116,10 +119,11 @@
   }
 }
 
-.reply-comment-row{
+.reply-comment-row {
   position: relative;
   min-height: 20px;
 }
+
 .same-row-msg {
   color: #333;
   word-break: break-all;
