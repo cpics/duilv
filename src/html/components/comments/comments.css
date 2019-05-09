@@ -89,7 +89,45 @@
 
 .reply-comment-row {
   position: relative;
-  min-height: 20px; }
+  padding: 24px 0 0; }
+  .reply-comment-row .reply-comment-btn {
+    top: 2px;
+    margin-top: 0; }
+
+.reply-area {
+  padding: 10px 0;
+  display: none; }
+  .reply-area.show {
+    display: block; }
+  .reply-area .reply-textarea {
+    width: 100%;
+    height: 80px; }
+    .reply-area .reply-textarea textarea {
+      outline: none;
+      border: 0;
+      background: #f1f1f1;
+      resize: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
+      overflow-y: auto;
+      color: #333;
+      font-size: 14px;
+      padding: 15px 20px;
+      box-sizing: border-box; }
+    .reply-area .reply-textarea ::-webkit-input-placeholder {
+      font-size: 14px;
+      color: #999; }
+    .reply-area .reply-textarea :-moz-placeholder {
+      font-size: 14px;
+      color: #999; }
+    .reply-area .reply-textarea ::-moz-placeholder {
+      font-size: 14px;
+      color: #999; }
+    .reply-area .reply-textarea :-ms-input-placeholder {
+      font-size: 14px;
+      color: #999; }
 
 .same-row-msg {
   color: #333;
