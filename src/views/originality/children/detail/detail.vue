@@ -50,20 +50,23 @@
                     <span :class="{'active':type=='daily'}"
                           @click="changType('daily')">日报</span>
                     <span class="u-line">|</span>
-                    <span :class="{'active':type=='qe'}"
-                          @click="changType('qe')">周报</span>
-                    <span class="u-line">|</span>
                     <span :class="{'active':type=='report'}"
-                          @click="changType('report')">检查报告</span>
+                          @click="changType('report')">周报</span>
+                    <span class="u-line">|</span>
+                    <span :class="{'active':type=='qe'}"
+                          @click="changType('qe')">检查报告</span>
                 </div>
                 <div class="m-structure-content">
                     <div class="m-structure-information">
                         <div class="m-prise-content">
-                            <router-link class="e-prise-box"
+                            <div class="e-prise-box"
+                                 @click="goto(item)"
+                                 v-for="(item,index) in list"
+                                 :key="index">
+                                <!-- <router-link class="e-prise-box"
                                          tag="div"
                                          :to="{name:'jxjPostDetail',params:{id:item.id},query:{xid:xid}}"
-                                         v-for="(item,index) in list"
-                                         :key="index">
+                                         > -->
                                 <div class="prise-hd">
                                     <div class="prise-face f-circle">
                                         <img :src="item.postUser.headImage">
@@ -112,7 +115,8 @@
                                         <div class="prise-comment">
                                             <div class="comment-list">
                                                 <ul>
-                                                    <li v-for="(rep,r) in item.reps"
+                                                    <li v-if="!rep.isChild"
+                                                        v-for="(rep,r) in item.reps"
                                                         :key="r">
                                                         <div class="comment-face">
                                                             <img :src="rep.headImage"
@@ -120,7 +124,7 @@
                                                         </div>
                                                         <div class="comment-info">
                                                             <div class="comment-name">{{rep.nickName}}</div>
-                                                            <div class="comment-msg">{{item.content}}</div>
+                                                            <div class="comment-msg">{{rep.content}}</div>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -128,7 +132,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </router-link>
+                            </div>
                         </div>
                         <!-- <div class="m-pages">
               <button type="button" disabled="disabled" class="btn-prev">上一页</button>
@@ -295,6 +299,11 @@ export default {
             this.list = [];
             this.type = type;
             this.getJxjLog();
+        },
+        goto(item) {
+            if (item.type != 'QE') {
+                this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }, query: { xid: this.xid } });
+            }
         }
     },
     created() {

@@ -51,33 +51,45 @@
                                 <span class="small-txt">{{detail.weather}}</span>
                             </div>
                         </div>
-                        <div class="m-prise-content">
-                            <div class="e-prise-box">
+                        <daily v-if="detail.type == '日报'" :detail="detail"></daily>
+                        <div class="m-prise-content"
+                             v-if="0">
+
+                            <div class="e-prise-box"
+                                 v-if="0">
                                 <div class="prise-article">
-                                    <!-- <div class="prise-art-name">
-                                        <b>项目进度</b>
-                                    </div> -->
-                                    <div class="prise-art-txt"
-                                         v-if="!detail.isNewPost">
-                                        <div v-html="detail.content"></div>
-                                    </div>
-                                    <div v-if="detail.isNewPost"
-                                         v-for="(item,i) in detail.postData"
-                                         :key="i">
-                                        <div class="prise-art-txt"
-                                             v-if="item.type=='文字'">
-                                            {{item.content}}
+                                    <div v-if="detail.Type !='日报'">
+                                        <div class="prise-art-name"
+                                             v-if="detail.type=='日报'">
+                                            <b>项目进度</b>
                                         </div>
-                                        <div class="cp-column pic-300 cp-swiper"
-                                             v-if="item.type=='图片'">
-                                            <div class="swiper-container">
-                                                <div class="swiper-wrapper">
-                                                    <div class="swiper-slide cp-item">
-                                                        <img :src="item.content"
-                                                             alt="" />
+                                        <div class="prise-art-txt"
+                                             v-if="detail.type =='日报'">
+                                            <div>{{detail.dailyProp.pschedule}}</div>
+                                        </div>
+                                    </div>
+                                    <div v-if="detail.Type !='日报'">
+                                        <div class="prise-art-txt"
+                                             v-if="!detail.isNewPost">
+                                            <div v-html="detail.content"></div>
+                                        </div>
+                                        <div v-if="detail.isNewPost"
+                                             v-for="(item,i) in detail.postData"
+                                             :key="i">
+                                            <div class="prise-art-txt"
+                                                 v-if="item.type=='文字'">
+                                                {{item.content}}
+                                            </div>
+                                            <div class="cp-column pic-300 cp-swiper"
+                                                 v-if="item.type=='图片'">
+                                                <div class="swiper-container">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide cp-item">
+                                                            <img :src="item.content"
+                                                                 alt="" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <!-- <div class="swiper-button-next"
+                                                    <!-- <div class="swiper-button-next"
                                                  tabindex="0"
                                                  role="button"
                                                  aria-label="Next slide"></div>
@@ -85,13 +97,14 @@
                                                  tabindex="0"
                                                  role="button"
                                                  aria-label="Previous slide"></div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="e-prise-box"
-                                 v-if="detail.type == '日报'">
+                                 v-if="detail.type == '日报' && false">
                                 <div class="daily-project">
                                     <div class="daily-pro-left">
                                         <dl class="daily-pro-row">
@@ -129,109 +142,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="e-prise-box">
-                                <div class="">
-                                    <!--<div class="comment-title">-->
-                                    <!--发表评论-->
-                                    <!--</div>-->
-                                    <div class="comment-publish">
-                                        <div class="publish-face">
-                                            <img src=""
-                                                 alt="">
-                                        </div>
-                                        <div class="comment-textarea">
-                                            <textarea v-model="reParams.content"
-                                                      placeholder="我有话说..."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="comment-publish-btn">
-                                        <span class="publish-btn"
-                                              @click="jxjAddReplis()">发表评论</span>
-                                    </div>
-                                </div>
-                                <div class="comment-box">
-                                    <div class="comment-title">
-                                        <span class="has-arrow-up">
-                                            全部评论
-                                            <i class="c-arrow-up"></i>
-                                        </span>
-                                    </div>
-                                    <div class="prise-comment">
-                                        <div class="comment-list">
-                                            <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt="">
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">
-                                                            <span>我是你大哥</span>
-                                                            <span class="name-tipper">
-                                                                <span class="comment-time">10分钟前</span>
-                                                                <em class="comment-dot">·</em>
-                                                                <span class="report-btn">举报</span>
-                                                            </span>
-                                                            <span class="reply-comment-btn">
-                                                                <i class="n-small-icon comment-icon"></i>
-                                                                <span>回复</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="comment-msg">
-                                                            斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt="">
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">
-                                                            <span>我是你大哥</span>
-                                                            <span class="name-tipper">
-                                                                <span class="comment-time">10分钟前</span>
-                                                                <em class="comment-dot">·</em>
-                                                                <span class="report-btn">举报</span>
-                                                            </span>
-                                                            <span class="reply-comment-btn">
-                                                                <i class="n-small-icon comment-icon"></i>
-                                                                <span>回复</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="comment-msg">
-                                                            真厉害，厉害死了
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt="">
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">
-                                                            <span>我是你大哥</span>
-                                                            <span class="name-tipper">
-                                                                <span class="comment-time">10分钟前</span>
-                                                                <em class="comment-dot">·</em>
-                                                                <span class="report-btn">举报</span>
-                                                            </span>
-                                                            <span class="reply-comment-btn">
-                                                                <i class="n-small-icon comment-icon"></i>
-                                                                <span>回复</span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="comment-msg">
-                                                            我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="e-prise-box"
+                                 v-if="0">
+                                <to-comment @jxjAddReplis="jxjAddReplis"></to-comment>
+                                <comment-box :commentList="detail.reps"
+                                             @showReplayFunc="showReplayFunc">
+                                    <template scope="props">
+
+                                        <reply-comment :replyId="props.rowdata.id"
+                                                       @jxjAddReplis="jxjAddReplis"></reply-comment>
+                                    </template>
+                                </comment-box>
                             </div>
                         </div>
                     </div>
@@ -294,10 +215,13 @@
                 </div>
             </div>
         </div>
+        <to-top :isLike="detail.isLike"
+                :id="reParams.id"></to-top>
     </div>
 </template>
 
 <script>
+import 'swiper/dist/css/swiper.css';
 import '../../../../html/components/detailHd/detailHd.scss';
 import '../../../../html/components/tabs/tabs.scss';
 
@@ -310,7 +234,12 @@ import '../../../../html/pages/originality/daily/daily.scss';
 
 import '../../../../html/components/fixBar/fixBar.scss';
 
-
+import toTop from '../../../../components/to-top/to-top.vue';
+import commentBox from '../../../../components/comment-box/comment-box.vue';
+import replyComment from '../../../../components/comment-box/reply-comment.vue';
+import toComment from '../../../../components/to-comment/to-comment.vue';
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+import daily from './components/daily.vue';
 import { getJxjPostDetail, getJxjDetail, getWeather, jxjAddReplis } from '../../../../api';
 import stars from '../../../../pubilc/util/stars';
 import timeago from '../../../../pubilc/util/timeago';
@@ -328,6 +257,15 @@ export default {
             }
 
         }
+    },
+    components: {
+        commentBox,
+        replyComment,
+        toComment,
+        toTop,
+        swiper,
+        swiperSlide,
+        daily
     },
     methods: {
         async getHeader() {
@@ -353,8 +291,12 @@ export default {
                 res.Data.zjfb.forEach(item => {
                     item.timeAgo = timeago(new Date(item.createdTime));
                 });
+                res.Data.reps.forEach(item => {
+                    item.showReplay = false;
+                    item.timeAgo = timeago(new Date(item.createdTime));
+                })
                 this.detail = res.Data;
-            }else{
+            } else {
                 this.$layer.alert(res.Content);
             }
 
@@ -367,16 +309,28 @@ export default {
                 this.weather = res.Data;
             }
         },
-        async jxjAddReplis() {
-            if (this.reParams.content.legnth == 0) {
-                this.$layer.alert('请输入评论内容');
-                return false;
+        async jxjAddReplis(content, repId) {
+            this.reParams.content = content;
+            if (repId) {
+                this.reParams.repId = repId;
+            } else {
+                this.reParams.repId = '';
             }
             let res = await jxjAddReplis(this.reParams);
             if (res.Type == 'Success') {
                 this.$layer.alert(res.Content);
                 this.getData();
+            } else {
+                this.$layer.alert(res.Content);
             }
+        },
+        showReplayFunc(index) {
+            // debugger;
+            this.detail.reps[index].showReplay = !this.detail.reps[index].showReplay;
+        },
+        //点赞
+        likeFunc() {
+
         }
     },
     created() {

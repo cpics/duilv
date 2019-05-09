@@ -1,9 +1,11 @@
 <template>
-    <router-link tag="a" :to="{'name':'enterDetail',params:{id:info.enterId}}">
+    <router-link tag="a"
+                 :to="{'name':'enterDetail',params:{id:info.enterId}}">
         <div class="group-left">
             <a class="company-info">
                 <div class="company-pic">
-                    <img :src="info.entIcon" alt>
+                    <img :src="info.entIcon"
+                         alt>
                 </div>
                 <div class="company-name">
                     <h4>{{info.title}}</h4>
@@ -14,20 +16,26 @@
             <!--鼠标移上图片变大 + hover-scale-->
             <!--图片高度不固定 + h-auto-->
             <div class="cp-column">
-                <a class="cp-item" v-for="(item,index) in info.images" :key="index">
-                    <img :src="item" alt>
+                <a class="cp-item"
+                   v-for="(item,index) in info.images"
+                   :key="index">
+                    <img :src="item"
+                         alt>
                 </a>
             </div>
         </div>
         <div class="group-right">
-            <a href class="group-article">{{info.content}}</a>
-            <div class="group-address" v-if="info.signAddr">
+            <a href
+               class="group-article">{{info.content}}</a>
+            <div class="group-address"
+                 v-if="info.signAddr">
                 <i class="address-icon"></i>
                 <span>{{info.signAddr}}</span>
             </div>
             <div class="group-handle">
                 <span class="gh-col">
-                    <h-like :likeNum="info.likeNum" :id="info.id"></h-like>
+                    <h-like :likeNum="info.likeNum"
+                            :id="info.id"></h-like>
                 </span>
                 <span class="gh-col">
                     <i class="msg-icon"></i>
@@ -39,7 +47,7 @@
         </span>-->
             </div>
         </div>
-    </router-link >
+    </router-link>
 </template>
 
 <script>

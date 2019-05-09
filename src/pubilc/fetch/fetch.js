@@ -1,6 +1,7 @@
 import axios from 'axios';
 import cookies from '../cookies/cookies';
-import { userInfo } from 'os';
+// import { userInfo } from 'os';
+import store from '../../store';
 
 let fetch = axios.create({
     timeout: 100 * 1000,
@@ -39,6 +40,10 @@ fetch.interceptors.response.use(
     response => {
         // Do something with response data
         // console.log(response);
+        // console.log(response.data);
+        if (response.data && response.data.Type == 'Warning') {
+            store.commit('delUserInfo');
+        }
         return response.data;
         // if (response.data) {
         //     return response.data;
