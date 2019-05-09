@@ -99,6 +99,9 @@
       font-size: 14px;
     }
   }
+  &.bomb-reply{
+    @include center(600px, 240px);
+  }
 }
 
 .bomb-small-close,

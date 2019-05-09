@@ -80,6 +80,14 @@
     overflow-y: auto; }
     .bomb-com-box .comment-list .comment-msg {
       font-size: 14px; }
+  .bomb-com-box.bomb-reply {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 12;
+    width: 600px;
+    height: 240px;
+    margin: -120px 0 0 -300px; }
 
 .bomb-small-close,
 .bomb-close-icon {
