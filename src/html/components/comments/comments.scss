@@ -25,6 +25,13 @@
   .prise-comment {
     padding: 10px 45px;
     background: #f1f1f1;
+    .reply-area {
+      .reply-textarea {
+        textarea{
+          background: #fff;
+        }
+      }
+    }
   }
   .comment-title {
     font-size: 16px;
@@ -52,6 +59,22 @@
   &.has-bg {
     padding: 0 30px;
     background: #f1f1f1;
+    .level-comment{
+      padding-top: 6px;
+      &:first-child{
+        padding-top: 0;
+      }
+    }
+    .reply-comment-btn{
+      font-size: 14px;
+    }
+    .reply-area {
+      .reply-textarea {
+        textarea {
+          background: #fff;
+        }
+      }
+    }
   }
   li {
     padding: 15px 0;

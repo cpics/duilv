@@ -79,6 +79,8 @@
     width: 40%;
     display: inline-block;
     float: left;
+    word-wrap: break-word;
+    word-break: break-all;
   }
   .dist-size {
     width: 42%;

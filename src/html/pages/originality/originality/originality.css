@@ -57,7 +57,9 @@
     color: #999;
     width: 40%;
     display: inline-block;
-    float: left; }
+    float: left;
+    word-wrap: break-word;
+    word-break: break-all; }
   .sign-pop-box .dist-size {
     width: 42%;
     display: inline-block;
