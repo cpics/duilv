@@ -131,12 +131,84 @@
   }
 }
 
+.add-role-box {
+  padding: 15px 0;
+  font-size: 14px;
+  line-height: 30px;
+  display: none;
+  &.show {
+    display: block;
+  }
+  @extend %clearfix;
+  &.show {
+    display: block;
+  }
+  .role-input {
+    float: left;
+    input {
+      width: 160px;
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 14px;
+      outline: none;
+      padding: 5px 15px;
+      background: #fff;
+      border: 1px solid #e8e7e7;
+    }
+  }
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  :-moz-placeholder {
+    font-size: 14px;
+  }
+  ::-moz-placeholder {
+    font-size: 14px;
+  }
+  :-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .role-nike-name {
+    float: left;
+    padding: 0 20px;
+    min-width: 80px;
+    max-width: 160px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .role-handle {
+    float: left;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .role-line {
+      position: relative;
+      top: -1px;
+      font-size: 12px;
+      padding: 0 4px;
+      line-height: 28px;
+    }
+    .role-btn {
+      color: #47c091;
+      padding: 0 4px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .project-rol-list {
   li {
     font-size: 16px;
     padding: 14px 0 30px;
     border-top: 1px solid #e8e7e7;
-    &:first-child{
+    &:first-child {
       border-top: 0;
     }
   }
@@ -236,7 +308,7 @@
     display: inline-block;
     margin-top: 10px;
     border: 1px solid #7ae0b2;
-    &:hover{
+    &:hover {
       color: #fff;
       background: #4bde9e;
     }
