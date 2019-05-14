@@ -58,13 +58,13 @@
   .c-daily-row .daily-tag-green {
     color: #47c091;
     border: 1px solid #47c091; }
-    .c-daily-row .daily-tag-green:hover, .c-daily-row .daily-tag-green:active {
+    .c-daily-row .daily-tag-green:hover, .c-daily-row .daily-tag-green.active {
       color: #fff;
       background: #47c091; }
   .c-daily-row .daily-tag-red {
     color: #ff0a0a;
     border: 1px solid #ff0a0a; }
-    .c-daily-row .daily-tag-red:hover, .c-daily-row .daily-tag-red:active {
+    .c-daily-row .daily-tag-red:hover, .c-daily-row .daily-tag-red.active {
       color: #fff;
       background: #ff0a0a; }
   .c-daily-row input {

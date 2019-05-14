@@ -70,7 +70,7 @@
     color: #47c091;
     border: 1px solid #47c091;
     &:hover,
-    &:active {
+    &.active {
       color: #fff;
       background: #47c091;
     }
@@ -79,7 +79,7 @@
     color: #ff0a0a;
     border: 1px solid #ff0a0a;
     &:hover,
-    &:active {
+    &.active {
       color: #fff;
       background: #ff0a0a;
     }
