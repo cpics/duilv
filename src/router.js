@@ -74,8 +74,8 @@ export const menuRouter = [
                     title: '匠心记-帖子详情',
                 },
                 component: () =>
-                    import('./views/originality/children/postDetail/postDetail.vue')
-                    // import('./views/originality/children/postDetail/postDetail.vue'),
+                    import('./views/originality/children/postDetail/postDetail.vue'),
+                // import('./views/originality/children/postDetail/postDetail.vue'),
             },
             {
                 path: 'imgDetail/:id',
@@ -85,6 +85,33 @@ export const menuRouter = [
                 },
                 component: () =>
                     import('./views/originality/children/detail/detail.vue'),
+            },
+            {
+                path: 'createQE/:id',
+                name: 'createQE',
+                metta: {
+                    title: '匠心记-创建报告',
+                },
+                component: () =>
+                    import('./views/originality/children/createQE/createQE.vue'),
+            },
+            {
+                path: 'createDaliy/:id',
+                name: 'createDaliy',
+                metta: {
+                    title: '匠心记-创建日报',
+                },
+                component: () =>
+                    import('./views/originality/children/createDaliy/createDaliy.vue'),
+            },
+            {
+                path: 'modifyProject/:id',
+                name: 'modifyProject',
+                metta: {
+                    title: '匠心记-项目修改',
+                },
+                component: () =>
+                    import('./views/originality/children/modifyProject/modifyProject.vue'),
             },
         ],
     },

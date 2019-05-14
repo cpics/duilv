@@ -53,7 +53,7 @@ export const deleteTz = params =>
 //获取手机验证码
 export const getVerifyForSms = params =>
     fetch.post(`${domain}/Api/Common/GetSmsVerifyCode/`, params);
-    // fetch.post(`${domain}/Api/Common/GetTestSmsCode/`, params);
+// fetch.post(`${domain}/Api/Common/GetTestSmsCode/`, params);
 
 //注册登录
 export const login = params => fetch.post(`${domain}/Api/User/Login/`, params);
@@ -137,6 +137,22 @@ export const GetJxjProUsers = params =>
 export const jxjAddProjectLog = params =>
     fetch.post(`${domain}/Api/ProjectLog/AddProjectLog/`, params);
 
+//添加主题
+export const jxjAddPost = params =>
+    fetch.post(`${domain}/Api/ProjectLog/AddPost/`, params);
+
+//添加周报
+export const jxjAddReport = params =>
+    fetch.post(`${domain}/Api/ProjectLog/AddReport/`, params);
+
+//添加QE报告
+export const jxjAddQEReport = params =>
+    fetch.post(`${domain}/Api/ProjectLog/AddQEReport/`, params);
+
+//添加日报
+export const jxjAddDaily = params =>
+    fetch.post(`${domain}/Api/ProjectLog/AddDaily/`, params);
+
 //-----------------行业圈--------------
 //获取全部
 export const getAllEnter = params =>
@@ -189,7 +205,6 @@ export const getUserByPhone = params =>
 //通过手机号获取用户信息
 export const updateEnterUsers = params =>
     fetch.post(`${domain}/Api/EnterPrise/UpdateEnterUsers/`, params);
-
 
 //课程培训
 export const enterCourseIndex = params =>

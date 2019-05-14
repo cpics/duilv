@@ -1,8 +1,8 @@
 <template>
-    <div class="">
-        <!--<div class="comment-title">-->
-        <!--发表评论-->
-        <!--</div>-->
+    <div class="comment-box">
+        <div class="comment-title">
+            发表评论
+        </div>
         <div class="comment-publish">
             <div class="publish-face">
                 <img src=""

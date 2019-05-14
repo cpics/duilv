@@ -301,9 +301,9 @@ export default {
             this.getJxjLog();
         },
         goto(item) {
-            if (item.type != 'QE') {
-                this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }, query: { xid: this.xid } });
-            }
+            // if (item.type != 'QE') {
+            this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }, query: { xid: this.xid } });
+            // }
         }
     },
     created() {

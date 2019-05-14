@@ -45,119 +45,26 @@
             <div class="daily-content">
                 <div class="m-structure-content">
                     <div class="m-structure-information">
-                        <div class="common-tit-space">
-                            <div class="common-title">
-                                {{detail.timeAgo}}
-                                <span class="small-txt">{{detail.weather}}</span>
-                            </div>
-                        </div>
-                        <daily v-if="detail.type == '日报'" :detail="detail"></daily>
-                        <div class="m-prise-content"
-                             v-if="0">
 
-                            <div class="e-prise-box"
-                                 v-if="0">
-                                <div class="prise-article">
-                                    <div v-if="detail.Type !='日报'">
-                                        <div class="prise-art-name"
-                                             v-if="detail.type=='日报'">
-                                            <b>项目进度</b>
-                                        </div>
-                                        <div class="prise-art-txt"
-                                             v-if="detail.type =='日报'">
-                                            <div>{{detail.dailyProp.pschedule}}</div>
-                                        </div>
-                                    </div>
-                                    <div v-if="detail.Type !='日报'">
-                                        <div class="prise-art-txt"
-                                             v-if="!detail.isNewPost">
-                                            <div v-html="detail.content"></div>
-                                        </div>
-                                        <div v-if="detail.isNewPost"
-                                             v-for="(item,i) in detail.postData"
-                                             :key="i">
-                                            <div class="prise-art-txt"
-                                                 v-if="item.type=='文字'">
-                                                {{item.content}}
-                                            </div>
-                                            <div class="cp-column pic-300 cp-swiper"
-                                                 v-if="item.type=='图片'">
-                                                <div class="swiper-container">
-                                                    <div class="swiper-wrapper">
-                                                        <div class="swiper-slide cp-item">
-                                                            <img :src="item.content"
-                                                                 alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="swiper-button-next"
-                                                 tabindex="0"
-                                                 role="button"
-                                                 aria-label="Next slide"></div>
-                                            <div class="swiper-button-prev"
-                                                 tabindex="0"
-                                                 role="button"
-                                                 aria-label="Previous slide"></div> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="e-prise-box"
-                                 v-if="detail.type == '日报' && false">
-                                <div class="daily-project">
-                                    <div class="daily-pro-left">
-                                        <dl class="daily-pro-row">
-                                            <dt>项目名称</dt>
-                                            <dd>{{detail.title}}</dd>
-                                        </dl>
-                                        <dl class="daily-pro-row">
-                                            <dt>项目负责</dt>
-                                            <dd>{{detail.dailyProp.projectManage.join(',')}}</dd>
-                                        </dl>
-                                        <dl class="daily-pro-row">
-                                            <dt>安全状态</dt>
-                                            <dd>{{detail.dailyProp.salfState}}</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="daily-pro-right">
-                                        <dl class="daily-r-row">
-                                            <dt>对策：</dt>
-                                            <dd>{{detail.dailyProp.measure}}</dd>
-                                        </dl>
-                                        <dl class="daily-r-row">
-                                            <dt>人员详情：</dt>
-                                            <dd>共{{detail.dailyProp.peopleNum}}人 {{detail.dailyProp.sDetail}}</dd>
-                                        </dl>
-                                        <dl class="daily-r-row">
-                                            <dt>需协调事宜：</dt>
-                                            <dd>{{detail.dailyProp.pdiscuss}}</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div class="daily-situation">
-                                    <div class="sit-label">其他情况汇报：</div>
-                                    <div class="sit-txt">
-                                        {{detail.dailyProp.pother}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="e-prise-box"
-                                 v-if="0">
-                                <to-comment @jxjAddReplis="jxjAddReplis"></to-comment>
-                                <comment-box :commentList="detail.reps"
-                                             @showReplayFunc="showReplayFunc">
-                                    <template scope="props">
+                        <daily v-if="detail.type == '日报'"
+                               :detail="detail"></daily>
+                        <no-daily v-if="detail.type != '日报'"
+                                  :detail="detail"></no-daily>
+                        <div class="structure-border">
+                            <to-comment @jxjAddReplis="jxjAddReplis"></to-comment>
+                            <comment-box :commentList="detail.reps"
+                                         @showReplayFunc="showReplayFunc">
+                                <template scope="props">
 
-                                        <reply-comment :replyId="props.rowdata.id"
-                                                       @jxjAddReplis="jxjAddReplis"></reply-comment>
-                                    </template>
-                                </comment-box>
-                            </div>
+                                    <reply-comment :replyId="props.rowdata.id"
+                                                   @jxjAddReplis="jxjAddReplis"></reply-comment>
+                                </template>
+                            </comment-box>
                         </div>
                     </div>
                     <div class="m-structure-quick">
-                        <div class="structure-btn">发布内容</div>
+                        <div class="structure-btn"
+                             @click="gotoCreate">发布内容</div>
                         <div class="structure-box"
                              v-if="detail.postUser">
                             <div class="com-md-face">
@@ -222,6 +129,7 @@
 
 <script>
 import 'swiper/dist/css/swiper.css';
+import '../../../../html/components/crumbs/crumbs.scss';
 import '../../../../html/components/detailHd/detailHd.scss';
 import '../../../../html/components/tabs/tabs.scss';
 
@@ -238,8 +146,9 @@ import toTop from '../../../../components/to-top/to-top.vue';
 import commentBox from '../../../../components/comment-box/comment-box.vue';
 import replyComment from '../../../../components/comment-box/reply-comment.vue';
 import toComment from '../../../../components/to-comment/to-comment.vue';
-import { swiper, swiperSlide } from 'vue-awesome-swiper';
+// import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import daily from './components/daily.vue';
+import noDaily from './components/noDaily.vue';
 import { getJxjPostDetail, getJxjDetail, getWeather, jxjAddReplis } from '../../../../api';
 import stars from '../../../../pubilc/util/stars';
 import timeago from '../../../../pubilc/util/timeago';
@@ -263,9 +172,8 @@ export default {
         replyComment,
         toComment,
         toTop,
-        swiper,
-        swiperSlide,
-        daily
+        daily,
+        noDaily
     },
     methods: {
         async getHeader() {
@@ -276,6 +184,16 @@ export default {
                 res.Data.timeAgo = timeago(new Date(res.Data.creatTime));
                 this.header = res.Data;
                 // console.log(this.header);
+            }
+        },
+
+        gotoCreate() {
+            if (this.detail.type == 'QE') {
+                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'QE' } })
+            } else if (this.detail.type == '周报') {
+                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZB' } })
+            } else if (this.detail.type == '日报') {
+                this.$router.push({ name: 'createDaliy', params: { id: this.$route.query.xid }, query: { title: this.detail.title } })
             }
         },
         async getData() {
