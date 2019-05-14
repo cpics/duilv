@@ -255,7 +255,7 @@
       padding: 0 16px;
       margin-left: 20px;
       border-radius: 15px;
-      background: #47c091;
+      background: #7ae0b2;
     }
     .role-handle {
       width: 348px;
@@ -307,7 +307,7 @@
     &.star-5 i:first-child + i,
     &.star-5 i:first-child + i + i,
     &.star-5 i:first-child + i + i + i,
-    &.star-5 i:first-child + i + i + i + i{
+    &.star-5 i:first-child + i + i + i + i {
       background-image: url("images/star.png");
     }
   }
@@ -321,6 +321,39 @@
     &:hover {
       color: #fff;
       background: #4bde9e;
+    }
+  }
+}
+
+/*项目详情 弹框*/
+.bomb-com-box {
+  &.bomb-full {
+    .modify-form-main {
+      padding: 0;
+      height: 100%;
+      overflow-y: auto;
+      border: 0;
+      .modify-base-info {
+        color: #4c4c4c;
+      }
+      .modify-caption {
+        padding: 10px 0;
+      }
+      .modify-sit-row {
+        line-height: 30px;
+        padding: 3px 0;
+        .sit-label {
+          padding: 0;
+          line-height: 30px;
+        }
+      }
+    }
+    .project-rol-list {
+      .project-role-row {
+        .role-user-info{
+          width: 850px;
+        }
+      }
     }
   }
 }

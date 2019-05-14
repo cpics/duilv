@@ -99,8 +99,18 @@
       font-size: 14px;
     }
   }
-  &.bomb-reply{
+  &.bomb-reply {
     @include center(600px, 240px);
+  }
+  &.bomb-full {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    z-index: 12;
+    width: 1050px;
+    height: 80%;
+    margin: 0 0 0 -585px;
+    box-sizing: content-box;
   }
 }
 
@@ -153,7 +163,7 @@
       box-sizing: border-box;
       background: #fff;
       border: 1px solid #e8e7e7;
-      &:hover{
+      &:hover {
         background: #f2f2f2;
       }
     }

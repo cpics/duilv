@@ -88,6 +88,15 @@
     width: 600px;
     height: 240px;
     margin: -120px 0 0 -300px; }
+  .bomb-com-box.bomb-full {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    z-index: 12;
+    width: 1050px;
+    height: 80%;
+    margin: 0 0 0 -585px;
+    box-sizing: content-box; }
 
 .bomb-small-close,
 .bomb-close-icon {

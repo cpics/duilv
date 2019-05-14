@@ -207,7 +207,7 @@
     padding: 0 16px;
     margin-left: 20px;
     border-radius: 15px;
-    background: #47c091; }
+    background: #7ae0b2; }
   .project-rol-list .project-role-row .role-handle {
     width: 348px;
     text-align: right; }
@@ -236,5 +236,24 @@
   .project-rol-list .add-role-btn:hover {
     color: #fff;
     background: #4bde9e; }
+
+/*项目详情 弹框*/
+.bomb-com-box.bomb-full .modify-form-main {
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  border: 0; }
+  .bomb-com-box.bomb-full .modify-form-main .modify-base-info {
+    color: #4c4c4c; }
+  .bomb-com-box.bomb-full .modify-form-main .modify-caption {
+    padding: 10px 0; }
+  .bomb-com-box.bomb-full .modify-form-main .modify-sit-row {
+    line-height: 30px;
+    padding: 3px 0; }
+    .bomb-com-box.bomb-full .modify-form-main .modify-sit-row .sit-label {
+      padding: 0;
+      line-height: 30px; }
+.bomb-com-box.bomb-full .project-rol-list .project-role-row .role-user-info {
+  width: 850px; }
 
 /*# sourceMappingURL=modifyProject.css.map */
