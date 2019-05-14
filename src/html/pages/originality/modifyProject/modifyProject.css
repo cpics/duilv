@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.modify-form-main .modify-sit-row, .project-rol-list .project-role-row .role-user-info {
+.modify-form-main .modify-sit-row, .add-role-box, .project-rol-list .project-role-row .role-user-info {
   zoom: 1; }
-  .modify-form-main .modify-sit-row:after, .project-rol-list .project-role-row .role-user-info:after {
+  .modify-form-main .modify-sit-row:after, .add-role-box:after, .project-rol-list .project-role-row .role-user-info:after {
     clear: both;
     content: '';
     display: block;
@@ -106,6 +106,62 @@
         background: #f7f7f7;
         font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
         overflow-y: auto; }
+
+.add-role-box {
+  padding: 15px 0;
+  font-size: 14px;
+  line-height: 30px;
+  display: none; }
+  .add-role-box.show {
+    display: block; }
+  .add-role-box.show {
+    display: block; }
+  .add-role-box .role-input {
+    float: left; }
+    .add-role-box .role-input input {
+      width: 160px;
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 14px;
+      outline: none;
+      padding: 5px 15px;
+      background: #fff;
+      border: 1px solid #e8e7e7; }
+  .add-role-box ::-webkit-input-placeholder {
+    font-size: 14px; }
+  .add-role-box :-moz-placeholder {
+    font-size: 14px; }
+  .add-role-box ::-moz-placeholder {
+    font-size: 14px; }
+  .add-role-box :-ms-input-placeholder {
+    font-size: 14px; }
+  .add-role-box .role-nike-name {
+    float: left;
+    padding: 0 20px;
+    min-width: 80px;
+    max-width: 160px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .add-role-box .role-handle {
+    float: left; }
+    .add-role-box .role-handle span {
+      display: inline-block;
+      vertical-align: middle; }
+    .add-role-box .role-handle .role-line {
+      position: relative;
+      top: -1px;
+      font-size: 12px;
+      padding: 0 4px;
+      line-height: 28px; }
+    .add-role-box .role-handle .role-btn {
+      color: #47c091;
+      padding: 0 4px;
+      cursor: pointer; }
+      .add-role-box .role-handle .role-btn:hover {
+        text-decoration: underline; }
 
 .project-rol-list li {
   font-size: 16px;
