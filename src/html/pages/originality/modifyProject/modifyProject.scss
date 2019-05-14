@@ -350,11 +350,21 @@
     }
     .project-rol-list {
       .project-role-row {
-        .role-user-info{
+        .role-user-info {
           width: 850px;
         }
       }
     }
+  }
+  .orig-modify-btn {
+    position: absolute;
+    top: -44px;
+    left: 60px;
+    width: 88px;
+    height: 88px;
+    font-size: 0;
+    display: block;
+    background: url("images/edit.png") no-repeat center center;
   }
 }
 

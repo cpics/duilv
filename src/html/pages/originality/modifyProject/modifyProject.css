@@ -255,5 +255,14 @@
       line-height: 30px; }
 .bomb-com-box.bomb-full .project-rol-list .project-role-row .role-user-info {
   width: 850px; }
+.bomb-com-box .orig-modify-btn {
+  position: absolute;
+  top: -44px;
+  left: 60px;
+  width: 88px;
+  height: 88px;
+  font-size: 0;
+  display: block;
+  background: url("images/edit.png") no-repeat center center; }
 
 /*# sourceMappingURL=modifyProject.css.map */
