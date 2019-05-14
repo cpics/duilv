@@ -29,10 +29,6 @@
   .modify-form-main .modify-base-map {
     width: 800px;
     max-height: 240px; }
-    .modify-form-main .modify-base-map img {
-      display: block;
-      max-width: 100%;
-      max-height: 100%; }
   .modify-form-main .modify-situation {
     padding-bottom: 10px; }
   .modify-form-main .modify-caption {
@@ -228,7 +224,7 @@
     display: inline-block;
     margin-right: 2px;
     background: url("images/gstar.png") no-repeat center center; }
-  .project-rol-list .role-star.one-star i:first-child, .project-rol-list .role-star.two-star i:first-child, .project-rol-list .role-star.two-star i:first-child + i, .project-rol-list .role-star.three-star i:first-child, .project-rol-list .role-star.three-star i:first-child + i, .project-rol-list .role-star.three-star i:first-child + i + i, .project-rol-list .role-star.four-star i:first-child, .project-rol-list .role-star.four-star i:first-child + i, .project-rol-list .role-star.four-star i:first-child + i + i, .project-rol-list .role-star.four-star i:first-child + i + i + i, .project-rol-list .role-star.five-star i:first-child, .project-rol-list .role-star.five-star i:first-child + i, .project-rol-list .role-star.five-star i:first-child + i + i, .project-rol-list .role-star.five-star i:first-child + i + i + i, .project-rol-list .role-star.five-star i:first-child + i + i + i + i {
+  .project-rol-list .role-star.one-star i:first-child, .project-rol-list .role-star.two-star i:first-child, .project-rol-list .role-star.two-star i:first-child + i, .project-rol-list .role-star.three-star i:first-child, .project-rol-list .role-star.three-star i:first-child + i, .project-rol-list .role-star.three-star i:first-child + i + i, .project-rol-list .role-star.four-star i:first-child, .project-rol-list .role-star.four-star i:first-child + i, .project-rol-list .role-star.four-star i:first-child + i + i, .project-rol-list .role-star.four-star i:first-child + i + i + i, .project-rol-list .role-star.five-star i:first-child, .project-rol-list .role-star.five-star i:first-child + i, .project-rol-list .role-star.five-star i:first-child + i + i, .project-rol-list .role-star.five-star i:first-child + i + i + i, .project-rol-list .role-star.five-star i:first-child + i + i + i + i, .project-rol-list .role-star.star-1 i:first-child, .project-rol-list .role-star.star-2 i:first-child, .project-rol-list .role-star.star-2 i:first-child + i, .project-rol-list .role-star.star-3 i:first-child, .project-rol-list .role-star.star-3 i:first-child + i, .project-rol-list .role-star.star-3 i:first-child + i + i, .project-rol-list .role-star.star-4 i:first-child, .project-rol-list .role-star.star-4 i:first-child + i, .project-rol-list .role-star.star-4 i:first-child + i + i, .project-rol-list .role-star.star-4 i:first-child + i + i + i, .project-rol-list .role-star.star-5 i:first-child, .project-rol-list .role-star.star-5 i:first-child + i, .project-rol-list .role-star.star-5 i:first-child + i + i, .project-rol-list .role-star.star-5 i:first-child + i + i + i, .project-rol-list .role-star.star-5 i:first-child + i + i + i + i {
     background-image: url("images/star.png"); }
 .project-rol-list .add-role-btn {
   padding: 2px 5px;

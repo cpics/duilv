@@ -34,11 +34,6 @@
   .modify-base-map {
     width: 800px;
     max-height: 240px;
-    img {
-      display: block;
-      max-width: 100%;
-      max-height: 100%;
-    }
   }
   .modify-situation {
     padding-bottom: 10px;
@@ -297,7 +292,22 @@
     &.five-star i:first-child + i,
     &.five-star i:first-child + i + i,
     &.five-star i:first-child + i + i + i,
-    &.five-star i:first-child + i + i + i + i {
+    &.five-star i:first-child + i + i + i + i,
+    &.star-1 i:first-child,
+    &.star-2 i:first-child,
+    &.star-2 i:first-child + i,
+    &.star-3 i:first-child,
+    &.star-3 i:first-child + i,
+    &.star-3 i:first-child + i + i,
+    &.star-4 i:first-child,
+    &.star-4 i:first-child + i,
+    &.star-4 i:first-child + i + i,
+    &.star-4 i:first-child + i + i + i,
+    &.star-5 i:first-child,
+    &.star-5 i:first-child + i,
+    &.star-5 i:first-child + i + i,
+    &.star-5 i:first-child + i + i + i,
+    &.star-5 i:first-child + i + i + i + i{
       background-image: url("images/star.png");
     }
   }
