@@ -129,6 +129,10 @@ export const uploadImageByBase = params =>
 export const getJxjTags = params =>
     fetch.post(`${domain}/Api/ProjectLog/GetTags/`, params);
 
+//匠心记获取人员类型标签
+export const GetJxjProUserTypes = params =>
+    fetch.post(`${domain}/Api/ProjectLog/GetProUserTypes/`, params);
+
 //匠心记获取人员列表
 export const GetJxjProUsers = params =>
     fetch.post(`${domain}/Api/ProjectLog/GetProUsers/`, params);

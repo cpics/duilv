@@ -113,6 +113,15 @@ export const menuRouter = [
                 component: () =>
                     import('./views/originality/children/modifyProject/modifyProject.vue'),
             },
+            {
+                path: 'apply',
+                name: 'jxjApply',
+                metta: {
+                    title: '匠心记-申请',
+                },
+                component: () =>
+                    import('./views/originality/children/apply/apply.vue'),
+            }
         ],
     },
     {

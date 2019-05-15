@@ -10,6 +10,8 @@
                       v-if="type =='QE'">创建QE报告</span>
                 <span class="c-current"
                       v-if="type =='ZB'">创建周报</span>
+                <span class="c-current"
+                      v-if="type =='ZT'">创建主体</span>
             </div>
             <!--主体-->
             <div class="create-qe-main">
@@ -18,6 +20,8 @@
                     v-if="type =='QE'">创建QE报告</h2>
                 <h2 class="create-qe-tit"
                     v-if="type =='ZB'">创建周报</h2>
+                <h2 class="create-qe-tit"
+                    v-if="type =='ZT'">创建主题</h2>
                 <div class="create-qe-form">
                     <div class="create-qe-row">
                         <div class="create-qe-input">
@@ -243,6 +247,7 @@ import {
     uploadImage,
     jxjAddQEReport,
     jxjAddReport,
+    jxjAddPost
 } from '../../../../api/index.js';
 export default {
     name: 'createE',
@@ -436,6 +441,18 @@ export default {
 
             if (this.type == 'ZB') {
                 let res = await jxjAddReport({
+                    title: this.title,
+                    id: this.id,
+                    data: data
+                })
+                if (res.Type == 'Success') {
+                    this.$layer.alert(res.Content);
+                } else if (res.Type == 'Error') {
+                    this.$layer.alert(res.Content);
+                }
+            }
+            if (this.type == 'ZT') {
+                let res = await jxjAddPost({
                     title: this.title,
                     id: this.id,
                     data: data

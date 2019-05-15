@@ -194,6 +194,8 @@ export default {
                 this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZB' } })
             } else if (this.detail.type == '日报') {
                 this.$router.push({ name: 'createDaliy', params: { id: this.$route.query.xid }, query: { title: this.detail.title } })
+            } else if (this.detail.type == '普通' || this.detail.type == '图文') {
+                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZT' } });
             }
         },
         async getData() {

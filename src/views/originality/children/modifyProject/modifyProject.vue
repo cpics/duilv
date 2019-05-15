@@ -95,25 +95,32 @@
                     <div class="modify-base-info">
                         <div class="project-rol-list">
                             <ul>
-                                <li>
-                                    <div class="project-role-row">
+                                <li v-for="(arr,i) in detail.proUsers"
+                                    :key="i">
+                                    <div class="project-role-row"
+                                         v-for="(person,p) in arr.users"
+                                         :key="p">
                                         <div class="role-user-info">
                                             <div class="role-face">
-                                                <img src=""
+                                                <img :src="person.headImage"
                                                      alt="">
                                             </div>
                                             <div class="role-name">
-                                                <b>项目经理</b>
-                                                <p>李小兵</p>
+                                                <b>{{person.type}}</b>
+                                                <p>{{person.nickName}}</p>
                                             </div>
-                                            <div class="role-tag">堆绿会员</div>
+                                            <div class="role-tag"
+                                                 v-for="(tag,t) in person.tags"
+                                                 :key="t">{{tag}}</div>
+
                                         </div>
                                         <!--一星 one-star-->
                                         <!--二星 two-star-->
                                         <!--三星 three-star-->
                                         <!--四星 four-star-->
                                         <!--五星 five-star-->
-                                        <div class="role-star three-star">
+                                        <div class="role-star"
+                                             :class="'star-'+person.star">
                                             <i></i>
                                             <i></i>
                                             <i></i>
@@ -121,204 +128,30 @@
                                             <i></i>
                                         </div>
                                         <div class="role-handle">
-                                            <span class="role-del">删除</span>
+                                            <span class="role-del" @click="delPerson(arr,p)">删除</span>
                                         </div>
                                     </div>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目经理</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
+                                    <!--添加 显示 +show-->
+                                    <div class="add-role-box show"
+                                         v-if="arr.showAdd">
+                                        <div class="role-input">
+                                            <input type="text"
+                                                   v-model="arr.searchPhone"
+                                                   v-on:input="getUserByPhone(arr)"
+                                                   placeholder="请输入添加人的手机号" />
                                         </div>
-                                        <!--一星 one-star-->
-                                        <!--二星 two-star-->
-                                        <!--三星 three-star-->
-                                        <!--四星 four-star-->
-                                        <!--五星 five-star-->
-                                        <div class="role-star three-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
+                                        <div class="role-nike-name">{{arr.searchName}}</div>
                                         <div class="role-handle">
-                                            <span class="role-del">删除</span>
+                                            <span class="role-btn"
+                                                  @click="addPerson(i)">确定</span>
+                                            <span class="role-line">|</span>
+                                            <span class="role-btn"
+                                                  @click="showAdd(i)">取消</span>
                                         </div>
                                     </div>
-                                    <div class="add-role-btn">+添加项目经理</div>
-                                </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目负责人</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <!--一星 one-star-->
-                                        <!--二星 two-star-->
-                                        <!--三星 three-star-->
-                                        <!--四星 four-star-->
-                                        <!--五星 five-star-->
-                                        <div class="role-star three-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <div class="role-handle">
-                                            <span class="role-del">删除</span>
-                                        </div>
-                                    </div>
-                                    <div class="add-role-btn">+添加项目负责人</div>
-                                </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目设计</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <!--一星 one-star-->
-                                        <!--二星 two-star-->
-                                        <!--三星 three-star-->
-                                        <!--四星 four-star-->
-                                        <!--五星 five-star-->
-                                        <div class="role-star three-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <div class="role-handle">
-                                            <span class="role-del">删除</span>
-                                        </div>
-                                    </div>
-                                    <div class="add-role-btn">+添加项目设计</div>
-                                </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目质量安全</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <div class="role-star one-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <div class="role-handle">
-                                            <span class="role-del">删除</span>
-                                        </div>
-                                    </div>
-                                    <div class="add-role-btn">+添加项目质量安全</div>
-                                </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目质量安全</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <div class="role-star two-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <div class="role-handle">
-                                            <span class="role-del">删除</span>
-                                        </div>
-                                    </div>
-                                    <div class="add-role-btn">+添加项目质量安全</div>
-                                </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目支援</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <div class="role-star four-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <div class="role-handle">
-                                            <span class="role-del">删除</span>
-                                        </div>
-                                    </div>
-                                    <div class="add-role-btn">+添加项目支援</div>
-                                </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目协理</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <div class="role-star five-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <div class="role-handle">
-                                            <span class="role-del">删除</span>
-                                        </div>
-                                    </div>
-                                    <div class="add-role-btn">+添加项目协理</div>
+                                    <div class="add-role-btn"
+                                         v-if="arr.type != '协理'"
+                                         @click="showAdd(i)">+添加{{arr.type}}</div>
                                 </li>
                             </ul>
                         </div>
@@ -352,6 +185,12 @@ export default {
             });
 
             if (res.Type == 'Success') {
+                res.Data.proUsers.forEach(item => {
+                    item.showAdd = false;
+                    item.searchPhone = '';
+                    item.searchName = '这里显示昵称';
+                    item.proAddUser = null;
+                })
                 this.detail = res.Data;
 
                 if (this.detail.proPoint) {
@@ -379,13 +218,51 @@ export default {
                 map.enableScrollWheelZoom();
             }
         },
+        showAdd(i) {
+            this.detail.proUsers[i].showAdd = !this.detail.proUsers[i].showAdd;
+        },
+        addPerson(i) {
+            this.detail.proUsers[i].users.push(this.detail.proUsers[i].proAddUser);
+            this.detail.proUsers[i].proAddUser = null;
+            this.detail.proUsers[i].searchPhone = '';
+            this.detail.searchName = '这边显示昵称';
+            this.detail.proUsers[i].showAdd = false;
+            console.log(this.detail.proUsers[i].users);
+        },
+        delPerson(item, i) {
+            item.users.splice(i, 1);
+        },
+        async getUserByPhone(item) {
+            if (item.searchPhone == '') {
+                item.searchName = '这边显示昵称';
+                item.proAddUser = null;
+                return;
+            }
+            if (!/^1[34578]\d{9}$/.test(item.searchPhone)) {
+                item.searchName = '号码不正确';
+                item.proAddUser = null;
+                return;
+            }
+            let res = await GetJxjProUsers({
+                phone: item.searchPhone
+            });
+            if (res.Type == 'Success') {
+                item.proAddUser = res.Data;
+                item.proAddUser.type = item.type;
+
+                item.searchName = res.Data.nickName;
+            } else {
+                item.proAddUser = null;
+                item.searchName = '查无此人';
+            }
+        }
     },
     created() {
         this.getJxjDetail();
 
     },
     mounted() {
-        // this.initBaiduMap();
+
 
     }
 

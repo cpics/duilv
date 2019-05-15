@@ -24,7 +24,8 @@
                 <!--右侧操作-->
                 <div class="com-hd-handle">
                     <div class="hd-bottom-td">
-                        <span class="cm-sign-btn">签到详情</span>
+                        <span class="cm-sign-btn"
+                              @click="openQiandao">签到详情</span>
                         <!--<span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span>-->
                     </div>
                 </div>
@@ -151,7 +152,8 @@
                                 class="prompt-txt">加载更多</button>
                     </div>
                     <div class="m-structure-quick">
-                        <div class="structure-btn">发布内容</div>
+                        <div class="structure-btn"
+                             @click="showPoP">发布内容</div>
                         <div class="structure-box pd-small">
                             <div class="common-tit-h2">
                                 <b>项目概况简述</b>
@@ -163,7 +165,7 @@
                                 <div class="pro-intro-txt">{{header.desc}}</div>
                             </div>
                             <div class="common-tit-h2">
-                                <a href
+                                <a @click="openxq"
                                    class="more-tit-btn">项目详情&gt;</a>
                             </div>
                         </div>
@@ -225,6 +227,32 @@
                 </div>
             </div>
         </div>
+
+        <!--写报告 显示 +show-->
+        <div class="shadow-fixed show"
+             v-if="popDir">
+            <div class="mask"></div>
+            <div class="bomb-com-box bomb-reply">
+                <div class="bomb-small-close"
+                     @click="showPoP"></div>
+                <div class="bomb-entrance">
+                    <div class="b-entrance-btn"
+                         @click="gotoCreate('zt')">写主题</div>
+                    <div class="b-entrance-btn"
+                         @click="gotoCreate('zb')">写周报</div>
+                    <div class="b-entrance-btn"
+                         @click="gotoCreate('qe')">写QE报告</div>
+                    <div class="b-entrance-btn"
+                         @click="gotoCreate('daliy')">写日报</div>
+                </div>
+            </div>
+        </div>
+        <d-qiandao v-if="qiandaoDir"
+                   @close="closeQiandao"></d-qiandao>
+        <d-xiangqing :detail="header"
+                     @initBaiduMap="initBaiduMap"
+                     @close="closexq"
+                     v-if="xiangqingDir"></d-xiangqing>
     </div>
 </template>
 
@@ -238,13 +266,24 @@ import '../../../../html/components/picture/picture.css';
 import '../../../../html/components/comments/comments.css';
 import '../../../../html/components/page/page.css';
 import '../../../../html/pages/originality/originality/originality.scss';
+import '../../../../html/pages/originality/modifyProject/modifyProject.scss';
 
 import { getJxjDetail, getJxjLog, getWeather } from '../../../../api/index.js';
 import timeago from '../../../../pubilc/util/timeago';
+
+import dQiandao from './components/d-qiandao.vue';
+import dXiangqing from './components/d-xiangqing.vue';
 export default {
     name: 'originality',
+    components: {
+        dQiandao,
+        dXiangqing
+    },
     data() {
         return {
+            qiandaoDir: false,
+            xiangqingDir: false,
+            popDir: false,
             header: {},
             list: [],
             weather: '',
@@ -255,6 +294,22 @@ export default {
         };
     },
     methods: {
+        initBaiduMap() {
+            let opints = this.header.proPoint.split(',');
+            let that = this;
+            let script = document.createElement("script");
+            script.src = "//api.map.baidu.com/api?v=2.0&ak=uVdH4iqsEd2BPnlCupOlHFUytU7eqiWL&callback=createMap"
+            document.head.appendChild(script)
+            window.createMap = () => {
+                //创建Map实例
+                var map = new BMap.Map("mapContent");
+                var point = new BMap.Point(opints[0], opints[1]);
+                map.centerAndZoom(point, 16);
+                var marker = new BMap.Marker(point);        // 创建标注    
+                map.addOverlay(marker);
+                map.enableScrollWheelZoom();
+            }
+        },
         async getHeader() {
             let res = await getJxjDetail({
                 id: this.$route.params.id
@@ -304,6 +359,32 @@ export default {
             // if (item.type != 'QE') {
             this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }, query: { xid: this.xid } });
             // }
+        },
+        gotoCreate(type) {
+            if (type == 'qe') {
+                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'QE' } })
+            } else if (type == 'zb') {
+                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZB' } })
+            } else if (type == 'daliy') {
+                this.$router.push({ name: 'createDaliy', params: { id: this.$route.query.xid }, query: { title: this.header.title } })
+            } else if (type == 'zt') {
+                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZT' } });
+            }
+        },
+        closeQiandao() {
+            this.qiandaoDir = false;
+        },
+        openQiandao() {
+            this.qiandaoDir = true;
+        },
+        closexq() {
+            this.xiangqingDir = false;
+        },
+        openxq() {
+            this.xiangqingDir = true;
+        },
+        showPoP() {
+            this.popDir = !this.popDir;
         }
     },
     created() {
