@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../html/components/crumbs/crumbs.css"/>
 
     <link rel="stylesheet" type="text/css" href="../../../../html/pages/originality/apply/apply.css"/>
-
+    <link rel="stylesheet" type="text/css" href="../../../../html/pages/originality/modifyProject/modifyProject.css"/>
 </head>
 <body>
 <div id="app">
@@ -244,101 +244,359 @@
                                         <div class="a-column-tit">
                                             <div class="a-tit">项目经理</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="默认是自己的ID"/>
-                                                <span class="unit-nike">昵称：将将将</span>
-                                                <!--<span class="unit-vere">(*必填)</span>-->
-                                            </div>
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入项目经理手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加项目经理&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加项目经理</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="a-orig-column">
                                         <div class="a-column-tit">
                                             <div class="a-tit">项目负责人</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入项目负责人手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加项目负责人&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加项目负责人</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="a-orig-column">
                                         <div class="a-column-tit">
                                             <div class="a-tit">项目设计</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入项目设计手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加项目设计&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加项目设计</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="a-orig-column">
                                         <div class="a-column-tit">
                                             <div class="a-tit">项目质量安全</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入项目质量安全手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加项目质量安全&gt;&gt;</div>
-                                        </div>
-                                    </div>
-                                    <div class="a-orig-column">
-                                        <div class="a-column-tit">
-                                            <div class="a-tit">项目质量安全</div>
-                                        </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入项目质量安全手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加项目质量安全&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加项目质量安全</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="a-orig-column">
                                         <div class="a-column-tit">
                                             <div class="a-tit">项目支援</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入项目支援手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加项目支援&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加项目支援</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="a-orig-column">
                                         <div class="a-column-tit">
                                             <div class="a-tit">甲方</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入甲方手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加甲方&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加甲方</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="a-orig-column">
                                         <div class="a-column-tit">
                                             <div class="a-tit">监理</div>
                                         </div>
-                                        <div class="apply-form">
-                                            <div class="apply-form-row">
-                                                <input type="text" placeholder="请输入监理手机号"/>
-                                                <span class="unit-vere">(*必填)</span>
-                                            </div>
-                                            <div class="add-apply-btn">+添加监理&gt;&gt;</div>
+                                        <div class="project-rol-list">
+                                            <ul>
+                                                <li>
+                                                    <div class="project-role-row">
+                                                        <div class="role-user-info">
+                                                            <div class="role-face">
+                                                                <img src="../../../../html/components/common/images/face.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="role-name">
+                                                                <p>李小兵</p>
+                                                            </div>
+                                                            <div class="role-tag">堆绿会员</div>
+                                                        </div>
+                                                        <!--一星 one-star-->
+                                                        <!--二星 two-star-->
+                                                        <!--三星 three-star-->
+                                                        <!--四星 four-star-->
+                                                        <!--五星 five-star-->
+                                                        <div class="role-star three-star">
+                                                            <i></i><i></i><i></i><i></i><i></i>
+                                                        </div>
+                                                        <div class="role-handle">
+                                                            <span class="role-del">删除</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--添加 显示 +show-->
+                                                    <div class="add-role-box show">
+                                                        <div class="role-input">
+                                                            <input type="text" placeholder="请输入添加人的手机号"/>
+                                                        </div>
+                                                        <div class="role-nike-name">昵称：将将将</div>
+                                                        <div class="role-handle">
+                                                            <span class="role-btn">确定</span>
+                                                            <span class="role-line">|</span>
+                                                            <span class="role-btn">取消</span>
+                                                        </div>
+                                                        <div class="role-del-icon"></div>
+                                                    </div>
+                                                    <div class="add-role-btn">+添加监理</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

@@ -98,7 +98,7 @@
   margin-bottom: 40px; }
 
 .a-orig-column .a-column-tit {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #f2f2f2; }
   .a-orig-column .a-column-tit .a-tit {
     width: 126px;
@@ -108,6 +108,23 @@
     font-size: 16px;
     text-align: center;
     background: #f2f2f2; }
+.a-orig-column .project-rol-list .project-role-row .role-name {
+  padding-top: 0;
+  line-height: 68px; }
+.a-orig-column .add-role-box .role-input {
+  margin-right: 15px; }
+.a-orig-column .add-role-box .role-nike-name {
+  min-width: 100px; }
+.a-orig-column .role-del-icon {
+  width: 20px;
+  height: 30px;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  background: url("images/del.png") no-repeat center center;
+  background-size: contain; }
+  .a-orig-column .role-del-icon:hover {
+    opacity: .8; }
 
 .apply-form-row {
   font-size: 14px;
