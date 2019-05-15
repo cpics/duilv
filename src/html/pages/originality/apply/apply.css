@@ -188,6 +188,7 @@
   .apply-pic .apply-pic-item {
     position: relative;
     width: 150px;
+    height: 150px;
     float: left;
     margin: 0 0 20px 20px; }
     .apply-pic .apply-pic-item img {
@@ -251,7 +252,7 @@
     position: absolute;
     right: -10px;
     top: -10px;
-    z-index: 2;
+    z-index: 4;
     width: 20px;
     height: 20px;
     display: inline-block;
