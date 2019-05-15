@@ -77,16 +77,13 @@
                                                        @change="uploadImg()"
                                                        ref="imgFileInput"
                                                        accept="image/png, image/jpeg, image/gif, image/jpg">
-                                                <img v-if="form1.picPath.length >0"
-                                                     :src="form1.picPath"
+
+                                            </div>
+                                            <div class="apply-pic-item"
+                                                 v-if="form1.picPath.length >0">
+                                                <img :src="form1.picPath"
                                                      alt="">
                                             </div>
-                                            <!-- <div class="apply-reselect">
-                                                <div class="reselect-btn">重新选择</div>
-                                                <input type="file"
-                                                       name="file"
-                                                       class="" />
-                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -378,7 +375,7 @@ export default {
         async submitStep2() {
             let dir = true;
             for (let i = 0; i < this.persons.length; i++) {
-                if (this.persons[i].arr.length == 0 && this.persons[i].typeName !='协理') {
+                if (this.persons[i].arr.length == 0 && this.persons[i].typeName != '协理') {
                     dir = false;
                     this.$layer.alert('请添加' + this.persons[i].typeName);
                     break;
