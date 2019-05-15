@@ -16,7 +16,10 @@
     height: 100%;
     z-index: 10;
     display: none;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .5) !important;
+    filter: Alpha(opacity=50);
+    background: #000;
+    *zoom: 1;
   }
   &.show {
     display: block;

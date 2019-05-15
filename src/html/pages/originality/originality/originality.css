@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.sign-pop-box .sign-pop-item dd, .sign-pop-box .sign-i-infor {
+.sign-pop-box .sign-pop-item dd, .sign-pop-box .sign-i-infor, .bomb-entrance {
   zoom: 1; }
-  .sign-pop-box .sign-pop-item dd:after, .sign-pop-box .sign-i-infor:after {
+  .sign-pop-box .sign-pop-item dd:after, .sign-pop-box .sign-i-infor:after, .bomb-entrance:after {
     clear: both;
     content: '';
     display: block;
@@ -71,5 +71,25 @@
     text-align: right;
     display: inline-block;
     float: left; }
+
+/*入口弹框*/
+.bomb-entrance {
+  padding-top: 70px;
+  text-align: center; }
+  .bomb-entrance .b-entrance-btn {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+    display: inline-block;
+    background: #4cde9f;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 15px;
+    *float: left; }
+    .bomb-entrance .b-entrance-btn:hover {
+      background: #7ae0b2; }
 
 /*# sourceMappingURL=originality.css.map */
