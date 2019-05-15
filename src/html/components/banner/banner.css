@@ -6,6 +6,9 @@
   .m-slider-banner.m-norm-banner {
     width: 1170px;
     height: 300px; }
+  .m-slider-banner.mall-banner {
+    width: 1170px;
+    height: 208px; }
   .m-slider-banner .swiper-container {
     position: relative;
     width: 100%;

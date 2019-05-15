@@ -1,0 +1,80 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*商城列表*/
+.mall-goods {
+  min-height: 300px;
+  padding: 30px 0;
+  margin-left: -12px;
+  @extend %clearfix;
+  &-item {
+    width: 281px;
+    height: 365px;
+    border: 1px solid #e8e7e7;
+    float: left;
+    box-sizing: content-box;
+    margin: 0 0 20px 12px;
+    &:hover {
+      box-shadow: 0 0 10px rgba(17, 17, 17, .2);
+    }
+    .goods-pic {
+      height: 193px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .goods-info {
+      padding: 15px 20px;
+    }
+    .goods-money {
+      font-size: 20px;
+      color: #ff4049;
+      line-height: 1.3;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-bottom: 5px;
+    }
+    .goods-txt {
+      color: #333;
+      font-size: 14px;
+      line-height: 24px;
+      height: 48px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+    .goods-handle {
+      text-align: right;
+    }
+    .goods-buy-btn {
+      width: 110px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      display: inline-block;
+      font-size: 14px;
+      color: #fff;
+      cursor: pointer;
+      background: #ff4049;
+      &:hover {
+        background: #f81d28;
+      }
+    }
+  }
+}
