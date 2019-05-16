@@ -61,7 +61,7 @@
     box-sizing: border-box;
   }
   .dynamic-tip {
-    min-width: 46px;
+    min-width: 54px;
     color: #999;
     font-size: 16px;
     height: 26px;
@@ -70,7 +70,7 @@
     text-align: center;
     display: inline-block;
     padding: 0 6px;
-    margin: 2px 20px 0 0;
+    margin: 2px 20px 8px 0;
     border: 1px solid #999;
     border-radius: 5px;
     &.active,
