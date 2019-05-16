@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.chapter-list li, .teacher-list ul {
+.chapter-list li, .teacher-list ul, .chap-picture {
   zoom: 1; }
-  .chapter-list li:after, .teacher-list ul:after {
+  .chapter-list li:after, .teacher-list ul:after, .chap-picture:after {
     clear: both;
     content: '';
     display: block;
@@ -165,5 +165,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+
+.chap-picture {
+  padding: 8px 0 0;
+  margin-left: -14px; }
+  .chap-picture.hover-scale {
+    cursor: pointer; }
+    .chap-picture.hover-scale .chap-item:hover {
+      cursor: pointer;
+      transform: scale(1.06);
+      transition: all .4s ease-in-out; }
+
+.chap-item {
+  width: 176px;
+  height: 120px;
+  float: left;
+  display: block;
+  overflow: hidden;
+  margin-left: 14px;
+  margin-bottom: 14px; }
+  .chap-item img {
+    display: block;
+    width: 100%;
+    height: 100%; }
 
 /*# sourceMappingURL=course.css.map */
