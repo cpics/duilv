@@ -27,9 +27,65 @@
   .modify-base-info {
     font-size: 16px;
     padding: 10px 0;
+    .apply-form-row{
+      padding: 20px 0 5px;
+    }
+    .apply-tag {
+      min-width: 50px;
+      height: 32px;
+      line-height: 32px;
+      color: #666;
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      background: #fff;
+      cursor: pointer;
+      padding: 0 20px;
+      border: 1px solid #e8e7e7;
+      margin-right: 25px;
+      margin-bottom: 15px;
+      &.active {
+        color: #fff;
+        background: #4cde9f;
+        border: 1px solid #4cde9f;
+      }
+    }
   }
   .base-i-row {
     padding: 6px 0;
+    line-height: 32px;
+    @extend %clearfix;
+    .base-label {
+      float: left;
+    }
+    .base-input {
+      float: left;
+      input {
+        width: 340px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 16px;
+        border: 1px solid #e8e7e7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
+      }
+      ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      ::-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-ms-input-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+    }
   }
   .modify-base-map {
     width: 800px;

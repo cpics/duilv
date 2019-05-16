@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.modify-form-main .modify-sit-row, .add-role-box, .project-rol-list .project-role-row .role-user-info {
+.modify-form-main .base-i-row, .modify-form-main .modify-sit-row, .add-role-box, .project-rol-list .project-role-row .role-user-info {
   zoom: 1; }
-  .modify-form-main .modify-sit-row:after, .add-role-box:after, .project-rol-list .project-role-row .role-user-info:after {
+  .modify-form-main .base-i-row:after, .modify-form-main .modify-sit-row:after, .add-role-box:after, .project-rol-list .project-role-row .role-user-info:after {
     clear: both;
     content: '';
     display: block;
@@ -24,8 +24,53 @@
   .modify-form-main .modify-base-info {
     font-size: 16px;
     padding: 10px 0; }
+    .modify-form-main .modify-base-info .apply-form-row {
+      padding: 20px 0 5px; }
+    .modify-form-main .modify-base-info .apply-tag {
+      min-width: 50px;
+      height: 32px;
+      line-height: 32px;
+      color: #666;
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      background: #fff;
+      cursor: pointer;
+      padding: 0 20px;
+      border: 1px solid #e8e7e7;
+      margin-right: 25px;
+      margin-bottom: 15px; }
+      .modify-form-main .modify-base-info .apply-tag.active {
+        color: #fff;
+        background: #4cde9f;
+        border: 1px solid #4cde9f; }
   .modify-form-main .base-i-row {
-    padding: 6px 0; }
+    padding: 6px 0;
+    line-height: 32px; }
+    .modify-form-main .base-i-row .base-label {
+      float: left; }
+    .modify-form-main .base-i-row .base-input {
+      float: left; }
+      .modify-form-main .base-i-row .base-input input {
+        width: 340px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 16px;
+        border: 1px solid #e8e7e7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif; }
+      .modify-form-main .base-i-row .base-input ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input :-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input ::-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input :-ms-input-placeholder {
+        font-size: 16px;
+        color: #999; }
   .modify-form-main .modify-base-map {
     width: 800px;
     max-height: 240px; }
