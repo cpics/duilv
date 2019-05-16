@@ -121,7 +121,7 @@ export const menuRouter = [
                 },
                 component: () =>
                     import('./views/originality/children/apply/apply.vue'),
-            }
+            },
         ],
     },
     {
@@ -171,14 +171,6 @@ export const menuRouter = [
             },
         ],
     },
-    // {
-    //     path: '/news',
-    //     name: 'news',
-    //     meta: {
-    //         title: '绿建要闻'
-    //     },
-    //     component: () => import('./views/news/news.vue')
-    // },
     {
         path: '/news',
         name: 'news',
@@ -236,6 +228,26 @@ export const menuRouter = [
                     import('./views/cloud/children/detail/detail.vue'),
             },
         ],
+    },
+    {
+        path: '/mall',
+        name: 'mall',
+        meta: {
+            title: '商城',
+        },
+        component: () => import('./views/mall/mall.vue'),
+        redirect: '/mall/index',
+        children: [
+            {
+                path: 'index',
+                name: 'mallIndex',
+                meta: {
+                    title: '商城-首页',
+                },
+                component: () =>
+                    import('./views/mall/children/index/index.vue'),
+            },
+        ]
     },
 ];
 export const centerRouter = [

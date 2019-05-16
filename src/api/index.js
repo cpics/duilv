@@ -129,6 +129,10 @@ export const uploadImageByBase = params =>
 export const getJxjTags = params =>
     fetch.post(`${domain}/Api/ProjectLog/GetTags/`, params);
 
+//匠心记获取父节点列表
+export const getParentProInfos = params =>
+    fetch.post(`${domain}/Api/ProjectLog/getParentProInfos/`, params);
+
 //匠心记获取人员类型标签
 export const GetJxjProUserTypes = params =>
     fetch.post(`${domain}/Api/ProjectLog/GetProUserTypes/`, params);
@@ -140,6 +144,11 @@ export const GetJxjProUsers = params =>
 //匠心记申请
 export const jxjAddProjectLog = params =>
     fetch.post(`${domain}/Api/ProjectLog/AddProjectLog/`, params);
+
+//匠心记申请
+export const jxjUpdateProjectInfo = params =>
+    fetch.post(`${domain}/Api/ProjectLog/UpdateProjectInfo/`, params);
+
 
 //添加主题
 export const jxjAddPost = params =>
@@ -226,3 +235,12 @@ export const yzkDetail = params =>
 //云智库评论
 export const yzkAddReplis = params =>
     fetch.post(`${domain}/Api/Yzk/AddReplis/`, params);
+
+//-------------商城------
+//商城首页
+export const getMallIndex = params =>
+    fetch.post(`${domain}/Api/Store/Index/`, params);
+
+//商品详情
+export const getMallDetail = params =>
+    fetch.post(`${domain}/Api/Store/Detail/`, params);

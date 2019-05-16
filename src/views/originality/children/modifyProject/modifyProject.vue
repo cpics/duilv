@@ -127,8 +127,9 @@
                                             <i></i>
                                             <i></i>
                                         </div>
-                                        <div class="role-handle">
-                                            <span class="role-del" @click="delPerson(arr,p)">删除</span>
+                                        <div class="role-handle" >
+                                            <span class="role-del" v-if="arr.type !='协理'"
+                                                  @click="delPerson(arr,p)">删除</span>
                                         </div>
                                     </div>
                                     <!--添加 显示 +show-->
@@ -158,7 +159,8 @@
                     </div>
                 </div>
                 <div class="cm-form-btn">
-                    <div class="cu-form-btn">提交</div>
+                    <div class="cu-form-btn"
+                         @click="submitFunc">提交</div>
                 </div>
             </div>
         </div>
@@ -169,13 +171,40 @@
 import '../../../../html/components/crumbs/crumbs.css';
 import '../../../../html/pages/originality/modifyProject/modifyProject.css';
 // import loadScript from ''
-import { getJxjDetail, GetJxjProUsers } from '../../../../api/index';
+import { getJxjDetail, GetJxjProUsers, jxjUpdateProjectInfo } from '../../../../api/index';
 import loadScript from '../../../../pubilc/util/loadScript';
 export default {
     name: 'modifyProject',
     data() {
         return {
-            detail: {}
+            detail: {},
+            rules: {
+                title: [
+                    { required: true, message: '请填写项目名称!' }
+                ],
+                desc: [
+                    { required: true, message: '请填写项目简介!' }
+                ],
+                productName: [
+                    { required: true, message: '请填写产品名称!' }
+                ],
+                productPart: [
+                    { required: true, message: '请填写产品组成!' }
+                ],
+                productTrait: [
+                    { required: true, message: '请填写产品特点!' }
+                ],
+                quality: [
+                    { required: true, message: '请填写工程质量!' }
+                ],
+                cycle: [
+                    { required: true, message: '请填写工程周期!' }
+                ],
+                scale: [
+                    { required: true, message: '请填写工程规模!' }
+                ],
+
+            }
         }
     },
     methods: {
@@ -255,6 +284,58 @@ export default {
                 item.proAddUser = null;
                 item.searchName = '查无此人';
             }
+        },
+        async submitFunc() {
+
+            let validator = new this.$validator(this.rules);
+            let model = this.detail;
+            validator.validate(model, async (errors, fields) => {
+                if (!errors) {
+                    let dir = true;
+                    for (let i = 0; i < this.detail.proUsers.length; i++) {
+                        if (this.detail.proUsers[i].users.length == 0 && this.detail.proUsers[i].type != '协理') {
+                            dir = false;
+                            this.$layer.alert('请添加' + this.detail.proUsers[i].type);
+                            break;
+                        }
+                    }
+
+                    if (!dir) {
+                        return false;
+                    }
+                    let proUsers = [];
+
+                    this.detail.proUsers.forEach(item => {
+                        item.users.forEach(person => {
+                            proUsers.push({
+                                id: person.id,
+                                type: item.id
+                            })
+                        })
+                    });
+
+                    let res = await jxjUpdateProjectInfo({
+                        id: this.detail.id,
+                        title: this.detail.title,
+                        desc: this.detail.desc,
+                        productName: this.detail.productName,
+                        productPart: this.detail.productPart,
+                        productTrait: this.detail.productTrait,
+                        quality: this.detail.quality,
+                        cycle: this.detail.cycle,
+                        scale: this.detail.scale,
+                        proUsers: proUsers
+                    })
+                    if (res.Type == 'Success') {
+                        this.$layer.alert(res.Content);
+                    } else {
+                        this.$layer.alert(res.Content);
+                    }
+                } else {
+                    // this.setp1Dir = false;
+                    this.$layer.alert(errors[0].message);
+                }
+            });
         }
     },
     created() {

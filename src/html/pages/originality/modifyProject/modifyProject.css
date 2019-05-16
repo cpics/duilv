@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.modify-form-main .modify-sit-row, .add-role-box, .project-rol-list .project-role-row .role-user-info {
+.modify-form-main .base-i-row, .modify-form-main .modify-sit-row, .add-role-box, .project-rol-list .project-role-row .role-user-info {
   zoom: 1; }
-  .modify-form-main .modify-sit-row:after, .add-role-box:after, .project-rol-list .project-role-row .role-user-info:after {
+  .modify-form-main .base-i-row:after, .modify-form-main .modify-sit-row:after, .add-role-box:after, .project-rol-list .project-role-row .role-user-info:after {
     clear: both;
     content: '';
     display: block;
@@ -25,7 +25,32 @@
     font-size: 16px;
     padding: 10px 0; }
   .modify-form-main .base-i-row {
-    padding: 6px 0; }
+    padding: 6px 0;
+    line-height: 32px; }
+    .modify-form-main .base-i-row .base-label {
+      float: left; }
+    .modify-form-main .base-i-row .base-input {
+      float: left; }
+      .modify-form-main .base-i-row .base-input input {
+        width: 340px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 16px;
+        border: 1px solid #e8e7e7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif; }
+      .modify-form-main .base-i-row .base-input ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input :-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input ::-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input :-ms-input-placeholder {
+        font-size: 16px;
+        color: #999; }
   .modify-form-main .modify-base-map {
     width: 800px;
     max-height: 240px; }

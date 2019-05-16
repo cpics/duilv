@@ -51,12 +51,23 @@
                                         <span class="unit-vere">(*必填)</span>
                                     </div>
                                     <div class="apply-form-row">
+                                        <el-select v-model="form1.parentId"
+                                                   placeholder="请选择项目类型">
+                                            <el-option v-for="item in parentIds"
+                                                       :key="item.title"
+                                                       :label="item.title"
+                                                       :value="item.id">
+                                            </el-option>
+                                        </el-select>
+                                        <span class="unit-vere">(*必填)</span>
+                                    </div>
+                                    <!-- <div class="apply-form-row">
                                         <el-date-picker v-model="form1.createdTime"
                                                         type="date"
                                                         placeholder="项目创建时间">
                                         </el-date-picker>
                                         <span class="unit-vere">(*必填)</span>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="apply-form-row">
                                         <input type="text"
                                                placeholder="项目地点" />
@@ -256,7 +267,7 @@
 import '../../../../html/components/crumbs/crumbs.scss';
 import '../../../../html/pages/originality/apply/apply.scss';
 import '../../../../html/pages/originality/modifyProject/modifyProject.scss';
-import { getJxjTags, uploadImage, GetJxjProUserTypes, GetJxjProUsers, jxjAddProjectLog } from '../../../../api';
+import { getJxjTags, uploadImage, GetJxjProUserTypes, GetJxjProUsers, jxjAddProjectLog, getParentProInfos } from '../../../../api';
 import { mapState, mapMutations } from 'vuex';
 export default {
     name: 'jxjApply',
@@ -266,9 +277,11 @@ export default {
             setp: 1,
             persons: [],
             setp1Dir: false,
+            parentIds: [],
             form1: {
+                parentId: '',
                 title: '',//项目名称
-                createdTime: '',//创建时间
+                // createdTime: '',//创建时间
                 desc: '',//项目简介
                 picPath: '',//图片
                 tagIds: [],//标签
@@ -284,8 +297,8 @@ export default {
                 title: [
                     { required: true, message: '请填写项目名称!' }
                 ],
-                createdTime: [
-                    { required: true, message: '请选择创建时间!' }
+                parentId: [
+                    { required: true, message: '请选择项目类型!' }
                 ],
                 desc: [
                     { required: true, message: '请填写项目简介!' }
@@ -331,6 +344,12 @@ export default {
                 this.tags = res.Data;
             } else {
                 this.$layer.alert(res.Content);
+            }
+        },
+        async getParentProInfos() {
+            let res = await getParentProInfos();
+            if (res.Type == 'Success') {
+                this.parentIds = res.Data;
             }
         },
         chooseTags(i) {
@@ -386,11 +405,11 @@ export default {
                 return false;
             }
 
-            this.persons.proUsers = [];
+            this.form1.proUsers = [];
 
             this.persons.forEach(item => {
                 item.arr.forEach(person => {
-                    this.persons.proUsers.push({
+                    this.form1.proUsers.push({
                         id: person.id,
                         type: item.id
                     })
@@ -473,6 +492,7 @@ export default {
     created() {
         // console.log(this.userInfo);
         this.getJxjTags();
+        this.getParentProInfos();
         this.GetJxjProUserTypes();
 
     }
