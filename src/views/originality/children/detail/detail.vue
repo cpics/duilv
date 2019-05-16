@@ -34,13 +34,13 @@
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs"
-                   href>首页</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'default'}">首页</router-link>
                 <span class="c-sep">&gt;</span>
-                <a class="c-crumbs"
-                   href>匠心记</a>
+                <span class="c-current">匠心记</span>
                 <span class="c-sep">&gt;</span>
-                <span class="c-current">环秀湖花园</span>
+                <span class="c-current">{{header.title}}</span>
             </div>
             <!--主体-->
             <div class="origin-content">

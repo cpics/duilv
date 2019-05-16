@@ -4,8 +4,7 @@
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs"
-                   href="">匠心记</a>
+                <span class="c-current">匠心记</span>
                 <span class="c-sep">&gt;</span>
                 <a class="c-crumbs"
                    href="">环秀湖花园北区</a>
