@@ -197,6 +197,7 @@
   width: 100%;
   height: 176px; }
 .trace-d-list .trace-tit {
+  color: #333;
   height: 48px;
   font-size: 16px;
   font-weight: bold;
@@ -206,6 +207,8 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; }
+  .trace-d-list .trace-tit:active, .trace-d-list .trace-tit:visited {
+    color: #333; }
 .trace-d-list .trace-handle {
   color: #666;
   padding-top: 5px;
