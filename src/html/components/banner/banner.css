@@ -66,7 +66,8 @@
   margin: 0 auto; }
   .m-norm-banner.mall-banner {
     width: 1170px;
-    height: 208px; }
+    height: 208px;
+    padding-top: 0; }
   .m-norm-banner .pic-banner,
   .m-norm-banner .video-box {
     width: 100%;
