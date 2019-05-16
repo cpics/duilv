@@ -304,12 +304,12 @@ export default {
                         return false;
                     }
                     let proUsers = [];
-
+                    
                     this.detail.proUsers.forEach(item => {
                         item.users.forEach(person => {
                             proUsers.push({
                                 id: person.id,
-                                type: item.id
+                                type: item.typeid
                             })
                         })
                     });

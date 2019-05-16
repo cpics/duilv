@@ -1,74 +1,74 @@
 <template>
-  <!--页面主体-->
-  <div class="g-container">
-    <!--详情头部-->
-    <div class="com-detail-hd">
-      <div class="com-hd-inner">
-        <div class="com-hd-info">
-          <div class="com-hd-face">
-            <img :src="detail.picPath">
-          </div>
-          <div class="com-hd-name">
-            <div class="hd-bottom-td">
-              <div class="hd-name-row">{{detail.title}}</div>
-              <!--今日信息-->
-              <!--<div class="hd-name-row">-->
-              <!--<span>今天</span>-->
-              <!--<span>2017年3月18日</span>-->
-              <!--<span>星期三</span>-->
-              <!--<span>天气：晴</span>-->
-              <!--</div>-->
+    <!--页面主体-->
+    <div class="g-container">
+        <!--详情头部-->
+        <div class="com-detail-hd">
+            <div class="com-hd-inner">
+                <div class="com-hd-info">
+                    <div class="com-hd-face">
+                        <img :src="detail.picPath">
+                    </div>
+                    <div class="com-hd-name">
+                        <div class="hd-bottom-td">
+                            <div class="hd-name-row">{{detail.title}}</div>
+                            <!--今日信息-->
+                            <!--<div class="hd-name-row">-->
+                            <!--<span>今天</span>-->
+                            <!--<span>2017年3月18日</span>-->
+                            <!--<span>星期三</span>-->
+                            <!--<span>天气：晴</span>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <!--右侧操作-->
+                <div class="com-hd-handle">
+                    <div class="hd-bottom-td">
+                        <span class="cm-sign-btn">签到详情</span>
+                        <span class="share-wechat-btn">
+                            分享：
+                            <i class="u-wechat-icon"></i>
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <!--右侧操作-->
-        <div class="com-hd-handle">
-          <div class="hd-bottom-td">
-            <span class="cm-sign-btn">签到详情</span>
-            <span class="share-wechat-btn">
-              分享：
-              <i class="u-wechat-icon"></i>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="m-container m-width">
-      <!--面包屑-->
-      <div class="crumbs-box">
-        <a class="c-crumbs" href>首页</a>
-        <span class="c-sep">&gt;</span>
-        <a class="c-crumbs" href>匠企行</a>
-        <span class="c-sep">&gt;</span>
-        <a class="c-crumbs" href>苏州海的大姐有限公司</a>
-        <span class="c-sep">&gt;</span>
-        <span class="c-current">企业编辑</span>
-      </div>
-      <!--项目回顾-->
-      <div class="g-normal-content">
-        <div class="m-editor-box">
-          <div class="u-editor-tabs">
-            <span class="edit-tab-col" :class="{'active':type == 1}" @click="show(1)">电脑页面</span>
-            <span class="edit-tab-col" :class="{'active':type == 2}" @click="show(2)">手机页面</span>
-            <div class="edit-save-button">
-              <span class="edit-save-btn" @click="updateEnterDesc()">保存</span>
-              <!--<span class="edit-save-btn bg-grey">取消</span>-->
+        <div class="m-container m-width">
+            <!--面包屑-->
+            <div class="crumbs-box">
+                <a class="c-crumbs" href>首页</a>
+                <span class="c-sep">&gt;</span>
+                <a class="c-crumbs" href>匠企行</a>
+                <span class="c-sep">&gt;</span>
+                <a class="c-crumbs" href>苏州海的大姐有限公司</a>
+                <span class="c-sep">&gt;</span>
+                <span class="c-current">企业编辑</span>
             </div>
-          </div>
-          <div class="u-editor-box">
-            <!--电脑页面 显示 +show-->
-            <div class="editor-inner" :class="{'show':type == 1}">
-              <div class="edit_container">
-                <quill-editor
-                  v-model="PCcontent"
-                  ref="myQuillEditor"
-                  :options="editorOption"
-                  @blur="onEditorBlur($event)"
-                  @focus="onEditorFocus($event)"
-                  @change="onEditorChange($event)"
-                ></quill-editor>
-              </div>
-              <!-- <div class="news-article">
+            <!--项目回顾-->
+            <div class="g-normal-content">
+                <div class="m-editor-box">
+                    <div class="u-editor-tabs">
+                        <span class="edit-tab-col" :class="{'active':type == 1}" @click="show(1)">电脑页面</span>
+                        <span class="edit-tab-col" :class="{'active':type == 2}" @click="show(2)">手机页面</span>
+                        <div class="edit-save-button">
+                            <span class="edit-save-btn" @click="updateEnterDesc()">保存</span>
+                            <!--<span class="edit-save-btn bg-grey">取消</span>-->
+                        </div>
+                    </div>
+                    <div class="u-editor-box">
+                        <!--电脑页面 显示 +show-->
+                        <div class="editor-inner" :class="{'show':type == 1}">
+                            <div class="edit_container">
+                                <quill-editor
+                                    v-model="PCcontent"
+                                    ref="myQuillEditor"
+                                    :options="editorOption"
+                                    @blur="onEditorBlur($event)"
+                                    @focus="onEditorFocus($event)"
+                                    @change="onEditorChange($event)"
+                                ></quill-editor>
+                            </div>
+                            <!-- <div class="news-article">
                 <p>
                   木心
                   1927年生于浙江桐乡。本名孙璞，字仰中，号牧心，笔名木心。毕业于上海美术专科学校。1982年定居纽约。陈丹青的导师。在台湾和纽约华人圈中被视为深解中国传统文化的精英和传奇人物。曾出版多部著作。
@@ -78,30 +78,30 @@
                 <p>常以为人是一种容器，盛着快乐，盛着悲哀。但人不是容器，人是导管，快乐流过，悲哀流过，导管只是导管。各种快乐悲哀流过流过，一直到死，导管才空了。疯子就是导管的淤塞和破裂。</p>
                 <img src alt>
               </div>-->
-            </div>
-            <!--手机页面 显示 +show-->
-            <div class="editor-inner" :class="{'show':type == 2}">
-              <div class="editor-phone-info">
-                <div class="e-phone-textarea">
-                  <textarea v-model="mobileContent" placeholder="正文内容......"></textarea>
+                        </div>
+                        <!--手机页面 显示 +show-->
+                        <div class="editor-inner" :class="{'show':type == 2}">
+                            <div class="editor-phone-info">
+                                <div class="e-phone-textarea">
+                                    <textarea v-model="mobileContent" placeholder="正文内容......"></textarea>
+                                </div>
+                                <div class="e-phone-pic">
+                                    <div class="pic-phone-item">
+                                        <button class="upload-btn">添加图片</button>
+                                        <input @change="uploadImg()" type="file" name="file" ref="imgInput">
+                                    </div>
+                                    <div class="pic-phone-item" v-for="(item,i) in mobileImgs" :key="i">
+                                        <img :src="item">
+                                        <i class="phone-del-pic"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="e-phone-pic">
-                  <div class="pic-phone-item">
-                    <button class="upload-btn">添加图片</button>
-                    <input @change="uploadImg()" type="file" name="file" ref="imgInput">
-                  </div>
-                  <div class="pic-phone-item" v-for="(item,i) in mobileImgs" :key="i">
-                    <img :src="item">
-                    <i class="phone-del-pic"></i>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>

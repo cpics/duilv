@@ -1,149 +1,156 @@
 <template>
-  <div class="g-container">
-    <div class="m-container m-width">
-      <!--面包屑-->
-      <div class="crumbs-box">
-        <a class="c-crumbs" href>首页</a>
-        <span class="c-sep">&gt;</span>
-        <span class="c-current">行业圈</span>
-      </div>
-      <!--行业圈-->
-      <div class="m-structure-content">
-        <div class="m-structure-information">
-          <div class="m-prise-content">
-            <div class="e-prise-box" v-for="(item,index) in list" :key="index">
-              <a @click="gotoDetail(item.enterId)">
-                <div class="prise-hd">
-                  <div class="prise-face">
-                    <img :src="item.icon">
-                  </div>
-                  <div class="prise-hd-info">
-                    <div class="prise-hd-name">{{item.enterName}}</div>
-                    <!-- <div class="prise-time">12小时前</div> -->
-                  </div>
-                </div>
-                <div class="prise-article">
-                  <div class="prise-art-name">
-                    <b>{{item.title}}</b>
-                    <span class="art-tips">{{item.type}}</span>
-                  </div>
-                  <!-- <div class="prise-art-txt" v-html="item.content"></div> -->
-                  <div class="view-more-prise" :class="{'active':!item.zkDir}">
-                    <div class="prise-art-txt" v-html="item.content"></div>
-                    <div
-                      class="view-more-txt unfold"
-                      v-if="!item.zkDir"
-                      @click.stop.prevent="zkFunc(index)"
-                    >
-                      查看更多
-                      <i></i>
-                    </div>
-                    <div
-                      class="view-more-txt fewer"
-                      v-if="item.zkDir"
-                      @click.stop.prevent="zkFunc(index)"
-                    >
-                      收起
-                      <i></i>
-                    </div>
-                  </div>
-                  <div class="cp-column hover-scale big-pic">
-                    <div class="cp-item" v-for="(img,i) in item.images" :key="i">
-                      <img :src="img">>
-                    </div>
-                  </div>
-                  <div class="u-news-handle">
-                    <div class="un-left">
-                      <span class="un-col c-grey-9">
-                        <i class="address-icon"></i>
-                        {{item.addr}}
-                      </span>
-                    </div>
-                    <div class="un-right">
-                      <span class="un-col">
-                        <!--选中 +active-->
-                        <i class="like-icon" :class="{'active':item.isLike}"></i>
-                        {{item.likes}}
-                      </span>
-                      <span class="un-col">
-                        <i class="n-small-icon comment-icon"></i>
-                        {{item.repNum}}
-                        <em class="c-arrow-up"></em>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="comment-box">
-                    <div class="prise-comment">
-                      <div class="comment-list">
-                        <ul>
-                          <li v-for="(rep,r) in item.reps" :key="r">
-                            <div class="comment-face">
-                              <img src alt>
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-name">{{rep.nickName}}</div>
-                              <div class="comment-msg">{{rep.content}}</div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+    <div class="g-container">
+        <div class="m-container m-width">
+            <!--面包屑-->
+            <div class="crumbs-box">
+                <a class="c-crumbs"
+                   href>首页</a>
+                <span class="c-sep">&gt;</span>
+                <span class="c-current">行业圈</span>
             </div>
-            <div class="news-more" v-if="list.length<count" @click="more()">加载更多</div>
-          </div>
+            <!--行业圈-->
+            <div class="m-structure-content">
+                <div class="m-structure-information">
+                    <div class="m-prise-content">
+                        <div class="e-prise-box"
+                             v-for="(item,index) in list"
+                             :key="index">
+                            <a @click="gotoDetail(item.enterId)">
+                                <div class="prise-hd">
+                                    <div class="prise-face">
+                                        <img :src="item.icon">
+                                    </div>
+                                    <div class="prise-hd-info">
+                                        <div class="prise-hd-name">{{item.enterName}}</div>
+                                        <!-- <div class="prise-time">12小时前</div> -->
+                                    </div>
+                                </div>
+                                <div class="prise-article">
+                                    <div class="prise-art-name">
+                                        <b>{{item.title}}</b>
+                                        <span class="art-tips">{{item.type}}</span>
+                                    </div>
+                                    <!-- <div class="prise-art-txt" v-html="item.content"></div> -->
+                                    <div class="view-more-prise"
+                                         :class="{'active':!item.zkDir}">
+                                        <div class="prise-art-txt"
+                                             v-html="item.content"></div>
+                                        <div class="view-more-txt unfold"
+                                             v-if="!item.zkDir"
+                                             @click.stop.prevent="zkFunc(index)">
+                                            查看更多
+                                            <i></i>
+                                        </div>
+                                        <div class="view-more-txt fewer"
+                                             v-if="item.zkDir"
+                                             @click.stop.prevent="zkFunc(index)">
+                                            收起
+                                            <i></i>
+                                        </div>
+                                    </div>
+                                    <div class="cp-column hover-scale big-pic">
+                                        <div class="cp-item"
+                                             v-for="(img,i) in item.images"
+                                             :key="i">
+                                            <img :src="img">>
+                                        </div>
+                                    </div>
+                                    <div class="u-news-handle">
+                                        <div class="un-left">
+                                            <span class="un-col c-grey-9">
+                                                <i class="address-icon"></i>
+                                                {{item.addr}}
+                                            </span>
+                                        </div>
+                                        <div class="un-right">
+                                            <span class="un-col">
+                                                <!--选中 +active-->
+                                                <i class="like-icon"
+                                                   :class="{'active':item.isLike}"></i>
+                                                {{item.likes}}
+                                            </span>
+                                            <span class="un-col">
+                                                <i class="n-small-icon comment-icon"></i>
+                                                {{item.repNum}}
+                                                <em class="c-arrow-up"></em>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="comment-box">
+                                        <div class="prise-comment">
+                                            <div class="comment-list">
+                                                <ul>
+                                                    <li v-for="(rep,r) in item.reps"
+                                                        :key="r">
+                                                        <div class="comment-face">
+                                                            <img src
+                                                                 alt>
+                                                        </div>
+                                                        <div class="comment-info">
+                                                            <div class="comment-name">{{rep.nickName}}</div>
+                                                            <div class="comment-msg">{{rep.content}}</div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-more"
+                             v-if="list.length<count"
+                             @click="more()">加载更多</div>
+                    </div>
+                </div>
+                <div class="m-structure-quick">
+                    <!-- <div class="structure-btn">写动态</div> -->
+                    <div class="structure-box"
+                         v-if="likeArr.length >0 ">
+                        <div class="common-tit-h2">
+                            <b>猜你想看</b>
+                            <!-- <a href class="more-tit-btn">全部&gt;</a> -->
+                        </div>
+                        <div class="guess-like">
+                            <router-link tag="a"
+                                         class="guess-item"
+                                         v-for="(l,i) in likeArr"
+                                         :key="i"
+                                         :to="{name:'enterDetail',params:{id:l.id}}">
+                                <div class="guess-face">
+                                    <img :src="l.icon">
+                                </div>
+                                <div class="guess-info">{{l.title}}</div>
+                            </router-link>
+                        </div>
+                    </div>
+                    <div class="structure-box">
+                        <div class="common-tit-h2">
+                            <b>绿建要闻</b>
+                        </div>
+                        <div class="recommend-list">
+                            <router-link v-for="(item,i) in news"
+                                         :key="i"
+                                         :to="{name:'newsDdetail',params:{id:item.id}}"
+                                         tag="a"
+                                         class="recommend-item">{{item.title}}</router-link>
+                        </div>
+                    </div>
+                    <div class="scan-code-quick">
+                        <div class="code-quick-pic">
+                            <img src="../../../../html/components/footer/images/code.png"
+                                 alt>
+                        </div>
+                        <div class="code-quick-txt">
+                            扫一扫”即可将
+                            <br>网页分享至朋友圈
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-        <div class="m-structure-quick">
-          <div class="structure-btn">写动态</div>
-          <div class="structure-box" v-if="likeArr.length >0 ">
-            <div class="common-tit-h2">
-              <b>猜你想看</b>
-              <a href class="more-tit-btn">全部&gt;</a>
-            </div>
-            <div class="guess-like">
-              <router-link
-                tag="a"
-                class="guess-item"
-                v-for="(l,i) in likeArr"
-                :key="i"
-                :to="{name:'enterDetail',params:{id:l.id}}"
-              >
-                <div class="guess-face">
-                  <img :src="l.icon">
-                </div>
-                <div class="guess-info">{{l.title}}</div>
-              </router-link>
-            </div>
-          </div>
-          <div class="structure-box">
-            <div class="common-tit-h2">
-              <b>绿建要闻</b>
-            </div>
-            <div class="recommend-list">
-              <router-link
-                v-for="(item,i) in news"
-                :key="i"
-                :to="{name:'newsDdetail',params:{id:item.id}}"
-                tag="a"
-                class="recommend-item"
-              >{{item.title}}</router-link>
-            </div>
-          </div>
-          <div class="scan-code-quick">
-            <div class="code-quick-pic">
-              <img src="../../../../html/components/footer/images/code.png" alt>
-            </div>
-            <div class="code-quick-txt">
-              扫一扫”即可将
-              <br>网页分享至朋友圈
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -159,12 +166,14 @@ import '../../../../html/components/dynamic/dynamic.scss';
 import {
     enterPriseIndex,
     getLikeEnter,
-    getNewsIndex
+    getNewsIndex,
+    AddEnterPost
 } from '../../../../api/index';
 export default {
     name: 'enterInex',
     data() {
         return {
+            showCre: false,
             params: {
                 index: 0,
                 size: 20
@@ -172,7 +181,7 @@ export default {
             list: [],
             likeArr: [],
             news: [],
-            count:''
+            count: ''
         };
     },
     methods: {
@@ -219,15 +228,15 @@ export default {
 
 <style scoped>
 .news-more {
-  margin: 0 auto;
-  margin-top: 20px;
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  border: 1px solid blanchedalmond;
-  text-align: center;
-  border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border: 1px solid blanchedalmond;
+    text-align: center;
+    border-radius: 10px;
 }
 </style>
 

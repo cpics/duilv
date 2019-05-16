@@ -161,7 +161,7 @@ export const menuRouter = [
                     import('./views/enterprise/children/edit/edit.vue'),
             },
             {
-                path: 'course',
+                path: 'course/:id',
                 name: 'enterCourse',
                 meta: {
                     title: '行业圈-课程',
@@ -247,6 +247,15 @@ export const menuRouter = [
                 component: () =>
                     import('./views/mall/children/index/index.vue'),
             },
+            {
+                path: 'detail/:id',
+                name: 'mallDetail',
+                meta: {
+                    title: '商城-详情',
+                },
+                component: () =>
+                    import('./views/mall/children/detail/detail.vue'),
+            }
         ]
     },
 ];

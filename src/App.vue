@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <div class="mod-wrapper">
-      <div class="mod-wrap">
-        <header-wrapper>
-          <logo/>
-          <header-menu/>
-          <header-about/>
-        </header-wrapper>
-        <router-view/>
-        <footer-component :footData="footData"/>
-      </div>
+    <div id="app">
+        <div class="mod-wrapper">
+            <div class="mod-wrap">
+                <header-wrapper>
+                    <logo/>
+                    <header-menu/>
+                    <header-about/>
+                </header-wrapper>
+                <router-view/>
+                <footer-component :footData="footData"/>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>

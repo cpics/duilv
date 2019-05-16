@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <!--右侧操作-->
-                <div class="com-hd-handle">
+                <!-- <div class="com-hd-handle">
                     <div class="hd-bottom-td">
                         <span class="cm-sign-btn">签到详情</span>
                         <span class="share-wechat-btn">
@@ -31,7 +31,7 @@
                             <i class="u-wechat-icon"></i>
                         </span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="m-container m-width">
@@ -92,11 +92,11 @@
                                     <div class="prise-article">
                                         <div class="prise-art-name">
                                             <b>{{item.title}}</b>
-                                            <span class="art-tips">{{item.Type}}</span>
+                                            <span class="art-tips" v-if="item.type.length>0">{{item.type}}</span>
                                         </div>
                                         <div class="view-more-prise"
                                              :class="{'active':!item.zkDir}">
-                                            >
+                                            
                                             <div class="prise-art-txt"
                                                  v-html="item.content"></div>
                                             <div class="view-more-txt unfold"
@@ -120,7 +120,7 @@
                                             </div>
                                         </div>
                                         <div class="u-news-handle">
-                                            <div class="un-left">
+                                            <div class="un-left" v-if="item.addr.length>0">
                                                 <span class="un-col c-grey-9">
                                                     <i class="address-icon"></i>
                                                     {{item.addr}}
@@ -179,7 +179,8 @@
                                     class="prompt-txt">加载更多</button>
                         </div>
                         <div class="m-structure-quick">
-                            <div class="structure-btn">写动态</div>
+                            <div class="structure-btn"
+                                 @click="showPop()">写动态</div>
                             <div class="structure-box clock-in">
                                 <div class="clock-list">
                                     <div class="clock-today">
@@ -251,8 +252,8 @@
                             <div class="structure-box">
                                 <div class="common-tit-h2">
                                     <b>猜你想看</b>
-                                    <a href
-                                       class="more-tit-btn">全部&gt;</a>
+                                    <!-- <a href
+                                       class="more-tit-btn">全部&gt;</a> -->
                                 </div>
                                 <div class="guess-like">
                                     <router-link tag="a"
@@ -382,53 +383,28 @@
                     <!--投诉 显示 +show-->
                     <div class="u-normal-main show"
                          v-if="menu[3] ==1">
-                        <div class="write-complain-btn">
+                        <!-- <div class="write-complain-btn">
                             <span class="write-btn">写客诉</span>
-                        </div>
+                        </div> -->
                         <div class="m-prise-content">
-                            <div class="e-prise-box has-border">
+                            <div class="e-prise-box has-border"
+                                 v-for="(item,i) in Complaints"
+                                 :key="i">
                                 <div class="prise-article">
                                     <div class="prise-art-name">
-                                        <b>嘉兴世合小镇</b>
-                                        <div class="prise-time">2018/7/27</div>
+                                        <b>{{item.id}}</b>
+                                        <div class="prise-time">{{item.createdTime}}</div>
                                     </div>
-                                    <div class="prise-art-txt">不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...</div>
+                                    <div class="prise-art-txt">{{item.content}}</div>
                                     <div class="cp-column hover-scale pic-260">
-                                        <div class="cp-item">
-                                            <img src
+                                        <div class="cp-item"
+                                             v-for="(img,m) in item.imgs"
+                                             :key="m">
+                                            <img :src="img"
                                                  alt>
                                         </div>
-                                        <div class="cp-item">
-                                            <img src
-                                                 alt>
-                                        </div>
-                                        <div class="cp-item">
-                                            <img src
-                                                 alt>
-                                        </div>
-                                        <div class="cp-item">
-                                            <img src
-                                                 alt>
-                                        </div>
+
                                     </div>
-                                </div>
-                            </div>
-                            <div class="e-prise-box has-border">
-                                <div class="prise-article">
-                                    <div class="prise-art-name">
-                                        <b>嘉兴世合小镇</b>
-                                        <div class="prise-time">2018/7/27</div>
-                                    </div>
-                                    <div class="prise-art-txt">不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...</div>
-                                </div>
-                            </div>
-                            <div class="e-prise-box has-border">
-                                <div class="prise-article">
-                                    <div class="prise-art-name">
-                                        <b>嘉兴世合小镇</b>
-                                        <div class="prise-time">2018/7/27</div>
-                                    </div>
-                                    <div class="prise-art-txt">不知道要求多少行字？？“他像是来自遥远古代的神祇──在某个意义上说，木心的那个世界，那个精致的、熠熠为光的、爱智的、澹泊却又为美为精神性叩问而骚乱的世界，在他展开他那淡泊、旖旎的文字卷轴时，早已崩毁覆灭...</div>
                                 </div>
                             </div>
                         </div>
@@ -437,131 +413,88 @@
                     <div class="u-normal-main show"
                          v-if="menu[4] ==1 ">
                         <div class="course-list dole">
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
+                            <router-link tag="a"
+                                         :to="{name:'enterCourse',params:{id:item.id}}"
+                                         class="course-item"
+                                         v-for="(item,i) in courseList"
+                                         :key="i">
                                 <!--显示 +show-->
-                                <i class="dole-icon show">NEW</i>
+                                <i class="dole-icon show"
+                                   v-if="item.isNew">NEW</i>
+                                <i class="dole-icon show"
+                                   v-if="item.isHot">HOT</i>
                                 <div class="course-pic">
-                                    <img src
+                                    <img :src="item.picPath"
                                          alt>
                                 </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
+                                <h2 class="course-tit">{{item.title}}</h2>
                                 <div class="course-txt">
-                                    <span>高级课程</span>
+                                    <span>{{item.level == 1?'初级':(item.level == 2?'中级':'高级')}}</span>
                                     <em class="course-circle">·</em>
-                                    <span>55人在学</span>
+                                    <span>{{item.hits}}人在学</span>
                                 </div>
                                 <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
+                                    <span class="course-money">￥{{item.price}}元</span>
+                                    <i class="star-icon"
+                                       :class="'star-'+item.score"></i>
                                 </div>
-                            </a>
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
-                                <!--显示 +show-->
-                                <i class="dole-icon show">HOT</i>
-                                <div class="course-pic">
-                                    <img src
-                                         alt>
-                                </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
-                                <div class="course-txt">
-                                    <span>高级课程</span>
-                                    <em class="course-circle">·</em>
-                                    <span>55人在学</span>
-                                </div>
-                                <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
-                                </div>
-                            </a>
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
-                                <div class="course-pic">
-                                    <img src
-                                         alt>
-                                </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
-                                <div class="course-txt">
-                                    <span>高级课程</span>
-                                    <em class="course-circle">·</em>
-                                    <span>55人在学</span>
-                                </div>
-                                <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
-                                </div>
-                            </a>
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
-                                <div class="course-pic">
-                                    <img src
-                                         alt>
-                                </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
-                                <div class="course-txt">
-                                    <span>高级课程</span>
-                                    <em class="course-circle">·</em>
-                                    <span>55人在学</span>
-                                </div>
-                                <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
-                                </div>
-                            </a>
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
-                                <div class="course-pic">
-                                    <img src
-                                         alt>
-                                </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
-                                <div class="course-txt">
-                                    <span>高级课程</span>
-                                    <em class="course-circle">·</em>
-                                    <span>55人在学</span>
-                                </div>
-                                <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
-                                </div>
-                            </a>
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
-                                <div class="course-pic">
-                                    <img src
-                                         alt>
-                                </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
-                                <div class="course-txt">
-                                    <span>高级课程</span>
-                                    <em class="course-circle">·</em>
-                                    <span>55人在学</span>
-                                </div>
-                                <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
-                                </div>
-                            </a>
-                            <a href="../../../../html/pages/enterprise/course/course.html"
-                               class="course-item">
-                                <div class="course-pic">
-                                    <img src
-                                         alt>
-                                </div>
-                                <h2 class="course-tit">拍颗粒活动场地课程</h2>
-                                <div class="course-txt">
-                                    <span>高级课程</span>
-                                    <em class="course-circle">·</em>
-                                    <span>55人在学</span>
-                                </div>
-                                <div class="course-handle">
-                                    <span class="course-money">￥3000元</span>
-                                    <i class="star-icon three-star"></i>
-                                </div>
-                            </a>
+                            </router-link>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!--写动态 显示 +show-->
+        <div class="shadow-fixed show"
+             v-if="popDir">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"
+                     @click="showPop"></div>
+                <div class="dynamic-form">
+                    <div class="dynamic-row">
+                        <input type="text"
+                               v-model="form.title"
+                               placeholder="请填写主题名" />
+                    </div>
+                    <div class="dynamic-row">
+                        <span class="dynamic-tip"
+                              @click="choosePostType(item.id)"
+                              :class="{'active':form.type == item.id}"
+                              v-for="(item,i) in postType"
+                              :key="i">{{item.typeName}}</span>
+                    </div>
+                    <div class="dynamic-row">
+                        <textarea v-model="form.content"
+                                  placeholder="请输入内容..."></textarea>
+                    </div>
+                    <div class="dynamic-row">
+                        <div class="dynamic-pic">
+                            <div class="dynamic-col"
+                                 v-for="(item,i) in form.images"
+                                 :key="i">
+                                <img :src="item"
+                                     alt="">
+                                <i class="circle-close-btn"
+                                   @click="delImg(i)"></i>
+                            </div>
+                            <div class="dynamic-col">
+                                <button class="upload-btn">添加图片</button>
+                                <input type="file"
+                                       id="imgFile"
+                                       name="file"
+                                       @change="uploadPostImg()"
+                                       ref="postImgFileInput"
+                                       accept="image/png, image/jpeg, image/gif, image/jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bomb-bottom-btn">
+                    <span class="bo-pop-btn bg-grey"
+                          @click="cancelPop">取消并返回</span>
+                    <span class="bo-pop-btn"
+                          @click="AddEnterPost">发表</span>
                 </div>
             </div>
         </div>
@@ -583,6 +516,9 @@ import '../../../../html/components/comments/comments.scss';
 import '../../../../html/pages/enterprise/details/details.scss';
 import '../../../../html/components/course/course.scss';
 
+import '../../../../html/components/popCommon/popCommon.scss';
+import '../../../../html/components/dynamic/dynamic.css';
+
 import {
     enterDetail,
     enterCurrentIndex,
@@ -594,13 +530,19 @@ import {
     uploadImage,
     updateEnterIcon,
     getUserByPhone,
-    updateEnterUsers
+    updateEnterUsers,
+    AddEnterPost,
+    GetEnterPostTypes,
+    GetTodaySign
 } from '../../../../api/index';
 export default {
     name: 'enterDetail',
     data() {
         return {
-            menu: [1, 0, 0, 0, 0],
+            todaySings:[],
+            popDir: false,
+            postType: [],
+            menu: [0, 1, 0, 0, 0],
             detail: {},
             list: [],
             count: 0,
@@ -618,10 +560,110 @@ export default {
             params: {
                 index: 0,
                 size: 10
+            },
+            form: {
+                id: this.$route.params.id,
+                title: '',
+                type: '',
+                content: '',
+                images: []
+            },
+            rules: {
+                title: [
+                    { required: true, message: '请填写主体名称!' }
+                ],
+                type: [
+                    { required: true, message: '请选择动态类型!' }
+                ],
+                content: [
+                    { required: true, message: '请填写动态内容!' }
+                ],
+                images: [
+                    { required: true, message: '请添加图片!' }
+                ]
             }
         };
     },
+    // computed: {
+    //     getLeavel(l) {
+    //         let str = '';
+    //         if (l == 1) {
+    //             str = '初级';
+    //         } else if (l == 2) {
+    //             str = '中级';
+    //         } else if (l == 3) {
+    //             str = '高级';
+    //         }
+    //         return str;
+    //     }
+    // },
     methods: {
+        showPop() {
+            this.popDir = !this.popDir;
+        },
+        cancelPop() {
+            this.form.title = '';
+            this.form.type = '';
+            this.form.content = '';
+            this.form.images = [];
+            this.showPop();
+        },
+        async GetEnterPostTypes() {
+            let res = await GetEnterPostTypes();
+            if (res.Type == 'Success') {
+                this.postType = res.Data;
+            }
+        },
+        async GetTodaySign(){
+            let res = await GetTodaySign({
+                id:this.$route.params.id
+            });
+            if(res.Type == 'Success'){
+                this.todaySings = res.Data;
+            }
+        },
+        choosePostType(type) {
+            this.form.type = type;
+        },
+        delImg(i) {
+            this.form.images.splice(i, 1);
+        },
+        //写动态-上传图片
+        async uploadPostImg() {
+
+            let file = this.$refs.postImgFileInput.files[0];
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            let that = this;
+            reader.onload = async function (e) {
+                let res = await uploadImage({
+                    file: file
+                });
+                if (res.Type == 'Success') {
+                    that.form.images.push(res.Data);
+                    console.log(that.form.images);
+                }
+            };
+        },
+        async AddEnterPost() {
+            let validator = new this.$validator(this.rules);
+            let model = this.form;
+            validator.validate(model, async (errors, fields) => {
+                if (!errors) {
+                    let res = await AddEnterPost(this.form);
+                    if (res.Type == 'Success') {
+                        this.$layer.alert(res.Content);
+                        // this.init();
+                        // this.enterCurrentIndex();
+                    } else {
+                        this.$layer.alert(res.Content);
+                    }
+                } else {
+                    this.$layer.alert(errors[0].message);
+
+                }
+            });
+        },
         showReFunc() {
             this.showRetitle = !this.showRetitle;
         },
@@ -885,6 +927,8 @@ export default {
             this.getLikeEnter();
             this.getEnterComplaint();
             this.enterCourseIndex();
+            this.GetEnterPostTypes();
+            this.GetTodaySign();
         }
     },
     created() {

@@ -223,6 +223,10 @@ export const updateEnterUsers = params =>
 export const enterCourseIndex = params =>
     fetch.post(`${domain}/Api/Course/Index/`, params);
 
+//课程培训
+export const enterCourseDetail = params =>
+    fetch.post(`${domain}/Api/Course/Details/`, params);
+
 //-------------云智库------
 //云智库首页
 export const yzkIndex = params =>
@@ -244,3 +248,16 @@ export const getMallIndex = params =>
 //商品详情
 export const getMallDetail = params =>
     fetch.post(`${domain}/Api/Store/Detail/`, params);
+
+
+//行业圈--写动态
+export const AddEnterPost = params =>
+    fetch.post(`${domain}/Api/EnterPrise/AddEnterPost/`, params);
+
+//行业圈--获取动态类型
+export const GetEnterPostTypes = params =>
+    fetch.post(`${domain}/Api/EnterPrise/GetEnterPostTypes/`, params);
+
+//行业圈--获取今日打卡
+export const GetTodaySign = params =>
+    fetch.post(`${domain}/Api/EnterPrise/GetTodaySign/`, params);

@@ -9,94 +9,32 @@
                 <span class="c-sep">&gt;</span>
                 <span class="c-current">商城</span>
             </div>
-            <!--轮播-banner-->
-            <div class="m-slider-banner mall-banner">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a class="oper-pic"
-                               href="javascript:;"
-                               style="background-image: url('../../../../html/components/banner/images/banner1.png');"></a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="oper-pic"
-                               href="javascript:;"
-                               style="background-image: url('../../../../html/components/banner/images/banner.png');"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-bullets">
-                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                        <span class="swiper-pagination-bullet"></span>
-                    </div>
+            <!--图片banner-->
+            <div class="m-norm-banner mall-banner">
+                <div class="pic-banner">
+                    <img :src="detail.picPath"
+                         alt="" />
                 </div>
             </div>
             <!--主体-->
             <div class="mall-goods">
-                <div class="mall-goods-item">
+                <div class="mall-goods-item"
+                     v-for="(item,i) in detail.goods"
+                     :key="i">
                     <div class="goods-pic">
-                        <img src="../../../../html/pages/home/images/demo.png"
+                        <img :src="item.picPath"
                              alt="" />
                     </div>
                     <div class="goods-info">
-                        <div class="goods-money">¥ 3999.00</div>
-                        <div class="goods-txt">水性EAU丙烯酸高环保渗水型跑道酸高环保渗水型跑道（XC-RT2110S）(100㎡起含施工)</div>
+                        <div class="goods-money">¥ {{item.price}}</div>
+                        <div class="goods-txt">{{item.title}}</div>
                         <div class="goods-handle">
-                            <div class="goods-buy-btn">立即购买</div>
+                            <div class="goods-buy-btn"
+                                 @click="goto(item.id)">立即购买</div>
                         </div>
                     </div>
                 </div>
-                <div class="mall-goods-item">
-                    <div class="goods-pic">
-                        <img src="../../../../html/pages/home/images/demo.png"
-                             alt="" />
-                    </div>
-                    <div class="goods-info">
-                        <div class="goods-money">¥ 3999.00</div>
-                        <div class="goods-txt">水性EAU丙烯酸高环保渗水型跑道（XC-RT2110S）(100㎡起含施工)</div>
-                        <div class="goods-handle">
-                            <div class="goods-buy-btn">立即购买</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mall-goods-item">
-                    <div class="goods-pic">
-                        <img src="../../../../html/pages/home/images/demo.png"
-                             alt="" />
-                    </div>
-                    <div class="goods-info">
-                        <div class="goods-money">¥ 3999.00</div>
-                        <div class="goods-txt">水性EAU丙烯酸高环保渗水型跑道（XC-RT2110S）(100㎡起含施工)</div>
-                        <div class="goods-handle">
-                            <div class="goods-buy-btn">立即购买</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mall-goods-item">
-                    <div class="goods-pic">
-                        <img src="../../../../html/pages/home/images/demo.png"
-                             alt="" />
-                    </div>
-                    <div class="goods-info">
-                        <div class="goods-money">¥ 3999.00</div>
-                        <div class="goods-txt">水性EAU丙烯酸高环保渗水型跑道（XC-RT2110S）(100㎡起含施工)</div>
-                        <div class="goods-handle">
-                            <div class="goods-buy-btn">立即购买</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mall-goods-item">
-                    <div class="goods-pic">
-                        <img src="../../../../html/pages/home/images/demo.png"
-                             alt="" />
-                    </div>
-                    <div class="goods-info">
-                        <div class="goods-money">¥ 3999.00</div>
-                        <div class="goods-txt">水性EAU丙烯酸高环保渗水型跑道（XC-RT2110S）(100㎡起含施工)</div>
-                        <div class="goods-handle">
-                            <div class="goods-buy-btn">立即购买</div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -110,12 +48,21 @@ import { getMallIndex } from '../../../../api/index.js';
 export default {
     name: 'mall',
     data() {
-        return {};
+        return {
+            detail: {}
+        };
     },
     methods: {
         async getMallIndex() {
             let res = await getMallIndex();
-
+            if (res.Type == 'Success') {
+                this.detail = res.Data;
+            } else {
+                this.$layer.alert(res.Content);
+            }
+        },
+        goto(id) {
+            this.$router.push({name:'mallDetail',params:{id:id}})
         }
     },
     created() {
