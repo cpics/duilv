@@ -24,26 +24,6 @@
   .modify-form-main .modify-base-info {
     font-size: 16px;
     padding: 10px 0; }
-    .modify-form-main .modify-base-info .apply-form-row {
-      padding: 20px 0 5px; }
-    .modify-form-main .modify-base-info .apply-tag {
-      min-width: 50px;
-      height: 32px;
-      line-height: 32px;
-      color: #666;
-      font-size: 16px;
-      text-align: center;
-      display: inline-block;
-      background: #fff;
-      cursor: pointer;
-      padding: 0 20px;
-      border: 1px solid #e8e7e7;
-      margin-right: 25px;
-      margin-bottom: 15px; }
-      .modify-form-main .modify-base-info .apply-tag.active {
-        color: #fff;
-        background: #4cde9f;
-        border: 1px solid #4cde9f; }
   .modify-form-main .base-i-row {
     padding: 6px 0;
     line-height: 32px; }
