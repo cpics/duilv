@@ -179,6 +179,32 @@
       top: -40px;
     }
   }
+  .select-box{
+    width: 260px;
+    margin-right: 20px;
+    .select-btn{
+      width: 218px;
+      text-align: left;
+      padding-left: 20px;
+    }
+    .opts{
+      width: 258px;
+      a{
+        padding-left: 20px;
+        text-align: left;
+      }
+    }
+  }
+  .el-select{
+    width: 260px;
+    margin-right: 20px;
+    input{
+      width: 100%;
+    }
+    .el-input__inner{
+      border-radius: 0;
+    }
+  }
   input {
     width: 220px;
     height: 38px;

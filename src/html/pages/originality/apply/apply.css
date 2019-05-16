@@ -134,6 +134,25 @@
   .apply-form-row.txt-short .unit-vere {
     position: relative;
     top: -40px; }
+  .apply-form-row .select-box {
+    width: 260px;
+    margin-right: 20px; }
+    .apply-form-row .select-box .select-btn {
+      width: 218px;
+      text-align: left;
+      padding-left: 20px; }
+    .apply-form-row .select-box .opts {
+      width: 258px; }
+      .apply-form-row .select-box .opts a {
+        padding-left: 20px;
+        text-align: left; }
+  .apply-form-row .el-select {
+    width: 260px;
+    margin-right: 20px; }
+    .apply-form-row .el-select input {
+      width: 100%; }
+    .apply-form-row .el-select .el-input__inner {
+      border-radius: 0; }
   .apply-form-row input {
     width: 220px;
     height: 38px;
