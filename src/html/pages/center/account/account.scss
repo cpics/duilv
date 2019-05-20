@@ -34,6 +34,25 @@
   }
   .account-input {
     margin-left: 115px;
+    .el-input--prefix {
+      .el-input__inner{
+        padding-left: 30px;
+      }
+    }
+    .el-input--suffix {
+      .el-input__inner{
+        padding-right: 30px;
+      }
+    }
+    .el-input__inner{
+      border-radius: 0;
+      box-sizing: content-box;
+    }
+    .el-date-editor{
+      .el-input__icon{
+        line-height: 34px;
+      }
+    }
     input {
       width: 170px;
       height: 32px;

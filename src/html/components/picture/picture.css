@@ -21,7 +21,8 @@
     transition: all .4s ease-in-out; }
   .cp-column.big-pic .cp-item {
     width: 300px;
-    height: 204px; }
+    height: 204px;
+    margin-bottom: 10px; }
   .cp-column.middle-pic .cp-item {
     width: 276px;
     height: 190px; }

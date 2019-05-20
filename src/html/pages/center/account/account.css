@@ -28,6 +28,15 @@
     padding-right: 35px; }
   .account-row .account-input {
     margin-left: 115px; }
+    .account-row .account-input .el-input--prefix .el-input__inner {
+      padding-left: 30px; }
+    .account-row .account-input .el-input--suffix .el-input__inner {
+      padding-right: 30px; }
+    .account-row .account-input .el-input__inner {
+      border-radius: 0;
+      box-sizing: content-box; }
+    .account-row .account-input .el-date-editor .el-input__icon {
+      line-height: 34px; }
     .account-row .account-input input {
       width: 170px;
       height: 32px;
