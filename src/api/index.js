@@ -261,3 +261,7 @@ export const GetEnterPostTypes = params =>
 //行业圈--获取今日打卡
 export const GetTodaySign = params =>
     fetch.post(`${domain}/Api/EnterPrise/GetTodaySign/`, params);
+
+//行业圈--联系购买
+export const CourseOrderAdd = params =>
+    fetch.post(`${domain}/Api/Course/CourseOrderAdd/`, params);

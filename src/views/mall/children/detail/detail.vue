@@ -3,10 +3,11 @@
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs"
-                   href="">商城</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'mallIndex'}">商城</router-link>
                 <span class="c-sep">&gt;</span>
-                <span class="c-current">产品名称</span>
+                <span class="c-current">{{detail.title}}</span>
             </div>
             <!--主体-->
             <div class="mall-preview">

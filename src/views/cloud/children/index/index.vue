@@ -3,36 +3,41 @@
     <div class="g-container">
         <!--轮播-banner-->
         <div class="m-slider-banner m-norm-banner">
-            <swiper :options="swiperOption" ref="mySwiper">
+            <swiper :options="swiperOption"
+                    ref="mySwiper">
                 <!-- slides -->
-                <swiper-slide v-for="(item,index) in banner" :key="index">
+                <swiper-slide v-for="(item,index) in banner"
+                              :key="index">
                     <!-- <a class="oper-pic" :href="item.outLink"> -->
                     <img :src="item.picPath">
                     <!-- </a> -->
                 </swiper-slide>
 
                 <!-- Optional controls -->
-                <div class="swiper-pagination" slot="pagination"></div>
+                <div class="swiper-pagination"
+                     slot="pagination"></div>
             </swiper>
         </div>
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs" href>首页</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'default'}">首页</router-link>
                 <span class="c-sep">&gt;</span>
                 <span class="c-current">云智库</span>
             </div>
             <!--绿色校园-->
-            <div class="grn-box" v-for="(currentItem,c) in schemes" :key="c">
+            <div class="grn-box"
+                 v-for="(currentItem,c) in schemes"
+                 :key="c">
                 <div class="common-title">{{currentItem.type}}</div>
                 <div class="grn-list">
-                    <router-link
-                        class="grn-item"
-                        tag="a"
-                        v-for="(item,i) in currentItem.schemes"
-                        :key="i"
-                        :to="{name:'cloudDetail',params:{id:item.id}}"
-                    >
+                    <router-link class="grn-item"
+                                 tag="a"
+                                 v-for="(item,i) in currentItem.schemes"
+                                 :key="i"
+                                 :to="{name:'cloudDetail',params:{id:item.id}}">
                         <div class="grn-item-inner">
                             <div class="grn-pic">
                                 <img :src="item.picPath">
@@ -46,7 +51,7 @@
                             <div class="grn-info">{{item.desc}}</div>
                         </div>
                     </router-link>
-          
+
                 </div>
             </div>
         </div>

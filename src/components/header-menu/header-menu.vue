@@ -65,7 +65,7 @@ export default {
             // console.log(res);
         },
         goApply() {
-            this.$router.push({name:'jxjApply'});
+            this.$router.push({ name: 'jxjApply' });
         }
     },
     created() {

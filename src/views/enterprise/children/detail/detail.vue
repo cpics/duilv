@@ -37,11 +37,14 @@
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs"
-                   href>首页</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'default'}">首页</router-link>
                 <span class="c-sep">&gt;</span>
-                <a class="c-crumbs"
-                   href>匠企行</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'enterIndex'}">行业圈</router-link>
+
                 <span class="c-sep">&gt;</span>
                 <span class="c-current">{{detail.title}}</span>
             </div>
@@ -92,11 +95,12 @@
                                     <div class="prise-article">
                                         <div class="prise-art-name">
                                             <b>{{item.title}}</b>
-                                            <span class="art-tips" v-if="item.type.length>0">{{item.type}}</span>
+                                            <span class="art-tips"
+                                                  v-if="item.type.length>0">{{item.type}}</span>
                                         </div>
                                         <div class="view-more-prise"
                                              :class="{'active':!item.zkDir}">
-                                            
+
                                             <div class="prise-art-txt"
                                                  v-html="item.content"></div>
                                             <div class="view-more-txt unfold"
@@ -120,7 +124,8 @@
                                             </div>
                                         </div>
                                         <div class="u-news-handle">
-                                            <div class="un-left" v-if="item.addr.length>0">
+                                            <div class="un-left"
+                                                 v-if="item.addr.length>0">
                                                 <span class="un-col c-grey-9">
                                                     <i class="address-icon"></i>
                                                     {{item.addr}}
@@ -539,7 +544,7 @@ export default {
     name: 'enterDetail',
     data() {
         return {
-            todaySings:[],
+            todaySings: [],
             popDir: false,
             postType: [],
             menu: [0, 1, 0, 0, 0],
@@ -614,11 +619,11 @@ export default {
                 this.postType = res.Data;
             }
         },
-        async GetTodaySign(){
+        async GetTodaySign() {
             let res = await GetTodaySign({
-                id:this.$route.params.id
+                id: this.$route.params.id
             });
-            if(res.Type == 'Success'){
+            if (res.Type == 'Success') {
                 this.todaySings = res.Data;
             }
         },

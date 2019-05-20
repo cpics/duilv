@@ -4,14 +4,13 @@
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs"
-                   href="">首页</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'default'}">首页</router-link>
                 <span class="c-sep">&gt;</span>
-                <a class="c-crumbs"
-                   href="">匠企行</a>
-                <span class="c-sep">&gt;</span>
-                <a class="c-crumbs"
-                   href="">苏州海的大姐有限公司</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'enterIndex'}">行业圈</router-link>
                 <span class="c-sep">&gt;</span>
                 <span class="c-current">课程</span>
 
@@ -30,7 +29,7 @@
                             </div>
                             <div class="course-buy">
                                 <span class="cost-money">￥{{info.price}}元</span>
-                                <span class="buy-btn">联系购买</span>
+                                <span class="buy-btn" @click="CourseOrderAdd">联系购买</span>
                             </div>
                         </div>
                     </div>
@@ -58,13 +57,15 @@
                                             <div class="chap-label">{{i+1}}-{{c+1}}</div>
                                             <div class="chap-txt">{{current.title}}</div>
                                         </div>
-                                        <div class="chapter-info" >
+                                        <div class="chapter-info">
                                             <div class="chap-picture hover-scale">
-                                                <div class="chap-item" v-for="(img,m) in current.image" :key="m">
+                                                <div class="chap-item"
+                                                     v-for="(img,m) in current.image"
+                                                     :key="m">
                                                     <img :src="img"
                                                          alt="" />
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </li>
@@ -131,7 +132,7 @@ import '../../../../html/components/structure/structure.scss';
 import '../../../../html/pages/enterprise/course/course.scss';
 import '../../../../html/components/course/course.scss';
 
-import { enterCourseDetail } from '../../../../api/index.js';
+import { enterCourseDetail, CourseOrderAdd } from '../../../../api/index.js';
 export default {
     name: 'curseDetail',
     data() {
@@ -169,6 +170,16 @@ export default {
                 this.$layer.alert(res.Content);
             }
 
+        },
+        async CourseOrderAdd() {
+            let res = await CourseOrderAdd({
+                id: this.$route.params.id
+            });
+            if (res.Type == 'Success') {
+                this.$layer.alert(res.Content);
+            } else {
+                this.$layer.alert(res.Content);
+            }
         }
     },
     created() {

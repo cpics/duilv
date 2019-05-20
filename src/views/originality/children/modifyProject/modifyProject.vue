@@ -6,8 +6,9 @@
             <div class="crumbs-box">
                 <span class="c-current">匠心记</span>
                 <span class="c-sep">&gt;</span>
-                <a class="c-crumbs"
-                   href="">环秀湖花园北区</a>
+                <router-link tag="a" :to="{name:'jxjDetail',params:{id:this.$route.params.id}}">{{detail.title}}</router-link>
+                <!-- <a class="c-crumbs"
+                   href="">环秀湖花园北区</a> -->
                 <span class="c-sep">&gt;</span>
                 <span class="c-current">项目信息修改</span>
             </div>

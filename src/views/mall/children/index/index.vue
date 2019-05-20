@@ -4,8 +4,9 @@
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
-                <a class="c-crumbs"
-                   href="">首页</a>
+                <router-link tag="a"
+                             class="c-crumbs"
+                             :to="{name:'default'}">首页</router-link>
                 <span class="c-sep">&gt;</span>
                 <span class="c-current">商城</span>
             </div>
