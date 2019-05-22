@@ -69,13 +69,14 @@
     height: 83px;
     display: table-cell;
     vertical-align: bottom;
-    padding-bottom: 20px;
   }
   .cm-sign-btn {
+    position: relative;
+    top:20px;
     cursor: pointer;
     text-decoration: underline;
   }
-  .u-wechat-icon{
+  .u-wechat-icon {
     position: relative;
     top: -2px;
     width: 36px;
@@ -84,11 +85,42 @@
     vertical-align: middle;
     cursor: pointer;
     background: url("images/wechat.png") no-repeat center center;
+  }
+  .share-wechat-btn {
+    position: relative;
+    top:20px;
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 20px;
     &:hover{
-      opacity: .9;
+      .wechat-qr-code{
+        display: block;
+      }
     }
   }
-  .share-wechat-btn{
-    display: inline-block;
+  .wechat-qr-code {
+    position: absolute;
+    right: -30px;
+    top: 45px;
+    z-index: 2;
+    width: 116px;
+    height: 116px;
+    padding: 10px;
+    display: none;
+    background: #f1f1f1;
+    border-radius: 5px;
+    em {
+      position: absolute;
+      right: 42px;
+      top: -10px;
+      width: 20px;
+      height: 12px;
+      display: inline-block;
+      background: url("images/triangle1.png") no-repeat center center;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
