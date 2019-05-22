@@ -98,7 +98,7 @@
             >查看全部&gt;</a>-->
                         <router-link tag="a"
                                      class="more-case-btn"
-                                     :to="{name:'caseTrace',params:{id:detail.id},query:{title:detail.title}}">查看全部&gt;</router-link>
+                                     :to="{name:'caseTrace',params:{id:detail.id}}">查看全部&gt;</router-link>
                     </div>
                     <div class="review-content">
                         <div class="review-box-items"

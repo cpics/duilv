@@ -23,15 +23,12 @@
                     </div>
                 </div>
                 <!--右侧操作-->
-                <!-- <div class="com-hd-handle">
+                <div class="com-hd-handle">
                     <div class="hd-bottom-td">
-                        <span class="cm-sign-btn">签到详情</span>
-                        <span class="share-wechat-btn">
-                            分享：
-                            <i class="u-wechat-icon"></i>
-                        </span>
+                        <!-- <span class="cm-sign-btn">签到详情</span> -->
+                        <h-qrcode></h-qrcode>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="m-container m-width">
@@ -388,16 +385,17 @@
                     <!--投诉 显示 +show-->
                     <div class="u-normal-main show"
                          v-if="menu[3] ==1">
-                        <!-- <div class="write-complain-btn">
-                            <span class="write-btn">写客诉</span>
-                        </div> -->
+                        <div class="write-complain-btn">
+                            <span class="write-btn"
+                                  @click="showks">写客诉</span>
+                        </div>
                         <div class="m-prise-content">
                             <div class="e-prise-box has-border"
                                  v-for="(item,i) in Complaints"
                                  :key="i">
                                 <div class="prise-article">
                                     <div class="prise-art-name">
-                                        <b>{{item.id}}</b>
+                                        <b>{{item.title}}</b>
                                         <div class="prise-time">{{item.createdTime}}</div>
                                     </div>
                                     <div class="prise-art-txt">{{item.content}}</div>
@@ -503,6 +501,54 @@
                 </div>
             </div>
         </div>
+        <!--写客述 显示 +show-->
+        <div class="shadow-fixed show"
+             v-if="ksDir">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"
+                     @click="showks"></div>
+                <div class="dynamic-form">
+                    <div class="dynamic-row">
+                        <input type="text"
+                               v-model="ksForm.title"
+                               placeholder="请输入投诉标题" />
+                    </div>
+                    <div class="dynamic-row">
+                        <textarea v-model="ksForm.content"
+                                  placeholder="请输入正文内容..."></textarea>
+                    </div>
+                    <div class="dynamic-row">
+                        <div class="dynamic-pic">
+                            <div class="dynamic-col"
+                                 v-for="(item,i) in ksForm.imgs"
+                                 :key="i">
+                                <img :src="item"
+                                     alt="">
+                                <i class="circle-close-btn"
+                                   @click="delKsImg(i)"></i>
+                            </div>
+
+                            <div class="dynamic-col">
+                                <button class="upload-btn">添加图片</button>
+                                <input type="file"
+                                       id="ksFile"
+                                       name="file"
+                                       @change="uploadKsImg()"
+                                       ref="ksImgFileInput"
+                                       accept="image/png, image/jpeg, image/gif, image/jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bomb-bottom-btn">
+                    <span class="bo-pop-btn bg-grey"
+                          @click="showks">取消</span>
+                    <span class="bo-pop-btn"
+                          @click="AddEnterComplaint">发表</span>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -521,6 +567,8 @@ import '../../../../html/components/comments/comments.scss';
 import '../../../../html/pages/enterprise/details/details.scss';
 import '../../../../html/components/course/course.scss';
 
+import hQrcode  from '../../../../components/h-qrcode/h-qrcode';
+
 import '../../../../html/components/popCommon/popCommon.scss';
 import '../../../../html/components/dynamic/dynamic.css';
 
@@ -538,12 +586,14 @@ import {
     updateEnterUsers,
     AddEnterPost,
     GetEnterPostTypes,
-    GetTodaySign
+    GetTodaySign,
+    AddEnterComplaint,
 } from '../../../../api/index';
 export default {
     name: 'enterDetail',
     data() {
         return {
+            ksDir: false,
             todaySings: [],
             popDir: false,
             postType: [],
@@ -573,6 +623,23 @@ export default {
                 content: '',
                 images: []
             },
+            ksForm: {
+                id: this.$route.params.id,
+                title: '',
+                content: '',
+                imgs: []
+            },
+            ksRules: {
+                title: [
+                    { required: true, message: '请填写投诉标题!' }
+                ],
+                content: [
+                    { required: true, message: '请填写正文内容!' }
+                ],
+                imgs: [
+                    { required: true, message: '请添加图片!' }
+                ]
+            },
             rules: {
                 title: [
                     { required: true, message: '请填写主体名称!' }
@@ -588,6 +655,9 @@ export default {
                 ]
             }
         };
+    },
+    components: {
+        hQrcode
     },
     // computed: {
     //     getLeavel(l) {
@@ -605,6 +675,9 @@ export default {
     methods: {
         showPop() {
             this.popDir = !this.popDir;
+        },
+        showks() {
+            this.ksDir = !this.ksDir;
         },
         cancelPop() {
             this.form.title = '';
@@ -649,6 +722,45 @@ export default {
                     console.log(that.form.images);
                 }
             };
+        },
+        delKsImg(i) {
+            this.ksForm.imgs.splice(i, 1);
+        },
+        //写客诉-上传图片
+        async uploadKsImg() {
+
+            let file = this.$refs.ksImgFileInput.files[0];
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            let that = this;
+            reader.onload = async function (e) {
+                let res = await uploadImage({
+                    file: file
+                });
+                if (res.Type == 'Success') {
+                    that.ksForm.imgs.push(res.Data);
+                    // console.log(that.form.images);
+                }
+            };
+        },
+        //写投诉
+        async AddEnterComplaint() {
+            let validator = new this.$validator(this.ksRules);
+            let model = this.ksForm;
+            validator.validate(model, async (errors, fields) => {
+                if (!errors) {
+                    let res = await AddEnterComplaint(this.ksForm);
+                    if (res.Type == 'Success') {
+                        this.$layer.alert(res.Content);
+                        this.getEnterComplaint();
+                    } else {
+                        this.$layer.alert(res.Content);
+                    }
+                } else {
+                    this.$layer.alert(errors[0].message);
+
+                }
+            });
         },
         async AddEnterPost() {
             let validator = new this.$validator(this.rules);

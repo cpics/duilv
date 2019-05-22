@@ -149,7 +149,6 @@ export const jxjAddProjectLog = params =>
 export const jxjUpdateProjectInfo = params =>
     fetch.post(`${domain}/Api/ProjectLog/UpdateProjectInfo/`, params);
 
-
 //添加主题
 export const jxjAddPost = params =>
     fetch.post(`${domain}/Api/ProjectLog/AddPost/`, params);
@@ -249,7 +248,6 @@ export const getMallIndex = params =>
 export const getMallDetail = params =>
     fetch.post(`${domain}/Api/Store/Detail/`, params);
 
-
 //行业圈--写动态
 export const AddEnterPost = params =>
     fetch.post(`${domain}/Api/EnterPrise/AddEnterPost/`, params);
@@ -262,6 +260,14 @@ export const GetEnterPostTypes = params =>
 export const GetTodaySign = params =>
     fetch.post(`${domain}/Api/EnterPrise/GetTodaySign/`, params);
 
+//行业圈--获取今日打卡
+export const AddEnterComplaint = params =>
+    fetch.post(`${domain}/Api/EnterPrise/AddEnterComplaint/`, params);
+
 //行业圈--联系购买
 export const CourseOrderAdd = params =>
     fetch.post(`${domain}/Api/Course/CourseOrderAdd/`, params);
+
+//----------个人中心----------
+export const updateUserInfo = params =>
+    fetch.post(`${domain}/Api/User/UpdateUserInfo/`, params);

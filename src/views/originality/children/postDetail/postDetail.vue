@@ -25,7 +25,7 @@
                 <div class="com-hd-handle">
                     <div class="hd-bottom-td">
                         <span class="cm-sign-btn">签到详情</span>
-                        <!--<span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span>-->
+                        <h-qrcode></h-qrcode>
                     </div>
                 </div>
             </div>
@@ -152,6 +152,7 @@ import noDaily from './components/noDaily.vue';
 import { getJxjPostDetail, getJxjDetail, getWeather, jxjAddReplis } from '../../../../api';
 import stars from '../../../../pubilc/util/stars';
 import timeago from '../../../../pubilc/util/timeago';
+import hQrcode from '../../../../components/h-qrcode/h-qrcode';
 export default {
     name: 'postDetail',
     data() {
@@ -173,7 +174,8 @@ export default {
         toComment,
         toTop,
         daily,
-        noDaily
+        noDaily,
+        hQrcode
     },
     methods: {
         async getHeader() {

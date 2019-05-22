@@ -33,10 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="share-wechat-btn">
-                        分享：
-                        <i class="u-wechat-icon"></i>
-                    </div>
+                    <h-qrcode></h-qrcode>
                 </div>
                 <!--正文-->
                 <div class="m-structure-content">
@@ -132,9 +129,14 @@ import '../../../../html/components/structure/structure.scss';
 import '../../../../html/pages/enterprise/course/course.scss';
 import '../../../../html/components/course/course.scss';
 
+import hQrcode from '../../../../components/h-qrcode/h-qrcode';
+
 import { enterCourseDetail, CourseOrderAdd } from '../../../../api/index.js';
 export default {
     name: 'curseDetail',
+    components:{
+        hQrcode
+    },
     data() {
         return {
             info: {

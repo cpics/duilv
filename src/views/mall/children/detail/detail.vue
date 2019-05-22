@@ -66,13 +66,13 @@
                         <div class="goods-title">{{detail.title}}</div>
                         <div class="goods-price">
                             <span class="c-label">淘宝价：</span>
-                            <span class="c-price">￥119.90</span>
+                            <span class="c-price">￥{{detail.price}}</span>
                         </div>
                         <div class="goods-classify">
                             <div class="classify-label">分类：</div>
                             <div class="classify-col">
                                 <div class="c-cols"
-                                     :class="{'active':item.acitve}"
+                                     :class="{'active':item.active}"
                                      @click="chooseType(i)"
                                      v-for="(item,i) in detail.type"
                                      :key="i">{{item.typeName}}</div>
@@ -154,7 +154,9 @@ export default {
 
                 this.detail.type[i].active = true;
                 this.activeType = this.detail.type[i];
+                
             }
+            console.log(this.detail.type[i]);
         },
         gotoTaobao() {
             if (this.activeType == null) {

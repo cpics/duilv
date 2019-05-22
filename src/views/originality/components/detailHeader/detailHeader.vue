@@ -26,7 +26,7 @@
             <div class="com-hd-handle">
                 <div class="hd-bottom-td">
                     <span class="cm-sign-btn">签到详情</span>
-                    <!--<span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span>-->
+                    <h-qrcode></h-qrcode>
                 </div>
             </div>
         </div>
@@ -36,8 +36,12 @@
 <script>
 import timeago from '../../../../pubilc/util/timeago';
 import { getHeader, getWeather } from '../../../../api/index';
+import hQrcode from '../../../../components/h-qrcode/h-qrcode';
 export default {
     name: 'detailHeader',
+    components:{
+        hQrcode
+    },
     data() {
         return {
             header: {},

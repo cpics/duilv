@@ -24,7 +24,7 @@
                 <div class="com-hd-handle">
                     <div class="hd-bottom-td">
                         <!-- <span class="cm-sign-btn">签到详情</span> -->
-                        <!-- <span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span> -->
+                        <h-qrcode></h-qrcode>
                     </div>
                 </div>
             </div>
@@ -43,9 +43,9 @@
                 <span class="c-sep">&gt;</span>
                 <router-link tag="a"
                              class="c-crumbs"
-                             :to="{name:'caseDetal',params:{id:this.$route.params.id}}">{{title}}</router-link>
+                             :to="{name:'caseDetal',params:{id:this.$route.params.id}}">{{trace.proName}}</router-link>
                 <span class="c-sep">&gt;</span>
-                <span class="c-current">{{trace.proName}}</span>
+                <span class="c-current">项目回顾</span>
             </div>
             <!--项目回顾-->
             <div class="project-trace-content">
@@ -108,12 +108,17 @@ import '../../../../html/components/tabs/tabs.scss';
 import '../../../../html/components/picture/picture.scss';
 import '../../../../html/pages/cases/trace/trace.scss';
 
+import hQrcode from '../../../../components/h-qrcode/h-qrcode';
+
 import { getProjectEnd } from '../../../../api/index';
 export default {
     name: 'trace',
+    components:{
+        hQrcode
+    },
     data() {
         return {
-            title: this.$route.query.title,
+            // title: this.$route.query.title,
             params: {
                 id: this.$route.params.id,
                 type: 'all',

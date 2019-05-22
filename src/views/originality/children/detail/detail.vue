@@ -26,7 +26,7 @@
                     <div class="hd-bottom-td">
                         <span class="cm-sign-btn"
                               @click="openQiandao">签到详情</span>
-                        <!--<span class="share-wechat-btn">分享：<i class="u-wechat-icon"></i></span>-->
+                        <h-qrcode></h-qrcode>
                     </div>
                 </div>
             </div>
@@ -273,11 +273,13 @@ import timeago from '../../../../pubilc/util/timeago';
 
 import dQiandao from './components/d-qiandao.vue';
 import dXiangqing from './components/d-xiangqing.vue';
+import hQrcode from '../../../../components/h-qrcode/h-qrcode';
 export default {
     name: 'originality',
     components: {
         dQiandao,
-        dXiangqing
+        dXiangqing,
+        hQrcode
     },
     data() {
         return {
