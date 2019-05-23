@@ -9,10 +9,10 @@
             <i class="fix-big-icon like-b-icon"></i>
             <p>点赞</p>
         </div>
-        <div class="u-fix-item">
+        <!-- <div class="u-fix-item">
             <i class="fix-big-icon comment-b-icon"></i>
             <p>评论</p>
-        </div>
+        </div> -->
         <div class="u-fix-item scroll-top"
              @click="toTop">
             <i class="scroll-top-icon"></i>

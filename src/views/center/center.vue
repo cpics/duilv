@@ -60,7 +60,7 @@
                                         <input type="text"
                                                v-model="uInfo.phone"
                                                placeholder="请输入账号">
-                                        <span class="account-btn">修改手机号</span>
+                                        <!-- <span class="account-btn">修改手机号</span> -->
                                     </div>
                                 </div>
                                 <div class="account-row">
@@ -108,7 +108,7 @@
                             </div>
                             <div class="account-buttons">
                                 <div class="save-btn"
-                                     @click="updateUserInfo">保存</div>
+                                     @click="updateUserInfo(1)">保存</div>
                             </div>
                         </div>
                         <div class="center-account-box">
@@ -116,7 +116,7 @@
                                 <span class="cc-tit">
                                     <i></i>头像
                                 </span>
-                                <span class="cc-edit-btn">编辑</span>
+                                <!-- <span class="cc-edit-btn">编辑</span> -->
                             </div>
                             <div class="account-form">
                                 <div class="account-upload">
@@ -137,40 +137,8 @@
                                 </div>
                             </div>
                             <div class="account-buttons">
-                                <div class="save-btn">保存</div>
-                            </div>
-                        </div>
-                        <div class="center-account-box">
-                            <div class="cc-com-title">
-                                <span class="cc-tit">
-                                    <i></i>绑定账号设置
-                                </span>
-                                <!--<span class="cc-edit-btn">编辑</span>-->
-                            </div>
-                            <div class="account-form">
-                                <dl class="binding-list">
-                                    <dd>
-                                        <i class="bind-icon weixin-icon"></i>
-                                        <div class="bind-info">
-                                            <section>绑定微信账号，使用微信账号便捷登录，还可以将堆绿内容同步到绑定对应的平台，与更多好友分享。</section>
-                                        </div>
-                                        <div class="bind-button">立即绑定</div>
-                                    </dd>
-                                    <dd>
-                                        <i class="bind-icon qq-icon"></i>
-                                        <div class="bind-info">
-                                            <section>绑定微信账号，使用微信账号便捷登录，还可以将堆绿内容同步到绑定对应的平台，与更多好友分享。</section>
-                                        </div>
-                                        <div class="bind-button">立即绑定</div>
-                                    </dd>
-                                    <dd>
-                                        <i class="bind-icon weibo-icon"></i>
-                                        <div class="bind-info">
-                                            <section>绑定微信账号，使用微信账号便捷登录，还可以将堆绿内容同步到绑定对应的平台，与更多好友分享。</section>
-                                        </div>
-                                        <div class="bind-button">立即绑定</div>
-                                    </dd>
-                                </dl>
+                                <div class="save-btn"
+                                     @click="updateUserInfo(2)">保存</div>
                             </div>
                         </div>
                     </div>
@@ -180,90 +148,38 @@
                     <div class="cc-inner">
                         <div class="my-publish-list">
                             <ul>
-                                <li>
+                                <li v-for="(item,i) in cData.publish"
+                                    :key="i">
                                     <div class="my-center-infor">
                                         <div class="my-publish-info">
                                             <div class="pub-title">
-                                                <b>事故调查报告</b>
+                                                <b>{{item.title}}</b>
                                                 <!--报告  tag-yellow-->
                                                 <!--日报 tag-blue-->
                                                 <!--图文 tag-green-->
-                                                <span class="stroke-tag tag-yellow">报告</span>
+                                                <span class="stroke-tag tag-yellow">{{item.postType}}</span>
                                             </div>
-                                            <div class="pub-from">来自于 张家港圆融装饰工程有限公司</div>
+                                            <div class="pub-from">{{item.content}}</div>
                                             <div class="pub-count">
                                                 <span class="pub-count-col">
                                                     <i class="n-small-icon time-icon"></i>
-                                                    <span>25天前</span>
+                                                    <span>{{item.timeago}}</span>
                                                 </span>
-                                                <span class="pub-count-col">
+                                                <span class="pub-count-col"
+                                                      v-if="item.hits">
                                                     <i class="n-small-icon read-icon"></i>
-                                                    <span>2</span>
+                                                    <span>{{item.hits}}</span>
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">查看</a>
+                                            <router-link tag="a"
+                                                         class="pub-btn"
+                                                         :to="{name:'jxjPostDetail',params:{id:item.id}}">查看</router-link>
+
                                             <em>|</em>
-                                            <a href
-                                               class="pub-btn">删除</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="my-center-infor">
-                                        <div class="my-publish-info">
-                                            <div class="pub-title">
-                                                <b>事故调查报告</b>
-                                                <span class="stroke-tag tag-blue">日报</span>
-                                            </div>
-                                            <div class="pub-from">来自于 张家港圆融装饰工程有限公司</div>
-                                            <div class="pub-count">
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon time-icon"></i>
-                                                    <span>25天前</span>
-                                                </span>
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon read-icon"></i>
-                                                    <span>2</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">查看</a>
-                                            <em>|</em>
-                                            <a href
-                                               class="pub-btn">删除</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="my-center-infor">
-                                        <div class="my-publish-info">
-                                            <div class="pub-title">
-                                                <b>事故调查报告</b>
-                                                <span class="stroke-tag tag-green">图文</span>
-                                            </div>
-                                            <div class="pub-from">来自于 张家港圆融装饰工程有限公司</div>
-                                            <div class="pub-count">
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon time-icon"></i>
-                                                    <span>25天前</span>
-                                                </span>
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon read-icon"></i>
-                                                    <span>2</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">查看</a>
-                                            <em>|</em>
-                                            <a href
-                                               class="pub-btn">删除</a>
+                                            <a class="pub-btn"
+                                               @click="deleteTz(item.id,i)">删除</a>
                                         </div>
                                     </div>
                                 </li>
@@ -276,149 +192,40 @@
                     <div class="cc-inner">
                         <div class="my-publish-list">
                             <ul>
-                                <li>
+                                <li v-for="(item,i) in cData.reply"
+                                    :key="i">
                                     <div class="my-center-infor">
                                         <div class="my-publish-info">
                                             <div class="pub-title">
-                                                <b>事故调查报告</b>
+                                                <b>{{item.title}}</b>
                                                 <!--报告  tag-yellow-->
                                                 <!--日报 tag-blue-->
                                                 <!--图文 tag-green-->
-                                                <span class="stroke-tag tag-yellow">报告</span>
+                                                <span class="stroke-tag tag-yellow">{{item.postType}}</span>
                                             </div>
-                                            <div class="pub-from">来自于 张家港圆融装饰工程有限公司</div>
+                                            <div class="pub-from">{{item.content}}</div>
                                             <div class="pub-count">
                                                 <span class="pub-count-col">
                                                     <i class="n-small-icon time-icon"></i>
-                                                    <span>25天前</span>
+                                                    <span>{{item.timeago}}</span>
                                                 </span>
-                                                <span class="pub-count-col">
+                                                <span class="pub-count-col"
+                                                      v-if="item.hits">
                                                     <i class="n-small-icon read-icon"></i>
-                                                    <span>2</span>
+                                                    <span>{{item.hits}}</span>
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">查看</a>
+                                            <router-link tag="a"
+                                                         class="pub-btn"
+                                                         :to="{name:'jxjPostDetail',params:{id:item.id}}">查看</router-link>
                                             <em>|</em>
-                                            <a href
-                                               class="pub-btn">删除</a>
+                                            <a class="pub-btn"
+                                               @click="deleteReply(item.id,i)">删除</a>
                                         </div>
                                     </div>
-                                    <div class="comment-box">
-                                        <div class="comment-list has-bg">
-                                            <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt>
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">
-                                                            <span class="same-row-name">我是你大哥：</span>
-                                                            <span class="same-row-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</span>
-                                                        </div>
-                                                        <div class="comment-time">03月26日</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="my-center-infor">
-                                        <div class="my-publish-info">
-                                            <div class="pub-title">
-                                                <b>事故调查报告</b>
-                                                <span class="stroke-tag tag-blue">日报</span>
-                                            </div>
-                                            <div class="pub-from">来自于 张家港圆融装饰工程有限公司</div>
-                                            <div class="pub-count">
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon time-icon"></i>
-                                                    <span>25天前</span>
-                                                </span>
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon read-icon"></i>
-                                                    <span>2</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">查看</a>
-                                            <em>|</em>
-                                            <a href
-                                               class="pub-btn">删除</a>
-                                        </div>
-                                    </div>
-                                    <div class="comment-box">
-                                        <div class="comment-list has-bg">
-                                            <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt>
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">
-                                                            <span class="same-row-name">我是你大哥：</span>
-                                                            <span class="same-row-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</span>
-                                                        </div>
-                                                        <div class="comment-time">03月26日</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="my-center-infor">
-                                        <div class="my-publish-info">
-                                            <div class="pub-title">
-                                                <b>事故调查报告</b>
-                                                <span class="stroke-tag tag-green">图文</span>
-                                            </div>
-                                            <div class="pub-from">来自于 张家港圆融装饰工程有限公司</div>
-                                            <div class="pub-count">
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon time-icon"></i>
-                                                    <span>25天前</span>
-                                                </span>
-                                                <span class="pub-count-col">
-                                                    <i class="n-small-icon read-icon"></i>
-                                                    <span>2</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">查看</a>
-                                            <em>|</em>
-                                            <a href
-                                               class="pub-btn">删除</a>
-                                        </div>
-                                    </div>
-                                    <div class="comment-box">
-                                        <div class="comment-list has-bg">
-                                            <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt>
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">
-                                                            <span class="same-row-name">我是你大哥：</span>
-                                                            <span class="same-row-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</span>
-                                                        </div>
-                                                        <div class="comment-time">03月26日</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+
                                 </li>
                             </ul>
                         </div>
@@ -429,103 +236,47 @@
                     <div class="cc-inner">
                         <div class="history-look-list">
                             <ul>
-                                <li>
+                                <li v-for="(item, i) in cData.history"
+                                    :key="i">
                                     <div class="look-pic">
-                                        <img src=""
+                                        <img :src="item.image"
                                              alt>
                                     </div>
                                     <div class="look-info">
                                         <div class="look-title">
-                                            <b>事故调查报告</b>
+                                            <b>{{item.title}}</b>
                                             <!--报告  tag-yellow-->
                                             <!--日报 tag-blue-->
                                             <!--图文 tag-green-->
-                                            <span class="stroke-tag tag-yellow">报告</span>
+                                            <span class="stroke-tag tag-yellow">{{item.postType}}</span>
                                         </div>
-                                        <div class="look-txt">迎接无锡市政府职能部门检查，工地大清理</div>
+                                        <div class="look-txt">{{item.content}}</div>
                                         <div class="pub-count">
                                             <span class="pub-count-col">
                                                 <i class="n-small-icon time-icon"></i>
-                                                <span>25天前</span>
+                                                <span>{{item.timeago}}</span>
                                             </span>
-                                            <span class="pub-count-col">
+                                            <span class="pub-count-col"
+                                                  v-if="item.hits">
                                                 <i class="n-small-icon read-icon"></i>
-                                                <span>2</span>
+                                                <span>{{item.hits}}</span>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="my-publish-handle">
-                                        <a href
-                                           class="pub-btn">查看</a>
+                                        <router-link tag="a"
+                                                     class="pub-btn"
+                                                     :to="{name:'jxjPostDetail',params:{id:item.id}}">查看</router-link>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="look-pic">
-                                        <img src=""
-                                             alt>
-                                    </div>
-                                    <div class="look-info">
-                                        <div class="look-title">
-                                            <b>事故调查报告</b>
-                                            <!--报告  tag-yellow-->
-                                            <!--日报 tag-blue-->
-                                            <!--图文 tag-green-->
-                                            <span class="stroke-tag tag-yellow">报告</span>
-                                        </div>
-                                        <div class="look-txt">迎接无锡市政府职能部门检查，工地大清理</div>
-                                        <div class="pub-count">
-                                            <span class="pub-count-col">
-                                                <i class="n-small-icon time-icon"></i>
-                                                <span>25天前</span>
-                                            </span>
-                                            <span class="pub-count-col">
-                                                <i class="n-small-icon read-icon"></i>
-                                                <span>2</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="my-publish-handle">
-                                        <a href
-                                           class="pub-btn">查看</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="look-pic">
-                                        <img src=""
-                                             alt>
-                                    </div>
-                                    <div class="look-info">
-                                        <div class="look-title">
-                                            <b>事故调查报告</b>
-                                            <!--报告  tag-yellow-->
-                                            <!--日报 tag-blue-->
-                                            <!--图文 tag-green-->
-                                            <span class="stroke-tag tag-yellow">报告</span>
-                                        </div>
-                                        <div class="look-txt">迎接无锡市政府职能部门检查，工地大清理</div>
-                                        <div class="pub-count">
-                                            <span class="pub-count-col">
-                                                <i class="n-small-icon time-icon"></i>
-                                                <span>25天前</span>
-                                            </span>
-                                            <span class="pub-count-col">
-                                                <i class="n-small-icon read-icon"></i>
-                                                <span>2</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="my-publish-handle">
-                                        <a href
-                                           class="pub-btn">查看</a>
-                                    </div>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
-                    <div class="load-more-btn">
+                    <!-- <div class="load-more-btn">
                         <span>加载更多</span>
                         <i class="arrow-stoke-icon active"></i>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="center-content-inner show"
                      v-if="index == 4">
@@ -533,82 +284,25 @@
                         <div class="complain-list">
                             <ul>
                                 <!--已处理 +disabled-->
-                                <li>
-                                    <h4 class="complain-time">2018年03月16日</h4>
-                                    <div class="complain-txt">来自金品国贸项目三期</div>
+                                <li :class="{'disabled':item.state == '已受理'}"
+                                    v-for="(item,i) in cData.complaint"
+                                    :key="i">
+                                    <h4 class="complain-time">{{item.projectName}}</h4>
+                                    <!-- <div class="complain-txt">{{item.content}}</div> -->
                                     <div class="complain-comment">
                                         <div class="comment-list has-bg">
                                             <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt>
-                                                    </div>
+                                                <li class="no-face">
                                                     <div class="comment-info">
-                                                        <div class="comment-name">我是你大哥：</div>
-                                                        <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                                                        <div class="comment-time">03月26日</div>
+                                                        <div class="comment-name">{{item.nickName}}</div>
+                                                        <div class="comment-msg">{{item.content}}</div>
+                                                        <div class="comment-time">{{item.createdTime}}</div>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="my-publish-handle">
-                                            <!--<a href="" class="pub-btn">处理中</a>-->
-                                            <!--<a href="" class="pub-btn">未处理</a>-->
-                                            <a href
-                                               class="pub-btn">删除</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h4 class="complain-time">2018年03月16日</h4>
-                                    <div class="complain-txt">来自金品国贸项目三期</div>
-                                    <div class="complain-comment">
-                                        <div class="comment-list has-bg">
-                                            <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt>
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">我是你大哥：</div>
-                                                        <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                                                        <div class="comment-time">03月26日</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="my-publish-handle">
-                                            <!--<a href="" class="pub-btn">处理中</a>-->
-                                            <!--<a href="" class="pub-btn">未处理</a>-->
-                                            <a href
-                                               class="pub-btn">确认处理完成</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="disabled">
-                                    <h4 class="complain-time">2018年03月16日</h4>
-                                    <div class="complain-txt">来自金品国贸项目三期</div>
-                                    <div class="complain-comment">
-                                        <div class="comment-list has-bg">
-                                            <ul>
-                                                <li>
-                                                    <div class="comment-face">
-                                                        <img src=""
-                                                             alt>
-                                                    </div>
-                                                    <div class="comment-info">
-                                                        <div class="comment-name">我是你大哥：</div>
-                                                        <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
-                                                        <div class="comment-time">03月26日</div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="my-publish-handle">
-                                            <a href
-                                               class="pub-btn">已处理</a>
+                                            <a class="pub-btn">{{item.state}}</a>
                                         </div>
                                     </div>
                                 </li>
@@ -625,10 +319,10 @@
                         <div class="feedback-box">
                             <div class="feedback-textarea">
                                 <i class="feed-tree"></i>
-                                <textarea placeholder="我们有什么可以帮助您的吗？......."></textarea>
+                                <textarea v-model="feedBackContent" placeholder="我们有什么可以帮助您的吗？......."></textarea>
                             </div>
                             <div class="feedback-submit">
-                                <div class="feedback-btn">提交意见</div>
+                                <div class="feedback-btn" @click="feedBack">提交意见</div>
                             </div>
                         </div>
                     </div>
@@ -653,13 +347,15 @@ import '../../html/pages/center/complain/complain.css';
 import '../../html/pages/center/feedback/feedback.css';
 
 import { centerRouter } from '../../router.js';
-import { getUserInfo, userCenter, updateUserInfo, uploadImage } from '../../api/index';
+import { getUserInfo, userCenter, updateUserInfo, uploadImage, deleteTz, deleteReply, feedBack } from '../../api/index';
 import { mapState, mapMutations } from 'vuex';
+import timeago from '../../pubilc/util/timeago.js';
 
 export default {
     name: 'centerIndex',
     data() {
         return {
+            feedBackContent:'',
             index: 0,
             uInfo: {
                 birthDay: '',
@@ -691,6 +387,11 @@ export default {
                     { required: true, message: '请选择出生日期' }
                 ]
             },
+            imgRule: {
+                headImage: [
+                    { required: true, message: '请填写昵称!' }
+                ]
+            },
             cData: {
                 complaint: [],
                 history: [],
@@ -707,6 +408,41 @@ export default {
         ...mapMutations(['setUserInfo', 'delUserInfo']),
         goto(index) {
             this.index = index;
+        },
+        async deleteTz(id, index) {
+            let res = await deleteTz({
+                id: id
+            });
+            if (res.Type == 'Success') {
+                this.cData.publish.splice(index, 1);
+                this.$layer.alert(res.Content);
+            } else {
+                this.$layer.alert(res.Content);
+            }
+        },
+        async feedBack(){
+            if(this.feedBackContent.length == 0){
+                this.$layer.alert('请输入您的宝贵意见');
+            }
+            let res = await feedBack({
+                content:this.feedBackContent
+            });
+            if(res.Type == 'Success'){
+                this.$layer.alert(res.Content);
+            }else{
+                this.$layer.alert(res.Content);
+            }
+        },
+        async deleteReply(id, index) {
+            let res = await deleteReply({
+                id: id
+            });
+            if (res.Type == 'Success') {
+                this.cData.reply.splice(index, 1);
+                this.$layer.alert(res.Content);
+            } else {
+                this.$layer.alert(res.Content);
+            }
         },
         chooseGender(gender) {
             this.uInfo.gender = gender;
@@ -755,18 +491,54 @@ export default {
             });
 
             if (res.Type == 'Success') {
+                //timeago
+                res.Data.publish.forEach(item => {
+                    item.timeago = timeago(new Date(item.createdTime));
+                })
+                res.Data.history.forEach(item => {
+                    item.timeago = timeago(new Date(item.createdTime));
+                })
+                res.Data.reply.forEach(item => {
+                    item.timeago = timeago(new Date(item.createdTime));
+                })
                 this.cData.complaint = res.Data.complaint;
                 this.cData.history = res.Data.history;
                 this.cData.publish = res.Data.publish;
                 this.cData.reply = res.Data.reply;
             }
         },
-        async updateUserInfo() {
-            let validator = new this.$validator(this.rules);
+        async updateUserInfo(type) {//1更新个人资料 ，2是更新头像
+            let validator;
+            if (type == 1) {
+                validator = new this.$validator(this.rules);
+            } else {
+                validator = new this.$validator(this.imgRule);
+            }
+
             let model = this.uInfo;
             validator.validate(model, async (errors, fields) => {
                 if (!errors) {
-
+                    let pm;
+                    if (type == 1) {
+                        pm = {
+                            id: this.uInfo.id,
+                            nickName: this.uInfo.nickName,
+                            birthDay: this.uInfo.birthDay,
+                            placeOfBirth: this.uInfo.placeOfBirth,
+                            gender: this.uInfo.gender
+                        }
+                    } else if (type == 2) {
+                        pm = {
+                            id: this.uInfo.id,
+                            headImage: this.uInfo.headImage
+                        }
+                    }
+                    let res = await updateUserInfo(pm);
+                    if (res.Type == 'Success') {
+                        this.$layer.alert(res.Content);
+                    } else {
+                        this.$layer.alert(res.Content);
+                    }
                 } else {
                     this.$layer.alert(errors[0].message);
 
@@ -789,6 +561,9 @@ export default {
         },
     },
     created() {
+        if(!this.userInfo){
+            this.$router.push({name:'home'});
+        }
         this.getUerInfo();
     }
 };

@@ -359,18 +359,18 @@ export default {
         },
         goto(item) {
             // if (item.type != 'QE') {
-            this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }, query: { xid: this.xid } });
+            this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }});
             // }
         },
         gotoCreate(type) {
             if (type == 'qe') {
-                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'QE' } })
+                this.$router.push({ name: 'createQE', params: { id: this.$route.params.id }, query: { type: 'QE' } })
             } else if (type == 'zb') {
-                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZB' } })
+                this.$router.push({ name: 'createQE', params: { id: this.$route.params.id }, query: { type: 'ZB' } })
             } else if (type == 'daliy') {
-                this.$router.push({ name: 'createDaliy', params: { id: this.$route.query.xid }, query: { title: this.header.title } })
+                this.$router.push({ name: 'createDaliy', params: { id: this.$route.params.id }, query: { title: this.header.title } })
             } else if (type == 'zt') {
-                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZT' } });
+                this.$router.push({ name: 'createQE', params: { id: this.$route.params.id }, query: { type: 'ZT' } });
             }
         },
         closeQiandao() {

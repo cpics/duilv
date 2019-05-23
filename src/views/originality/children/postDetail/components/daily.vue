@@ -2,7 +2,7 @@
     <div class="structure-border">
         <div class="common-tit-space">
             <div class="common-title">
-                {{detail.timeAgo}}
+                {{detail.title}}
                 <span class="small-txt">{{detail.weather}}</span>
             </div>
         </div>

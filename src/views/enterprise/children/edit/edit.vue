@@ -124,7 +124,6 @@ import {
     updateEnterDesc,
     uploadImage
 } from '../../../../api/index';
-import { type } from 'os';
 export default {
     name: 'edit',
     components: {

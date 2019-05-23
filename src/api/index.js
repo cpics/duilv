@@ -42,6 +42,11 @@ export const feedBack = params =>
 export const deleteTz = params =>
     fetch.post(`${domain}/Api/User/DeletePost/`, params);
 
+//删除评论
+export const deleteReply = params =>
+    fetch.post(`${domain}/Api/User/DeleteReply/`, params);
+
+
 // //获取图片验证码
 // export const getPicVFL = (params) =>
 //     fetch.post(`${domain}/Common/VerifyCode/`, params)

@@ -183,71 +183,39 @@
                         <div class="m-structure-quick">
                             <div class="structure-btn"
                                  @click="showPop()">写动态</div>
-                            <div class="structure-box clock-in">
+                            <div class="structure-box clock-in"
+                                 v-if="todaySings.length>0">
                                 <div class="clock-list">
                                     <div class="clock-today">
                                         <h4>今日打卡</h4>
-                                        <div class="clock-search-date">
-                                            <!--<input placeholder="" value="2019年1月1日"/>-->
+                                        <!-- <div class="clock-search-date">
+                                            <input placeholder="" value="2019年1月1日"/>
                                             <span>2019年1月1日</span>
                                             <i class="s-search-btn"></i>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <ul>
-                                        <li>
+                                        <li v-for="(sing,s) in todaySings" :key="s">
                                             <div class="clock-hd">
                                                 <div class="clock-face">
-                                                    <img src
+                                                    <img :src="sing.headImage"
                                                          alt>
                                                 </div>
                                                 <div class="clock-info">
-                                                    <div class="clock-name">我是你大哥</div>
-                                                    <p>2019年1月1日</p>
-                                                    <p>18点20分2秒</p>
+                                                    <div class="clock-name">{{sing.nickName}}</div>
+                                                    <p>{{sing.signTime.split(' ')[0]}}</p>
+                                                    <p>{{sing.signTime.split(' ')[1]}}</p>
                                                 </div>
                                                 <div class="clock-address">
                                                     <i class="address-icon"></i>
-                                                    <span>苏州市乐嘉汇商务广场</span>
+                                                    <span>{{sing.signAddr}}</span>
                                                 </div>
                                                 <!--<div class="sign-handle">-->
                                                 <!--<span class="sign-btn">在此签到</span>-->
                                                 <!--</div>-->
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="clock-hd">
-                                                <div class="clock-face">
-                                                    <img src
-                                                         alt>
-                                                </div>
-                                                <div class="clock-info">
-                                                    <div class="clock-name">我是你大哥</div>
-                                                    <p>2019年1月1日</p>
-                                                    <p>18点20分2秒</p>
-                                                </div>
-                                                <div class="clock-address">
-                                                    <i class="address-icon"></i>
-                                                    <span>苏州市乐嘉汇商务广场</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="clock-hd">
-                                                <div class="clock-face">
-                                                    <img src
-                                                         alt>
-                                                </div>
-                                                <div class="clock-info">
-                                                    <div class="clock-name">我是你大哥</div>
-                                                    <p>2019年1月1日</p>
-                                                    <p>18点20分2秒</p>
-                                                </div>
-                                                <div class="clock-address">
-                                                    <i class="address-icon"></i>
-                                                    <span>苏州市乐嘉汇商务广场</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                                    
                                     </ul>
                                 </div>
                             </div>
@@ -567,7 +535,7 @@ import '../../../../html/components/comments/comments.scss';
 import '../../../../html/pages/enterprise/details/details.scss';
 import '../../../../html/components/course/course.scss';
 
-import hQrcode  from '../../../../components/h-qrcode/h-qrcode';
+import hQrcode from '../../../../components/h-qrcode/h-qrcode';
 
 import '../../../../html/components/popCommon/popCommon.scss';
 import '../../../../html/components/dynamic/dynamic.css';

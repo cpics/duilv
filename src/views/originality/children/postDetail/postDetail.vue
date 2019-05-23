@@ -5,15 +5,15 @@
             <div class="com-hd-inner">
                 <div class="com-hd-info">
                     <div class="com-hd-face">
-                        <img :src="header.picPath"
+                        <img :src="detail.proImage"
                              alt>
                     </div>
                     <div class="com-hd-name">
                         <div class="hd-bottom-td">
-                            <div class="hd-name-row">{{header.title}}</div>
+                            <div class="hd-name-row">{{detail.title}}</div>
                             <!--今日信息-->
                             <div class="hd-name-row">
-                                <span>{{header.timeAgo}}</span>
+                                <span>{{detail.timeAgo}}</span>
                                 <!-- <span>{{header.now}}</span> -->
                                 <span>{{header.dayOfWeek}}</span>
                                 <span>天气：{{weather}}</span>
@@ -22,12 +22,12 @@
                     </div>
                 </div>
                 <!--右侧操作-->
-                <div class="com-hd-handle">
+                <!-- <div class="com-hd-handle">
                     <div class="hd-bottom-td">
                         <span class="cm-sign-btn">签到详情</span>
                         <h-qrcode></h-qrcode>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="m-container m-width">
@@ -178,26 +178,26 @@ export default {
         hQrcode
     },
     methods: {
-        async getHeader() {
-            let res = await getJxjDetail({
-                id: this.$route.query.xid
-            });
-            if (res.Type == 'Success') {
-                res.Data.timeAgo = timeago(new Date(res.Data.creatTime));
-                this.header = res.Data;
-                // console.log(this.header);
-            }
-        },
+        // async getHeader() {
+        //     let res = await getJxjDetail({
+        //         id: this.$route.query.xid
+        //     });
+        //     if (res.Type == 'Success') {
+        //         res.Data.timeAgo = timeago(new Date(res.Data.creatTime));
+        //         this.header = res.Data;
+        //         // console.log(this.header);
+        //     }
+        // },
 
         gotoCreate() {
             if (this.detail.type == 'QE') {
-                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'QE' } })
+                this.$router.push({ name: 'createQE', params: { id: this.detail.id }, query: { type: 'QE' } })
             } else if (this.detail.type == '周报') {
-                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZB' } })
+                this.$router.push({ name: 'createQE', params: { id: this.detail.id }, query: { type: 'ZB' } })
             } else if (this.detail.type == '日报') {
-                this.$router.push({ name: 'createDaliy', params: { id: this.$route.query.xid }, query: { title: this.detail.title } })
+                this.$router.push({ name: 'createDaliy', params: { id: this.detail.id }, query: { title: this.detail.title } })
             } else if (this.detail.type == '普通' || this.detail.type == '图文') {
-                this.$router.push({ name: 'createQE', params: { id: this.$route.query.xid }, query: { type: 'ZT' } });
+                this.$router.push({ name: 'createQE', params: { id: this.detail.id }, query: { type: 'ZT' } });
             }
         },
         async getData() {
@@ -256,7 +256,7 @@ export default {
         }
     },
     created() {
-        this.getHeader();
+        // this.getHeader();
         this.getWeather();
         this.getData();
 
