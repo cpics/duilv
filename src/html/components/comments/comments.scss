@@ -78,7 +78,6 @@
   }
   li {
     padding: 15px 0;
-    @extend %clearfix;
     &.reply-row {
       padding-top: 0;
     }
@@ -89,12 +88,10 @@
     border-radius: 50%;
     overflow: hidden;
     float: left;
+    display: none;
     img {
       @extend %pic;
     }
-  }
-  .comment-info {
-    margin-left: 60px;
   }
   .comment-name {
     position: relative;
