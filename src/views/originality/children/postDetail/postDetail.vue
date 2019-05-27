@@ -22,12 +22,13 @@
                     </div>
                 </div>
                 <!--右侧操作-->
-                <!-- <div class="com-hd-handle">
+                <div class="com-hd-handle">
                     <div class="hd-bottom-td">
-                        <span class="cm-sign-btn">签到详情</span>
+                        <span class="cm-sign-btn"
+                              @click="openQiandao">签到详情</span>
                         <h-qrcode></h-qrcode>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="m-container m-width">
@@ -46,11 +47,14 @@
                 <div class="m-structure-content">
                     <div class="m-structure-information">
 
-                        <daily v-if="detail.type == '日报'"
+                        <daily @openPopImgList="openPopImgList"
+                               v-if="detail.type == '日报'"
                                :detail="detail"></daily>
-                        <no-daily v-if="detail.type != '日报'"
+                        <no-daily @openPopImgList="openPopImgList"
+                                  v-if="detail.type != '日报'"
                                   :detail="detail"></no-daily>
-                        <div class="structure-border">
+                        <div class="structure-border"
+                             id="toCommentBox">
                             <to-comment @jxjAddReplis="jxjAddReplis"></to-comment>
                             <comment-box :commentList="detail.reps"
                                          @showReplayFunc="showReplayFunc">
@@ -99,7 +103,62 @@
                             </div>
                         </div>
                         <div class="structure-box"
-                             v-if="detail.zjfb && detail.zjfb.length >0">
+                             v-if="detail.zjfb && detail.zjfb.length >0 && detail.type == 'QE'">
+                            <div class="common-tit-h2">
+                                <b>最近发布报告</b>
+                            </div>
+                            <div class="nearly-report">
+                                <div class="nearly-row"
+                                     v-for="(item,i) in detail.zjfb"
+                                     :key="i">
+                                    <router-link tag="a"
+                                                 :to="{name:'jxjPostDetail',params:{id:item.id}}">{{item.title}}</router-link>
+                                    <p>{{item.createdTime.split(' ')[0]}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="structure-box"
+                             v-if="detail.zjfb && detail.zjfb.length >0 && detail.type == '图文'">
+                            <div class="common-tit-h2">
+                                <b>最近主题</b>
+                            </div>
+                            <div class="nearly-report">
+                                <div class="nearly-row"
+                                     v-for="(item,i) in detail.zjfb"
+                                     :key="i">
+                                    <router-link tag="a"
+                                                 :to="{name:'jxjPostDetail',params:{id:item.id}}">{{item.title}}</router-link>
+                                    <p>{{item.createdTime.split(' ')[0]}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="structure-box"
+                             v-if="detail.zjfb && detail.zjfb.length >0 && detail.type == '周报'">
+                            <div class="common-tit-h2 has-line">
+                                <i class="weekly-icon">周</i>
+                                <b>往期周报</b>
+                            </div>
+                            <div class="history-weekly-report">
+                                <div class="weekly-item"
+                                     v-for="(item,i) in detail.zjfb"
+                                     :key="i">
+                                    <div class="weekly-face">
+                                        <img src=""
+                                             alt="" />
+                                    </div>
+                                    <div class="weekly-info">
+                                        <router-link tag="a"
+                                                     :to="{name:'jxjPostDetail',params:{id:item.id}}"
+                                                     class="weekly-name">{{item.title}}</router-link>
+                                        <div class="weekly-time">{{item.createdTime.split(' ')[0]}}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="structure-box"
+                             v-if="detail.zjfb && detail.zjfb.length >0 && detail.type == '日报'">
                             <div class="common-tit-h2">
                                 <b>历史日报</b>
                             </div>
@@ -122,12 +181,40 @@
                 </div>
             </div>
         </div>
+        <d-qiandao v-if="qiandaoDir"
+                   @close="closeQiandao"></d-qiandao>
         <to-top :isLike="detail.isLike"
+                @likeFunc="likeFunc"
                 :id="reParams.id"></to-top>
+
+        <div class="shadow-fixed show"
+             v-if="currentImgShow">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"
+                     @click="closePopimglist"></div>
+                <div class="qe-view-detail">
+                    <div class="cp-column cp-bomb-full cp-swiper">
+
+                        <swiper :options="swiperOption">
+                            <swiper-slide v-for="(item,index) in currentImgList"
+                                          :key="index">
+                                <img :src="item">
+                            </swiper-slide>
+                            <div class="swiper-button-prev"
+                                 slot="button-prev"></div>
+                            <div class="swiper-button-next"
+                                 slot="button-next"></div>
+                        </swiper>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+
 import 'swiper/dist/css/swiper.css';
 import '../../../../html/components/crumbs/crumbs.scss';
 import '../../../../html/components/detailHd/detailHd.scss';
@@ -139,14 +226,16 @@ import '../../../../html/components/picture/picture.scss';
 import '../../../../html/components/comments/comments.scss';
 
 import '../../../../html/pages/originality/daily/daily.scss';
+import '../../../../html/pages/originality/qe/qe.scss';
 
 import '../../../../html/components/fixBar/fixBar.scss';
 
 import toTop from '../../../../components/to-top/to-top.vue';
+import dQiandao from '../detail/components/d-qiandao';
 import commentBox from '../../../../components/comment-box/comment-box.vue';
 import replyComment from '../../../../components/comment-box/reply-comment.vue';
 import toComment from '../../../../components/to-comment/to-comment.vue';
-// import { swiper, swiperSlide } from 'vue-awesome-swiper';
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import daily from './components/daily.vue';
 import noDaily from './components/noDaily.vue';
 import { getJxjPostDetail, getJxjDetail, getWeather, jxjAddReplis } from '../../../../api';
@@ -157,6 +246,8 @@ export default {
     name: 'postDetail',
     data() {
         return {
+            currentImgShow: false,
+            qiandaoDir: false,
             header: {},
             detail: {},
             weather: '',
@@ -164,18 +255,35 @@ export default {
                 id: this.$route.params.id,
                 repId: '',
                 content: ''
-            }
+            },
+            swiperOption: {
+                slidesPerView: 1,
+                loop: true,
+                loopFillGroupWithBlank: true,
+                prevButton: '.swiper-button-prev',
+                nextButton: '.swiper-button-next',
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            },
+            currentImgList: [
+
+            ]
 
         }
     },
     components: {
+        swiper,
+        swiperSlide,
         commentBox,
         replyComment,
         toComment,
         toTop,
         daily,
         noDaily,
-        hQrcode
+        hQrcode,
+        dQiandao
     },
     methods: {
         // async getHeader() {
@@ -188,7 +296,14 @@ export default {
         //         // console.log(this.header);
         //     }
         // },
+        openPopImgList(imgList) {
+            this.currentImgList = imgList;
+            this.currentImgShow = true;
 
+        },
+        closePopimglist() {
+            this.currentImgShow = false;
+        },
         gotoCreate() {
             if (this.detail.type == 'QE') {
                 this.$router.push({ name: 'createQE', params: { id: this.detail.id }, query: { type: 'QE' } })
@@ -199,6 +314,12 @@ export default {
             } else if (this.detail.type == '普通' || this.detail.type == '图文') {
                 this.$router.push({ name: 'createQE', params: { id: this.detail.id }, query: { type: 'ZT' } });
             }
+        },
+        closeQiandao() {
+            this.qiandaoDir = false;
+        },
+        openQiandao() {
+            this.qiandaoDir = true;
         },
         async getData() {
             let res = await getJxjPostDetail({
@@ -251,8 +372,12 @@ export default {
             this.detail.reps[index].showReplay = !this.detail.reps[index].showReplay;
         },
         //点赞
-        likeFunc() {
-
+        likeFunc(type) {
+            if (type == 1) {
+                this.detail.isLike++;
+            } else if (type == 2) {
+                this.detail.isLike--;
+            }
         }
     },
     created() {
@@ -260,6 +385,12 @@ export default {
         this.getWeather();
         this.getData();
 
+    },
+    watch: {
+        $route(to, from) {
+            this.getWeather();
+            this.getData();
+        }
     }
 }
 </script>

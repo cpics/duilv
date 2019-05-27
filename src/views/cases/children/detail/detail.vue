@@ -98,6 +98,7 @@
             >查看全部&gt;</a>-->
                         <router-link tag="a"
                                      class="more-case-btn"
+                                     target="_blank"
                                      :to="{name:'caseTrace',params:{id:detail.id}}">查看全部&gt;</router-link>
                     </div>
                     <div class="review-content">
@@ -149,6 +150,7 @@
                             <li v-for="(item,index) in detail.hxzz"
                                 :key="index">
                                 <router-link tag="a"
+                                             target="_blank"
                                              :to="{name:'jxjDetail',params:{id:item.id}}">
                                     <a class="trace-pic">
                                         <img :src="item.picPath"

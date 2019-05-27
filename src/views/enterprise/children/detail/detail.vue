@@ -385,6 +385,7 @@
                          v-if="menu[4] ==1 ">
                         <div class="course-list dole">
                             <router-link tag="a"
+                                         target="_blank"
                                          :to="{name:'enterCourse',params:{id:item.id}}"
                                          class="course-item"
                                          v-for="(item,i) in courseList"

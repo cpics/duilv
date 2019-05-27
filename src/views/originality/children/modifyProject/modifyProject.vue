@@ -6,7 +6,8 @@
             <div class="crumbs-box">
                 <span class="c-current">匠心记</span>
                 <span class="c-sep">&gt;</span>
-                <router-link tag="a" :to="{name:'jxjDetail',params:{id:this.$route.params.id}}">{{detail.title}}</router-link>
+                <router-link tag="a"
+                             :to="{name:'jxjDetail',params:{id:this.$route.params.id}}">{{detail.title}}</router-link>
                 <!-- <a class="c-crumbs"
                    href="">环秀湖花园北区</a> -->
                 <span class="c-sep">&gt;</span>
@@ -127,8 +128,9 @@
                                             <i></i>
                                             <i></i>
                                         </div>
-                                        <div class="role-handle" >
-                                            <span class="role-del" v-if="arr.type !='协理'"
+                                        <div class="role-handle">
+                                            <span class="role-del"
+                                                  v-if="arr.type !='协理'"
                                                   @click="delPerson(arr,p)">删除</span>
                                         </div>
                                     </div>
@@ -304,7 +306,7 @@ export default {
                         return false;
                     }
                     let proUsers = [];
-                    
+
                     this.detail.proUsers.forEach(item => {
                         item.users.forEach(person => {
                             proUsers.push({
@@ -327,7 +329,11 @@ export default {
                         proUsers: proUsers
                     })
                     if (res.Type == 'Success') {
-                        this.$layer.alert(res.Content);
+                        this.$layer.alert(res.Content, (index) => {
+                            this.$layer.close(index);
+                            this.$router.push({ name: 'jxjDetail', params: { id: this.detail.id } })
+                            // console.log(1);
+                        });
                     } else {
                         this.$layer.alert(res.Content);
                     }

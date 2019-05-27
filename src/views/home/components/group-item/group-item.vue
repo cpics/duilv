@@ -1,5 +1,6 @@
 <template>
     <router-link tag="a"
+                 target="_blank"
                  :to="{'name':'enterDetail',params:{id:info.enterId}}">
         <div class="group-left">
             <a class="company-info">

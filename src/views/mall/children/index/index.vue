@@ -20,6 +20,7 @@
             <!--主体-->
             <div class="mall-goods">
                 <div class="mall-goods-item"
+                     @click="goto(item.id)"
                      v-for="(item,i) in detail.goods"
                      :key="i">
                     <div class="goods-pic">
@@ -30,8 +31,7 @@
                         <div class="goods-money">¥ {{item.price}}</div>
                         <div class="goods-txt">{{item.title}}</div>
                         <div class="goods-handle">
-                            <div class="goods-buy-btn"
-                                 @click="goto(item.id)">立即购买</div>
+                            <div class="goods-buy-btn">立即购买</div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,9 @@ export default {
             }
         },
         goto(id) {
-            this.$router.push({name:'mallDetail',params:{id:id}})
+            let routeData = this.$router.resolve({ name: 'mallDetail', params: { id: id } });
+            window.open(routeData.href, '_blank');
+            // this.$router.push({ name: 'mallDetail', params: { id: id } })
         }
     },
     created() {

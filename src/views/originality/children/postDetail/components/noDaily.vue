@@ -43,9 +43,10 @@
                                     <div class="cp-item"
                                          v-for="(img,m) in item.content.split(',')"
                                          :key="m">
-                                        <img src="../../../../../html/pages/home/images/demo.png" />
-                                        <!-- <img :src="img"
-                                             alt=""> -->
+                                        <!-- <img src="../../../../../html/pages/home/images/demo.png" /> -->
+                                        <img @click="popImg(item.content.split(','))"
+                                             :src="img"
+                                             alt="">
                                     </div>
 
                                 </div>
@@ -159,6 +160,11 @@ export default {
             let p = (this.detail.qeInfo.qePoint[6] / 10).toFixed(2) * 100 + '%';
             return p;
         },
+    },
+    methods: {
+        popImg(imgs) {
+            this.$emit('openPopImgList', imgs);
+        }
     }
 }
 </script>

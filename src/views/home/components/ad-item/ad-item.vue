@@ -1,9 +1,9 @@
 <template>
-  <div class="ad-item">
-    <a :href="info.outLink">
-      <img :src="info.picPath" alt>
-    </a>
-  </div>
+    <div class="ad-item">
+        <a :href="info.outLink" target="_blank">
+            <img :src="info.picPath" alt>
+        </a>
+    </div>
 </template>
 
 <script>

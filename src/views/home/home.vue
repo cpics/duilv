@@ -1,31 +1,39 @@
 <template>
     <div class="g-container">
         <div class="m-slider-banner">
-            <swiper :options="swiperOption" ref="mySwiper">
+            <swiper :options="swiperOption"
+                    ref="mySwiper">
                 <!-- slides -->
-                <swiper-slide v-for="(item,index) in banner" :key="index">
-                    <a class="oper-pic" :href="item.outLink">
-                        <img :src="item.picPath">
+                <swiper-slide v-for="(item,index) in banner"
+                              :key="index">
+                    <a class="oper-pic"
+                       :style="{backgroundImage:'url(' + item.picPath + ')'}"
+                       :href="item.outLink">
                     </a>
                 </swiper-slide>
 
                 <!-- Optional controls -->
-                <div class="swiper-pagination" slot="pagination"></div>
+                <div class="swiper-pagination"
+                     slot="pagination"></div>
             </swiper>
         </div>
         <div class="m-container m-width">
             <div class="ad-slogan-pic">
-                <img :src="bgImg" alt>
+                <img :src="bgImg"
+                     alt>
             </div>
             <div class="mh-column-content">
                 <div class="mh-left-main">
-                    <div class="mt-main" v-if="rmal.length>0">
+                    <div class="mt-main"
+                         v-if="rmal.length>0">
                         <div class="common-tit-h1">
                             <b>热门案例</b>
                             <span>专业优秀的教程免费看</span>
                         </div>
                         <div class="case-column">
-                            <case-item :info="item" v-for="(item,index) in rmal" :key="index"></case-item>
+                            <case-item :info="item"
+                                       v-for="(item,index) in rmal"
+                                       :key="index"></case-item>
                         </div>
                     </div>
                     <div class="mt-main">
@@ -35,27 +43,28 @@
                         </div>
                         <div class="news-column">
                             <div class="news-column-hd">
-                                <router-link
-                                    tag="a"
-                                    class="u-news-hd"
-                                    :to="{name:'newsDdetail',params:{id:item.id}}"
-                                    v-show="index<2"
-                                    v-for="(item,index) in ljyw"
-                                    :key="index"
-                                >
+                                <router-link tag="a"
+                                             target="_blank"
+                                             class="u-news-hd"
+                                             :to="{name:'newsDdetail',params:{id:item.id}}"
+                                             v-show="index<2"
+                                             v-for="(item,index) in ljyw"
+                                             :key="index">
                                     <div class="u-news-pic">
-                                        <img :src="item.bgImg" alt>
+                                        <img :src="item.bgImg"
+                                             alt>
                                     </div>
                                     <div class="u-news-txt">{{item.title}}</div>
                                 </router-link>
                             </div>
                             <div class="u-news-list">
                                 <ul>
-                                    <li v-show="index>=2" v-for="(item,index) in ljyw" :key="index">
-                                        <router-link
-                                            tag="a"
-                                            :to="{name:'newsDdetail',params:{id:item.id}}"
-                                        >{{item.title}}</router-link>
+                                    <li v-show="index>=2"
+                                        v-for="(item,index) in ljyw"
+                                        :key="index">
+                                        <router-link tag="a"
+                                                     target="_blank"
+                                                     :to="{name:'newsDdetail',params:{id:item.id}}">{{item.title}}</router-link>
                                     </li>
                                 </ul>
                             </div>
@@ -66,18 +75,28 @@
                     <div class="petite-box">
                         <div class="common-tit-h2">
                             <b>常用方案</b>
-                            <a href class="more-tit-btn">更多&gt;</a>
+                            <router-link tag="a"
+                                         target="_blank"
+                                         :to="{name:'caseIndex'}"
+                                         class="more-tit-btn">更多&gt;</router-link>
+                            <!-- <a href
+                               class="more-tit-btn">更多&gt;</a> -->
                         </div>
                         <div class="petite-list">
-                            <petite-item v-for="(item,index) in cyfa" :info="item" :key="index"></petite-item>
+                            <petite-item v-for="(item,index) in cyfa"
+                                         :info="item"
+                                         :key="index"></petite-item>
                         </div>
                         <div class="petite-box">
                             <div class="common-tit-h2">
                                 <b>产品课程</b>
-                                <a href class="more-tit-btn">更多&gt;</a>
+                                <a href
+                                   class="more-tit-btn">更多&gt;</a>
                             </div>
                             <div class="course-list">
-                                <course-item v-for="(item,index) in cpkc" :info="item" :key="index"></course-item>
+                                <course-item v-for="(item,index) in cpkc"
+                                             :info="item"
+                                             :key="index"></course-item>
                             </div>
                         </div>
                     </div>
@@ -89,14 +108,14 @@
                     <span>现场经验分享，线下施工，线上体验</span>
                 </div>
                 <div class="ing-main">
-                    <router-link
-                        tag="a"
-                        :to="{name:'jxjDetail',params:{id:currentJxj.id}}"
-                        class="ing-information"
-                    >
+                    <router-link tag="a"
+                                 target="_blank"
+                                 :to="{name:'jxjDetail',params:{id:currentJxj.id}}"
+                                 class="ing-information">
                         <div class="ing-hd">
                             <div class="ing-face">
-                                <img :src="currentJxj.headImage" alt>
+                                <img :src="currentJxj.headImage"
+                                     alt>
                             </div>
                             <div class="ing-info">
                                 <h2 class="ing-tit">{{currentJxj.projectName}}</h2>
@@ -112,24 +131,32 @@
                         <!--鼠标移上图片变大 + hover-scale-->
                         <!--图片高度不固定 + h-auto-->
                         <div class="cp-column">
-                            <a class="cp-item" v-for="(img,i) in currentJxj.images" :key="i">
-                                <img :src="img" alt>
+                            <a class="cp-item"
+                               v-for="(img,i) in currentJxj.images"
+                               :key="i">
+                                <img :src="img"
+                                     alt>
                             </a>
                         </div>
                     </router-link>
                     <div class="ing-roll">
-                        <ul>
-                            <li v-for="(jxjItem,i) in jxj" :key="i" @click="changejxjItem(i)">
-                                <a>
+                        <swiper :options="swiperOption3"
+                                ref="jxjSwpier">
+                            <swiper-slide v-for="(jxjItem,i) in jxj"
+                                          :key="i">
+                                <router-link tag="a"
+                                             target="_blank"
+                                             :to="{name:'jxjDetail',params:{id:currentJxj.id}}">
                                     <span class="roll-face">
-                                        <img :src="jxjItem.headImage" alt>
+                                        <img :src="jxjItem.headImage"
+                                             alt>
                                     </span>
                                     <span class="roll-name">{{jxjItem.nickName}}</span>
                                     <b>{{jxjItem.projectName}}</b>
                                     施工上传了 {{jxjItem.postName}}
-                                </a>
-                            </li>
-                        </ul>
+                                </router-link>
+                            </swiper-slide>
+                        </swiper>
                     </div>
                 </div>
             </div>
@@ -141,7 +168,8 @@
                     </div>
                     <div class="u-group-list">
                         <ul>
-                            <li v-for="(item,index) in qz" :key="index">
+                            <li v-for="(item,index) in qz"
+                                :key="index">
                                 <group-item :info="item"></group-item>
                             </li>
                         </ul>
@@ -149,7 +177,9 @@
                 </div>
                 <div class="mh-right-main">
                     <div class="ad-list">
-                        <ad-item v-for="(item,index) in hzqy" :key="index" :info="item"></ad-item>
+                        <ad-item v-for="(item,index) in hzqy"
+                                 :key="index"
+                                 :info="item"></ad-item>
                     </div>
                 </div>
             </div>
@@ -201,6 +231,24 @@ export default {
                 autoplay: {
                     delay: 2000
                 }
+            },
+            swiperOption3: {
+                // pagination: '.swiper-pagination',
+                slidesPerView: 9,
+                direction: 'vertical',
+                autoplay: {
+                    delay: 10000
+                },
+                loop: true,
+                on: {
+                    slideChangeTransitionEnd: () => {
+                        let ss = this.$refs.jxjSwpier.swiper;
+                        let i = ss.activeIndex;
+                        console.log(i);
+                        this.currentJxj = this.jxj[i];
+                        // alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+                    }
+                }
             }
         };
     },
@@ -223,10 +271,10 @@ export default {
                 this.hzqy = res.Data.hzqy;
                 // console.log(this.bgImg,this.hzqy);
 
-                this.rmal.forEach(function(item) {
+                this.rmal.forEach(function (item) {
                     item.stars = stars(item.score);
                 });
-                this.cpkc.forEach(function(item) {
+                this.cpkc.forEach(function (item) {
                     item.stars = stars(item.score);
                 });
             }

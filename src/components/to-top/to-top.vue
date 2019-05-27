@@ -9,10 +9,11 @@
             <i class="fix-big-icon like-b-icon"></i>
             <p>点赞</p>
         </div>
-        <!-- <div class="u-fix-item">
+        <div class="u-fix-item"
+             @click="toComment">
             <i class="fix-big-icon comment-b-icon"></i>
             <p>评论</p>
-        </div> -->
+        </div>
         <div class="u-fix-item scroll-top"
              @click="toTop">
             <i class="scroll-top-icon"></i>
@@ -32,7 +33,13 @@ export default {
                 id: this.id
             });
             if (res.Type == 'Success') {
-                this.isLike = true;
+                if (res.Content.indexOf('点赞') > -1) {
+                    this.$emit('likeFunc', 1)
+                } else if (res.Content.indexOf('取消') > -1) {
+                    this.$emit('likeFunc', 2)
+                }
+
+                // this.isLike = true;
                 this.$layer.alert(res.Content);
             } else {
                 this.$layer.alert(res.Content);
@@ -40,6 +47,10 @@ export default {
         },
         toTop() {
             document.documentElement.scrollTop = 0;
+        },
+        toComment() {
+            document.documentElement.scrollTop = document.querySelector('#toCommentBox').offsetTop;
+            // console.log();
         }
     }
 }

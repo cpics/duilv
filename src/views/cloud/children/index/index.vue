@@ -35,6 +35,7 @@
                 <div class="grn-list">
                     <router-link class="grn-item"
                                  tag="a"
+                                 target="_blank"
                                  v-for="(item,i) in currentItem.schemes"
                                  :key="i"
                                  :to="{name:'cloudDetail',params:{id:item.id}}">

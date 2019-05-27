@@ -20,6 +20,7 @@
             <!--参考 https://hao.uisdc.com/#inspiration-->
             <div class="m-cases-content">
                 <left-menu :list="cases.tags"
+                           :currentTagId="currentTagId"
                            @filterTag="filterTag"></left-menu>
                 <!--详情内容-->
                 <div class="g-cases">
@@ -73,6 +74,7 @@ export default {
         async init() {
             let res = await getCasesInex();
             this.cases = res.Data;
+            this.currentTagId = this.cases.tags[0].id;
             // console.log(res);
         },
         filterTag(id) {

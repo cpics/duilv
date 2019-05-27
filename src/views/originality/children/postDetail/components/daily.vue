@@ -17,7 +17,17 @@
                         <div class="prise-art-txt">
                             <div>{{detail.dailyProp.pschedule}}</div>
                         </div>
-                        <cp-swpiper :list="detail.dailyProp.imgs"></cp-swpiper>
+                        <div class="qe-view-detail">
+                            <div class="cp-column pic-300">
+                                <div class="cp-item"
+                                     v-for="(img,m) in detail.dailyProp.imgs"
+                                     :key="m">
+                                    <img @click="popImg(detail.dailyProp.imgs)"
+                                         :src="img"
+                                         alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="e-prise-box">
@@ -65,12 +75,17 @@
 </template>
 
 <script>
-import cpSwpiper from './cp-swiper.vue';
+// import cpSwpiper from './cp-swiper.vue';
 export default {
     name: 'daily',
     props: ['detail'],
     components: {
-        cpSwpiper
+        // cpSwpiper
+    },
+    methods: {
+        popImg(imgs) {
+            this.$emit('openPopImgList', imgs);
+        }
     }
 }
 </script>

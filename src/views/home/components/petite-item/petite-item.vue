@@ -1,7 +1,11 @@
 <template>
-    <router-link class="petite-item" tag="a" :to="{name:'cloudDetail',params:{id:info.id}}">
+    <router-link class="petite-item"
+                 target="_blank"
+                 tag="a"
+                 :to="{name:'cloudDetail',params:{id:info.id}}">
         <div class="petite-pic">
-            <img :src="info.bgImg" alt>
+            <img :src="info.bgImg"
+                 alt>
         </div>
         <div class="petite-describe">{{info.title}}</div>
     </router-link>

@@ -170,7 +170,8 @@
                             </div>
                         </div>
                         <div class="structure-box">
-                            <div v-for="(item,index) in header.projectPartner"
+                            <div v-if="item.type == '项目经理'"
+                                 v-for="(item,index) in header.projectPartner"
                                  :key="index">
                                 <div class="com-md-face">
                                     <img :src="item.headImage"
@@ -186,37 +187,26 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="structure-box">
-              <div class="common-tit-h2">
-                <b>类似项目</b>
-              </div>
-              <div class="guess-like">
-                <a href class="guess-item">
-                  <div class="guess-face">
-                    <img src="../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="guess-info">苏州海的大姐软件有限公司</div>
-                </a>
-                <a href class="guess-item">
-                  <div class="guess-face">
-                    <img src="../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="guess-info">苏州海的大姐软件有限公司</div>
-                </a>
-                <a href class="guess-item">
-                  <div class="guess-face">
-                    <img src="../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="guess-info">苏州海的大姐软件有限公司</div>
-                </a>
-                <a href class="guess-item">
-                  <div class="guess-face">
-                    <img src="../../../html/pages/home/images/demo.png" alt>
-                  </div>
-                  <div class="guess-info">苏州海的大姐软件有限公司</div>
-                </a>
-              </div>
-            </div>-->
+                        <div class="structure-box"
+                             v-if="header.lsProject && header.lsProject.length>0">
+                            <div class="common-tit-h2">
+                                <b>类似项目</b>
+                            </div>
+                            <div class="guess-like">
+                                <router-link tag="a"
+                                             v-for="(item,i) in header.lsProject"
+                                             :key="i"
+                                             :to="{name:'jxjDetail',params:{id:item.id}}"
+                                             class="guess-item">
+                                    <div class="guess-face">
+                                        <img :src="item.picPath"
+                                             alt>
+                                    </div>
+                                    <div class="guess-info">{{item.title}}</div>
+                                </router-link>
+
+                            </div>
+                        </div>
                         <div class="scan-code-quick">
                             <div class="code-quick-pic">
                                 <img src="../../../../html/components/comments/images/code1.png"
@@ -359,7 +349,10 @@ export default {
         },
         goto(item) {
             // if (item.type != 'QE') {
-            this.$router.push({ name: 'jxjPostDetail', params: { id: item.id }});
+            // window.open()
+            let routeData = this.$router.resolve({ name: 'jxjPostDetail', params: { id: item.id } });
+            window.open(routeData.href, '_blank');
+            // this.$router.push();
             // }
         },
         gotoCreate(type) {
@@ -394,6 +387,13 @@ export default {
         this.getWeather();
         this.getHeader();
         this.getJxjLog();
+    },
+    watch: {
+        $route(to, from) {
+            this.getWeather();
+            this.getHeader();
+            this.getJxjLog();
+        }
     }
 };
 </script>

@@ -113,6 +113,7 @@
                         </div>
                         <div class="guess-like">
                             <router-link tag="a"
+                                         target="_blank"
                                          class="guess-item"
                                          v-for="(l,i) in likeArr"
                                          :key="i"
@@ -130,6 +131,8 @@
                         </div>
                         <div class="recommend-list">
                             <router-link v-for="(item,i) in news"
+                                         target="_blank"
+                                         v-if="i<10"
                                          :key="i"
                                          :to="{name:'newsDdetail',params:{id:item.id}}"
                                          tag="a"
@@ -148,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </template>
@@ -211,7 +214,9 @@ export default {
             this.list[i].zkDir = !this.list[i].zkDir;
         },
         gotoDetail(id) {
-            this.$router.push({ name: 'enterDetail', params: { id: id } });
+            let routeData = this.$router.resolve({ name: 'enterDetail', params: { id: id } });
+            window.open(routeData.href, '_blank');
+            // this.$router.push();
         },
         more() {
             this.params.index++;

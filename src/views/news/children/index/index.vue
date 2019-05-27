@@ -26,6 +26,7 @@
                             <li v-for="(item,index) in news"
                                 :key="index">
                                 <router-link tag="a"
+                                             target="_blank"
                                              :to="{name:'newsDdetail',params:{id:item.id}}">
                                     <div class="u-news-pic">
                                         <img :src="item.picPath">
@@ -71,6 +72,7 @@
                         </div>
                         <div class="recommend-list">
                             <router-link class="recommend-item"
+                                         target="_blank"
                                          tag="a"
                                          v-for="(item,index) in oldNews"
                                          :key="index"
