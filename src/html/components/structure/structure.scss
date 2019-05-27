@@ -522,5 +522,11 @@
         color: #47c091;
       }
     }
+    .weekly-time{
+      display: block;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
 }

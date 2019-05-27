@@ -408,5 +408,10 @@
       text-overflow: ellipsis; }
       .weekly-item .weekly-info .weekly-name:hover {
         color: #47c091; }
+    .weekly-item .weekly-info .weekly-time {
+      display: block;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden; }
 
 /*# sourceMappingURL=structure.css.map */
