@@ -262,21 +262,35 @@
 
 .ing-roll {
   position: relative;
-  width: 582px;
-  height: 380px;
+  width: 526px;
+  height: 360px;
   float: right;
+  padding: 10px 28px;
   background: #f1f1f1;
-  overflow-y: auto; }
+  box-sizing: content-box; }
+  .ing-roll .swiper-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  .ing-roll .swiper-wrapper {
+    width: 100%;
+    height: 100%; }
+    .ing-roll .swiper-wrapper .swiper-slide {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-align: left;
+      margin: 0 auto; }
   .ing-roll a {
     color: #333; }
-  .ing-roll ul {
-    padding: 0 28px; }
   .ing-roll li {
-    color: #252525;
-    padding: 7px 0;
-    line-height: 28px; }
+    color: #252525; }
     .ing-roll li a {
+      padding: 7px 0;
       display: block;
+      line-height: 28px;
       white-space: nowrap;
       text-overflow: ellipsis;
       width: 100%;
