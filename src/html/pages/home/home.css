@@ -277,17 +277,16 @@
   .ing-roll .swiper-wrapper {
     width: 100%;
     height: 100%; }
-    .ing-roll .swiper-wrapper .swiper-slide {
-      width: 100%;
-      height: 100%;
-      display: block;
-      text-align: left;
-      margin: 0 auto; }
   .ing-roll a {
     color: #333; }
-  .ing-roll li {
+  .ing-roll .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: left;
+    margin: 0 auto;
     color: #252525; }
-    .ing-roll li a {
+    .ing-roll .swiper-slide a {
       padding: 7px 0;
       display: block;
       line-height: 28px;
@@ -295,13 +294,13 @@
       text-overflow: ellipsis;
       width: 100%;
       overflow: hidden; }
-    .ing-roll li span, .ing-roll li b {
+    .ing-roll .swiper-slide span, .ing-roll .swiper-slide b {
       font-size: 14px;
       display: inline-block;
       vertical-align: top; }
-    .ing-roll li .roll-name {
+    .ing-roll .swiper-slide .roll-name {
       margin-left: 10px; }
-    .ing-roll li b {
+    .ing-roll .swiper-slide b {
       margin: 0 6px 0 14px; }
   .ing-roll .roll-face {
     width: 28px;

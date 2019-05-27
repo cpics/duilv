@@ -365,18 +365,16 @@
   .swiper-wrapper {
     width: 100%;
     height: 100%;
-    .swiper-slide {
-      width: 100%;
-      height: 100%;
-      display: block;
-      text-align: left;
-      margin: 0 auto;
-    }
   }
   a {
     color: #333;
   }
-  li {
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: left;
+    margin: 0 auto;
     color: #252525;
     a {
       padding: 7px 0;
