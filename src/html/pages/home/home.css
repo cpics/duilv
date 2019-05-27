@@ -14,7 +14,8 @@
 .mh-slogan-content .msi-pic img, .case-column .case-pic img, .news-column .u-news-pic img, .petite-item .petite-pic img, .ing-roll .roll-face img, .ing-face img, .u-group-list .company-pic img {
   width: 100%;
   height: 100%;
-  display: block; }
+  display: block;
+  object-fit: cover; }
 
 .ad-slogan-pic {
   width: 100%;

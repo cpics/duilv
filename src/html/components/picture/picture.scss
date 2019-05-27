@@ -20,6 +20,12 @@
       margin-left: 0;
       margin-bottom: 0;
     }
+    .swiper-container,
+    .swiper-wrapper,
+    .swiper-slide{
+      width: 100%;
+      height: 100%;
+    }
   }
   @extend %clearfix;
   &.hover-scale {
@@ -48,6 +54,12 @@
     .cp-item {
       width: 260px;
       height: 180px;
+    }
+  }
+  &.pic-100 {
+    .cp-item {
+      width: 100px;
+      height: 72px;
     }
   }
   &.pic-300 {

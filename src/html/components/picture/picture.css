@@ -18,6 +18,11 @@
     .cp-column.cp-swiper .cp-item {
       margin-left: 0;
       margin-bottom: 0; }
+    .cp-column.cp-swiper .swiper-container,
+    .cp-column.cp-swiper .swiper-wrapper,
+    .cp-column.cp-swiper .swiper-slide {
+      width: 100%;
+      height: 100%; }
   .cp-column.hover-scale .cp-item:hover {
     cursor: pointer;
     transform: scale(1.06);
@@ -32,6 +37,9 @@
   .cp-column.pic-260 .cp-item {
     width: 260px;
     height: 180px; }
+  .cp-column.pic-100 .cp-item {
+    width: 100px;
+    height: 72px; }
   .cp-column.pic-300 .cp-item {
     width: 300px;
     height: 206px; }

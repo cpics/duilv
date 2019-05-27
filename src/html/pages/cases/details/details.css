@@ -12,7 +12,8 @@
 .qua-pic-item img, .case-pro-list .case-pro-pic img, .trace-d-list .trace-pic img {
   width: 100%;
   height: 100%;
-  display: block; }
+  display: block;
+  object-fit: cover; }
 
 /*案例详情*/
 .g-case-detail {

@@ -12,7 +12,8 @@
 .m-structure-content .u-news-pic img {
   width: 100%;
   height: 100%;
-  display: block; }
+  display: block;
+  object-fit: cover; }
 
 /*要闻*/
 .m-structure-content .m-news-list {
