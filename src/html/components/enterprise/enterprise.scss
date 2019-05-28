@@ -15,8 +15,9 @@
   padding: 30px 0;
   border-top: 1px solid #e8e7e7;
   .prise-hd {
+    cursor: pointer;
     @extend %clearfix;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
   }
   .prise-face {
     width: 50px;
@@ -78,12 +79,12 @@
     width: 100%;
     &.active {
       .prise-art-txt {
-        max-height: 64px;
+        max-height: 122px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 4;
         margin-bottom: 0;
       }
       .view-more-txt {

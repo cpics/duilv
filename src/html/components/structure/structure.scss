@@ -193,24 +193,29 @@
       background: #4bde9e;
     }
   }
+  .recommend-list{
+    li{
+      position: relative;
+      margin-bottom: 15px;
+      &:before {
+        position: absolute;
+        left: -10px;
+        top: 10px;
+        content: "";
+        width: 3px;
+        height: 3px;
+        background: #333;
+        border-radius: 50%;
+      }
+    }
+  }
   .recommend-item {
     position: relative;
     color: #333;
     font-size: 14px;
     display: block;
-    margin-bottom: 15px;
     max-height: 42px;
     @include ellipsis(2);
-    &:before {
-      position: absolute;
-      left: -10px;
-      top: 9px;
-      content: "";
-      width: 3px;
-      height: 3px;
-      background: #333;
-      border-radius: 50%;
-    }
     &:hover {
       color: #4bde9e;
       text-decoration: underline;

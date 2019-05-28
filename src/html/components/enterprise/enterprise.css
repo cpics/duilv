@@ -13,7 +13,8 @@
   padding: 30px 0;
   border-top: 1px solid #e8e7e7; }
   .e-prise-box .prise-hd {
-    padding-bottom: 30px; }
+    cursor: pointer;
+    margin-bottom: 30px; }
   .e-prise-box .prise-face {
     width: 50px;
     height: 50px;
@@ -62,12 +63,12 @@
     position: relative;
     width: 100%; }
     .e-prise-box .view-more-prise.active .prise-art-txt {
-      max-height: 64px;
+      max-height: 122px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 4;
       margin-bottom: 0; }
     .e-prise-box .view-more-prise.active .view-more-txt.fewer {
       display: none; }

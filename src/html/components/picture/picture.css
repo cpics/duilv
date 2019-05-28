@@ -23,6 +23,13 @@
     .cp-column.cp-swiper .swiper-slide {
       width: 100%;
       height: 100%; }
+      .cp-column.cp-swiper .swiper-container img,
+      .cp-column.cp-swiper .swiper-wrapper img,
+      .cp-column.cp-swiper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
   .cp-column.hover-scale .cp-item:hover {
     cursor: pointer;
     transform: scale(1.06);
