@@ -337,7 +337,8 @@
   color: #333;
   font-size: 14px;
   padding: 8px 0;
-  line-height: 20px; }
+  line-height: 20px;
+  display: block; }
   .his-daily-item:first-child {
     padding-top: 0; }
 .his-daily .his-time {
