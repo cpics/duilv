@@ -21,9 +21,18 @@
     filter: Alpha(opacity=50);
     background: #000;
     *zoom: 1; }
+  .shadow-fixed .mask-transparent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none; }
   .shadow-fixed.show {
     display: block; }
-    .shadow-fixed.show .mask {
+    .shadow-fixed.show .mask,
+    .shadow-fixed.show .mask-transparent {
       display: block; }
     .shadow-fixed.show .bomb-box {
       transform-origin: center center;
@@ -151,5 +160,50 @@
       background: #ccc; }
       .bomb-bottom-btn .bo-pop-btn.bg-grey:hover {
         background: rgba(204, 204, 204, 0.8); }
+
+/*loading*/
+.g-loading {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 12;
+  width: 106px;
+  height: 70px;
+  margin: -35px 0 0 -53px;
+  background: rgba(0, 0, 0, 0.8) !important;
+  filter: Alpha(opacity=80);
+  background: #000;
+  *zoom: 1;
+  border-radius: 5px; }
+  .g-loading .loading-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+    background: url("images/load.png") no-repeat center center;
+    background-size: contain;
+    -webkit-animation: load 1s linear infinite;
+    animation: load 1s linear infinite; }
+  .g-loading .load-txt {
+    padding-top: 10px; }
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=popCommon.css.map */
