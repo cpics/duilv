@@ -96,18 +96,12 @@
             </div>
             <!--页面主体-->
             <div class="g-container">
-                <!--图片banner-->
-                <div class="m-norm-banner">
-                    <div class="pic-banner">
-                        <img src="../../../../html/components/banner/images/banner.png" alt=""/>
-                    </div>
-                </div>
                 <div class="m-container m-width">
                     <!--面包屑-->
                     <div class="crumbs-box">
                         <a class="c-crumbs" href="">首页</a>
                         <span class="c-sep">&gt;</span>
-                        <a class="c-crumbs" href="">绿建要闻</a>
+                        <a class="c-crumbs" href="">堆绿要闻</a>
                         <span class="c-sep">&gt;</span>
                         <span class="c-current">我习于冷 志于成冰</span>
                     </div>
@@ -118,6 +112,13 @@
                                 <h2>我习于冷，志于成冰</h2>
                                 <div class="u-news-handle">
                                     <div class="un-left">
+                                        <div class="second-crumbs">
+                                            <a class="c-crumbs" href="">要闻</a>
+                                            <span class="c-sep">&gt;&gt;</span>
+                                            <span class="c-current">2018建筑钢结构防腐蚀技术创新交流会隆重举行！</span>
+                                        </div>
+                                    </div>
+                                    <div class="un-right">
                                         <span class="un-col">
                                             <i class="n-small-icon eye-icon"></i>
                                             100
@@ -142,6 +143,12 @@
                                     <p>
                                         常以为人是一种容器，盛着快乐，盛着悲哀。但人不是容器，人是导管，快乐流过，悲哀流过，导管只是导管。各种快乐悲哀流过流过，一直到死，导管才空了。疯子就是导管的淤塞和破裂。</p>
                                     <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                    <p>
+                                        常以为人是一种容器，盛着快乐，盛着悲哀。但人不是容器，人是导管，快乐流过，悲哀流过，导管只是导管。各种快乐悲哀流过流过，一直到死，导管才空了。疯子就是导管的淤塞和破裂。</p>
+                                    <div class="news-pic-has-title">
+                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                        <div class="news-pic-tit">常以为人是一种容器</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="comment-box">
@@ -150,73 +157,142 @@
                                 </div>
                                 <div class="comment-publish">
                                     <div class="publish-face">
-                                        <img src="../../../../html/pages/home/images/demo.png" alt="">
+                                        <img src="./../../../../html/pages/home/images/demo.png" alt="">
                                     </div>
-                                    <div class="comment-textarea">
-                                        <textarea placeholder="我有话说..."></textarea>
-                                    </div>
+                                    <div class="comment-textarea"><textarea placeholder="我有话说..."></textarea></div>
                                 </div>
-                                <div class="comment-publish-btn">
-                                    <span class="publish-btn">发表评论</span>
-                                </div>
+                                <div class="comment-publish-btn"><span class="publish-btn">发表评论</span></div>
                             </div>
                             <div class="comment-box pt-small">
                                 <div class="comment-title">
-                                    最新评论
+                                    全部评论
                                 </div>
                                 <div class="comment-list">
                                     <ul>
                                         <li>
-                                            <div class="comment-face">
-                                                <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                            </div>
-                                            <div class="comment-info">
-                                                <div class="comment-name">
-                                                    <span>我是你大哥</span>
-                                                    <span class="name-tipper">
-                                                        <span class="comment-time">10分钟前</span>
-                                                        <em class="comment-dot">·</em>
-                                                        <span class="report-btn">举报</span>
-                                                    </span>
+                                            <div class="level-comment">
+                                                <div class="comment-face">
+                                                    <img src="./../../../../html/pages/home/images/demo.png" alt="">
                                                 </div>
-                                                <div class="comment-msg">
-                                                    斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                                <div class="comment-info">
+                                                    <div class="comment-name">
+                                                        <span>匿名用户</span>
+                                                        <span class="name-tipper">
+                                                            <span class="comment-time">1 月前</span>
+                                                            <em class="comment-dot">· </em>
+                                                            <span class="report-btn">举报</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="comment-msg">
+                                                        <div>斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</div>
+                                                        <div class="reply-comment-row">
+                                                                <span class="reply-comment-btn">
+                                                                    <i class="n-small-icon comment-icon"></i>
+                                                                    <span>回复</span>
+                                                                </span>
+                                                            <!--回复区  显示 +show-->
+                                                            <div class="reply-area show">
+                                                                <div class="reply-textarea">
+                                                                    <textarea placeholder="回复XXX"></textarea>
+                                                                </div>
+                                                                <div class="comment-publish-btn">
+                                                                    <span class="publish-btn">发送</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="comment-face">
-                                                <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                            </div>
-                                            <div class="comment-info">
-                                                <div class="comment-name">
-                                                    <span>苏州大乘环保新材有限公司</span>
-                                                    <span class="name-tipper">
-                                                        <span class="comment-time">10分钟前</span>
-                                                        <em class="comment-dot">·</em>
-                                                        <span class="report-btn">举报</span>
-                                                    </span>
-                                                </div>
-                                                <div class="comment-msg">
-                                                    真厉害，厉害死了
+                                            <div class="level-comment">
+                                                <div class="comment-info">
+                                                    <div class="comment-msg">
+                                                        <div><span class="c-dark-blue">匿名用户</span> 回复
+                                                            <span class="c-dark-blue">匿名用户</span> ：5555
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="comment-face">
-                                                <img src="../../../../html/pages/home/images/demo.png" alt="">
-                                            </div>
-                                            <div class="comment-info">
-                                                <div class="comment-name">
-                                                    <span>我是你大哥</span>
-                                                    <span class="name-tipper">
-                                                        <span class="comment-time">10分钟前</span>
-                                                        <em class="comment-dot">·</em>
-                                                        <span class="report-btn">举报</span>
-                                                    </span>
+                                            <div class="level-comment">
+                                                <div class="comment-info">
+                                                    <div class="comment-msg">
+                                                        <div><span class="c-dark-blue">匿名用户</span> 回复
+                                                            <span class="c-dark-blue">匿名用户</span> ：5555555
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="comment-msg">
-                                                    我也在等待那一天。我必须等到能把自己当做另一个人的那一刻，等到自我消散的时候。那将会让我非常喜悦
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="level-comment">
+                                                <div class="comment-face">
+                                                    <img src="./../../../../html/pages/home/images/demo.png" alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <div class="comment-name">
+                                                        <span>吕恒波</span>
+                                                        <span class="name-tipper">
+                                                            <span class="comment-time">1 月前</span>
+                                                            <em class="comment-dot">· </em>
+                                                            <span class="report-btn">举报</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="comment-msg">
+                                                        <div>打错字了，碰头</div>
+                                                        <div class="reply-comment-row">
+                                                            <span class="reply-comment-btn">
+                                                                <i class="n-small-icon comment-icon"></i>
+                                                                <span>回复</span>
+                                                            </span>
+                                                            <!--回复区  显示 +show-->
+                                                            <div class="reply-area ">
+                                                                <div class="reply-textarea">
+                                                                    <textarea placeholder="回复XXX"></textarea>
+                                                                </div>
+                                                                <div class="comment-publish-btn">
+                                                                    <span class="publish-btn">发送</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="level-comment">
+                                                <div class="comment-face"><img
+                                                        src="https://www.iduilv.com/Upload/Image/3d166eeba1e14ee5afd86dd2cdc25710.jpg"
+                                                        alt=""></div>
+                                                <div class="comment-info">
+                                                    <div class="comment-name">
+                                                        <span>帅哥星空</span>
+                                                        <span class="name-tipper">
+                                                            <span class="comment-time">1 月前</span>
+                                                            <em class="comment-dot">· </em>
+                                                            <span class="report-btn">举报</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="comment-msg">
+                                                        <div>你的项目签到一个没签？？？</div>
+                                                        <div class="reply-comment-row">
+                                                            <span class="reply-comment-btn">
+                                                                <i class="n-small-icon comment-icon"></i>
+                                                                <span>回复</span>
+                                                            </span>
+                                                            <!--回复区  显示 +show-->
+                                                            <div class="reply-area ">
+                                                                <div class="reply-textarea">
+                                                                    <textarea placeholder="回复XXX"></textarea>
+                                                                </div>
+                                                                <div class="comment-publish-btn">
+                                                                    <span class="publish-btn">发送</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </li>
@@ -371,7 +447,7 @@
                                 <div class="fix-num">100</div>
                             </div>
                         </dd>
-                        <dd>
+                        <dd style="display: none">
                             <div class="fix-scan">
                                 <i class="fix-line"></i>
                                 <div class="fix-wechat-icon"></div>
@@ -394,6 +470,7 @@
                         </dd>
                         <dd>
                             <div class="fix-col">
+                                <i class="fix-line"></i>
                                 <div class="fix-up-btn"></div>
                             </div>
                         </dd>

@@ -28,7 +28,7 @@
     background: #f1f1f1;
     .reply-area {
       .reply-textarea {
-        textarea{
+        textarea {
           background: #fff;
         }
       }
@@ -56,17 +56,43 @@
   }
 }
 
+.bomb-com-box {
+  .comment-list {
+    padding: 10px 30px;
+    background: #f1f1f1;
+    li {
+      padding: 8px 0;
+    }
+    .level-comment {
+      padding-top: 6px;
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+    .reply-comment-btn {
+      font-size: 14px;
+    }
+    .reply-area {
+      .reply-textarea {
+        textarea {
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
 .comment-list {
   &.has-bg {
     padding: 0 30px;
     background: #f1f1f1;
-    .level-comment{
+    .level-comment {
       padding-top: 6px;
-      &:first-child{
+      &:first-child {
         padding-top: 0;
       }
     }
-    .reply-comment-btn{
+    .reply-comment-btn {
       font-size: 14px;
     }
     .reply-area {
@@ -83,11 +109,11 @@
     &.reply-row {
       padding-top: 0;
     }
-    &.no-face{
-      .comment-face{
+    &.no-face {
+      .comment-face {
         display: none;
       }
-      .comment-info{
+      .comment-info {
         margin-left: 0;
       }
     }
@@ -163,7 +189,7 @@
 .reply-area {
   padding: 10px 0;
   display: none;
-  &.show{
+  &.show {
     display: block;
   }
   .reply-textarea {
@@ -473,5 +499,12 @@
     vertical-align: middle;
     background: url("images/scan.png") no-repeat center center;
   }
-
+  .fix-col {
+    font-size: 0;
+    text-align: left;
+    .fix-up-btn{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
 }

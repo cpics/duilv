@@ -38,6 +38,20 @@
 .m-structure-content .has-arrow-up .c-arrow-up {
   margin-right: -8px; }
 
+.bomb-com-box .comment-list {
+  padding: 10px 30px;
+  background: #f1f1f1; }
+  .bomb-com-box .comment-list li {
+    padding: 8px 0; }
+  .bomb-com-box .comment-list .level-comment {
+    padding-top: 6px; }
+    .bomb-com-box .comment-list .level-comment:first-child {
+      padding-top: 0; }
+  .bomb-com-box .comment-list .reply-comment-btn {
+    font-size: 14px; }
+  .bomb-com-box .comment-list .reply-area .reply-textarea textarea {
+    background: #fff; }
+
 .comment-list.has-bg {
   padding: 0 30px;
   background: #f1f1f1; }
@@ -359,5 +373,11 @@
     margin: 0 30px;
     vertical-align: middle;
     background: url("images/scan.png") no-repeat center center; }
+  .fixation-bottom .fix-col {
+    font-size: 0;
+    text-align: left; }
+    .fixation-bottom .fix-col .fix-up-btn {
+      display: inline-block;
+      vertical-align: middle; }
 
 /*# sourceMappingURL=comments.css.map */

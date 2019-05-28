@@ -12,13 +12,20 @@
   line-height: 2;
   font-size: 16px;
   padding-top: 15px;
-
   p {
     padding-bottom: 20px;
   }
   img {
     display: block;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+  }
+  .news-pic-has-title {
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  .news-pic-tit {
+    text-align: center;
   }
 }

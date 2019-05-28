@@ -116,9 +116,23 @@
     @extend %clearfix;
     .un-left {
       float: left;
+      max-width: 56%;
     }
     .un-right {
       float: right;
+    }
+    .second-crumbs{
+      width: 100%;
+      color: #666;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      a,
+      a:visited,
+      a:active{
+        color: #666;
+      }
     }
     .un-col {
       position: relative;

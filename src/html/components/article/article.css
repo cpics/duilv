@@ -16,6 +16,10 @@
   .news-article img {
     display: block;
     max-width: 100%;
-    margin-bottom: 20px; }
+    margin: 0 auto 20px; }
+  .news-article .news-pic-has-title img {
+    margin-bottom: 10px; }
+  .news-article .news-pic-tit {
+    text-align: center; }
 
 /*# sourceMappingURL=article.css.map */
