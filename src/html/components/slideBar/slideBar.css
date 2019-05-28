@@ -8,8 +8,7 @@
   margin-left: -585px; }
   .m-slide-bar.fixation {
     position: fixed;
-    top: 120px;
-    z-index: 4; }
+    top: 120px; }
   .m-slide-bar .u-slide-item {
     position: relative;
     width: 90px;

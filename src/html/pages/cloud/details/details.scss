@@ -39,16 +39,18 @@
 }
 
 .cloud-d-item {
-  padding: 115px 5px 40px;
+  padding: 90px 5px 40px;
   margin-top: -90px;
-  border-top: 1px solid #e8e7e7;
   &:first-child {
-    border-top: 0;
+    .cloud-d-headline{
+      border-top: 0;
+    }
   }
 }
 
 .cloud-d-headline {
-  padding-bottom: 15px;
+  padding: 25px 0 15px;
+  border-top: 1px solid #e8e7e7;
   h2 {
     color: #252525;
     font-size: 18px;
