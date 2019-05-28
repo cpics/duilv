@@ -22,6 +22,7 @@
     box-sizing: content-box;
     margin: 0 0 20px 12px; }
     .mall-goods-item:hover {
+      cursor: pointer;
       box-shadow: 0 0 10px rgba(17, 17, 17, 0.2); }
     .mall-goods-item .goods-pic {
       height: 193px; }
