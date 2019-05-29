@@ -17,7 +17,23 @@
 
 /*评论*/
 .comment-box {
+  position: relative;
   padding-top: 30px; }
+  .comment-box.is-show-comment:before {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    content: "";
+    display: inline-block;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #f1f1f1; }
+  .comment-box .c-arrow-up {
+    right: 10px;
+    top: 20px;
+    margin: 0; }
   .comment-box.pt-small {
     padding-top: 10px; }
   .comment-box .prise-comment {
