@@ -184,8 +184,11 @@
       position: relative;
       width: 100px;
       display: inline-block;
-      font-size: 20px;
-      color: #252525; }
+      font-size: 18px;
+      color: #252525;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden; }
       .m-slide-left li .ml-slide-tit:visited {
         color: #252525; }
       .m-slide-left li .ml-slide-tit:hover {
@@ -196,6 +199,7 @@
         .m-slide-left li .ml-slide-tit:hover a:visited {
           color: #fff; }
     .m-slide-left li.active {
+      position: relative;
       color: #4bde9e;
       font-weight: bold; }
       .m-slide-left li.active .ml-slide-tit {
@@ -203,19 +207,23 @@
       .m-slide-left li.active:hover {
         color: #fff; }
         .m-slide-left li.active:hover .ml-slide-tit {
-          color: #fff; }
+          color: #4bde9e;
+          background: #f1f1f1; }
+      .m-slide-left li.active .ml-line-icon {
+        top: 50%;
+        display: inline-block; }
   .m-slide-left .ml-slide-inner {
     position: relative; }
   .m-slide-left .ml-line-icon {
     position: absolute;
-    left: 35px;
+    left: 26px;
     top: 0;
     width: 10px;
     height: 1px;
     content: "";
     color: #333;
     background: #333;
-    display: inline-block;
+    display: none;
     transition: all .5s; }
 
 /*# sourceMappingURL=slideBar.css.map */

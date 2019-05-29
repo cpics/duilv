@@ -179,7 +179,7 @@
   border: 1px solid #e8e7e7;
   box-shadow: 0 0 29px #e4e4e4;
   cursor: default;
-  .m-bomb-cloud{
+  .m-bomb-cloud {
     width: 100%;
     min-height: 300px;
     max-height: 600px;
@@ -197,7 +197,7 @@
   display: block;
   cursor: pointer;
   background: url("images/close.png") no-repeat center center;
-  &:hover{
+  &:hover {
     opacity: .9;
   }
 }
@@ -226,8 +226,11 @@
       position: relative;
       width: 100px;
       display: inline-block;
-      font-size: 20px;
+      font-size:18px;
       color: #252525;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
       &:visited {
         color: #252525;
       }
@@ -242,6 +245,7 @@
       }
     }
     &.active {
+      position: relative;
       color: #4bde9e;
       font-weight: bold;
       .ml-slide-tit {
@@ -250,8 +254,13 @@
       &:hover {
         color: #fff;
         .ml-slide-tit {
-          color: #fff;
+          color: #4bde9e;
+          background: #f1f1f1;
         }
+      }
+      .ml-line-icon {
+        top: 50%;
+        display: inline-block;
       }
     }
 
@@ -261,14 +270,14 @@
   }
   .ml-line-icon {
     position: absolute;
-    left: 35px;
+    left: 26px;
     top: 0;
     width: 10px;
     height: 1px;
     content: "";
     color: #333;
     background: #333;
-    display: inline-block;
+    display: none;
     transition: all .5s;
   }
 }
