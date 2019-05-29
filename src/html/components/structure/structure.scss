@@ -35,6 +35,10 @@
   .m-structure-information {
     width: 940px;
     float: left;
+    &.structure-border{
+      width: 858px;
+      box-sizing: content-box;
+    }
     .comment-box {
       .comment-title {
         color: #252525;
