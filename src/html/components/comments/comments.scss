@@ -21,10 +21,10 @@
 .comment-box {
   position: relative;
   padding-top: 30px;
-  &.is-show-comment{
-    &:before{
+  &.is-show-comment {
+    &:before {
       position: absolute;
-      right:10px;
+      right: 10px;
       top: 20px;
       width: 0;
       height: 0;
@@ -35,8 +35,8 @@
       border-bottom: 10px solid #f1f1f1;
     }
   }
-  .c-arrow-up{
-    right:10px;
+  .c-arrow-up {
+    right: 10px;
     top: 20px;
     margin: 0;
   }
@@ -338,15 +338,16 @@
 /*评论底部浮动*/
 .fixation-bottom {
   position: fixed;
-  left: 0;
+  left: 50%;
   bottom: 0;
   z-index: 5;
-  width: 100%;
+  width: 940px;
+  margin-left: -585px;
   background: #fff;
   padding: 14px 0;
   border-top: 1px solid #e8e7e7;
   .fix-bot-inner {
-    width: 1170px;
+    width: 100%;
     margin: 0 auto;
     @extend %clearfix;
   }
@@ -522,7 +523,7 @@
   .fix-col {
     font-size: 0;
     text-align: left;
-    .fix-up-btn{
+    .fix-up-btn {
       display: inline-block;
       vertical-align: middle;
     }

@@ -243,15 +243,16 @@
 /*评论底部浮动*/
 .fixation-bottom {
   position: fixed;
-  left: 0;
+  left: 50%;
   bottom: 0;
   z-index: 5;
-  width: 100%;
+  width: 940px;
+  margin-left: -585px;
   background: #fff;
   padding: 14px 0;
   border-top: 1px solid #e8e7e7; }
   .fixation-bottom .fix-bot-inner {
-    width: 1170px;
+    width: 100%;
     margin: 0 auto; }
   .fixation-bottom .fix-bot-publish {
     width: 490px;
