@@ -3,11 +3,15 @@
         <div class="m-norm-banner"
              v-if="detail.topVedio !=''">
             <div class="video-box">
-                <video class="video-area"
+                <video muted
+                       ref="topVideo"
+                       class="video-area"
+                       autoplay
                        :poster="detail.topBgimg"
                        controls="true">
-                    <source :src="detail.topVedio"
-                            type="video/mp4">
+                       <!-- <source :src="detail.topVedio"
+                            type="video/mp4"> -->
+
                 </video>
                 <!--播放按钮 显示 +show-->
                 <i class="video-icon"></i>
@@ -42,6 +46,8 @@
                         </div>
                         <!--注意事项-->
                         <div class="m-slide-bomb">
+                            <div class="slide-close-icon"
+                                 @click="showCate(1)"></div>
                             <div class="m-bomb-cloud">
                                 <div class="u-question-dispose">
                                     <div class="uqd-items"
@@ -83,6 +89,8 @@
                         </div>
                         <!--产品信息-->
                         <div class="m-slide-bomb">
+                            <div class="slide-close-icon"
+                                 @click="showCate(2)"></div>
                             <div class="m-bomb-cloud">
                                 <div class="u-products-article"
                                      v-html="detail.product"></div>
@@ -99,115 +107,69 @@
                         </div>
                         <!--相关案例-->
                         <div class="m-slide-bomb">
+                            <div class="slide-close-icon"
+                                 @click="showCate(3)"></div>
                             <div class="m-bomb-cloud">
                                 <div class="u-related-case">
                                     <div class="related-tab">
-                                        <b class="active">往期案例</b>
+                                        <b :class="{'active':xgalIndex == 1}"
+                                           @click="chooseXgal(1)">往期案例</b>
                                         <span>|</span>
-                                        <b>现有案例</b>
+                                        <b :class="{'active':xgalIndex == 2}"
+                                           @click="chooseXgal(2)">现有案例</b>
                                     </div>
                                     <div class="related-main">
                                         <!--往期案例 显示 +show-->
-                                        <div class="related-box">
+                                        <div class="related-box show"
+                                             v-if="xgalIndex == 1 && detail.xgal">
                                             <div class="related-list">
                                                 <ul>
-                                                    <li>
-                                                        <div class="related-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="related-info">
-                                                            <h2>建发高铁新城（泱誉）</h2>
-                                                            <div class="related-txt">
-                                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工 |
+                                                    <li v-for="(item,i) in detail.xgal.wqal"
+                                                        :key="i">
+                                                        <router-link tag="a"
+                                                                     target="_blank"
+                                                                     :to="{name:'cloudDetail',params:{id:item.id}}">
+                                                            <div class="related-pic">
+                                                                <img :src="item.picPath"
+                                                                     alt>
                                                             </div>
-                                                            <div class="related-tipper">
-                                                                <span class="related-tip">质量检测报告</span>
-                                                                <span class="related-tip">质量检测报告</span>
+                                                            <div class="related-info">
+                                                                <h2>{{item.title}}</h2>
+                                                                <div class="related-txt">
+                                                                    {{item.desc}}
+                                                                </div>
+                                                                <div class="related-tipper">
+                                                                    <span class="related-tip"
+                                                                          v-if="item.hasReport">质量检测报告</span>
+                                                                    <span class="related-tip"
+                                                                          v-if="item.hasWarranty">联合质保书</span>
+                                                                    <span class="related-tip"
+                                                                          v-if="item.hasTracking">项目追踪</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="related-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="related-info">
-                                                            <h2>建发高铁新城（泱誉）</h2>
-                                                            <div class="related-txt">
-                                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工 |
-                                                            </div>
-                                                            <div class="related-tipper">
-                                                                <span class="related-tip">质量检测报告</span>
-                                                                <span class="related-tip">质量检测报告</span>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="related-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="related-info">
-                                                            <h2>建发高铁新城（泱誉）</h2>
-                                                            <div class="related-txt">
-                                                                工程规模：4100平方米球场面层施工、1800平方米儿童活动场地面层施工、900平方米运动场器械区面层施工 |
-                                                            </div>
-                                                            <div class="related-tipper">
-                                                                <span class="related-tip">质量检测报告</span>
-                                                                <span class="related-tip">质量检测报告</span>
-                                                            </div>
-                                                        </div>
+                                                        </router-link>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <!--现有案例 显示 +show-->
-                                        <div class="related-box show">
+                                        <div class="related-box show"
+                                             v-if="xgalIndex == 2">
                                             <div class="now-case-list">
                                                 <ul>
-                                                    <li>
-                                                        <div class="n-case-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="n-case-txt">绿地中央广场4号地块绿地</div>
+                                                    <li v-for="(item,i) in detail.xgal.xyPro"
+                                                        :key="i">
+                                                        <router-link tag="a"
+                                                                     target="_blank"
+                                                                     :to="{name:'cloudDetail',params:{id:item.id}}">
+                                                            <div class="n-case-pic">
+                                                                <img :src="item.picPath"
+                                                                     alt>
+                                                            </div>
+                                                            <div class="n-case-txt">{{item.title}}</div>
+                                                        </router-link>
                                                     </li>
-                                                    <li>
-                                                        <div class="n-case-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="n-case-txt">绿地中央广场4号地块绿地</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="n-case-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="n-case-txt">绿地中央广场4号地块绿地</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="n-case-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="n-case-txt">绿地中央广场4号地块绿地</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="n-case-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="n-case-txt">绿地中央广场4号地块绿地</div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="n-case-pic">
-                                                            <img src
-                                                                 alt>
-                                                        </div>
-                                                        <div class="n-case-txt">绿地中央广场4号地块绿地</div>
-                                                    </li>
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -228,7 +190,9 @@
                                  :key="i">
                                 <div class="cloud-d-headline">
                                     <h2>{{item.title}}</h2>
-                                    <span class="video-play-btn">
+                                    <span class="video-play-btn"
+                                          @click="openPopVideo(item.vedio)"
+                                          v-if="item.vedio">
                                         <i class="arrow-b-right"></i>
                                         <span>视频</span>
                                     </span>
@@ -269,6 +233,66 @@
                 </div>
             </div>
         </div>
+        <!--回到顶部+评论-->
+        <div class="m-fix-bar">
+            <!--选中 +active-->
+            <div class="u-fix-item"
+                 @click="openPopComment">
+                <i class="fix-big-icon comment-b-icon"></i>
+                <p>评论</p>
+            </div>
+            <div class="u-fix-item scroll-top"
+                 @click="toTop">
+                <i class="scroll-top-icon"></i>
+            </div>
+        </div>
+        <!--视频弹框 显示 +show-->
+        <div class="shadow-fixed show"
+             v-show="popVideoDir">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"
+                     @click="closePopVideo"></div>
+                <div class="bomb-video-box">
+
+                    <video muted
+                           ref="popVideo"
+                           class="video-area"
+                           autoplay
+                           controls="true">
+                           <!-- <source :src="detail.topVedio"
+                            type="video/mp4"> -->
+
+                    </video>
+                    <!--播放按钮 显示 +show-->
+                    <i class="video-icon"></i>
+                </div>
+            </div>
+        </div>
+        <!--评论弹框-->
+        <div class="shadow-fixed show"
+             v-if="popCommentDir">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"
+                     @click="closePopComment"></div>
+                <div class="">
+                    <to-comment @jxjAddReplis="yzkAddReplis"></to-comment>
+                    <comment-box :commentList="detail.reps"
+                                 :replyBtnDir="false">
+                    </comment-box>
+                </div>
+            </div>
+        </div>
+        <!--loading-->
+        <div class="shadow-fixed show"
+             v-if="loadingDir">
+            <div class="mask-transparent"></div>
+            <div class="g-loading">
+                <div class="loading-icon"></div>
+                <div class="load-txt">正在加载...</div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -282,29 +306,115 @@ import '../../../../html/components/picture/picture.css';
 import '../../../../html/components/fixBar/fixBar.css';
 import '../../../../html/pages/cloud/details/details.css';
 
+import '../../../../html/components/popCommon/popCommon.css';
+import '../../../../html/components/comments/comments.css';
 import '../../../../html/components/cases/cases.css';
 
-import { yzkDetail } from '../../../../api/index';
+import timeago from '../../../../pubilc/util/timeago';
+
+import commentBox from '../../../../components/comment-box/comment-box.vue';
+import replyComment from '../../../../components/comment-box/reply-comment.vue';
+import toComment from '../../../../components/to-comment/to-comment.vue';
+
+
+
+import { yzkDetail, yzkAddReplis, yzkGetReplis } from '../../../../api/index';
 import { createHash } from 'crypto';
 import { setTimeout } from 'timers';
 export default {
     name: 'cloudDetail',
+    components: {
+        commentBox,
+        replyComment,
+        toComment
+    },
     data() {
         return {
+            loadingDir: false,
+            popCommentDir: false,
+            xgalIndex: 1,
+            popVideoDir: false,
+            currentVideo: '',
             detail: {},
             iii: 0,
             isSlidefixation: false,
             isNowfixation: false,
             offsetTopArr: [],
-            ff: 0
+            ff: 0,
+            reParams: {
+                id: this.$route.params.id,
+                repId: '',
+                content: ''
+            },
         };
     },
     methods: {
+        chooseXgal(index) {
+            this.xgalIndex = index;
+        },
+        closePopComment() {
+            this.popCommentDir = false;
+        },
+        openPopComment() {
+            this.popCommentDir = true;
+        },
+        async yzkAddReplis(content, repId) {
+            this.reParams.content = content;
+            if (repId) {
+                this.reParams.repId = repId;
+            } else {
+                this.reParams.repId = '';
+            }
+            let res = await yzkAddReplis(this.reParams);
+            if (res.Type == 'Success') {
+                this.$layer.alert(res.Content);
+                this.yzkGetReplis();
+            } else {
+                this.$layer.alert(res.Content);
+            }
+        },
+        async yzkGetReplis() {
+            let res = await yzkGetReplis({ id: parseInt(this.$route.params.id) })
+            if (res.Type == 'Success') {
+                res.Data.forEach(item => {
+                    item.showReplay = false;
+                    item.timeAgo = timeago(new Date(item.createdTime));
+                })
+                this.detail.reps = res.Data;
+            } else {
+                this.$layer.alert(res.Content);
+            }
+        },
+        showReplayFunc(index) {
+            this.detail.reps[index].showReplay = !this.detail.reps[index].showReplay;
+        },
+        toTop() {
+            document.documentElement.scrollTop = 0;
+            this.iii = 0;
+
+        },
+        openPopVideo(vedio) {
+            this.currentVideo = '//www.iduilv.com' + vedio;
+            // console.log(this.currentVideo);
+
+            this.popVideoDir = true;
+            this.$refs.popVideo.src = this.currentVideo;
+            this.$refs.popVideo.play();
+
+        },
+        closePopVideo() {
+            this.$refs.popVideo.pause();
+            this.popVideoDir = false;
+        },
         async getDetail() {
             let res = await yzkDetail({
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
+
+                res.Data.topVedio = '//www.iduilv.com' + res.Data.topVedio;
+                this.$refs.topVideo.src = res.Data.topVedio;
+                this.$refs.topVideo.play();
                 res.Data.schemeItem.forEach(item => {
                     item.content.forEach(c => {
                         c.content = c.content.replace(/\r\n/g, '<br />');
@@ -315,16 +425,25 @@ export default {
                     });
                     // console.log(item.content);
                 });
+                res.Data.reps.forEach(item => {
+                    item.showReplay = false;
+                    item.timeAgo = timeago(new Date(item.createdTime));
+                })
                 this.detail = res.Data;
             }
         },
         goto(i) {
-            this.iii = i;
-            let offsetTop = document.querySelector('#anchor' + i).offsetTop;
-            console.log(offsetTop);
-            // document.body.scrollTop = offsetTop;
-            // window.pageYOffset = offsetTop;
-            document.documentElement.scrollTop = offsetTop;
+            this.loadingDir = true;
+            setTimeout(() => {
+                this.iii = i;
+                let offsetTop = document.querySelector('#anchor' + i).offsetTop;
+                // console.log(offsetTop);
+                // document.body.scrollTop = offsetTop;
+                // window.pageYOffset = offsetTop;
+                document.documentElement.scrollTop = offsetTop;
+
+                this.loadingDir = false;
+            }, 500);
         },
         showCate(i) {
             if (this.ff == i) {

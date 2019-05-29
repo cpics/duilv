@@ -1,11 +1,11 @@
 <template>
     <div class="g-container">
         <!--图片banner-->
-        <div class="m-norm-banner">
+        <!-- <div class="m-norm-banner">
             <div class="pic-banner">
                 <img :src="info.picPath">
             </div>
-        </div>
+        </div> -->
         <div class="m-container m-width">
             <!--面包屑-->
             <div class="crumbs-box">
@@ -21,7 +21,7 @@
             </div>
             <!--绿建要闻-详情-->
             <div class="m-structure-content">
-                <div class="m-structure-information">
+                <div class="m-structure-information structure-border">
                     <div class="news-d-article">
                         <h2>{{info.title}}</h2>
                         <div class="u-news-handle">
@@ -41,6 +41,7 @@
                             </div>
                         </div>
                         <div class="news-article"
+                             id="contentView"
                              v-html="info.content"></div>
                     </div>
                     <div class="comment-box">
@@ -113,7 +114,8 @@
                 </div>
             </div>
         </div>
-        <div class="fixation-bottom">
+        <div class="fixation-bottom"
+             v-show="showCommentDir">
             <div class="fix-bot-inner">
                 <div class="fix-bot-publish">
                     <input type="text"
@@ -137,29 +139,8 @@
                             </div>
                         </dd>
                         <dd>
-                            <div class="fix-scan">
-                                <i class="fix-line"></i>
-                                <div class="fix-wechat-icon"></div>
-                                <i class="fix-line"></i>
-                                <i class="fix-scan-icon"></i>
-                                <i class="fix-line"></i>
-                                <div class="fix-is-show">
-                                    <div class="is-show-pic">
-                                        <qrcode-vue :value="localHref"
-                                                    :size="116"
-                                                    level="H"></qrcode-vue>
-                                    </div>
-                                    <div class="is-show-info">
-                                        <div class="is-show-txt">
-                                            打开微信”扫一扫“<br/> 打开网页后点击票屏幕
-                                            <br/> 右上角”分享“按钮
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </dd>
-                        <dd>
                             <div class="fix-col">
+                                <i class="fix-line"></i>
                                 <div @click="toTop"
                                      class="fix-up-btn"></div>
                             </div>
@@ -181,12 +162,13 @@ import '../../../../html/components/article/article.scss';
 
 import QrcodeVue from 'qrcode.vue';
 
-import { getNewsDetail, addReplis, getReplies } from '../../../../api/index';
+import { getNewsDetail, addReplis, getReplies, like } from '../../../../api/index';
 import timeago from '../../../../pubilc/util/timeago';
 export default {
     name: 'newsDetail',
     data() {
         return {
+            showCommentDir: true,
             info: {},
             repContent: '',
             repPopContent: '',
@@ -200,9 +182,37 @@ export default {
         toTop() {
             document.documentElement.scrollTop = 0;
         },
+        handleScroll() {
+            let clHeight = document.documentElement.clientHeight;
+            let contentHeight = document.getElementById("contentView").offsetHeight;
+            let scrollTop =
+                window.pageYOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+            setTimeout(() => {
+                if (scrollTop > (contentHeight - 200)) {
+                    this.showCommentDir = false;
+                } else {
+                    this.showCommentDir = true;
+                }
+            }, 100);
+            // console.log()
+        },
         //点赞
-        likeFunc() {
-
+        async likeFunc() {
+            let res = await like({
+                id: this.$route.params.id
+            });
+            if (res.Type == 'Success') {
+                this.$layer.alert(res.Content);
+                if (res.Content.indexOf('点赞') > -1) {
+                    this.info.likes++;
+                } else {
+                    this.info.likes--;
+                }
+            } else {
+                this.$layer.alert(res.Content);
+            }
         },
         async getData() {
             let res = await getNewsDetail({
@@ -270,6 +280,13 @@ export default {
         $route(to, from) {
             this.getData();
         }
+    },
+    mounted() {
+        this.handleScroll();
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 };
 </script>

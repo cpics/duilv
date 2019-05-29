@@ -106,33 +106,6 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="project-role-row">
-                                        <div class="role-user-info">
-                                            <div class="role-face">
-                                                <img src=""
-                                                     alt="">
-                                            </div>
-                                            <div class="role-name">
-                                                <b>项目负责人</b>
-                                                <p>李小兵</p>
-                                            </div>
-                                            <div class="role-tag">堆绿会员</div>
-                                        </div>
-                                        <!--一星 one-star-->
-                                        <!--二星 two-star-->
-                                        <!--三星 three-star-->
-                                        <!--四星 four-star-->
-                                        <!--五星 five-star-->
-                                        <div class="role-star three-star">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </div>

@@ -12,7 +12,8 @@ export const footer = params =>
     fetch.post(`${domain}/Api/Index/Footer`, params);
 
 //圈子点赞
-export const like = params => fetch.post(`${domain}/Api/Posts/Like/`, params);
+export const like = params => 
+    fetch.post(`${domain}/Api/Posts/Like/`, params);
 
 //首页-获取更多
 export const getQzMore = params =>
@@ -242,7 +243,12 @@ export const yzkDetail = params =>
 
 //云智库评论
 export const yzkAddReplis = params =>
-    fetch.post(`${domain}/Api/Yzk/AddReplis/`, params);
+    fetch.post(`${domain}/Api/Yzk/AddReplies/`, params);
+
+//云智库评论
+export const yzkGetReplis = params =>
+    fetch.post(`${domain}/Api/Yzk/GetReplies/`, params);
+
 
 //-------------商城------
 //商城首页

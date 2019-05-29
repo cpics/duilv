@@ -22,7 +22,7 @@
                                 <div class="cp-item"
                                      v-for="(img,m) in detail.dailyProp.imgs"
                                      :key="m">
-                                    <img @click="popImg(detail.dailyProp.imgs)"
+                                    <img @click="popImg(detail.dailyProp.imgs,m)"
                                          :src="img"
                                          alt="">
                                 </div>
@@ -83,8 +83,8 @@ export default {
         // cpSwpiper
     },
     methods: {
-        popImg(imgs) {
-            this.$emit('openPopImgList', imgs);
+        popImg(imgs,m) {
+            this.$emit('openPopImgList', imgs, m);
         }
     }
 }

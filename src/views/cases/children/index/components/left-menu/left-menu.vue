@@ -2,8 +2,7 @@
     <!--滚动固定时 +fixation-->
     <div class="m-slide-left">
         <div class="ml-slide-inner">
-            <i class="ml-line-icon"
-               style="transform:translateY(29px)"></i>
+
             <ul>
                 <li :class="{'active':item.id == currentTagId}"
                     v-for="(item,index) in list"
@@ -13,6 +12,7 @@
             tag="a"
             class="ml-slide-tit"
           >{{item.tagName}}</router-link>-->
+                    <i class="ml-line-icon"></i>
                     <a @click="filterTag(item.id)"
                        class="ml-slide-tit">{{item.tagName}}</a>
                 </li>

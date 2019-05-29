@@ -25,13 +25,16 @@
                                 <span>{{item.nickName}}</span>
                                 <span class="name-tipper">
                                     <span class="comment-time">{{item.timeAgo}}</span>
-                                    <em class="comment-dot">·</em>
-                                    <span class="report-btn">举报</span>
+                                    <em class="comment-dot"
+                                        v-if="replyBtnDir">·</em>
+                                    <span class="report-btn"
+                                          v-if="replyBtnDir">举报</span>
                                 </span>
                             </div>
                             <div class="comment-msg">
                                 <div>{{item.content}}</div>
-                                <div class="reply-comment-row">
+                                <div class="reply-comment-row"
+                                     v-if="replyBtnDir">
                                     <span class="reply-comment-btn"
                                           @click="showReplayFunc(i)">
                                         <i class="n-small-icon comment-icon"></i>
@@ -71,7 +74,8 @@
 export default {
     name: 'commentBox',
     props: {
-        commentList: Array
+        commentList: Array,
+        replyBtnDir: Boolean
     },
     methods: {
         showReplayFunc(index) {

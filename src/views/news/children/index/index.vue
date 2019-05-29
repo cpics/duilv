@@ -4,7 +4,7 @@
         <!--图片banner-->
         <div class="m-norm-banner">
             <div class="pic-banner">
-                <img src
+                <img :src="picPath"
                      alt>
             </div>
         </div>
@@ -71,12 +71,16 @@
                             <b>往期推荐</b>
                         </div>
                         <div class="recommend-list">
-                            <router-link class="recommend-item"
-                                         target="_blank"
-                                         tag="a"
-                                         v-for="(item,index) in oldNews"
-                                         :key="index"
-                                         :to="{name:'newsDdetail',params:{id:item.id}}">{{item.title}}</router-link>
+                            <ul>
+                                <li v-for="(item,index) in oldNews"
+                                    :key="index">
+                                    <router-link class="recommend-item"
+                                                 target="_blank"
+                                                 tag="a"
+                                                 :to="{name:'newsDdetail',params:{id:item.id}}">{{item.title}}</router-link>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                     <div class="scan-code-quick">

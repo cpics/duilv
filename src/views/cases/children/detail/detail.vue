@@ -140,7 +140,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="case-detail-cols">
+                <div class="case-detail-cols"
+                     v-if="detail.hxzz && detail.hxzz.length>0">
                     <div class="case-common-title">
                         <i class="case-title-icon trace"></i>
                         后续追踪

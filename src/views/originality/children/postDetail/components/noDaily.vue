@@ -44,7 +44,7 @@
                                          v-for="(img,m) in item.content.split(',')"
                                          :key="m">
                                         <!-- <img src="../../../../../html/pages/home/images/demo.png" /> -->
-                                        <img @click="popImg(item.content.split(','))"
+                                        <img @click="popImg(item.content.split(','),m)"
                                              :src="img"
                                              alt="">
                                     </div>
@@ -162,8 +162,8 @@ export default {
         },
     },
     methods: {
-        popImg(imgs) {
-            this.$emit('openPopImgList', imgs);
+        popImg(imgs,m) {
+            this.$emit('openPopImgList', imgs,m);
         }
     }
 }

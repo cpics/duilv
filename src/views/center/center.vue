@@ -174,6 +174,7 @@
                                         </div>
                                         <div class="my-publish-handle">
                                             <router-link tag="a"
+                                                         target="_blank"
                                                          class="pub-btn"
                                                          :to="{name:'jxjPostDetail',params:{id:item.id}}">查看</router-link>
 
@@ -218,6 +219,7 @@
                                         </div>
                                         <div class="my-publish-handle">
                                             <router-link tag="a"
+                                                         target="_blank"
                                                          class="pub-btn"
                                                          :to="{name:'jxjPostDetail',params:{id:item.id}}">查看</router-link>
                                             <em>|</em>
@@ -265,6 +267,7 @@
                                     </div>
                                     <div class="my-publish-handle">
                                         <router-link tag="a"
+                                                     target="_blank"
                                                      class="pub-btn"
                                                      :to="{name:'jxjPostDetail',params:{id:item.id}}">查看</router-link>
                                     </div>
@@ -319,10 +322,12 @@
                         <div class="feedback-box">
                             <div class="feedback-textarea">
                                 <i class="feed-tree"></i>
-                                <textarea v-model="feedBackContent" placeholder="我们有什么可以帮助您的吗？......."></textarea>
+                                <textarea v-model="feedBackContent"
+                                          placeholder="我们有什么可以帮助您的吗？......."></textarea>
                             </div>
                             <div class="feedback-submit">
-                                <div class="feedback-btn" @click="feedBack">提交意见</div>
+                                <div class="feedback-btn"
+                                     @click="feedBack">提交意见</div>
                             </div>
                         </div>
                     </div>
@@ -355,7 +360,7 @@ export default {
     name: 'centerIndex',
     data() {
         return {
-            feedBackContent:'',
+            feedBackContent: '',
             index: 0,
             uInfo: {
                 birthDay: '',
@@ -420,16 +425,16 @@ export default {
                 this.$layer.alert(res.Content);
             }
         },
-        async feedBack(){
-            if(this.feedBackContent.length == 0){
+        async feedBack() {
+            if (this.feedBackContent.length == 0) {
                 this.$layer.alert('请输入您的宝贵意见');
             }
             let res = await feedBack({
-                content:this.feedBackContent
+                content: this.feedBackContent
             });
-            if(res.Type == 'Success'){
+            if (res.Type == 'Success') {
                 this.$layer.alert(res.Content);
-            }else{
+            } else {
                 this.$layer.alert(res.Content);
             }
         },
@@ -561,8 +566,8 @@ export default {
         },
     },
     created() {
-        if(!this.userInfo){
-            this.$router.push({name:'home'});
+        if (!this.userInfo) {
+            this.$router.push({ name: 'home' });
         }
         this.getUerInfo();
     }

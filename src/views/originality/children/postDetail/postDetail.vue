@@ -57,6 +57,7 @@
                              id="toCommentBox">
                             <to-comment @jxjAddReplis="jxjAddReplis"></to-comment>
                             <comment-box :commentList="detail.reps"
+                                         :replyBtnDir="true"
                                          @showReplayFunc="showReplayFunc">
                                 <template scope="props">
 
@@ -145,7 +146,7 @@
                                      v-for="(item,i) in detail.zjfb"
                                      :key="i">
                                     <div class="weekly-face">
-                                        <img src=""
+                                        <img :src="item.headImage"
                                              alt="" />
                                     </div>
                                     <div class="weekly-info">
@@ -163,18 +164,22 @@
                                 <b>历史日报</b>
                             </div>
                             <div class="his-daily">
-                                <div class="his-daily-item"
-                                     v-for="(item,i) in detail.zjfb"
-                                     :key="i">
-                                    <span class="his-time">{{item.createdTime.split(' ')[0]}}</span>
+
+                                <router-link class="his-daily-item"
+                                             :to="{name:'jxjPostDetail',params:{id:item.id}}"
+                                             v-for="(item,i) in detail.zjfb"
+                                             :key="i">
+
+                                    <span class="his-time">{{item.timeStr}}</span>
                                     <span class="stroke-tag-circle">{{item.salfState}}</span>
-                                </div>
+                                </router-link>
                             </div>
                         </div>
                         <div class="scan-code-quick">
                             <div class="code-quick-pic">
-                                <img src="../../../../html/components/comments/images/code1.png"
-                                     alt="" />
+                                <qrcode-vue :value="localHref"
+                                            :size="140"
+                                            level="H"></qrcode-vue>
                             </div>
                         </div>
                     </div>
@@ -242,10 +247,14 @@ import { getJxjPostDetail, getJxjDetail, getWeather, jxjAddReplis } from '../../
 import stars from '../../../../pubilc/util/stars';
 import timeago from '../../../../pubilc/util/timeago';
 import hQrcode from '../../../../components/h-qrcode/h-qrcode';
+
+import QrcodeVue from 'qrcode.vue';
+
 export default {
     name: 'postDetail',
     data() {
         return {
+            localHref: location.href,
             currentImgShow: false,
             qiandaoDir: false,
             header: {},
@@ -257,15 +266,12 @@ export default {
                 content: ''
             },
             swiperOption: {
-                slidesPerView: 1,
+                initialSlide: 0,
                 loop: true,
-                loopFillGroupWithBlank: true,
-                prevButton: '.swiper-button-prev',
-                nextButton: '.swiper-button-next',
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
             },
             currentImgList: [
 
@@ -283,7 +289,8 @@ export default {
         daily,
         noDaily,
         hQrcode,
-        dQiandao
+        dQiandao,
+        QrcodeVue
     },
     methods: {
         // async getHeader() {
@@ -296,8 +303,10 @@ export default {
         //         // console.log(this.header);
         //     }
         // },
-        openPopImgList(imgList) {
+        openPopImgList(imgList,index) {
+            
             this.currentImgList = imgList;
+            this.swiperOption.initialSlide = index;
             this.currentImgShow = true;
 
         },
@@ -333,6 +342,8 @@ export default {
                 }
                 res.Data.zjfb.forEach(item => {
                     item.timeAgo = timeago(new Date(item.createdTime));
+                    let ti = item.createdTime.split(' ')[0].split('-');
+                    item.timeStr = ti[0] + '年' + ti[1] + '月' + ti[2] + '日';
                 });
                 res.Data.reps.forEach(item => {
                     item.showReplay = false;

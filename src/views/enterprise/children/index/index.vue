@@ -15,8 +15,9 @@
                         <div class="e-prise-box"
                              v-for="(item,index) in list"
                              :key="index">
-                            <a @click="gotoDetail(item.enterId)">
-                                <div class="prise-hd">
+                            <div>
+                                <div class="prise-hd"
+                                     @click="gotoDetail(item.enterId)">
                                     <div class="prise-face">
                                         <img :src="item.icon">
                                     </div>
@@ -33,16 +34,19 @@
                                     <!-- <div class="prise-art-txt" v-html="item.content"></div> -->
                                     <div class="view-more-prise"
                                          :class="{'active':!item.zkDir}">
-                                        <div class="prise-art-txt"
-                                             v-html="item.content"></div>
+                                        <div class="prise-art-txt">
+                                            <div class="txt-div" v-html="item.content" style="height:100%;">
+
+                                            </div>
+                                        </div>
                                         <div class="view-more-txt unfold"
-                                             v-if="!item.zkDir"
+                                             v-if="!item.zkDir && item.isNeedMoreBtn"
                                              @click.stop.prevent="zkFunc(index)">
                                             查看更多
                                             <i></i>
                                         </div>
                                         <div class="view-more-txt fewer"
-                                             v-if="item.zkDir"
+                                             v-if="item.zkDir && item.isNeedMoreBtn"
                                              @click.stop.prevent="zkFunc(index)">
                                             收起
                                             <i></i>
@@ -52,11 +56,13 @@
                                         <div class="cp-item"
                                              v-for="(img,i) in item.images"
                                              :key="i">
-                                            <img :src="img">>
+                                            <img @click="openPopImgList(item.images,i)"
+                                                 :src="img">
                                         </div>
                                     </div>
                                     <div class="u-news-handle">
-                                        <div class="un-left">
+                                        <div class="un-left"
+                                             v-if="item.addr">
                                             <span class="un-col c-grey-9">
                                                 <i class="address-icon"></i>
                                                 {{item.addr}}
@@ -72,11 +78,13 @@
                                             <span class="un-col">
                                                 <i class="n-small-icon comment-icon"></i>
                                                 {{item.repNum}}
-                                                <em class="c-arrow-up"></em>
+
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="comment-box">
+                                    <div class="comment-box"
+                                         v-if="item.reps.length>0">
+                                        <em class="c-arrow-up"></em>
                                         <div class="prise-comment">
                                             <div class="comment-list">
                                                 <ul>
@@ -96,7 +104,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <div class="news-more"
                              v-if="list.length<count"
@@ -130,13 +138,17 @@
                             <b>绿建要闻</b>
                         </div>
                         <div class="recommend-list">
-                            <router-link v-for="(item,i) in news"
-                                         target="_blank"
-                                         v-if="i<10"
-                                         :key="i"
-                                         :to="{name:'newsDdetail',params:{id:item.id}}"
-                                         tag="a"
-                                         class="recommend-item">{{item.title}}</router-link>
+                            <ul>
+                                <li v-for="(item,i) in news"
+                                    :key="i"
+                                    v-if="i<10">
+
+                                    <router-link target="_blank"
+                                                 :to="{name:'newsDdetail',params:{id:item.id}}"
+                                                 tag="a"
+                                                 class="recommend-item">{{item.title}}</router-link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="scan-code-quick">
@@ -153,15 +165,42 @@
             </div>
 
         </div>
+        <div class="shadow-fixed show"
+             v-if="currentImgShow">
+            <div class="mask"></div>
+            <div class="bomb-com-box">
+                <div class="bomb-small-close"
+                     @click="closePopimglist"></div>
+                <div class="qe-view-detail">
+                    <div class="cp-column cp-bomb-full cp-swiper">
+
+                        <swiper :options="swiperOption">
+
+                            <swiper-slide v-for="(item,index) in currentImgList"
+                                          :key="index">
+                                <img :src="item">
+                            </swiper-slide>
+                            <div class="swiper-button-prev"
+                                 slot="button-prev"></div>
+                            <div class="swiper-button-next"
+                                 slot="button-next"></div>
+                        </swiper>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import 'swiper/dist/css/swiper.css';
 import '../../../../html/components/crumbs/crumbs.scss';
 import '../../../../html/components/structure/structure.scss';
 import '../../../../html/components/enterprise/enterprise.scss';
 import '../../../../html/components/picture/picture.scss';
 import '../../../../html/components/comments/comments.scss';
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
 import '../../../../html/components/popCommon/popCommon.scss';
 import '../../../../html/components/dynamic/dynamic.scss';
@@ -174,8 +213,25 @@ import {
 } from '../../../../api/index';
 export default {
     name: 'enterInex',
+    components: {
+        swiper,
+        swiperSlide,
+    },
     data() {
         return {
+            currentImgShow: false,
+            swiperOption: {
+                initialSlide: 0,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+
+            },
+            currentImgList: [
+
+            ],
             showCre: false,
             params: {
                 index: 0,
@@ -188,6 +244,17 @@ export default {
         };
     },
     methods: {
+        openPopImgList(imgList, i) {
+            console.log(imgList);
+            this.currentImgList = imgList;
+            this.swiperOption.initialSlide = i;
+            // console.log(this.currentImgList);
+            this.currentImgShow = true;
+
+        },
+        closePopimglist() {
+            this.currentImgShow = false;
+        },
         async getNewsIndex() {
             let res = await getNewsIndex();
             if (res.Type == 'Success') {
@@ -199,9 +266,20 @@ export default {
             if (res.Type == 'Success') {
                 res.Data.data.forEach(item => {
                     item.zkDir = false;
+                    item.isNeedMoreBtn = false;
                 });
                 this.list = this.list.concat(res.Data.data);
                 this.count = res.Data.count;
+                this.$nextTick(() => {
+                    let dom = document.querySelectorAll('.prise-art-txt .txt-div');
+                    dom.forEach((item,i)=>{
+                        console.log(item.offsetHeight);
+                        if(item.offsetHeight> 128){
+                            this.list[i].isNeedMoreBtn = true;
+                        }
+                    })
+
+                })
             }
         },
         async getLikeEnter() {
