@@ -139,7 +139,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
-      .goods-classify .classify-col .c-cols:hover, .goods-classify .classify-col .c-cols.active {
+      .goods-classify .classify-col .c-cols.active {
         border: 1px solid #b81e20; }
 
 .add-cart-btn {
