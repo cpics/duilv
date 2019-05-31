@@ -390,6 +390,10 @@ export default {
     },
     watch: {
         $route(to, from) {
+            this.list = [];
+            this.type = 'all';
+            this.pageIndex = 0;
+            this.count = 0;
             this.getWeather();
             this.getHeader();
             this.getJxjLog();

@@ -195,7 +195,7 @@
         <div class="shadow-fixed show"
              v-if="currentImgShow">
             <div class="mask"></div>
-            <div class="bomb-com-box">
+            <div class="bomb-com-box full-bomb">
                 <div class="bomb-small-close"
                      @click="closePopimglist"></div>
                 <div class="qe-view-detail">
@@ -267,6 +267,7 @@ export default {
             },
             swiperOption: {
                 initialSlide: 0,
+                simulateTouch: false,
                 loop: true,
                 navigation: {
                     nextEl: '.swiper-button-next',

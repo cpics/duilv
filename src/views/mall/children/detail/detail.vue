@@ -30,7 +30,8 @@
                                               :key="index">
                                     <a class="oper-pic"
                                        href="javascript:;">
-                                        <img :src="item" @click="chooseImg(index)">
+                                        <img :src="item"
+                                             @click="chooseImg(index)">
                                     </a>
                                 </swiper-slide>
                             </swiper>
@@ -64,6 +65,7 @@
                     </div>
                     <div class="preview-hd-info">
                         <div class="goods-title">{{detail.title}}</div>
+                        <div style="padding-bottom:10px;">{{detail.desc}}</div>
                         <div class="goods-price">
                             <span class="c-label">淘宝价：</span>
                             <span class="c-price">￥{{detail.price}}</span>
@@ -72,10 +74,8 @@
                             <div class="classify-label">分类：</div>
                             <div class="classify-col">
                                 <div class="c-cols"
-                                     :class="{'active':item.active}"
-                                     @click="chooseType(i)"
-                                     v-for="(item,i) in detail.type"
-                                     :key="i">{{item.typeName}}</div>
+                                     v-for="(item,i) in detail.types"
+                                     :key="i">{{item}}</div>
                             </div>
                         </div>
                         <div class="add-cart-btn"
@@ -88,11 +88,7 @@
                         <div class="good-tit">商品详情</div>
                     </div>
                     <div class="goods-preview-inner">
-                        <p>{{detail.desc}}</p>
-                        <img v-for="(item, i) in detail.content"
-                             :key="i"
-                             :src="item"
-                             alt="" />
+                        <div style="text-align: center;" v-html="detail.content"></div>
                     </div>
                 </div>
             </div>
@@ -116,7 +112,6 @@ export default {
     data() {
         return {
             detail: {},
-            activeType: null,
             activeImg: '',
             swiperOption: {
                 slidesPerView: 3,
@@ -133,9 +128,9 @@ export default {
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
-                res.Data.type.forEach(item => {
-                    item.active = false;
-                })
+                // res.Data.type.forEach(item => {
+                //     // item.active = false;
+                // })
                 this.activeImg = res.Data.images[0];
                 this.detail = res.Data;
             }
@@ -143,27 +138,10 @@ export default {
         chooseImg(i) {
             this.activeImg = this.detail.images[i];
         },
-        chooseType(i) {
-            if (this.detail.type[i].active == true) {
-                this.detail.type[i].active = false;
-                this.activeType = null;
-            } else {
-                this.detail.type.forEach(item => {
-                    item.active = false;
-                });
 
-                this.detail.type[i].active = true;
-                this.activeType = this.detail.type[i];
-                
-            }
-            console.log(this.detail.type[i]);
-        },
         gotoTaobao() {
-            if (this.activeType == null) {
-                this.$layer.alert('请选择分类!');
-            } else {
-                location.href = this.activeType.taobaoUrl;
-            }
+            window.open(this.detail.taobaoUrl, '_blank'); 
+
         }
     },
     created() {

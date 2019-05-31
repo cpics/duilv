@@ -495,12 +495,15 @@ export default {
         }
     },
     created() {
+        document.getElementsByTagName('body')[0].className ='bg-page-grey';
         this.getDetail();
+        
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
     },
     destroyed() {
+        document.getElementsByTagName('body')[0].className="";
         window.removeEventListener('scroll', this.handleScroll);
     }
 };

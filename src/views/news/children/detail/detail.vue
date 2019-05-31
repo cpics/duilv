@@ -22,7 +22,8 @@
             <!--绿建要闻-详情-->
             <div class="m-structure-content">
                 <div class="m-structure-information structure-border">
-                    <div class="news-d-article">
+                    <div class="news-d-article"
+                         id="contentView">
                         <h2>{{info.title}}</h2>
                         <div class="u-news-handle">
                             <div class="un-left">
@@ -41,11 +42,32 @@
                             </div>
                         </div>
                         <div class="news-article"
-                             id="contentView"
                              v-html="info.content"></div>
                     </div>
                     <div class="comment-box">
-                        <div class="comment-title">发表评论</div>
+                        <div class="comment-title">
+                            <div class="comment-tit-txt">发表评论
+                                <i></i>
+                            </div>
+                            <div class="comment-bot-column">
+                                <div class="fix-cell">
+                                    <i class="fix-line"></i>
+                                    <span class="is-top"></span>
+                                </div>
+                                <div class="fix-cell">
+                                    <i class="n-small-icon comment-icon"></i>
+                                    {{info.repNum}}
+                                </div>
+                                <div class="fix-cell"
+                                     @click="likeFunc()">
+                                    <!--点赞选中 +active-->
+                                    <i class="like-icon "
+                                       :class="{'active':info.isLike}"></i>
+                                    {{info.likes}}
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="comment-publish">
                             <div class="publish-face">
                                 <img src
@@ -73,11 +95,6 @@
                                     <div class="comment-info">
                                         <div class="comment-name">
                                             <span>{{item.nickName}}</span>
-                                            <!-- <span class="name-tipper">
-                        <span class="comment-time">10分钟前</span>
-                        <em class="comment-dot">·</em>
-                        <span class="report-btn">举报</span>
-                      </span>-->
                                         </div>
                                         <div class="comment-msg"
                                              v-html="item.content"></div>
@@ -122,30 +139,25 @@
                            v-model="repPopContent"
                            placeholder="评论..." />
                     <div @click="addReplis(2)"
-                         class="fix-bot-btn">发表</div>
+                         class="fix-bot-btn">快速评论</div>
                 </div>
-                <div class="fix-bot-column">
-                    <!--手型  c-pointer-->
-                    <dl>
-                        <dd>
-                            <div class="fix-count"
-                                 @click="likeFunc()">
-                                <i class="like-icon"></i>
-                                <div class="fix-num">{{info.likes}}</div>
-                            </div>
-                            <div class="fix-count">
-                                <i class="n-small-icon comment-icon"></i>
-                                <div class="fix-num">{{info.repNum}}</div>
-                            </div>
-                        </dd>
-                        <dd>
-                            <div class="fix-col">
-                                <i class="fix-line"></i>
-                                <div @click="toTop"
-                                     class="fix-up-btn"></div>
-                            </div>
-                        </dd>
-                    </dl>
+                <div class="comment-bot-column">
+                    <div class="fix-cell"
+                         @click="toTop">
+                        <i class="fix-line"></i>
+                        <span class="is-top"></span>
+                    </div>
+                    <div class="fix-cell">
+                        <i class="n-small-icon comment-icon"></i>
+                        {{info.repNum}}
+                    </div>
+                    <div class="fix-cell"
+                         @click="likeFunc()">
+                        <!--点赞选中 +active-->
+                        <i class="like-icon"
+                           :class="{'active':info.isLike}"></i>
+                        {{info.likes}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,16 +197,23 @@ export default {
         handleScroll() {
             let clHeight = document.documentElement.clientHeight;
             let contentHeight = document.getElementById("contentView").offsetHeight;
+            console.log(clHeight, contentHeight);
+            if (clHeight > (contentHeight + 90 + 64 + 40 + 60 + 10)) {
+                // console.log(2);
+                this.showCommentDir = false;
+                return false;
+            }
             let scrollTop =
                 window.pageYOffset ||
                 document.documentElement.scrollTop ||
                 document.body.scrollTop;
             setTimeout(() => {
-                if (scrollTop > (contentHeight - 200)) {
+                if ((contentHeight + 90 + 64 + 40 + 60 + 10 - scrollTop) < clHeight) {
                     this.showCommentDir = false;
                 } else {
                     this.showCommentDir = true;
                 }
+                // console.log(this.showCommentDir);
             }, 100);
             // console.log()
         },
@@ -205,6 +224,7 @@ export default {
             });
             if (res.Type == 'Success') {
                 this.$layer.alert(res.Content);
+                this.info.isLike = !this.info.isLike;
                 if (res.Content.indexOf('点赞') > -1) {
                     this.info.likes++;
                 } else {
@@ -221,6 +241,9 @@ export default {
             if (res.Type == 'Success') {
                 res.Data.timeago = timeago(new Date(res.Data.createdTime));
                 this.info = res.Data;
+                this.$nextTick(() => {
+                    this.handleScroll();
+                })
             }
         },
         //获取最新评论
@@ -282,7 +305,8 @@ export default {
         }
     },
     mounted() {
-        this.handleScroll();
+
+
         window.addEventListener('scroll', this.handleScroll);
     },
     destroyed() {

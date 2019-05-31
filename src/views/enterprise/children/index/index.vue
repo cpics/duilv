@@ -35,7 +35,9 @@
                                     <div class="view-more-prise"
                                          :class="{'active':!item.zkDir}">
                                         <div class="prise-art-txt">
-                                            <div class="txt-div" v-html="item.content" style="height:100%;">
+                                            <div class="txt-div"
+                                                 v-html="item.content"
+                                                 style="height:100%;">
 
                                             </div>
                                         </div>
@@ -168,7 +170,7 @@
         <div class="shadow-fixed show"
              v-if="currentImgShow">
             <div class="mask"></div>
-            <div class="bomb-com-box">
+            <div class="bomb-com-box full-bomb">
                 <div class="bomb-small-close"
                      @click="closePopimglist"></div>
                 <div class="qe-view-detail">
@@ -222,6 +224,7 @@ export default {
             currentImgShow: false,
             swiperOption: {
                 initialSlide: 0,
+                simulateTouch: false,
                 loop: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -272,9 +275,9 @@ export default {
                 this.count = res.Data.count;
                 this.$nextTick(() => {
                     let dom = document.querySelectorAll('.prise-art-txt .txt-div');
-                    dom.forEach((item,i)=>{
+                    dom.forEach((item, i) => {
                         console.log(item.offsetHeight);
-                        if(item.offsetHeight> 128){
+                        if (item.offsetHeight > 128) {
                             this.list[i].isNeedMoreBtn = true;
                         }
                     })
