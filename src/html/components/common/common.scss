@@ -4,6 +4,11 @@ body {
   background: #fff;
 }
 
+.bg-page-grey,
+body.bg-page-grey{
+  background: #f4f4f4;
+}
+
 .mod-wrapper {
   width: 100%;
   min-width: 1170px;
