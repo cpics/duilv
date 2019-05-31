@@ -16,7 +16,9 @@
   padding-bottom: 50px; }
 
 .cloud-d-box {
-  background: #fff; }
+  padding: 35px;
+  background: #fff;
+  border: 1px solid #e8e7e7; }
   .cloud-d-box .cloud-d-tit {
     color: #000;
     font-size: 30px;
@@ -25,8 +27,7 @@
 
 .cloud-d-inner {
   min-height: 700px;
-  padding: 10px 0 0 30px;
-  border: 1px solid #e8e7e7; }
+  padding: 10px 0 0 0; }
 
 .cloud-d-information {
   width: 760px;
