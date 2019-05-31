@@ -18,6 +18,7 @@
 }
 
 .cloud-d-box {
+  background: #fff;
   .cloud-d-tit {
     color: #000;
     font-size: 30px;
@@ -111,13 +112,17 @@
 }
 
 .u-question-dispose {
-  padding: 0 35px 0 90px;
+  padding: 0 5px;
 }
 
 .uqd-items {
   padding: 35px 0;
   border-bottom: 1px solid #e8e7e7;
+  &:first-child{
+    padding-top: 0;
+  }
   &:last-child {
+    padding-bottom: 0;
     border-bottom-color: transparent;
   }
 }
@@ -158,7 +163,7 @@
 
 /*产品信息*/
 .u-products-article {
-  padding: 35px 100px;
+  padding: 0 5px;
   font-size: 16px;
   line-height: 2;
   p {
@@ -173,7 +178,7 @@
 
 /*相关案例*/
 .u-related-case {
-  padding: 40px 50px;
+  padding: 40px 5px;
   .related-tab {
     color: #333;
     font-size: 18px;
@@ -203,15 +208,19 @@
 /*现有案例*/
 .now-case-list {
   padding-top: 15px;
+  a{
+    color: #333;
+    display: block;
+  }
   ul {
-    margin-left: -22px;
+    margin-left: -20px;
     @extend %clearfix;
   }
   li {
     width: 174px;
     float: left;
     text-align: center;
-    margin-left: 22px;
+    margin-left: 20px;
     color: #333;
     font-size: 18px;
   }

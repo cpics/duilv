@@ -18,7 +18,7 @@
     color: #666;
     font-size: 16px;
     text-align: center;
-    background: #f0f0f0;
+    background: #ededed;
     margin-bottom: 12px;
     .u-slide-tit {
       height: 79px;
@@ -45,15 +45,18 @@
         position: relative;
         z-index: 4;
         background: #fff;
+        border-color: #fff;
         &:before {
           position: absolute;
-          right: -29px;
-          top: 0;
+          right: -50px;
+          top: -1px;
           z-index: 3;
           content: "";
-          width: 30px;
+          width: 60px;
           height: 100%;
           background: #fff;
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
         }
       }
       .slide-icon {
@@ -172,17 +175,24 @@
   top: 0;
   z-index: 3;
   width: 1080px;
-  min-height: 300px;
-  max-height: 600px;
+  height: 620px;
   display: none;
-  background: #fff;
-  border: 1px solid #e8e7e7;
-  box-shadow: 0 0 29px #e4e4e4;
   cursor: default;
   .m-bomb-cloud {
-    width: 100%;
-    min-height: 300px;
-    max-height: 600px;
+    position: relative;
+    left: 46px;
+    width: 963px;
+    padding: 35px;
+    height: 550px;
+    background: #fff;
+    box-sizing: content-box;
+    box-shadow: 0 0 29px #e4e4e4;
+  }
+  .u-question-dispose,
+  .u-products-article,
+  .u-related-case{
+    position: relative;
+    height: 100%;
     overflow-y: auto;
   }
 }

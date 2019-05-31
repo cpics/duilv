@@ -15,11 +15,13 @@
   min-height: 300px;
   padding-bottom: 50px; }
 
-.cloud-d-box .cloud-d-tit {
-  color: #000;
-  font-size: 30px;
-  font-weight: bold;
-  padding-bottom: 20px; }
+.cloud-d-box {
+  background: #fff; }
+  .cloud-d-box .cloud-d-tit {
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 20px; }
 
 .cloud-d-inner {
   min-height: 700px;
@@ -91,12 +93,15 @@
   text-align: left; }
 
 .u-question-dispose {
-  padding: 0 35px 0 90px; }
+  padding: 0 5px; }
 
 .uqd-items {
   padding: 35px 0;
   border-bottom: 1px solid #e8e7e7; }
+  .uqd-items:first-child {
+    padding-top: 0; }
   .uqd-items:last-child {
+    padding-bottom: 0;
     border-bottom-color: transparent; }
 
 .uqd-row {
@@ -121,7 +126,7 @@
 
 /*产品信息*/
 .u-products-article {
-  padding: 35px 100px;
+  padding: 0 5px;
   font-size: 16px;
   line-height: 2; }
   .u-products-article p {
@@ -133,7 +138,7 @@
 
 /*相关案例*/
 .u-related-case {
-  padding: 40px 50px; }
+  padding: 40px 5px; }
   .u-related-case .related-tab {
     color: #333;
     font-size: 18px;
@@ -156,13 +161,16 @@
 /*现有案例*/
 .now-case-list {
   padding-top: 15px; }
+  .now-case-list a {
+    color: #333;
+    display: block; }
   .now-case-list ul {
-    margin-left: -22px; }
+    margin-left: -20px; }
   .now-case-list li {
     width: 174px;
     float: left;
     text-align: center;
-    margin-left: 22px;
+    margin-left: 20px;
     color: #333;
     font-size: 18px; }
   .now-case-list .n-case-pic {
