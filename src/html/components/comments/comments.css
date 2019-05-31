@@ -1,7 +1,7 @@
 @charset "UTF-8";
-.comment-list li, .comment-publish, .fixation-bottom .fix-bot-inner, .fixation-bottom .fix-bot-publish, .fixation-bottom .fix-is-show {
+.comment-box .comment-title, .comment-list li, .comment-publish, .fixation-bottom .fix-bot-inner, .fixation-bottom .fix-bot-publish, .fixation-bottom .fix-is-show, .comment-bot-column {
   zoom: 1; }
-  .comment-list li:after, .comment-publish:after, .fixation-bottom .fix-bot-inner:after, .fixation-bottom .fix-bot-publish:after, .fixation-bottom .fix-is-show:after {
+  .comment-box .comment-title:after, .comment-list li:after, .comment-publish:after, .fixation-bottom .fix-bot-inner:after, .fixation-bottom .fix-bot-publish:after, .fixation-bottom .fix-is-show:after, .comment-bot-column:after {
     clear: both;
     content: '';
     display: block;
@@ -50,6 +50,18 @@
       display: inline-block; }
       .comment-box .comment-title .has-arrow-up .c-arrow-up {
         top: 30px; }
+    .comment-box .comment-title .comment-tit-txt {
+      float: left;
+      color: #252525;
+      font-size: 18px; }
+      .comment-box .comment-title .comment-tit-txt i {
+        width: 18px;
+        height: 10px;
+        display: inline-block;
+        margin-left: 8px;
+        background: url("images/drop.png") no-repeat center center; }
+    .comment-box .comment-title .comment-bot-column {
+      font-weight: normal; }
 
 .m-structure-content .has-arrow-up .c-arrow-up {
   margin-right: -8px; }
@@ -249,95 +261,61 @@
   width: 938px;
   margin-left: -585px;
   background: #fff;
-  padding: 14px 0;
+  padding: 10px 0;
   border: 1px solid #e8e7e7;
-  border-bottom: 0;
-  box-shadow: 0 -4px 10px 0 rgba(26, 26, 26, 0.03); }
+  border-bottom: 0; }
   .fixation-bottom.show {
     -webkit-animation: slideInUp .2s;
     animation: slideInUp .2s; }
   .fixation-bottom .fix-bot-inner {
-    padding: 0 15px;
+    padding: 0 10px;
     margin: 0 auto; }
   .fixation-bottom .fix-bot-publish {
-    width: 490px;
-    height: 60px;
-    padding: 12px 16px;
     float: left;
-    background: #f1f1f1;
     box-sizing: border-box; }
     .fixation-bottom .fix-bot-publish input {
       display: block;
-      width: 75%;
-      height: 36px;
-      line-height: 36px;
+      width: 330px;
+      height: 40px;
+      line-height: 40px;
       float: left;
       border: 0;
-      font-size: 18px;
+      font-size: 16px;
+      padding: 0 18px 0 28px;
       background: #f1f1f1;
       outline: none; }
     .fixation-bottom .fix-bot-publish ::-webkit-input-placeholder {
-      font-size: 18px;
+      font-size: 16px;
       color: #999; }
     .fixation-bottom .fix-bot-publish :-moz-placeholder {
-      font-size: 18px;
+      font-size: 16px;
       color: #999; }
     .fixation-bottom .fix-bot-publish ::-moz-placeholder {
-      font-size: 18px;
+      font-size: 16px;
       color: #999; }
     .fixation-bottom .fix-bot-publish :-ms-input-placeholder {
-      font-size: 18px;
+      font-size: 16px;
       color: #999; }
     .fixation-bottom .fix-bot-publish .fix-bot-btn {
-      width: 56px;
-      height: 36px;
-      line-height: 36px;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
       cursor: pointer;
-      background: #7ae0b2;
-      float: right;
+      background: #4cde9f;
+      float: left;
       color: #fff;
-      font-size: 18px;
-      text-align: center; }
-      .fixation-bottom .fix-bot-publish .fix-bot-btn:hover {
-        background: rgba(122, 224, 178, 0.8); }
-  .fixation-bottom .fix-bot-column {
-    float: left; }
-    .fixation-bottom .fix-bot-column dl {
-      display: table;
-      margin-left: 20px; }
-    .fixation-bottom .fix-bot-column dd {
-      color: #b4b4b4;
       font-size: 16px;
-      height: 60px;
       text-align: center;
-      display: table-cell;
-      vertical-align: middle; }
-      .fixation-bottom .fix-bot-column dd.line-empty {
-        padding: 0; }
-      .fixation-bottom .fix-bot-column dd:first-child {
-        padding: 0 30px; }
-    .fixation-bottom .fix-bot-column .fix-count {
-      padding: 0 5px;
-      min-width: 50px;
-      text-align: center;
-      display: inline-block; }
-    .fixation-bottom .fix-bot-column .c-pointer {
-      cursor: pointer; }
-    .fixation-bottom .fix-bot-column .like-icon,
-    .fixation-bottom .fix-bot-column .comment-icon {
-      display: block;
-      margin: 0 auto;
-      cursor: pointer; }
+      margin-left: 20px;
+      border-radius: 4px; }
+      .fixation-bottom .fix-bot-publish .fix-bot-btn:hover {
+        background: rgba(75, 222, 158, 0.8); }
+  .fixation-bottom .comment-bot-column {
+    padding-right: 16px; }
   .fixation-bottom .fix-scan {
     font-size: 0; }
     .fixation-bottom .fix-scan:hover .fix-is-show {
       display: block; }
-  .fixation-bottom .fix-line {
-    width: 1px;
-    height: 22px;
-    display: inline-block;
-    vertical-align: middle;
-    background: #b4b4b4; }
   .fixation-bottom .fix-wechat-icon {
     width: 48px;
     height: 40px;
@@ -401,6 +379,60 @@
     .fixation-bottom .fix-col .fix-up-btn {
       display: inline-block;
       vertical-align: middle; }
+
+.comment-bot-column {
+  float: right;
+  height: 40px;
+  line-height: 40px; }
+  .comment-bot-column .fix-cell {
+    color: #b4b4b4;
+    font-size: 16px;
+    padding: 0 14px;
+    display: inline-block;
+    float: right; }
+  .comment-bot-column .fix-line {
+    position: relative;
+    top: 9px;
+    width: 1px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: top;
+    background: #b4b4b4;
+    margin-right: 26px; }
+  .comment-bot-column .is-top {
+    width: 22px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    background: url("images/istop.png") no-repeat center center; }
+    .comment-bot-column .is-top:hover {
+      opacity: .9; }
+  .comment-bot-column .comment-icon {
+    cursor: pointer; }
+  .comment-bot-column dl {
+    display: table;
+    margin-left: 20px; }
+  .comment-bot-column dd {
+    color: #b4b4b4;
+    font-size: 16px;
+    height: 60px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle; }
+    .comment-bot-column dd.line-empty {
+      padding: 0; }
+    .comment-bot-column dd:first-child {
+      padding: 0 30px; }
+  .comment-bot-column .fix-count {
+    padding: 0 5px;
+    min-width: 50px;
+    text-align: center;
+    display: inline-block; }
+  .comment-bot-column .c-pointer {
+    cursor: pointer; }
+  .comment-bot-column .like-icon,
+  .comment-bot-column .comment-icon {
+    cursor: pointer; }
 
 @-webkit-keyframes slideInUp {
   0% {

@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /*详情*/
 .news-d-article {
-  padding: 0 0 30px; }
+  padding: 0 0 30px;
+  border-bottom: 1px solid #e8e7e7; }
   .news-d-article .u-news-handle {
     padding-top: 10px; }
 
