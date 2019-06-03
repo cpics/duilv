@@ -1,6 +1,6 @@
 <template>
     <div class="top-about">
-        <!-- <a href>联系我们</a> -->
+        <a>联系我们</a>
         <span class="is-login">
             <a href="javascript:;"
                v-if="!isLogined"

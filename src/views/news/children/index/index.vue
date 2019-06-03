@@ -85,8 +85,9 @@
                     </div>
                     <div class="scan-code-quick">
                         <div class="code-quick-pic">
-                            <img src
-                                 alt>
+                            <qrcode-vue :value="localHref"
+                                        :size="140"
+                                        level="H"></qrcode-vue>
                         </div>
                         <div class="code-quick-txt">
                             扫一扫”即可将
@@ -107,13 +108,20 @@ import '../../../../html/components/structure/structure.scss';
 
 import { getNewsIndex } from '../../../../api/index';
 import timeago from '../../../../pubilc/util/timeago';
+
+import QrcodeVue from 'qrcode.vue';
+
 export default {
     name: 'news',
+    components: {
+        QrcodeVue
+    },
     data() {
         return {
             news: [],
             picPath: '',
-            oldNews: []
+            oldNews: [],
+            localHref: location.href
         };
     },
     methods: {

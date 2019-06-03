@@ -9,7 +9,7 @@
                 <swiper-slide v-for="(item,index) in banner"
                               :key="index">
                     <!-- <a class="oper-pic" :href="item.outLink"> -->
-                    <img :src="item.picPath">
+                    <img :src="item">
                     <!-- </a> -->
                 </swiper-slide>
 

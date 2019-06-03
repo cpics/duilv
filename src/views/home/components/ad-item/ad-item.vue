@@ -1,7 +1,7 @@
 <template>
     <div class="ad-item">
-        <a :href="info.outLink" target="_blank">
-            <img :src="info.picPath" alt>
+        <a :href="info.OutLink" target="_blank">
+            <img :src="info.PicPath" alt>
         </a>
     </div>
 </template>

@@ -155,8 +155,9 @@
                     </div>
                     <div class="scan-code-quick">
                         <div class="code-quick-pic">
-                            <img src="../../../../html/components/footer/images/code.png"
-                                 alt>
+                            <qrcode-vue :value="localHref"
+                                        :size="140"
+                                        level="H"></qrcode-vue>
                         </div>
                         <div class="code-quick-txt">
                             扫一扫”即可将
@@ -207,6 +208,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import '../../../../html/components/popCommon/popCommon.scss';
 import '../../../../html/components/dynamic/dynamic.scss';
 
+import QrcodeVue from 'qrcode.vue';
+
 import {
     enterPriseIndex,
     getLikeEnter,
@@ -218,9 +221,11 @@ export default {
     components: {
         swiper,
         swiperSlide,
+        QrcodeVue
     },
     data() {
         return {
+            localHref: location.href,
             currentImgShow: false,
             swiperOption: {
                 initialSlide: 0,

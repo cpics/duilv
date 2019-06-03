@@ -39,7 +39,7 @@
                     <ul>
                         <li v-for="(item,index) in footData"
                             :key="index">
-                            <a :href="item.outLink">{{item.title}}</a>
+                            <a target="_blank" :href="item.outLink">{{item.Title}}</a>
                         </li>
 
                     </ul>

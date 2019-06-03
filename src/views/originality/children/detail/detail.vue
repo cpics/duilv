@@ -209,8 +209,9 @@
                         </div>
                         <div class="scan-code-quick">
                             <div class="code-quick-pic">
-                                <img src="../../../../html/components/comments/images/code1.png"
-                                     alt>
+                                <qrcode-vue :value="localHref"
+                                            :size="140"
+                                            level="H"></qrcode-vue>
                             </div>
                         </div>
                     </div>
@@ -264,15 +265,19 @@ import timeago from '../../../../pubilc/util/timeago';
 import dQiandao from './components/d-qiandao.vue';
 import dXiangqing from './components/d-xiangqing.vue';
 import hQrcode from '../../../../components/h-qrcode/h-qrcode';
+
+import QrcodeVue from 'qrcode.vue';
 export default {
     name: 'originality',
     components: {
         dQiandao,
         dXiangqing,
-        hQrcode
+        hQrcode,
+        QrcodeVue
     },
     data() {
         return {
+            localHref: location.href,
             qiandaoDir: false,
             xiangqingDir: false,
             popDir: false,
