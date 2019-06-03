@@ -17,6 +17,7 @@
                      slot="pagination"></div>
             </swiper>
         </div>
+        
         <div class="m-container m-width">
             <div class="ad-slogan-pic">
                 <img :src="bgImg"
