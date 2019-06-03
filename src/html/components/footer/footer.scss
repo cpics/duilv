@@ -16,13 +16,18 @@
   color: #f1f1f1;
   background: #313131;
   .foot-link-hd {
-    padding: 35px 0 10px 75px;
+    width: 1090px;
+    padding: 35px 0 10px 80px;
+    box-sizing: content-box;
     @extend %clearfix;
   }
   .links-col {
     width: 170px;
     float: left;
     line-height: 30px;
+    &:nth-last-child(2){
+      width: 280px;
+    }
     a,
     a:visited {
       color: #f1f1f1;

@@ -14,11 +14,15 @@
   color: #f1f1f1;
   background: #313131; }
   .m-footer-links .foot-link-hd {
-    padding: 35px 0 10px 75px; }
+    width: 1090px;
+    padding: 35px 0 10px 80px;
+    box-sizing: content-box; }
   .m-footer-links .links-col {
     width: 170px;
     float: left;
     line-height: 30px; }
+    .m-footer-links .links-col:nth-last-child(2) {
+      width: 280px; }
     .m-footer-links .links-col a,
     .m-footer-links .links-col a:visited {
       color: #f1f1f1; }
