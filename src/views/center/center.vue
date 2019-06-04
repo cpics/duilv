@@ -339,17 +339,17 @@
 </template>
 
 <script>
-import '../../html/components/center/center.css';
+import '../../html/components/center/center.scss';
 
-import '../../html/pages/center/account/account.css';
+import '../../html/pages/center/account/account.scss';
 
-import '../../html/pages/center/publish/publish.css';
-import '../../html/components/comments/comments.css';
+import '../../html/pages/center/publish/publish.scss';
+import '../../html/components/comments/comments.scss';
 
-import '../../html/pages/center/history/history.css';
+import '../../html/pages/center/history/history.scss';
 
-import '../../html/pages/center/complain/complain.css';
-import '../../html/pages/center/feedback/feedback.css';
+import '../../html/pages/center/complain/complain.scss';
+import '../../html/pages/center/feedback/feedback.scss';
 
 import { centerRouter } from '../../router.js';
 import { getUserInfo, userCenter, updateUserInfo, uploadImage, deleteTz, deleteReply, feedBack } from '../../api/index';

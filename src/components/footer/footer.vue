@@ -22,13 +22,16 @@
                 <div class="links-list">
                     <ul>
                         <li>
-                            <a href>微信公众号</a>
+                            <a target="_blank" href="https://weibo.com/p/1006066829964030/home?from=page_100606&mod=TAB&is_hot=1">新浪微博</a>
                         </li>
                         <li>
-                            <a href>新浪微博</a>
+                            <a target="_blank" href="https://www.toutiao.com/c/user/5849703835/#mid=1608826122136579">今日头条</a>
                         </li>
                         <li>
-                            <a href>百家号</a>
+                            <a target="_blank" href="http://dy.163.com/v2/article/detail/EBPAOSFP0545571Q.html">网易自媒体</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.zhihu.com/org/dui-lu-yun/posts">知乎平台</a>
                         </li>
                     </ul>
                 </div>

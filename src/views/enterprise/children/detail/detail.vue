@@ -539,7 +539,7 @@ import '../../../../html/components/course/course.scss';
 import hQrcode from '../../../../components/h-qrcode/h-qrcode';
 
 import '../../../../html/components/popCommon/popCommon.scss';
-import '../../../../html/components/dynamic/dynamic.css';
+import '../../../../html/components/dynamic/dynamic.scss';
 
 import {
     enterDetail,

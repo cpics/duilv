@@ -170,8 +170,8 @@
 </template>
 
 <script>
-import '../../../../html/components/crumbs/crumbs.css';
-import '../../../../html/pages/originality/modifyProject/modifyProject.css';
+import '../../../../html/components/crumbs/crumbs.scss';
+import '../../../../html/pages/originality/modifyProject/modifyProject.scss';
 // import loadScript from ''
 import { getJxjDetail, GetJxjProUsers, jxjUpdateProjectInfo } from '../../../../api/index';
 import loadScript from '../../../../pubilc/util/loadScript';

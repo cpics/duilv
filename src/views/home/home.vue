@@ -191,9 +191,9 @@
 <script>
 import 'swiper/dist/css/swiper.css';
 import '../../html/pages/home/home.scss';
-import '../../html/components/banner/banner.css';
-import '../../html/components/picture/picture.css';
-import '../../html/components/course/course.css';
+import '../../html/components/banner/banner.scss';
+import '../../html/components/picture/picture.scss';
+import '../../html/components/course/course.scss';
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import '../../html/components/crumbs/crumbs.css';
+import '../../html/components/crumbs/crumbs.scss';
 import '../../html/components/banner/banner.scss';
 export default {};
 </script>
