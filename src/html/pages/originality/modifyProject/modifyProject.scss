@@ -1,0 +1,403 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*项目更改*/
+.modify-form-main {
+  padding: 0 80px 20px 80px;
+  border: 1px solid #e8e7e7;
+  .modify-box {
+    padding: 10px 0 0;
+  }
+  .modify-form-tit {
+    color: #1a1a1a;
+    font-size: 20px;
+    line-height: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e8e7e7;
+  }
+  .modify-base-info {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+  .base-i-row {
+    padding: 6px 0;
+    line-height: 32px;
+    @extend %clearfix;
+    .base-label {
+      float: left;
+    }
+    .base-input {
+      float: left;
+      input {
+        width: 340px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 16px;
+        border: 1px solid #e8e7e7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
+      }
+      ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      ::-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-ms-input-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+    }
+  }
+  .modify-base-map {
+    width: 800px;
+    max-height: 240px;
+  }
+  .modify-situation {
+    padding-bottom: 10px;
+  }
+  .modify-caption {
+    color: #1a1a1a;
+    font-size: 18px;
+    padding: 20px 0;
+    ::-webkit-input-placeholder {
+      font-size: 16px;
+      color: #999;
+    }
+    :-moz-placeholder {
+      font-size: 16px;
+      color: #999;
+    }
+    ::-moz-placeholder {
+      font-size: 16px;
+      color: #999;
+    }
+    :-ms-input-placeholder {
+      font-size: 16px;
+      color: #999;
+    }
+  }
+  .modify-size {
+    width: 800px;
+    textarea {
+      width: 100%;
+      height: 230px;
+      resize: none;
+      border: 0;
+      outline: none;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.8;
+      padding: 20px 30px;
+      display: block;
+      box-sizing: border-box;
+      background: #f7f7f7;
+      font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;;
+      overflow-y: auto;
+    }
+
+  }
+  .modify-sit-row {
+    padding: 15px 0;
+    @extend %clearfix;
+    &:nth-last-of-type(1) {
+      padding-bottom: 0;
+    }
+    .sit-label {
+      width: 100px;
+      color: #666;
+      font-size: 16px;
+      line-height: 40px;
+      padding: 10px 0;
+      float: left;
+    }
+    .sit-input {
+      margin-left: 100px;
+      input {
+        display: block;
+        width: 640px;
+        height: 40px;
+        line-height: 40px;
+        color: #333;
+        font-size: 16px;
+        border: 0;
+        outline: none;
+        padding: 10px 30px;
+        background: #f7f7f7;
+      }
+      textarea {
+        width: 640px;
+        height: 100px;
+        resize: none;
+        border: 0;
+        outline: none;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.8;
+        padding: 10px 30px;
+        display: block;
+        background: #f7f7f7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+.add-role-box {
+  padding: 15px 0;
+  font-size: 14px;
+  line-height: 30px;
+  display: none;
+  &.show {
+    display: block;
+  }
+  @extend %clearfix;
+  &.show {
+    display: block;
+  }
+  .role-input {
+    float: left;
+    input {
+      width: 160px;
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 14px;
+      outline: none;
+      padding: 5px 15px;
+      background: #fff;
+      border: 1px solid #e8e7e7;
+    }
+  }
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  :-moz-placeholder {
+    font-size: 14px;
+  }
+  ::-moz-placeholder {
+    font-size: 14px;
+  }
+  :-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .role-nike-name {
+    float: left;
+    padding: 0 20px;
+    min-width: 80px;
+    max-width: 160px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .role-handle {
+    float: left;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .role-line {
+      position: relative;
+      top: -1px;
+      font-size: 12px;
+      padding: 0 4px;
+      line-height: 28px;
+    }
+    .role-btn {
+      color: #47c091;
+      padding: 0 4px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.project-rol-list {
+  li {
+    font-size: 16px;
+    padding: 14px 0 30px;
+    border-top: 1px solid #e8e7e7;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+  .project-role-row {
+    display: table;
+    *height: 68px;
+    padding: 16px 0;
+    .role-user-info,
+    .role-star,
+    .role-handle {
+      display: table-cell;
+      vertical-align: middle;
+      *float: left;
+    }
+    .role-user-info {
+      width: 460px;
+      @extend %clearfix;
+    }
+    .role-face {
+      width: 68px;
+      height: 68px;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      float: left;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    .role-name {
+      float: left;
+      margin-left: 20px;
+      line-height: 25px;
+      padding-top: 9px;
+    }
+    .role-tag {
+      position: relative;
+      top: 19px;
+      color: #fff;
+      font-size: 14px;
+      min-width: 40px;
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+      display: inline-block;
+      float: left;
+      padding: 0 16px;
+      margin-left: 20px;
+      border-radius: 15px;
+      background: #7ae0b2;
+    }
+    .role-handle {
+      width: 348px;
+      text-align: right;
+      .role-del {
+        color: #999;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .role-star {
+    width: 200px;
+    i {
+      width: 22px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 2px;
+      background: url("images/gstar.png") no-repeat center center;
+    }
+    &.one-star i:first-child,
+    &.two-star i:first-child,
+    &.two-star i:first-child + i,
+    &.three-star i:first-child,
+    &.three-star i:first-child + i,
+    &.three-star i:first-child + i + i,
+    &.four-star i:first-child,
+    &.four-star i:first-child + i,
+    &.four-star i:first-child + i + i,
+    &.four-star i:first-child + i + i + i,
+    &.five-star i:first-child,
+    &.five-star i:first-child + i,
+    &.five-star i:first-child + i + i,
+    &.five-star i:first-child + i + i + i,
+    &.five-star i:first-child + i + i + i + i,
+    &.star-1 i:first-child,
+    &.star-2 i:first-child,
+    &.star-2 i:first-child + i,
+    &.star-3 i:first-child,
+    &.star-3 i:first-child + i,
+    &.star-3 i:first-child + i + i,
+    &.star-4 i:first-child,
+    &.star-4 i:first-child + i,
+    &.star-4 i:first-child + i + i,
+    &.star-4 i:first-child + i + i + i,
+    &.star-5 i:first-child,
+    &.star-5 i:first-child + i,
+    &.star-5 i:first-child + i + i,
+    &.star-5 i:first-child + i + i + i,
+    &.star-5 i:first-child + i + i + i + i {
+      background-image: url("images/star.png");
+    }
+  }
+  .add-role-btn {
+    padding: 2px 5px;
+    color: #7ae0b2;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    border: 1px solid #7ae0b2;
+    &:hover {
+      color: #fff;
+      background: #4bde9e;
+    }
+  }
+}
+
+/*项目详情 弹框*/
+.bomb-com-box {
+  &.bomb-full {
+    .modify-form-main {
+      padding: 0;
+      height: 100%;
+      overflow-y: auto;
+      border: 0;
+      .modify-base-info {
+        color: #4c4c4c;
+      }
+      .modify-caption {
+        padding: 10px 0;
+      }
+      .modify-sit-row {
+        line-height: 30px;
+        padding: 3px 0;
+        .sit-label {
+          padding: 0;
+          line-height: 30px;
+        }
+      }
+    }
+    .project-rol-list {
+      .project-role-row {
+        .role-user-info {
+          width: 850px;
+        }
+      }
+    }
+  }
+  .orig-modify-btn {
+    position: absolute;
+    top: -44px;
+    left: 60px;
+    width: 88px;
+    height: 88px;
+    font-size: 0;
+    display: block;
+    background: url("images/edit.png") no-repeat center center;
+  }
+}
+

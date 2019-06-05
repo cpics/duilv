@@ -1,0 +1,84 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+%pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+//单行&多行省略
+//@include ellipsis;
+//@include ellipsis(3);
+@mixin ellipsis($lines: 1, $substract: 0) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100% - $substract;
+    overflow: hidden;
+  } @else {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/*要闻*/
+.m-structure-content {
+  .m-news-list {
+    padding: 30px 0;
+    li {
+      padding: 25px 0;
+      border-top: 1px solid #e8e7e7;
+      @extend %clearfix;
+      > a {
+        color: #333;
+        display: block;
+      }
+    }
+  }
+  .u-news-pic {
+    width: 300px;
+    height: 204px;
+    float: left;
+    display: block;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.06);
+      transition: all .4s ease-in-out;
+    }
+    img {
+      @extend %pic;
+    }
+  }
+  .u-news-info {
+    color: #333;
+    display: block;
+    margin-left: 330px;
+  }
+  .u-news-tit {
+    font-size: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .u-news-txt {
+    font-size: 16px;
+    line-height: 2;
+    padding-top: 6px;
+    height: 102px;
+    @include ellipsis(3);
+  }
+}

@@ -1,0 +1,19 @@
+/*crumbs*/
+.crumbs-box {
+  color: #333;
+  font-size: 16px;
+  padding: 20px 0;
+  .c-crumbs {
+    color: #333;
+    cursor: pointer;
+    &:hover {
+      color: #4bde9e;
+    }
+  }
+  .c-sep {
+    padding: 0 5px;
+  }
+  .c-current {
+    text-decoration: underline;
+  }
+}

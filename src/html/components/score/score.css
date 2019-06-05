@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.score-box .score-row {
+  zoom: 1; }
+  .score-box .score-row:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*得分*/
+.score-box .score-row {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px; }
+.score-box .score-label {
+  width: 22%;
+  float: left; }
+.score-box .score-bar {
+  position: relative;
+  width: 58%;
+  height: 20px;
+  float: left;
+  background: #ccffe8;
+  border-radius: 2px;
+  overflow: hidden; }
+  .score-box .score-bar .score-bar-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: block;
+    background: #7ae0b2; }
+.score-box .score-num {
+  width: 20%;
+  float: right;
+  text-align: right; }
+
+.score-total-num {
+  color: #3fcd8d;
+  font-size: 20px;
+  text-align: right; }
+
+/*# sourceMappingURL=score.css.map */

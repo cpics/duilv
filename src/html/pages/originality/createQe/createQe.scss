@@ -1,0 +1,343 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*创建qe*/
+.create-qe-tit {
+  color: #333;
+  font-size: 20px;
+}
+
+.create-qe-row {
+  width: 860px;
+  padding: 30px 0;
+  border-top: 1px solid #e8e7e7;
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.create-qe-input {
+  width: 470px;
+  height: 40px;
+  input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 14px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    border: 0;
+    background: #f2f2f2;
+    &:focus {
+      box-shadow: 0 1px 2px 0 rgba(177, 177, 177, .1);
+    }
+  }
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+    color: #999;
+  }
+  :-moz-placeholder {
+    font-size: 14px;
+    color: #999;
+  }
+  ::-moz-placeholder {
+    font-size: 14px;
+    color: #999;
+  }
+  :-ms-input-placeholder {
+    font-size: 14px;
+    color: #999;
+  }
+}
+
+.create-qe-textarea {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  border: 1px solid #e8e7e7;
+  ::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  :-moz-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  ::-moz-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  :-ms-input-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  textarea {
+    width: 100%;
+    height: 160px;
+    resize: none;
+    border: 0;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    background: transparent;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;;
+    overflow-y: auto;
+  }
+}
+
+.create-form-pic {
+  padding: 20px 0;
+  @extend %clearfix;
+  margin-left: -20px;
+  .pic-qe-item {
+    position: relative;
+    width: 200px;
+    float: left;
+    margin: 0 0 20px 20px;
+    img {
+      width: 100%;
+      height: 180px;
+      display: block;
+    }
+    .upload-btn {
+      width: 100%;
+      height: 180px;
+      outline: none;
+      cursor: pointer;
+      font-size: 0;
+      border: 0;
+      background: url("images/pic1.png") no-repeat center center;
+    }
+    input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      cursor: pointer;
+    }
+    .edit-pic-tit {
+      padding: 20px 0 0;
+      font-size: 14px;
+      text-align: center;
+      box-sizing: border-box;
+      display: block;
+      input {
+        width: 100%;
+        height: 32px;
+        line-height: 32px;
+        display: block;
+        font-size: 16px;
+        padding: 0 10px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #d2d2d2;
+        &:focus {
+          border: 1px solid #7ae0b2;
+        }
+      }
+      ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      ::-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-ms-input-placeholder {
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
+  }
+  .qe-del-pic {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("images/del.png") no-repeat center center;
+  }
+}
+
+.create-qe-type {
+  padding: 20px 0;
+}
+
+.qe-type-choose {
+  padding: 20px 0;
+  margin-left: -15px;
+  @extend %clearfix;
+  .qe-type-col {
+    width: 276px;
+    height: 72px;
+    display: block;
+    float: left;
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    padding: 46px 0;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background: #f2f2f2;
+    &:hover {
+      opacity: .9;
+    }
+    p {
+      line-height: 24px;
+      padding-top: 6px;
+    }
+    .type-txt-icon,
+    .type-pic-icon,
+    .type-photo-icon,
+    .type-score-icon {
+      width: 50px;
+      height: 42px;
+      margin: 0 auto;
+    }
+    .type-txt-icon {
+      background: url("images/text.png") no-repeat center center;
+    }
+    .type-pic-icon {
+      background: url("images/picture.png") no-repeat center center;
+    }
+    .type-photo-icon {
+      background: url("images/photo.png") no-repeat center center;
+    }
+    .type-score-icon {
+      background: url("images/score.png") no-repeat center center;
+    }
+  }
+}
+
+/*评分弹框*/
+.give-score-form {
+  width: 420px;
+  margin: 0 auto;
+  padding: 15px 0;
+  max-height: 500px;
+  overflow-y: auto;
+  .gs-row {
+    padding: 15px 0;
+    @extend %clearfix;
+    ::-webkit-input-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+    :-moz-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+    ::-moz-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+    :-ms-input-placeholder {
+      font-size: 16px;
+      color: #ccc;
+    }
+  }
+  .gs-label {
+    width: 180px;
+    float: left;
+    color: #333;
+    font-size: 16px;
+    line-height: 40px;
+  }
+  .gs-input {
+    width: 200px;
+    height: 40px;
+    float: left;
+    input {
+      width: 100%;
+      height: 38px;
+      line-height: 38px;
+      display: block;
+      font-size: 16px;
+      padding: 0 20px;
+      text-align: center;
+      box-sizing: border-box;
+      border: 1px solid #d2d2d2;
+      &:focus {
+        border: 1px solid #7ae0b2;
+      }
+    }
+  }
+}
+
+.upload-photo-list {
+  padding-bottom: 20px;
+  .create-form-pic {
+    height: 300px;
+    overflow-y: auto;
+    .pic-qe-item {
+      width: 172px;
+      img,
+      .upload-btn {
+        height: 155px;
+      }
+    }
+  }
+  .create-qe-textarea {
+    font-size: 14px;
+    padding: 10px;
+    textarea {
+      height: 80px;
+      font-size: 14px;
+    }
+  }
+}
+
+.upload-photo-count {
+  padding-bottom: 20px;
+  @extend %clearfix;
+  .up-count-num {
+    float: left;
+    line-height: 32px;
+  }
+  .up-batch-btn {
+    float: right;
+    .upload-btn {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      outline: none;
+      cursor: pointer;
+      color: #666;
+      border: 1px solid #e8e7e7;
+      background: #f2f2f2;
+    }
+    input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 102px;
+      height: 32px;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,824 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="XXX">
+    <meta name="description" content="XXX">
+    <title>堆绿</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../html/components/common/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../html/components/common/common.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../html/components/topTab/topTab.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../html/components/banner/banner.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../html/components/footer/footer.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../html/components/center/center.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../html/pages/center/account/account.css"/>
+    <!--我的发布、我的回复-->
+    <link rel="stylesheet" type="text/css" href="../../../html/pages/center/publish/publish.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../html/components/comments/comments.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../html/pages/center/history/history.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../../../html/pages/center/complain/complain.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../html/pages/center/feedback/feedback.css"/>
+</head>
+<body>
+<div id="app">
+    <div class="mod-wrapper">
+        <div class="mod-wrap">
+            <!--页面头部-->
+            <div class="top-tab-box fixation">
+                <div class="m-width clearfix">
+                    <i class="top-logo"></i>
+                    <div class="top-menu">
+                        <ul class="top-menu-list">
+                            <li>
+                                <!--选中 +active-->
+                                <a class="top-m-item" href="../../../html/pages/home/home.html">首页</a>
+                            </li>
+                            <li><a class="top-m-item" href="../../../html/pages/cases/cases/cases.html">案例库</a></li>
+                            <li>
+                                <a class="top-m-item "
+                                   href="../../../html/pages/originality/originality/originality.html">匠心记
+                                </a>
+                                <div class="second-menu">
+                                    <div class="second-menu-inner">
+                                        <div class="second-m-box">
+                                            <div class="second-m-row">
+                                                <h4 class="second-label">绿色建材<i class="second-arrow-icon"></i></h4>
+                                                <div class="second-info">
+                                                    <a class="second-item" href="">无锡绿地西水东六期施工</a>
+                                                    <a class="second-item" href="">无锡绿地西水东六期施工</a>
+                                                    <a class="second-item" href="">嘉兴世合小镇</a>
+                                                    <a class="second-item" href="">无锡绿地西水东六期施工</a>
+                                                    <a class="second-item" href="">嘉兴世合小镇</a>
+                                                </div>
+                                            </div>
+                                            <div class="second-m-row">
+                                                <h4 class="second-label">绿色跑道<i class="second-arrow-icon"></i></h4>
+                                                <div class="second-info">
+                                                    <a class="second-item" href="">无锡绿地西水东六期施工</a>
+                                                    <a class="second-item" href="">无锡绿地西水东六期施工</a>
+                                                    <a class="second-item" href="">嘉兴世合小镇</a>
+                                                    <a class="second-item" href="">无锡绿地西水东六期施工</a>
+                                                    <a class="second-item" href="">嘉兴世合小镇</a>
+                                                    <a class="second-item" href="">阳光小学</a>
+                                                </div>
+                                            </div>
+                                            <div class="second-m-row">
+                                                <h4 class="second-label">绿色交通<i class="second-arrow-icon"></i></h4>
+                                                <div class="second-info">
+                                                    <a class="second-item" href="">嘉兴世合小镇</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="second-button">
+                                            <span class="dm-btn dm-btn-default">申请匠心记+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a class="top-m-item "
+                                   href="../../../html/pages/enterprise/enterprise/enterprise.html">行业圈</a>
+                            </li>
+                            <li><a class="top-m-item " href="../../../html/pages/news/news/news.html">绿建要闻</a></li>
+                            <li><a class="top-m-item " href="../../../html/pages/cloud/cloud/cloud.html">云智库</a></li>
+                            <li><a class="top-m-item" href="../../../html/pages/mall/mall/mall.html">商城</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-about">
+                        <a href="">联系我们</a>
+                        <span class="is-login">
+                            <!--<a href="">登录</a>-->
+                            <span class="login-top-face">
+                                <img src="../../../html/components/common/images/face.png" alt="">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--页面主体-->
+            <div class="g-container center-bg">
+                <!--个人中心-banner-->
+                <div class="center-head">
+                    <div class="center-face">
+                        <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                    </div>
+                    <div class="center-name">苏州海的大姐有限公司</div>
+                </div>
+                <!--正文内容-->
+                <div class="m-container m-width">
+                    <div class="center-tab mb-20">
+                        <dl class="center-tab-inner">
+                            <dd class="active">
+                                <span>账号信息</span>
+                            </dd>
+                            <dd>
+                                <span>我的发布</span>
+                            </dd>
+                            <dd>
+                                <span>我的回复</span>
+                            </dd>
+                            <dd>
+                                <span>历史浏览</span>
+                            </dd>
+                            <dd>
+                                <span>投诉中心</span>
+                            </dd>
+                            <dd>
+                                <span>意见反馈</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="center-content">
+                        <!--账号信息  显示 +show-->
+                        <div class="center-content-inner show">
+                            <div class="cc-inner">
+                                <div class="center-account-box">
+                                    <div class="cc-com-title">
+                                        <span class="cc-tit"><i></i>个人资料</span>
+                                        <span class="cc-edit-btn">编辑</span>
+                                    </div>
+                                    <div class="account-form">
+                                        <div class="account-row">
+                                            <label class="account-label">登录账号：</label>
+                                            <div class="account-input">
+                                                <input type="text" placeholder="请输入账号" value="13578456123"/>
+                                                <span class="account-btn">修改手机号</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-row">
+                                            <label class="account-label">昵称：</label>
+                                            <div class="account-input">
+                                                <input type="text" placeholder="请输入昵称" value="张冰冰"/>
+                                            </div>
+                                        </div>
+                                        <div class="account-row">
+                                            <label class="account-label">出生地：</label>
+                                            <div class="account-input">
+                                                <input type="text" placeholder="请输入出生地" value="伦敦"/>
+                                            </div>
+                                        </div>
+                                        <div class="account-row">
+                                            <label class="account-label">性别：</label>
+                                            <div class="account-input">
+                                    <span class="account-choose-item">
+                                        <i class="b-radio-icon active"></i>
+                                        <span>先生</span>
+                                    </span>
+                                                <span class="account-choose-item">
+                                        <i class="b-radio-icon"></i>
+                                        <span>女士</span>
+                                    </span>
+                                            </div>
+                                        </div>
+                                        <div class="account-row">
+                                            <label class="account-label">生日：</label>
+                                            <div class="account-input">
+                                                <!--选中 +active-->
+                                                <div class="select-box">
+                                                    <div class="select-btn">
+                                                        <span>1995</span>
+                                                        <i></i>
+                                                    </div>
+                                                    <div class="opts">
+                                                        <a href="javascript:;" val="0">1995</a>
+                                                        <a href="javascript:;" val="1">1996</a>
+                                                        <a href="javascript:;" val="2">1996</a>
+                                                        <a href="javascript:;" val="3">1996</a>
+                                                        <a href="javascript:;" val="4">1996</a>
+                                                        <a href="javascript:;" val="5">1996</a>
+                                                    </div>
+                                                </div>
+                                                <div class="select-box ">
+                                                    <div class="select-btn">
+                                                        <span>1</span>
+                                                        <i></i>
+                                                    </div>
+                                                    <div class="opts">
+                                                        <a href="javascript:;" val="0">1</a>
+                                                        <a href="javascript:;" val="1">2</a>
+                                                        <a href="javascript:;" val="2">3</a>
+                                                        <a href="javascript:;" val="3">4</a>
+                                                        <a href="javascript:;" val="4">5</a>
+                                                        <a href="javascript:;" val="5">6</a>
+                                                        <a href="javascript:;" val="6">7</a>
+                                                        <a href="javascript:;" val="7">8</a>
+                                                        <a href="javascript:;" val="8">9</a>
+                                                        <a href="javascript:;" val="9">10</a>
+                                                        <a href="javascript:;" val="10">11</a>
+                                                        <a href="javascript:;" val="11">12</a>
+                                                    </div>
+                                                </div>
+                                                <div class="select-box">
+                                                    <div class="select-btn">
+                                                        <span>2</span>
+                                                        <i></i>
+                                                    </div>
+                                                    <div class="opts">
+                                                        <a href="javascript:;" val="0">1</a>
+                                                        <a href="javascript:;" val="1">2</a>
+                                                        <a href="javascript:;" val="2">3</a>
+                                                        <a href="javascript:;" val="3">4</a>
+                                                        <a href="javascript:;" val="4">5</a>
+                                                        <a href="javascript:;" val="5">6</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="account-buttons">
+                                        <div class="save-btn">保存</div>
+                                    </div>
+                                </div>
+                                <div class="center-account-box">
+                                    <div class="cc-com-title">
+                                        <span class="cc-tit"><i></i>头像</span>
+                                        <span class="cc-edit-btn">编辑</span>
+                                    </div>
+                                    <div class="account-form">
+                                        <div class="account-upload">
+                                            <div class="upload-pic">
+                                                <img src="../../../html/components/common/images/face.png" alt=""/>
+                                            </div>
+                                            <div class="upload-btn-txt">
+                                                <button class="upload-btn">上传头像</button>
+                                                <input type="file" name="file" class=""/>
+                                            </div>
+                                            <div class="upload-tips">(支持JPG,PNG格式的图片)</div>
+                                        </div>
+                                    </div>
+                                    <div class="account-buttons">
+                                        <div class="save-btn">保存</div>
+                                    </div>
+                                </div>
+                                <div class="center-account-box">
+                                    <div class="cc-com-title">
+                                        <span class="cc-tit"><i></i>绑定账号设置</span>
+                                        <!--<span class="cc-edit-btn">编辑</span>-->
+                                    </div>
+                                    <div class="account-form">
+                                        <dl class="binding-list">
+                                            <dd>
+                                                <i class="bind-icon weixin-icon"></i>
+                                                <div class="bind-info">
+                                                    <section>
+                                                        绑定微信账号，使用微信账号便捷登录，还可以将堆绿内容同步到绑定对应的平台，与更多好友分享。
+                                                    </section>
+                                                </div>
+                                                <div class="bind-button">立即绑定</div>
+                                            </dd>
+                                            <dd>
+                                                <i class="bind-icon qq-icon"></i>
+                                                <div class="bind-info">
+                                                    <section>
+                                                        绑定微信账号，使用微信账号便捷登录，还可以将堆绿内容同步到绑定对应的平台，与更多好友分享。
+                                                    </section>
+                                                </div>
+                                                <div class="bind-button">立即绑定</div>
+                                            </dd>
+                                            <dd>
+                                                <i class="bind-icon weibo-icon"></i>
+                                                <div class="bind-info">
+                                                    <section>
+                                                        绑定微信账号，使用微信账号便捷登录，还可以将堆绿内容同步到绑定对应的平台，与更多好友分享。
+                                                    </section>
+                                                </div>
+                                                <div class="bind-button">立即绑定</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--我的发布 显示 +show-->
+                        <div class="center-content-inner show">
+                            <div class="cc-inner">
+                                <div class="my-publish-list">
+                                    <ul>
+                                        <li>
+                                            <div class="my-center-infor">
+                                                <div class="my-publish-info">
+                                                    <div class="pub-title">
+                                                        <b>事故调查报告</b>
+                                                        <!--报告  tag-yellow-->
+                                                        <!--日报 tag-blue-->
+                                                        <!--图文 tag-green-->
+                                                        <span class="stroke-tag tag-yellow">报告</span>
+                                                    </div>
+                                                    <div class="pub-from">
+                                                        来自于 张家港圆融装饰工程有限公司
+                                                    </div>
+                                                    <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                        <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">查看</a>
+                                                    <em>|</em>
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="my-center-infor">
+                                                <div class="my-publish-info">
+                                                    <div class="pub-title">
+                                                        <b>事故调查报告</b>
+                                                        <span class="stroke-tag tag-blue">日报</span>
+                                                    </div>
+                                                    <div class="pub-from">
+                                                        来自于 张家港圆融装饰工程有限公司
+                                                    </div>
+                                                    <div class="pub-count">
+                                                    <span class="pub-count-col">
+                                                        <i class="n-small-icon time-icon"></i>
+                                                        <span>25天前</span>
+                                                    </span>
+                                                        <span class="pub-count-col">
+                                                        <i class="n-small-icon read-icon"></i>
+                                                        <span>2</span>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">查看</a>
+                                                    <em>|</em>
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="my-center-infor">
+                                                <div class="my-publish-info">
+                                                    <div class="pub-title">
+                                                        <b>事故调查报告</b>
+                                                        <span class="stroke-tag tag-green">图文</span>
+                                                    </div>
+                                                    <div class="pub-from">
+                                                        来自于 张家港圆融装饰工程有限公司
+                                                    </div>
+                                                    <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                        <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">查看</a>
+                                                    <em>|</em>
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--我的回复 显示 +show-->
+                        <div class="center-content-inner show">
+                            <div class="cc-inner">
+                                <div class="my-publish-list">
+                                    <ul>
+                                        <li>
+                                            <div class="my-center-infor">
+                                                <div class="my-publish-info">
+                                                    <div class="pub-title">
+                                                        <b>事故调查报告</b>
+                                                        <!--报告  tag-yellow-->
+                                                        <!--日报 tag-blue-->
+                                                        <!--图文 tag-green-->
+                                                        <span class="stroke-tag tag-yellow">报告</span>
+                                                    </div>
+                                                    <div class="pub-from">
+                                                        来自于 张家港圆融装饰工程有限公司
+                                                    </div>
+                                                    <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                        <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">查看</a>
+                                                    <em>|</em>
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment-box">
+                                                <div class="comment-list has-bg">
+                                                    <ul>
+                                                        <li class="no-face">
+                                                            <div class="comment-face">
+                                                                <img src="../../../html/pages/home/images/demo.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-name">
+                                                                    <span class="same-row-name">我是你大哥：</span>
+                                                                    <span class="same-row-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</span>
+                                                                </div>
+                                                                <div class="comment-time">03月26日</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="my-center-infor">
+                                                <div class="my-publish-info">
+                                                    <div class="pub-title">
+                                                        <b>事故调查报告</b>
+                                                        <span class="stroke-tag tag-blue">日报</span>
+                                                    </div>
+                                                    <div class="pub-from">
+                                                        来自于 张家港圆融装饰工程有限公司
+                                                    </div>
+                                                    <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                        <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">查看</a>
+                                                    <em>|</em>
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment-box">
+                                                <div class="comment-list  has-bg">
+                                                    <ul>
+                                                        <li class="no-face">
+                                                            <div class="comment-face">
+                                                                <img src="../../../html/pages/home/images/demo.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-name">
+                                                                    <span class="same-row-name">我是你大哥：</span>
+                                                                    <span class="same-row-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</span>
+                                                                </div>
+                                                                <div class="comment-time">03月26日</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="my-center-infor">
+                                                <div class="my-publish-info">
+                                                    <div class="pub-title">
+                                                        <b>事故调查报告</b>
+                                                        <span class="stroke-tag tag-green">图文</span>
+                                                    </div>
+                                                    <div class="pub-from">
+                                                        来自于 张家港圆融装饰工程有限公司
+                                                    </div>
+                                                    <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                        <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">查看</a>
+                                                    <em>|</em>
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment-box">
+                                                <div class="comment-list has-bg">
+                                                    <ul>
+                                                        <li class="no-face">
+                                                            <div class="comment-face">
+                                                                <img src="../../../html/pages/home/images/demo.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-name">
+                                                                    <span class="same-row-name">我是你大哥：</span>
+                                                                    <span class="same-row-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！</span>
+                                                                </div>
+                                                                <div class="comment-time">03月26日</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--历史浏览 显示 +show-->
+                        <div class="center-content-inner show">
+                            <div class="cc-inner">
+                                <div class="history-look-list">
+                                    <ul>
+                                        <li>
+                                            <div class="look-pic">
+                                                <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                            </div>
+                                            <div class="look-info">
+                                                <div class="look-title">
+                                                    <b>事故调查报告</b>
+                                                    <!--报告  tag-yellow-->
+                                                    <!--日报 tag-blue-->
+                                                    <!--图文 tag-green-->
+                                                    <span class="stroke-tag tag-yellow">报告</span>
+                                                </div>
+                                                <div class="look-txt">迎接无锡市政府职能部门检查，工地大清理</div>
+                                                <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                    <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                            <div class="my-publish-handle">
+                                                <a href="" class="pub-btn">查看</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="look-pic">
+                                                <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                            </div>
+                                            <div class="look-info">
+                                                <div class="look-title">
+                                                    <b>事故调查报告</b>
+                                                    <!--报告  tag-yellow-->
+                                                    <!--日报 tag-blue-->
+                                                    <!--图文 tag-green-->
+                                                    <span class="stroke-tag tag-yellow">报告</span>
+                                                </div>
+                                                <div class="look-txt">迎接无锡市政府职能部门检查，工地大清理</div>
+                                                <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                    <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                            <div class="my-publish-handle">
+                                                <a href="" class="pub-btn">查看</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="look-pic">
+                                                <img src="../../../html/pages/home/images/demo.png" alt=""/>
+                                            </div>
+                                            <div class="look-info">
+                                                <div class="look-title">
+                                                    <b>事故调查报告</b>
+                                                    <!--报告  tag-yellow-->
+                                                    <!--日报 tag-blue-->
+                                                    <!--图文 tag-green-->
+                                                    <span class="stroke-tag tag-yellow">报告</span>
+                                                </div>
+                                                <div class="look-txt">迎接无锡市政府职能部门检查，工地大清理</div>
+                                                <div class="pub-count">
+                                                <span class="pub-count-col">
+                                                    <i class="n-small-icon time-icon"></i>
+                                                    <span>25天前</span>
+                                                </span>
+                                                    <span class="pub-count-col">
+                                                    <i class="n-small-icon read-icon"></i>
+                                                    <span>2</span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                            <div class="my-publish-handle">
+                                                <a href="" class="pub-btn">查看</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="load-more-btn">
+                                <span>加载更多</span>
+                                <i class="arrow-stoke-icon active"></i>
+                            </div>
+                        </div>
+                        <!--投诉中心 显示 +show-->
+                        <div class="center-content-inner show">
+                            <div class="cc-inner">
+                                <div class="complain-list">
+                                    <ul>
+                                        <!--已处理 +disabled-->
+                                        <li>
+                                            <h4 class="complain-time">2018年03月16日</h4>
+                                            <div class="complain-txt">来自金品国贸项目三期</div>
+                                            <div class="complain-comment">
+                                                <div class="comment-list has-bg">
+                                                    <ul>
+                                                        <li class="no-face">
+                                                            <div class="comment-face">
+                                                                <img src="../../../html/pages/home/images/demo.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-name">我是你大哥：</div>
+                                                                <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                                                </div>
+                                                                <div class="comment-time">03月26日</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <!--<a href="" class="pub-btn">处理中</a>-->
+                                                    <!--<a href="" class="pub-btn">未处理</a>-->
+                                                    <a href="" class="pub-btn">删除</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h4 class="complain-time">2018年03月16日</h4>
+                                            <div class="complain-txt">来自金品国贸项目三期</div>
+                                            <div class="complain-comment">
+                                                <div class="comment-list has-bg">
+                                                    <ul>
+                                                        <li class="no-face">
+                                                            <div class="comment-face">
+                                                                <img src="../../../html/pages/home/images/demo.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-name">我是你大哥：</div>
+                                                                <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                                                </div>
+                                                                <div class="comment-time">03月26日</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <!--<a href="" class="pub-btn">处理中</a>-->
+                                                    <!--<a href="" class="pub-btn">未处理</a>-->
+                                                    <a href="" class="pub-btn">确认处理完成</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="disabled">
+                                            <h4 class="complain-time">2018年03月16日</h4>
+                                            <div class="complain-txt">来自金品国贸项目三期</div>
+                                            <div class="complain-comment">
+                                                <div class="comment-list has-bg">
+                                                    <ul>
+                                                        <li class="no-face">
+                                                            <div class="comment-face">
+                                                                <img src="../../../html/pages/home/images/demo.png"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-name">我是你大哥：</div>
+                                                                <div class="comment-msg">斗破天穹粉红娘娘，在家吃西瓜不行吗，硬要出来浪，这么热！
+                                                                </div>
+                                                                <div class="comment-time">03月26日</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="my-publish-handle">
+                                                    <a href="" class="pub-btn">已处理</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--意见反馈 显示 +show-->
+                        <div class="center-content-inner show">
+                            <div class="cc-inner">
+                                <div class="cc-com-title">
+                                    <span class="cc-tit">请提出您的宝贵意见哦</span>
+                                </div>
+                                <div class="feedback-box">
+                                    <div class="feedback-textarea">
+                                        <i class="feed-tree"></i>
+                                        <textarea placeholder="我们有什么可以帮助您的吗？......."></textarea>
+                                    </div>
+                                    <div class="feedback-submit">
+                                        <div class="feedback-btn">提交意见</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--页面底部-->
+                <div class="m-footer-links">
+                    <div class="foot-link-hd m-width">
+                        <div class="links-col">
+                            <h2>关于我们</h2>
+                            <div class="links-list">
+                                <ul>
+                                    <li>
+                                        <a href="">关于我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="">联系我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="">商务合作</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="links-col">
+                            <h2>关注我们</h2>
+                            <div class="links-list">
+                                <ul>
+                                    <li>
+                                        <a href="">微信公众号</a>
+                                    </li>
+                                    <li>
+                                        <a href="">新浪微博</a>
+                                    </li>
+                                    <li>
+                                        <a href="">百家号</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="links-col">
+                            <h2>友情链接</h2>
+                            <div class="links-list">
+                                <ul>
+                                    <li>
+                                        <a href="">苏州大乘</a>
+                                    </li>
+                                    <li>
+                                        <a href="">xxxxxxx</a>
+                                    </li>
+                                    <li>
+                                        <a href="">xxxxxx</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="links-code">
+                            <div class="links-code-pic">
+                                <img src="../../../html/components/footer/images/code.png" alt=""/>
+                            </div>
+                            <div class="links-code-txt">
+                                <p>扫描二维码</p>
+                                <p>关注堆绿公众号</p>
+                            </div>
+                            <i class="fly-icon"></i>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="m-width">
+                            2017 堆绿网 Copyright www.duilv.com All rights reserved 苏ICP备13002314号
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

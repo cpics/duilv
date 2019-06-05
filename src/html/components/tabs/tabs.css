@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/*tabs*/
+.m-second-tabs {
+  color: #333;
+  font-size: 18px;
+  text-align: right;
+  padding: 20px 0; }
+  .m-second-tabs span {
+    cursor: pointer;
+    display: inline-block; }
+    .m-second-tabs span:hover {
+      text-decoration: underline; }
+    .m-second-tabs span.active {
+      font-weight: bold;
+      text-decoration: underline; }
+  .m-second-tabs .u-line {
+    color: #b4b4b4;
+    padding: 0 20px;
+    cursor: default; }
+  .m-second-tabs.active {
+    font-weight: bold;
+    text-decoration: underline; }
+
+/*tab-匠企行*/
+.m-normal-tabs dl {
+  font-size: 0;
+  height: 56px; }
+.m-normal-tabs dd {
+  height: 55px;
+  line-height: 54px;
+  cursor: pointer;
+  text-align: center;
+  width: 140px;
+  display: inline-block;
+  color: #666;
+  font-size: 20px;
+  padding: 0 7px;
+  margin-right: 8px;
+  background: #f1f1f1;
+  border: 1px solid #e8e7e7;
+  border-bottom: 0;
+  *float: left; }
+  .m-normal-tabs dd.active {
+    position: relative;
+    z-index: 2;
+    color: #252525;
+    font-weight: bold;
+    background: #fff;
+    box-shadow: 0 -5px 10px rgba(17, 17, 17, 0.1); }
+
+.g-normal-content {
+  padding: 15px 0 0;
+  margin-bottom: 50px; }
+
+.m-normal-box {
+  margin-top: -1px;
+  border: 1px solid #e8e7e7;
+  box-shadow: 0 0 20px rgba(17, 17, 17, 0.1); }
+  .m-normal-box .u-normal-main {
+    padding: 40px 20px 40px 40px;
+    display: none; }
+    .m-normal-box .u-normal-main.show {
+      display: block; }
+    .m-normal-box .u-normal-main.m-structure-content .m-structure-information {
+      width: 870px; }
+    .m-normal-box .u-normal-main .e-prise-box {
+      border-top: 0; }
+      .m-normal-box .u-normal-main .e-prise-box.has-border {
+        border-top: 1px solid #f1f1f1; }
+        .m-normal-box .u-normal-main .e-prise-box.has-border:first-child {
+          border-top: 0; }
+      .m-normal-box .u-normal-main .e-prise-box:first-child {
+        padding-top: 0; }
+      .m-normal-box .u-normal-main .e-prise-box:last-child {
+        padding-bottom: 0; }
+
+/*# sourceMappingURL=tabs.css.map */

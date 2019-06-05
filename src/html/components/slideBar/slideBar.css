@@ -1,0 +1,238 @@
+@charset "UTF-8";
+/*云智库固定菜单*/
+.m-slide-bar {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  width: 92px;
+  margin-left: -585px; }
+  .m-slide-bar.fixation {
+    position: fixed;
+    top: 120px; }
+  .m-slide-bar .u-slide-item {
+    position: relative;
+    width: 90px;
+    cursor: pointer;
+    display: block;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    background: #ededed;
+    margin-bottom: 12px; }
+    .m-slide-bar .u-slide-item .u-slide-tit {
+      height: 79px;
+      padding: 11px 0 0;
+      border: 1px solid #e8e7e7; }
+    .m-slide-bar .u-slide-item:nth-child(2) .m-slide-bomb {
+      top: -104px; }
+    .m-slide-bar .u-slide-item:nth-child(3) .m-slide-bomb {
+      top: -208px; }
+    .m-slide-bar .u-slide-item.active {
+      color: #18a687;
+      box-shadow: 0 0 29px #e4e4e4; }
+      .m-slide-bar .u-slide-item.active .m-slide-bomb {
+        display: block; }
+      .m-slide-bar .u-slide-item.active .u-slide-tit {
+        position: relative;
+        z-index: 4;
+        background: #fff;
+        border-color: #fff; }
+        .m-slide-bar .u-slide-item.active .u-slide-tit:before {
+          position: absolute;
+          right: -50px;
+          top: -1px;
+          z-index: 3;
+          content: "";
+          width: 60px;
+          height: 100%;
+          background: #fff;
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff; }
+      .m-slide-bar .u-slide-item.active .slide-icon {
+        background: url("images/slide_icon_active.png") no-repeat 0 0; }
+    .m-slide-bar .u-slide-item .us-tit {
+      padding-top: 7px; }
+    .m-slide-bar .u-slide-item:hover, .m-slide-bar .u-slide-item.active {
+      background: #fff;
+      color: #18a687; }
+      .m-slide-bar .u-slide-item:hover .slide-icon, .m-slide-bar .u-slide-item.active .slide-icon {
+        background: url("images/slide_icon_active.png") no-repeat 0 0; }
+  .m-slide-bar .slide-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    background: url("images/slide_icon.png") no-repeat 0 0; }
+    .m-slide-bar .slide-icon.attentions {
+      background-position: 0 0; }
+    .m-slide-bar .slide-icon.products {
+      background-position: 0 -40px; }
+    .m-slide-bar .slide-icon.cases {
+      background-position: 0 -80px; }
+
+/*详情固定nav*/
+.m-slide-nav {
+  position: absolute;
+  right: 50%;
+  width: 175px;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+  margin-right: -585px;
+  padding: 40px 10px; }
+  .m-slide-nav.fixation {
+    position: fixed;
+    top: 120px;
+    z-index: 4; }
+
+.arrow-r-icon {
+  position: relative;
+  top: -1px;
+  width: 9px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2px;
+  background: url("images/arrows.png") no-repeat 0 -23px; }
+
+.u-s-nav-hd {
+  min-width: 130px;
+  height: 34px;
+  line-height: 34px;
+  color: #fff;
+  font-size: 16px;
+  background: #4bde9e;
+  border-radius: 17px;
+  display: inline-block;
+  padding: 0 10px; }
+
+.u-s-nav-items {
+  font-size: 16px; }
+  .u-s-nav-items li {
+    padding: 14px 0; }
+    .u-s-nav-items li.active a {
+      color: #fff;
+      background: #4bde9e; }
+      .u-s-nav-items li.active a:hover {
+        text-decoration: none; }
+      .u-s-nav-items li.active a .arrow-r-icon {
+        display: inline-block; }
+    .u-s-nav-items li a {
+      min-width: 130px;
+      height: 34px;
+      line-height: 34px;
+      color: #333;
+      font-size: 16px;
+      padding: 0 10px;
+      display: inline-block;
+      border-radius: 17px; }
+      .u-s-nav-items li a:hover {
+        text-decoration: underline; }
+      .u-s-nav-items li a .arrow-r-icon {
+        display: none; }
+
+/*云智库左侧弹框*/
+.m-slide-bomb {
+  position: absolute;
+  left: 90px;
+  top: 0;
+  z-index: 3;
+  width: 1080px;
+  height: 620px;
+  display: none;
+  cursor: default; }
+  .m-slide-bomb .m-bomb-cloud {
+    position: relative;
+    left: 46px;
+    width: 963px;
+    padding: 35px;
+    height: 550px;
+    background: #fff;
+    box-sizing: content-box;
+    box-shadow: 0 0 29px #e4e4e4; }
+  .m-slide-bomb .u-question-dispose,
+  .m-slide-bomb .u-products-article,
+  .m-slide-bomb .u-related-case {
+    position: relative;
+    height: 100%;
+    overflow-y: auto; }
+
+.slide-close-icon {
+  position: absolute;
+  right: -10px;
+  top: -16px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: block;
+  cursor: pointer;
+  background: url("images/close.png") no-repeat center center; }
+  .slide-close-icon:hover {
+    opacity: .9; }
+
+/*案例库左侧菜单*/
+.m-slide-left {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  width: 188px;
+  margin-left: -585px;
+  background: #f1f1f1;
+  padding: 20px 0; }
+  .m-slide-left.fixation {
+    position: fixed;
+    top: 120px;
+    z-index: 4; }
+  .m-slide-left li {
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px 0;
+    height: 28px;
+    line-height: 28px; }
+    .m-slide-left li .ml-slide-tit {
+      position: relative;
+      width: 100px;
+      display: inline-block;
+      font-size: 18px;
+      color: #252525;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden; }
+      .m-slide-left li .ml-slide-tit:visited {
+        color: #252525; }
+      .m-slide-left li .ml-slide-tit:hover {
+        color: #fff;
+        background: #4bde9e;
+        border-radius: 3px; }
+        .m-slide-left li .ml-slide-tit:hover a,
+        .m-slide-left li .ml-slide-tit:hover a:visited {
+          color: #fff; }
+    .m-slide-left li.active {
+      position: relative;
+      color: #4bde9e;
+      font-weight: bold; }
+      .m-slide-left li.active .ml-slide-tit {
+        color: #4bde9e; }
+      .m-slide-left li.active:hover {
+        color: #fff; }
+        .m-slide-left li.active:hover .ml-slide-tit {
+          color: #4bde9e;
+          background: #f1f1f1; }
+      .m-slide-left li.active .ml-line-icon {
+        top: 50%;
+        display: inline-block; }
+  .m-slide-left .ml-slide-inner {
+    position: relative; }
+  .m-slide-left .ml-line-icon {
+    position: absolute;
+    left: 26px;
+    top: 0;
+    width: 10px;
+    height: 1px;
+    content: "";
+    color: #333;
+    background: #333;
+    display: none;
+    transition: all .5s; }
+
+/*# sourceMappingURL=slideBar.css.map */

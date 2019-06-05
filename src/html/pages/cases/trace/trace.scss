@@ -1,0 +1,118 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+%pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/*项目回顾-时间轴*/
+.trace-timeline {
+  margin-bottom: 50px;
+  .time-line-row {
+    color: #333;
+    @extend %clearfix;
+    &:last-child {
+      .time-line-info {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+    &:first-child{
+      .time-line-info{
+        padding-top: 0;
+      }
+      .time-number,
+      .time-line-date{
+        top: 0;
+      }
+    }
+  }
+  .time-line-date {
+    position: relative;
+    top: -20px;
+    font-size: 20px;
+    width: 124px;
+    float: left;
+    line-height: 40px;
+  }
+  .time-line-info {
+    position: relative;
+    padding: 30px 0 50px 104px;
+    margin-left: 124px;
+    min-height: 40px;
+    font-size: 16px;
+    border-left: 1px solid #e8e7e7;
+    border-bottom: 1px solid #e8e7e7;
+
+  }
+  .time-line-title {
+    position: relative;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    b {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  .t-tags-icon {
+    position: relative;
+    top: -1px;
+    color: #19a0f0;
+    font-size: 16px;
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 15px;
+    border: 1px solid #19a0f0;
+  }
+  .time-number {
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    background: #4bde9e;
+    border-radius: 50%;
+  }
+  .see-count-number {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    color: #666;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 30px;
+  }
+  .cp-column {
+    padding-top: 20px;
+    margin-left: -20px;
+    .cp-item {
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+  }
+  .pr-20{
+    padding-right: 20px;
+  }
+}

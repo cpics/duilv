@@ -1,0 +1,60 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*案例库*/
+.m-cases-content {
+  padding-left: 225px;
+  min-height: 620px;
+  padding-bottom: 40px;
+  @extend %clearfix;
+  .g-cases {
+    float: left;
+  }
+  .related-list {
+    padding-top: 90px;
+    margin-top: -90px;
+    a {
+      color: #333;
+      display: block;
+    }
+    &:first-child {
+      li {
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+    &:last-child {
+      li {
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+    li {
+      &:last-child {
+        border-bottom: 1px solid #e8e7e7;
+      }
+    }
+    &.current {
+      animation: move .4s;
+    }
+  }
+  @keyframes move {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

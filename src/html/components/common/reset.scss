@@ -1,0 +1,72 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  zoom: 1;
+}
+html {
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  color: #555;
+  font: 14px/1.5 "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,STHeiTi,sans-serif;
+}
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style-type: none;
+  vertical-align: bottom;
+}
+img {
+  border: 0 none;
+  vertical-align: top;
+}
+a {
+  text-decoration: none;
+  outline: 0 none;
+  cursor: pointer;
+  vertical-align: top;
+}
+a:hover {
+  text-decoration: underline;
+}
+ol, ul {
+  list-style: none outside none;
+}
+li {
+  list-style-type: none;
+}
+address, caption, cite, code, dfn, em, i, strong, th, var, optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+a, input {
+  outline: 0 none;
+}
+label {
+  vertical-align: middle;
+}
+table {
+  table-layout: fixed;
+}
+::-webkit-input-placeholder {
+  font-size: 20px;
+  color: #bebebe;
+}
+:-moz-placeholder {
+  font-size: 20px;
+  color: #bebebe;
+}
+::-moz-placeholder {
+  font-size: 20px;
+  color: #bebebe;
+}
+:-ms-input-placeholder {
+  font-size: 20px;
+  color: #bebebe;
+}

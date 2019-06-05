@@ -1,0 +1,223 @@
+@charset "UTF-8";
+.info-msg-manage, .info-msg-manage .i-member-list li, .info-msg-manage .member-opt-input {
+  zoom: 1; }
+  .info-msg-manage:after, .info-msg-manage .i-member-list li:after, .info-msg-manage .member-opt-input:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*信息管理*/
+.info-msg-manage {
+  position: relative;
+  padding: 20px 0; }
+  .info-msg-manage:before {
+    position: absolute;
+    left: 50%;
+    top: 4%;
+    content: "";
+    width: 1px;
+    height: 92%;
+    background: #e8e7e7; }
+  .info-msg-manage .info-msg-row {
+    color: #333;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 8px 0; }
+  .info-msg-manage .info-msg-col {
+    width: 440px;
+    float: left;
+    padding-left: 110px; }
+  .info-msg-manage .i-company-name {
+    display: inline-block;
+    margin-right: 15px; }
+  .info-msg-manage label {
+    display: inline-block; }
+  .info-msg-manage input.i-company-name {
+    line-height: 26px;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    background: #f1f1f1;
+    padding: 0 10px; }
+  .info-msg-manage .i-company-face {
+    position: relative;
+    top: -1px;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 15px; }
+    .info-msg-manage .i-company-face img {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  .info-msg-manage .i-msg-btn {
+    color: #996999;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline; }
+  .info-msg-manage .i-msg-tipper {
+    color: #999;
+    font-size: 12px; }
+  .info-msg-manage .i-member-list {
+    position: relative; }
+    .info-msg-manage .i-member-list h2 {
+      color: #333;
+      font-size: 20px;
+      padding-bottom: 12px; }
+    .info-msg-manage .i-member-list .member-edit-btn {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      z-index: 2;
+      min-width: 50px;
+      height: 26px;
+      line-height: 26px;
+      color: #996999;
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      padding: 0 15px;
+      cursor: pointer;
+      border-radius: 14px;
+      border: 1px solid #996999; }
+      .info-msg-manage .i-member-list .member-edit-btn:hover {
+        background: #f8ecf8; }
+    .info-msg-manage .i-member-list ul {
+      max-height: 270px;
+      overflow-y: auto; }
+    .info-msg-manage .i-member-list li {
+      position: relative;
+      padding: 10px 0;
+      line-height: 46px; }
+      .info-msg-manage .i-member-list li .member-opt-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        padding: 10px 0;
+        background: #fff;
+        display: none; }
+        .info-msg-manage .i-member-list li .member-opt-input.show {
+          display: block; }
+    .info-msg-manage .i-member-list .i-member-handle {
+      float: right;
+      width: 155px; }
+      .info-msg-manage .i-member-list .i-member-handle em {
+        color: #996999;
+        padding: 0 2px; }
+    .info-msg-manage .i-member-list .i-member-face {
+      width: 46px;
+      height: 46px;
+      vertical-align: middle;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      float: left; }
+      .info-msg-manage .i-member-list .i-member-face img {
+        display: block;
+        width: 100%;
+        height: 100%; }
+    .info-msg-manage .i-member-list .i-member-name {
+      float: left;
+      font-size: 20px;
+      max-width: 160px;
+      display: inline-block;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 20px; }
+  .info-msg-manage .member-opt-input {
+    padding: 15px 0; }
+    .info-msg-manage .member-opt-input input {
+      width: 140px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+      padding: 0 10px;
+      display: inline-block;
+      vertical-align: top;
+      border: 1px solid #e8e7e7;
+      float: left; }
+    .info-msg-manage .member-opt-input ::-webkit-input-placeholder {
+      font-size: 14px;
+      color: #ccc; }
+    .info-msg-manage .member-opt-input :-moz-placeholder {
+      font-size: 14px;
+      color: #ccc; }
+    .info-msg-manage .member-opt-input ::-moz-placeholder {
+      font-size: 14px;
+      color: #ccc; }
+    .info-msg-manage .member-opt-input :-ms-input-placeholder {
+      font-size: 14px;
+      color: #ccc; }
+    .info-msg-manage .member-opt-input .mem-nike-name {
+      color: #333;
+      font-size: 16px;
+      line-height: 38px;
+      display: inline-block;
+      width: 100px;
+      padding-left: 15px;
+      vertical-align: top;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      float: left; }
+    .info-msg-manage .member-opt-input .i-member-handle .i-msg-btn,
+    .info-msg-manage .member-opt-input .i-member-handle em {
+      line-height: 38px;
+      vertical-align: top; }
+  .info-msg-manage .member-opt-bottom {
+    padding: 15px 0 20px; }
+    .info-msg-manage .member-opt-bottom .member-add-btn {
+      text-align: left; }
+    .info-msg-manage .member-opt-bottom .mem-add-btn {
+      color: #996999;
+      font-size: 16px;
+      cursor: pointer; }
+      .info-msg-manage .member-opt-bottom .mem-add-btn:hover {
+        text-decoration: underline; }
+    .info-msg-manage .member-opt-bottom .member-finish-btn {
+      width: 365px;
+      text-align: right; }
+    .info-msg-manage .member-opt-bottom .mem-finish-btn {
+      width: 100px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      display: inline-block;
+      background: #996999;
+      cursor: pointer; }
+      .info-msg-manage .member-opt-bottom .mem-finish-btn:hover {
+        background: #8a5b8a; }
+
+.write-complain-btn {
+  text-align: right; }
+  .write-complain-btn .write-btn {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background: #7ae0b2;
+    margin-bottom: 25px;
+    display: inline-block; }
+    .write-complain-btn .write-btn:hover {
+      background: rgba(122, 224, 178, 0.8); }
+
+/*# sourceMappingURL=details.css.map */

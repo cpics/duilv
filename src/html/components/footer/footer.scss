@@ -1,0 +1,79 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*footer links*/
+.m-footer-links {
+  width: 100%;
+  color: #f1f1f1;
+  background: #313131;
+  .foot-link-hd {
+    width: 1090px;
+    padding: 35px 0 10px 80px;
+    box-sizing: content-box;
+    @extend %clearfix;
+  }
+  .links-col {
+    width: 170px;
+    float: left;
+    line-height: 30px;
+    &:nth-last-child(2){
+      width: 280px;
+    }
+    a,
+    a:visited {
+      color: #f1f1f1;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .links-list {
+    padding: 18px 0 30px;
+  }
+  .links-code {
+    position: relative;
+    width: 120px;
+    padding-left: 110px;
+    float: left;
+  }
+  .links-code-txt {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .fly-icon {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    z-index: 2;
+    display: block;
+    width: 109px;
+    height: 121px;
+    background: url("images/fly.png") no-repeat center center;
+  }
+  .links-code-pic {
+    img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
+  }
+  .footer-copyright {
+    padding: 13px 0;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid #171111;
+  }
+}

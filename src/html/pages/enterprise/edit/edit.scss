@@ -1,0 +1,250 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*编辑*/
+.m-editor-box {
+  padding: 40px 20px 40px 40px;
+  border: 1px solid #e8e7e7;
+  box-shadow: 0 0 20px rgba(17, 17, 17, .1);
+}
+
+.u-editor-tabs {
+  position: relative;
+  font-size: 18px;
+  .edit-tab-col {
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #e8e7e7;
+    background: #f1f1f1;
+    border-radius: 17px;
+    margin-right: 20px;
+    &.active {
+      color: #fff;
+      background: #4bde9e;
+      border-color: #4bde9e;
+    }
+  }
+  .edit-save-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    .edit-save-btn {
+      display: inline-block;
+      padding: 0 20px;
+      min-width: 40px;
+      text-align: center;
+      height: 34px;
+      line-height: 34px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 16px;
+      background: #47c091;
+      margin-left: 20px;
+      &:hover {
+        background: #7ae0b2;
+      }
+      &.bg-grey {
+        background: #ccc;
+        &:hover{
+          background: #ddd;
+        }
+      }
+    }
+  }
+}
+
+.editor-inner {
+  display: none;
+  padding: 30px 0;
+  &.show {
+    display: block;
+  }
+  .quill-editor {
+    height: 610px;
+  }
+  .ql-container.ql-snow{
+    height: 520px;
+  }
+}
+
+.choose-phone-list {
+  ul {
+    @extend %clearfix;
+  }
+  li {
+    width: 320px;
+    float: left;
+    min-height: 610px;
+  }
+  .phone-pic {
+    width: 320px;
+    height: 557px;
+    margin: 0 auto;
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+}
+
+.phone-choose-btn {
+  color: #333;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.is-open-icon {
+  width: 59px;
+  height: 31px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  cursor: pointer;
+  background: url("images/shut.png") no-repeat center center;
+  &.active {
+    background-image: url("images/open.png");
+  }
+}
+
+.e-phone-textarea {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  border: 1px solid #e8e7e7;
+  ::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  :-moz-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  ::-moz-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  :-ms-input-placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+  textarea {
+    width: 100%;
+    height: 160px;
+    resize: none;
+    border: 0;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    background: transparent;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;;
+    overflow-y: auto;
+  }
+}
+.editor-phone-info{
+  min-height:610px;
+}
+.e-phone-pic {
+  padding: 20px 0;
+  @extend %clearfix;
+  margin-left: -20px;
+  .pic-phone-item {
+    position: relative;
+    width: 200px;
+    float: left;
+    margin: 0 0 20px 20px;
+    img {
+      width: 100%;
+      height: 210px;
+      display: block;
+    }
+    .upload-btn {
+      width: 100%;
+      height: 210px;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #999;
+      text-align: center;
+      padding-top: 45px;
+      border:0;
+      background:#f6f6f6 url("images/picture.png") no-repeat center 65px;
+      background-size: 50px 42px;
+      box-sizing: border-box;
+    }
+    input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      cursor: pointer;
+    }
+    .edit-pic-tit {
+      padding: 20px 0 0;
+      font-size: 14px;
+      text-align: center;
+      box-sizing: border-box;
+      display: block;
+      input {
+        width: 100%;
+        height: 32px;
+        line-height: 32px;
+        display: block;
+        font-size: 16px;
+        padding: 0 10px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #d2d2d2;
+        &:focus {
+          border: 1px solid #7ae0b2;
+        }
+      }
+      ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      ::-moz-placeholder {
+        font-size: 16px;
+        color: #999;
+      }
+      :-ms-input-placeholder {
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
+  }
+  .phone-del-pic {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("images/del.png") no-repeat center center;
+  }
+}

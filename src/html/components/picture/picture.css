@@ -1,0 +1,90 @@
+@charset "UTF-8";
+.cp-column {
+  zoom: 1; }
+  .cp-column:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*多图 176*120*/
+.cp-column {
+  padding-top: 15px;
+  margin-left: -14px; }
+  .cp-column.cp-swiper {
+    margin-left: 0; }
+    .cp-column.cp-swiper .cp-item {
+      margin-left: 0;
+      margin-bottom: 0; }
+    .cp-column.cp-swiper .swiper-container,
+    .cp-column.cp-swiper .swiper-wrapper,
+    .cp-column.cp-swiper .swiper-slide {
+      width: 100%;
+      height: 100%; }
+      .cp-column.cp-swiper .swiper-container img,
+      .cp-column.cp-swiper .swiper-wrapper img,
+      .cp-column.cp-swiper .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+  .cp-column.hover-scale .cp-item:hover {
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: all .4s ease-in-out; }
+  .cp-column.big-pic .cp-item {
+    width: 300px;
+    height: 204px;
+    margin-bottom: 10px; }
+  .cp-column.middle-pic .cp-item {
+    width: 276px;
+    height: 190px; }
+  .cp-column.pic-260 .cp-item {
+    width: 260px;
+    height: 180px; }
+  .cp-column.pic-100 .cp-item {
+    width: 100px;
+    height: 72px; }
+  .cp-column.pic-300 .cp-item {
+    width: 300px;
+    height: 206px; }
+  .cp-column.h-auto .cp-item {
+    height: auto; }
+
+.cp-item {
+  width: 176px;
+  height: 120px;
+  float: left;
+  display: block;
+  overflow: hidden;
+  margin-left: 14px;
+  margin-bottom: 15px; }
+  .cp-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.qe-view-detail {
+  height: 100%;
+  overflow-y: auto; }
+  .qe-view-detail .cp-column.cp-bomb-full {
+    height: 433px;
+    padding-top: 40px; }
+  .qe-view-detail .cp-column.cp-bomb-middle {
+    width: 500px;
+    height: 360px;
+    padding-top: 20px;
+    margin: 0 auto; }
+  .qe-view-detail .qe-bomb-pic {
+    width: 100%;
+    padding-top: 15px; }
+    .qe-view-detail .qe-bomb-pic img {
+      max-width: 100%;
+      max-height: 400px;
+      display: block;
+      margin: 0 auto; }
+
+/*# sourceMappingURL=picture.css.map */

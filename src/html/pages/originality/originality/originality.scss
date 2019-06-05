@@ -1,0 +1,123 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*匠心记*/
+.origin-content {
+  .m-second-tabs {
+    padding-top: 0;
+  }
+  .m-structure-content {
+    padding-top: 25px;
+    border-top: 1px solid #f1f1f1;
+  }
+  .e-prise-box {
+    cursor: pointer;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+  .m-structure-quick {
+    padding-top: 95px;
+  }
+}
+
+/*签到弹框*/
+.sign-pop-box {
+  max-height: 600px;
+  overflow: auto;
+  .sign-title {
+    color: #252525;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
+  .sign-pop-item {
+    padding: 25px 0 15px;
+    border-top: 1px solid #e8e7e7;
+    &:first-child {
+      border-top: 0;
+    }
+    dd {
+      padding: 10px 0;
+      @extend %clearfix;
+    }
+  }
+  .sign-face {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .sign-info {
+    color: #333;
+    font-size: 14px;
+    margin-left: 66px;
+    .sign-i-name {
+      font-size: 16px;
+      padding-bottom: 5px;
+    }
+  }
+  .sign-i-infor {
+    @extend %clearfix;
+  }
+  .dist-address {
+    color: #999;
+    width: 40%;
+    display: inline-block;
+    float: left;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .dist-size {
+    width: 42%;
+    display: inline-block;
+    padding-left: 20px;
+    box-sizing: border-box;
+    float: left;
+  }
+  .dist-time {
+    width: 16%;
+    text-align: right;
+    display: inline-block;
+    float: left;
+  }
+}
+
+/*入口弹框*/
+.bomb-entrance {
+  padding-top: 70px;
+  text-align: center;
+  @extend %clearfix;
+  .b-entrance-btn {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 100px;
+    display: inline-block;
+    background: #4cde9f;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 15px;
+    *float:left;
+    &:hover {
+      background: #7ae0b2;
+    }
+  }
+}

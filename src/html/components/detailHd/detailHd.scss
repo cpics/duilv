@@ -1,0 +1,127 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+%pic {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/*详情头部*/
+.com-detail-hd {
+  padding: 20px 0;
+  .com-hd-inner {
+    width: 1170px;
+    height: 140px;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 auto;
+    padding-top: 105px;
+    background: url("images/hd.png") no-repeat top center;
+    background-size: 100% auto;
+    @extend %clearfix;
+  }
+  .com-hd-info {
+    width: 60%;
+    float: left;
+    padding: 0 48px;
+    @extend %clearfix;
+  }
+  .com-hd-face {
+    width: 136px;
+    height: 136px;
+    float: left;
+    border-radius: 6px;
+    border: 3px solid #fff;
+    img {
+      @extend %pic;
+      border-radius: 4px;
+    }
+  }
+  .com-hd-name {
+    font-weight: normal;
+    margin-left: 170px;
+    display: table;
+    .hd-name-row {
+      padding: 3px 0;
+      span {
+        padding-right: 20px;
+      }
+    }
+  }
+  .com-hd-handle {
+    width: 22%;
+    padding-right: 30px;
+    display: table;
+    text-align: right;
+    float: right;
+  }
+  .hd-bottom-td {
+    height: 83px;
+    display: table-cell;
+    vertical-align: bottom;
+  }
+  .cm-sign-btn {
+    position: relative;
+    top:20px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .u-wechat-icon {
+    position: relative;
+    top: -2px;
+    width: 36px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    background: url("images/wechat.png") no-repeat center center;
+  }
+  .share-wechat-btn {
+    position: relative;
+    top:20px;
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 20px;
+    &:hover{
+      .wechat-qr-code{
+        display: block;
+      }
+    }
+  }
+  .wechat-qr-code {
+    position: absolute;
+    right: -30px;
+    top: 45px;
+    z-index: 2;
+    width: 116px;
+    height: 116px;
+    padding: 10px;
+    display: none;
+    background: #f1f1f1;
+    border-radius: 5px;
+    em {
+      position: absolute;
+      right: 42px;
+      top: -10px;
+      width: 20px;
+      height: 12px;
+      display: inline-block;
+      background: url("images/triangle1.png") no-repeat center center;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

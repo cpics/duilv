@@ -1,0 +1,135 @@
+.m-slider-banner {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  &.m-norm-banner{
+    width: 1170px;
+    height: 300px;
+  }
+  &.mall-banner{
+    width: 1170px;
+    height: 208px;
+  }
+  .swiper-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  img {
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+    }
+    a,
+    .oper-pic {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto 100%;
+    }
+  }
+  .swiper-pagination {
+    width: 100%;
+    text-align: center;
+    bottom: 18px;
+  }
+  .swiper-pagination-bullet {
+    width: 70px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #fff;
+    opacity: 1;
+    margin: 0 8px;
+  }
+  .swiper-pagination-bullet {
+    &.swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #46da98;
+    }
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 18px;
+  }
+}
+
+.m-norm-banner {
+  width: 1170px;
+  height: 300px;
+  padding-top: 20px;
+  margin: 0 auto;
+  &.mall-banner{
+    width: 1170px;
+    height: 208px;
+    padding-top: 0;
+  }
+  .pic-banner,
+  .video-box {
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .video-box {
+    position: relative;
+  }
+  video {
+    object-fit: fill;
+  }
+  .video-area {
+    width: 100%;
+    height: 100%;
+  }
+  .video-box {
+    video::-internal-media-controls-download-button {
+      display: none;
+    }
+    video::-webkit-media-controls-enclosure {
+      overflow: hidden;
+    }
+    video::-webkit-media-controls-panel {
+      width: calc(100% + 40px);
+    }
+  }
+}
+
+.video-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 104px;
+  height: 103px;
+  display: none;
+  margin-left: -52px;
+  margin-top: -52px;
+  cursor: pointer;
+  background: url("images/video.png") no-repeat center center;
+  &.show {
+    display: block;
+  }
+}
+
+/*视频 开始*/

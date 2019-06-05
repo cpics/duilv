@@ -1,0 +1,53 @@
+/*分页*/
+.m-pages {
+  color: #333;
+  padding: 20px 0;
+  font-size: 0;
+  text-align: right;
+  .btn-prev,
+  .btn-next {
+    font-size: 18px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 15px;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    color: #666;
+    outline: none;
+    margin-left: 10px;
+    background: #f1f1f1;
+    &:disabled {
+      color: #b4b4b4;
+      cursor: default;
+    }
+  }
+  .u-pager {
+    font-size: 0;
+    display: inline-block;
+    dd {
+      font-size: 18px;
+      min-width: 34px;
+      height: 34px;
+      line-height: 34px;
+      color: #666;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      background: #f1f1f1;
+      margin-left: 10px;
+      padding: 0 5px;
+      box-sizing: border-box;
+      &.active,
+      &:hover {
+        color: #fff;
+        background: #4bde9e;
+      }
+      &.dots {
+        color: #666;
+        cursor: default;
+        background: transparent;
+      }
+    }
+  }
+}

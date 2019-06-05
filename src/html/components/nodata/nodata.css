@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*暂无数据*/
+.m-no-data {
+  display: none;
+  padding: 50px 20px; }
+  .m-no-data.show {
+    display: block; }
+  .m-no-data .no-data-icon {
+    width: 100px;
+    height: 95px;
+    display: block;
+    margin: 0 auto;
+    background: url("images/none.png") no-repeat center center;
+    background-size: contain; }
+  .m-no-data .no-data-prompt {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 25px; }
+
+/*# sourceMappingURL=nodata.css.map */

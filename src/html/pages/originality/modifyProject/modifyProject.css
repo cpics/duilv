@@ -1,0 +1,293 @@
+@charset "UTF-8";
+.modify-form-main .base-i-row, .modify-form-main .modify-sit-row, .add-role-box, .project-rol-list .project-role-row .role-user-info {
+  zoom: 1; }
+  .modify-form-main .base-i-row:after, .modify-form-main .modify-sit-row:after, .add-role-box:after, .project-rol-list .project-role-row .role-user-info:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*项目更改*/
+.modify-form-main {
+  padding: 0 80px 20px 80px;
+  border: 1px solid #e8e7e7; }
+  .modify-form-main .modify-box {
+    padding: 10px 0 0; }
+  .modify-form-main .modify-form-tit {
+    color: #1a1a1a;
+    font-size: 20px;
+    line-height: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e8e7e7; }
+  .modify-form-main .modify-base-info {
+    font-size: 16px;
+    padding: 10px 0; }
+  .modify-form-main .base-i-row {
+    padding: 6px 0;
+    line-height: 32px; }
+    .modify-form-main .base-i-row .base-label {
+      float: left; }
+    .modify-form-main .base-i-row .base-input {
+      float: left; }
+      .modify-form-main .base-i-row .base-input input {
+        width: 340px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 15px;
+        font-size: 16px;
+        border: 1px solid #e8e7e7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif; }
+      .modify-form-main .base-i-row .base-input ::-webkit-input-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input :-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input ::-moz-placeholder {
+        font-size: 16px;
+        color: #999; }
+      .modify-form-main .base-i-row .base-input :-ms-input-placeholder {
+        font-size: 16px;
+        color: #999; }
+  .modify-form-main .modify-base-map {
+    width: 800px;
+    max-height: 240px; }
+  .modify-form-main .modify-situation {
+    padding-bottom: 10px; }
+  .modify-form-main .modify-caption {
+    color: #1a1a1a;
+    font-size: 18px;
+    padding: 20px 0; }
+    .modify-form-main .modify-caption ::-webkit-input-placeholder {
+      font-size: 16px;
+      color: #999; }
+    .modify-form-main .modify-caption :-moz-placeholder {
+      font-size: 16px;
+      color: #999; }
+    .modify-form-main .modify-caption ::-moz-placeholder {
+      font-size: 16px;
+      color: #999; }
+    .modify-form-main .modify-caption :-ms-input-placeholder {
+      font-size: 16px;
+      color: #999; }
+  .modify-form-main .modify-size {
+    width: 800px; }
+    .modify-form-main .modify-size textarea {
+      width: 100%;
+      height: 230px;
+      resize: none;
+      border: 0;
+      outline: none;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.8;
+      padding: 20px 30px;
+      display: block;
+      box-sizing: border-box;
+      background: #f7f7f7;
+      font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
+      overflow-y: auto; }
+  .modify-form-main .modify-sit-row {
+    padding: 15px 0; }
+    .modify-form-main .modify-sit-row:nth-last-of-type(1) {
+      padding-bottom: 0; }
+    .modify-form-main .modify-sit-row .sit-label {
+      width: 100px;
+      color: #666;
+      font-size: 16px;
+      line-height: 40px;
+      padding: 10px 0;
+      float: left; }
+    .modify-form-main .modify-sit-row .sit-input {
+      margin-left: 100px; }
+      .modify-form-main .modify-sit-row .sit-input input {
+        display: block;
+        width: 640px;
+        height: 40px;
+        line-height: 40px;
+        color: #333;
+        font-size: 16px;
+        border: 0;
+        outline: none;
+        padding: 10px 30px;
+        background: #f7f7f7; }
+      .modify-form-main .modify-sit-row .sit-input textarea {
+        width: 640px;
+        height: 100px;
+        resize: none;
+        border: 0;
+        outline: none;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.8;
+        padding: 10px 30px;
+        display: block;
+        background: #f7f7f7;
+        font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, STHeiTi, sans-serif;
+        overflow-y: auto; }
+
+.add-role-box {
+  padding: 15px 0;
+  font-size: 14px;
+  line-height: 30px;
+  display: none; }
+  .add-role-box.show {
+    display: block; }
+  .add-role-box.show {
+    display: block; }
+  .add-role-box .role-input {
+    float: left; }
+    .add-role-box .role-input input {
+      width: 160px;
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 14px;
+      outline: none;
+      padding: 5px 15px;
+      background: #fff;
+      border: 1px solid #e8e7e7; }
+  .add-role-box ::-webkit-input-placeholder {
+    font-size: 14px; }
+  .add-role-box :-moz-placeholder {
+    font-size: 14px; }
+  .add-role-box ::-moz-placeholder {
+    font-size: 14px; }
+  .add-role-box :-ms-input-placeholder {
+    font-size: 14px; }
+  .add-role-box .role-nike-name {
+    float: left;
+    padding: 0 20px;
+    min-width: 80px;
+    max-width: 160px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .add-role-box .role-handle {
+    float: left; }
+    .add-role-box .role-handle span {
+      display: inline-block;
+      vertical-align: middle; }
+    .add-role-box .role-handle .role-line {
+      position: relative;
+      top: -1px;
+      font-size: 12px;
+      padding: 0 4px;
+      line-height: 28px; }
+    .add-role-box .role-handle .role-btn {
+      color: #47c091;
+      padding: 0 4px;
+      cursor: pointer; }
+      .add-role-box .role-handle .role-btn:hover {
+        text-decoration: underline; }
+
+.project-rol-list li {
+  font-size: 16px;
+  padding: 14px 0 30px;
+  border-top: 1px solid #e8e7e7; }
+  .project-rol-list li:first-child {
+    border-top: 0; }
+.project-rol-list .project-role-row {
+  display: table;
+  *height: 68px;
+  padding: 16px 0; }
+  .project-rol-list .project-role-row .role-user-info,
+  .project-rol-list .project-role-row .role-star,
+  .project-rol-list .project-role-row .role-handle {
+    display: table-cell;
+    vertical-align: middle;
+    *float: left; }
+  .project-rol-list .project-role-row .role-user-info {
+    width: 460px; }
+  .project-rol-list .project-role-row .role-face {
+    width: 68px;
+    height: 68px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left; }
+    .project-rol-list .project-role-row .role-face img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%; }
+  .project-rol-list .project-role-row .role-name {
+    float: left;
+    margin-left: 20px;
+    line-height: 25px;
+    padding-top: 9px; }
+  .project-rol-list .project-role-row .role-tag {
+    position: relative;
+    top: 19px;
+    color: #fff;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    float: left;
+    padding: 0 16px;
+    margin-left: 20px;
+    border-radius: 15px;
+    background: #7ae0b2; }
+  .project-rol-list .project-role-row .role-handle {
+    width: 348px;
+    text-align: right; }
+    .project-rol-list .project-role-row .role-handle .role-del {
+      color: #999;
+      cursor: pointer; }
+      .project-rol-list .project-role-row .role-handle .role-del:hover {
+        text-decoration: underline; }
+.project-rol-list .role-star {
+  width: 200px; }
+  .project-rol-list .role-star i {
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 2px;
+    background: url("images/gstar.png") no-repeat center center; }
+  .project-rol-list .role-star.one-star i:first-child, .project-rol-list .role-star.two-star i:first-child, .project-rol-list .role-star.two-star i:first-child + i, .project-rol-list .role-star.three-star i:first-child, .project-rol-list .role-star.three-star i:first-child + i, .project-rol-list .role-star.three-star i:first-child + i + i, .project-rol-list .role-star.four-star i:first-child, .project-rol-list .role-star.four-star i:first-child + i, .project-rol-list .role-star.four-star i:first-child + i + i, .project-rol-list .role-star.four-star i:first-child + i + i + i, .project-rol-list .role-star.five-star i:first-child, .project-rol-list .role-star.five-star i:first-child + i, .project-rol-list .role-star.five-star i:first-child + i + i, .project-rol-list .role-star.five-star i:first-child + i + i + i, .project-rol-list .role-star.five-star i:first-child + i + i + i + i, .project-rol-list .role-star.star-1 i:first-child, .project-rol-list .role-star.star-2 i:first-child, .project-rol-list .role-star.star-2 i:first-child + i, .project-rol-list .role-star.star-3 i:first-child, .project-rol-list .role-star.star-3 i:first-child + i, .project-rol-list .role-star.star-3 i:first-child + i + i, .project-rol-list .role-star.star-4 i:first-child, .project-rol-list .role-star.star-4 i:first-child + i, .project-rol-list .role-star.star-4 i:first-child + i + i, .project-rol-list .role-star.star-4 i:first-child + i + i + i, .project-rol-list .role-star.star-5 i:first-child, .project-rol-list .role-star.star-5 i:first-child + i, .project-rol-list .role-star.star-5 i:first-child + i + i, .project-rol-list .role-star.star-5 i:first-child + i + i + i, .project-rol-list .role-star.star-5 i:first-child + i + i + i + i {
+    background-image: url("images/star.png"); }
+.project-rol-list .add-role-btn {
+  padding: 2px 5px;
+  color: #7ae0b2;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid #7ae0b2; }
+  .project-rol-list .add-role-btn:hover {
+    color: #fff;
+    background: #4bde9e; }
+
+/*项目详情 弹框*/
+.bomb-com-box.bomb-full .modify-form-main {
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  border: 0; }
+  .bomb-com-box.bomb-full .modify-form-main .modify-base-info {
+    color: #4c4c4c; }
+  .bomb-com-box.bomb-full .modify-form-main .modify-caption {
+    padding: 10px 0; }
+  .bomb-com-box.bomb-full .modify-form-main .modify-sit-row {
+    line-height: 30px;
+    padding: 3px 0; }
+    .bomb-com-box.bomb-full .modify-form-main .modify-sit-row .sit-label {
+      padding: 0;
+      line-height: 30px; }
+.bomb-com-box.bomb-full .project-rol-list .project-role-row .role-user-info {
+  width: 850px; }
+.bomb-com-box .orig-modify-btn {
+  position: absolute;
+  top: -44px;
+  left: 60px;
+  width: 88px;
+  height: 88px;
+  font-size: 0;
+  display: block;
+  background: url("images/edit.png") no-repeat center center; }
+
+/*# sourceMappingURL=modifyProject.css.map */

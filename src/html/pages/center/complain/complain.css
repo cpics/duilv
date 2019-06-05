@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.complain-comment {
+  zoom: 1; }
+  .complain-comment:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden; }
+
+/*投诉*/
+.complain-list li {
+  padding: 30px 0;
+  border-top: 1px solid #e8e7e7; }
+  .complain-list li:first-child {
+    border-top: 0; }
+  .complain-list li.disabled {
+    color: #666; }
+    .complain-list li.disabled .complain-time,
+    .complain-list li.disabled .complain-txt,
+    .complain-list li.disabled .comment-name,
+    .complain-list li.disabled .comment-msg {
+      color: #666; }
+    .complain-list li.disabled .pub-btn {
+      color: #999;
+      cursor: default; }
+      .complain-list li.disabled .pub-btn:hover {
+        text-decoration: none; }
+.complain-list .comment-list li {
+  padding: 15px 0; }
+.complain-list .comment-list .comment-msg {
+  font-size: 14px; }
+.complain-list .complain-time {
+  font-size: 18px;
+  color: #000; }
+.complain-list .complain-txt {
+  color: #333;
+  font-size: 14px;
+  padding: 5px 0 16px; }
+.complain-list .my-publish-handle {
+  padding-top: 25px; }
+
+.complain-comment .comment-list {
+  width: 720px;
+  float: left; }
+
+/*# sourceMappingURL=complain.css.map */

@@ -1,0 +1,186 @@
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+  }
+}
+
+/*Jjiangxin*/
+.e-prise-box {
+  padding: 30px 0;
+  border-top: 1px solid #e8e7e7;
+  .prise-hd {
+    cursor: pointer;
+    @extend %clearfix;
+    margin-bottom: 30px;
+  }
+  .prise-face {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    float: left;
+    &.f-circle {
+      border-radius: 50%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .prise-hd-info {
+    width: 60%;
+    float: left;
+    padding: 0 15px;
+  }
+  .prise-status {
+    float: right;
+    font-size: 18px;
+    .prise-status-txt {
+      padding-left: 30px;
+    }
+  }
+  .prise-hd-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .prise-time {
+    color: #666;
+    font-size: 14px;
+    padding-top: 4px;
+  }
+  .prise-art-name {
+    padding-bottom: 5px;
+    b {
+      color: #333;
+      font-size: 20px;
+      padding-right: 20px;
+    }
+  }
+  .art-tips {
+    min-width: 44px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    color: #999;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #999;
+    border-radius: 3px;
+  }
+  .view-more-prise {
+    position: relative;
+    width: 100%;
+    &.active {
+      .prise-art-txt {
+        max-height: 122px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        margin-bottom: 0;
+      }
+      .view-more-txt {
+        &.fewer {
+          display: none;
+        }
+        &.unfold {
+          display: block;
+        }
+        i {
+          background-image: url("images/down.png");
+        }
+      }
+      &:hover {
+        .view-more-txt {
+          i {
+            background-image: url("images/dactive.png");
+          }
+        }
+      }
+    }
+    .view-more-txt {
+      &.fewer {
+        display: block;
+      }
+      &.unfold {
+        display: none;
+      }
+    }
+    &:hover {
+      .view-more-txt {
+        color: #4bde9e;
+        i {
+          background-image: url("images/upactive.png");
+        }
+      }
+    }
+  }
+  .view-more-txt {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    &:before {
+      position: absolute;
+      left: 0;
+      top: -20px;
+      z-index: 2;
+      content: "";
+      width: 100%;
+      height: 20px;
+      background-image: -webkit-linear-gradient(bottom, #fff 20%, rgba(255, 255, 255, 0));
+      background-image: linear-gradient(bottom, #fff 20%, rgba(255, 255, 255, 0));
+    }
+    i {
+      position: relative;
+      top: -1px;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 4px;
+      background: url("images/up.png") no-repeat center center;
+      background-size: 16px 16px;
+    }
+  }
+  .prise-art-txt {
+    color: #333;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 10px;
+  }
+  .cp-column {
+    margin-left: -20px;
+    &.cp-swiper {
+      margin-left: 0;
+      .cp-item {
+        margin-left: 0;
+      }
+    }
+  }
+  .cp-item {
+    margin-left: 20px;
+  }
+  .prise-tag-icon {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 15px;
+    color: #19a0f0;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    margin-left: 20px;
+    border: 1px solid #19a0f0;
+    border-radius: 14px;
+  }
+}

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.e-prise-box .qe-article .cp-column {
+  margin-bottom: 20px; }
+
+.structure-border .comment-box:first-child {
+  padding: 0 0 30px; }
+.structure-border .comment-box:nth-child(2) {
+  border-top: 1px solid #e8e7e7; }
+
+/*qe轮播图弹框*/
+.bomb-com-box .qe-view-detail .cp-column.pic-300 .cp-item {
+  margin-left: 0; }
+
+.qe-bomb-txt {
+  font-size: 16px;
+  padding: 10px 0 0; }
+
+.prise-art-txt {
+  font-size: 14px;
+  line-height: 1.8;
+  padding-top: 10px; }
+
+/*# sourceMappingURL=qe.css.map */

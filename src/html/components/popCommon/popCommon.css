@@ -1,0 +1,243 @@
+@charset "UTF-8";
+/*弹框 start*/
+.shadow-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 109;
+  display: none;
+  overflow: hidden; }
+  .shadow-fixed .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    background: rgba(0, 0, 0, 0.5) !important;
+    filter: Alpha(opacity=50);
+    background: #000;
+    *zoom: 1; }
+  .shadow-fixed .mask-transparent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none; }
+  .shadow-fixed.show {
+    display: block; }
+    .shadow-fixed.show .mask,
+    .shadow-fixed.show .mask-transparent {
+      display: block; }
+    .shadow-fixed.show .bomb-box {
+      transform-origin: center center;
+      animation: pulsePop .5s ease-in-out forwards; }
+    .shadow-fixed.show .bomb-bottom {
+      animation: bounceInDown .3s ease-in-out forwards; }
+  .shadow-fixed.bottom-fixed .bomb-box {
+    transform-origin: 50% 50% 0;
+    animation: none; }
+
+@-webkit-keyframes pulsePop {
+  0% {
+    -webkit-transform: scale3d(0.85, 0.85, 0.85);
+    transform: scale3d(0.85, 0.85, 0.85); }
+  50% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@keyframes pulsePop {
+  0% {
+    -webkit-transform: scale3d(0.85, 0.85, 0.85);
+    -moz-transform: scale3d(0.85, 0.85, 0.85);
+    transform: scale3d(0.85, 0.85, 0.85); }
+  50% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    -ms-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+.bomb-mv-box {
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 12;
+  width: 576px;
+  height: 678px;
+  margin: -339px 0 0 -288px; }
+
+.bomb-com-box {
+  background: #fff;
+  padding: 30px 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 12;
+  width: 600px;
+  height: 640px;
+  margin: -320px 0 0 -300px;
+  box-shadow: 0 0 20px rgba(17, 17, 17, 0.2); }
+  .bomb-com-box.full-bomb {
+    position: relative;
+    top: 5%;
+    left: 5%;
+    margin: 0;
+    width: 90%;
+    height: 90%;
+    background: none;
+    padding: 0;
+    box-shadow: 0 0 20px rgba(17, 17, 17, 0); }
+    .bomb-com-box.full-bomb .bomb-small-close {
+      width: 36px;
+      height: 36px;
+      background-image: url("images/close3.png"); }
+    .bomb-com-box.full-bomb .qe-view-detail {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 700px;
+      margin-top: -350px; }
+    .bomb-com-box.full-bomb .cp-bomb-full {
+      position: relative;
+      height: 80%;
+      top: 10%; }
+      .bomb-com-box.full-bomb .cp-bomb-full .swiper-slide {
+        position: relative; }
+        .bomb-com-box.full-bomb .cp-bomb-full .swiper-slide img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: 12;
+          width: 850px;
+          height: 700px;
+          margin: -350px 0 0 -425px; }
+  .bomb-com-box .comment-list {
+    max-height: 380px;
+    overflow-y: auto; }
+    .bomb-com-box .comment-list .comment-msg {
+      font-size: 14px; }
+  .bomb-com-box.bomb-reply {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 12;
+    width: 600px;
+    height: 240px;
+    margin: -120px 0 0 -300px; }
+  .bomb-com-box.bomb-full {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    z-index: 12;
+    width: 1050px;
+    height: 80%;
+    margin: 0 0 0 -585px;
+    box-sizing: content-box; }
+
+.bomb-small-close,
+.bomb-close-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 4;
+  cursor: pointer;
+  display: inline-block; }
+
+.bomb-close-icon {
+  width: 34px;
+  height: 34px;
+  background: url("images/close.png") no-repeat center center; }
+  .bomb-close-icon:hover {
+    opacity: .8; }
+
+.bomb-small-close {
+  width: 19px;
+  height: 18px;
+  background: url("images/close2.png") no-repeat center center; }
+
+.bomb-bottom-btn {
+  text-align: center;
+  padding: 25px 0 0;
+  border-top: 1px solid #e8e7e7; }
+  .bomb-bottom-btn .bo-pop-btn {
+    min-width: 100px;
+    padding: 0 8px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 20px;
+    cursor: pointer;
+    display: inline-block;
+    background: #4bde9e; }
+    .bomb-bottom-btn .bo-pop-btn:hover {
+      background: rgba(75, 255, 158, 0.8); }
+    .bomb-bottom-btn .bo-pop-btn.bo-btn-border {
+      color: #999;
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid #e8e7e7; }
+      .bomb-bottom-btn .bo-pop-btn.bo-btn-border:hover {
+        background: #f2f2f2; }
+    .bomb-bottom-btn .bo-pop-btn.bg-grey {
+      background: #ccc; }
+      .bomb-bottom-btn .bo-pop-btn.bg-grey:hover {
+        background: rgba(204, 204, 204, 0.8); }
+
+/*loading*/
+.g-loading {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 12;
+  width: 106px;
+  height: 70px;
+  margin: -35px 0 0 -53px;
+  background: rgba(0, 0, 0, 0.8) !important;
+  filter: Alpha(opacity=80);
+  background: #000;
+  *zoom: 1;
+  border-radius: 5px; }
+  .g-loading .loading-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 0 auto;
+    background: url("images/load.png") no-repeat center center;
+    background-size: contain;
+    -webkit-animation: load 1s linear infinite;
+    animation: load 1s linear infinite; }
+  .g-loading .load-txt {
+    padding-top: 10px; }
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=popCommon.css.map */
