@@ -15,7 +15,8 @@
   min-height: 620px;
   padding-bottom: 40px; }
   .m-cases-content .g-cases {
-    float: left; }
+    float: left;
+    width: 100%; }
   .m-cases-content .related-list a {
     color: #333;
     display: block; }
