@@ -40,9 +40,9 @@ export default {
                 }
 
                 // this.isLike = true;
-                this.$layer.alert(res.Content);
+                // this.$layer.alert(res.Content);
             } else {
-                this.$layer.alert(res.Content);
+                // this.$layer.alert(res.Content);
             }
         },
         toTop() {

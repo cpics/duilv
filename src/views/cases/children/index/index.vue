@@ -20,6 +20,7 @@
             <!--参考 https://hao.uisdc.com/#inspiration-->
             <div class="m-cases-content">
                 <left-menu :list="cases.tags"
+                           :fixationDir="fixationDir"
                            :currentTagId="currentTagId"
                            @filterTag="filterTag"></left-menu>
                 <!--详情内容-->
@@ -53,7 +54,8 @@ export default {
     data() {
         return {
             cases: {},
-            currentTagId: undefined
+            currentTagId: undefined,
+            fixationDir: false
         };
     },
     computed: {
@@ -78,12 +80,42 @@ export default {
             // console.log(res);
         },
         filterTag(id) {
+            // this.
+
+            let offsetTop = document.querySelector('#leftTabMenu').offsetTop;
+            document.documentElement.scrollTop = 352;
+            this.fixationDir = true;
             this.currentTagId = id;
+
+
             // this.$router.push('/cases/index?tagId=' + id);
+        },
+        handleScroll() {
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    let scrollTop =
+                        window.pageYOffset ||
+                        document.documentElement.scrollTop ||
+                        document.body.scrollTop;
+                    let offsetTop = document.querySelector('#leftTabMenu').offsetTop;
+                    console.log(scrollTop, offsetTop);
+                    if (scrollTop >= 352) {
+                        this.fixationDir = true;
+                    } else {
+                        this.fixationDir = false;
+                    }
+                });
+            });
         }
     },
     created() {
         this.init();
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 };
 </script>

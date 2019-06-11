@@ -1,6 +1,8 @@
 <template>
     <!--滚动固定时 +fixation-->
-    <div class="m-slide-left">
+    <div class="m-slide-left"
+         :class="{'fixation':fixationDir}"
+         id="leftTabMenu">
         <div class="ml-slide-inner">
 
             <ul>
@@ -24,7 +26,7 @@
 <script>
 export default {
     name: 'left-menu',
-    props: ['list', 'currentTagId'],
+    props: ['list', 'currentTagId', 'fixationDir'],
     data() {
         return {
             // currentTagId: undefined
