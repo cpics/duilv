@@ -297,18 +297,18 @@
 </template>
 
 <script>
-import '../../../../html/components/topTab/topTab.css';
-import '../../../../html/components/banner/banner.css';
-import '../../../../html/components/crumbs/crumbs.css';
+import '../../../../html/components/topTab/topTab.scss';
+import '../../../../html/components/banner/banner.scss';
+import '../../../../html/components/crumbs/crumbs.scss';
 
-import '../../../../html/components/slideBar/slideBar.css';
-import '../../../../html/components/picture/picture.css';
-import '../../../../html/components/fixBar/fixBar.css';
-import '../../../../html/pages/cloud/details/details.css';
+import '../../../../html/components/slideBar/slideBar.scss';
+import '../../../../html/components/picture/picture.scss';
+import '../../../../html/components/fixBar/fixBar.scss';
+import '../../../../html/pages/cloud/details/details.scss';
 
-import '../../../../html/components/popCommon/popCommon.css';
-import '../../../../html/components/comments/comments.css';
-import '../../../../html/components/cases/cases.css';
+import '../../../../html/components/popCommon/popCommon.scss';
+import '../../../../html/components/comments/comments.scss';
+import '../../../../html/components/cases/cases.scss';
 
 import timeago from '../../../../pubilc/util/timeago';
 

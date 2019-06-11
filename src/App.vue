@@ -8,7 +8,7 @@
                     <header-about/>
                 </header-wrapper>
                 <router-view/>
-                <footer-component :footData="footData"/>
+                <footer-component :footData="footData" />
             </div>
         </div>
     </div>
@@ -27,6 +27,8 @@ import footerComponent from './components/footer/footer';
 
 import { mapMutations, mapState } from 'vuex';
 
+import { getUserInfo } from './api/index.js';
+
 import { footer } from './api/index';
 export default {
     components: {
@@ -41,6 +43,9 @@ export default {
             footData: []
         };
     },
+    computed: {
+        ...mapState(['userInfo'])
+    },
     methods: {
         ...mapMutations(['setUserInfo']),
         async getFooter() {
@@ -49,12 +54,21 @@ export default {
                 this.footData = res.Data;
             }
             // console.log(res);
+        },
+        async getUserInfo() {
+            if (this.userInfo == null) {
+                let res = await getUserInfo();
+                if (res.Type == 'Success') {
+                    this.setUserInfo(res.Data.userInfo);
+                }
+            }
         }
     },
     created() {
         this.getFooter();
         // debugger;
         this.setUserInfo();
+        this.getUserInfo();
     }
 };
 </script>

@@ -237,10 +237,10 @@
 
 <script>
 
-import '../../../../html/components/crumbs/crumbs.css';
-import '../../../../html/pages/originality/createQe/createQe.css';
-import '../../../../html/components/score/score.css';
-import '../../../../html/components/popCommon/popCommon.css';
+import '../../../../html/components/crumbs/crumbs.scss';
+import '../../../../html/pages/originality/createQe/createQe.scss';
+import '../../../../html/components/score/score.scss';
+import '../../../../html/components/popCommon/popCommon.scss';
 
 import {
     uploadImage,

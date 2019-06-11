@@ -105,14 +105,14 @@
 </template>
 
 <script>
-import '../../../../html/components/crumbs/crumbs.css';
+import '../../../../html/components/crumbs/crumbs.scss';
 
-import '../../../../html/components/detailHd/detailHd.css';
-import '../../../../html/components/tabs/tabs.css';
+import '../../../../html/components/detailHd/detailHd.scss';
+import '../../../../html/components/tabs/tabs.scss';
 
-import '../../../../html/components/article/article.css';
+import '../../../../html/components/article/article.scss';
 
-import '../../../../html/pages/enterprise/edit/edit.css';
+import '../../../../html/pages/enterprise/edit/edit.scss';
 import { quillEditor } from 'vue-quill-editor'; //调用编辑器
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';

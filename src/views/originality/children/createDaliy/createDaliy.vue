@@ -152,9 +152,9 @@
 </template>
 
 <script>
-import '../../../../html/components/crumbs/crumbs.css';
+import '../../../../html/components/crumbs/crumbs.scss';
 
-import '../../../../html/pages/originality/createDaily/createDaily.css';
+import '../../../../html/pages/originality/createDaily/createDaily.scss';
 
 import { uploadImage, jxjAddDaily } from '../../../../api/index.js';
 

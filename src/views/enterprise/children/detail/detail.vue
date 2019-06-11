@@ -54,10 +54,13 @@
                         <dd :class="{'active':menu[1] == 1}"
                             @click="showDetail(1)">企业动态</dd>
                         <dd :class="{'active':menu[2] == 1}"
+                            v-if="detail.isPermission"
                             @click="showDetail(2)">信息管理</dd>
                         <dd :class="{'active':menu[3] == 1}"
+                            v-if="detail.isPermission"
                             @click="showDetail(3)">投诉</dd>
                         <dd :class="{'active':menu[4] == 1}"
+                            v-if="detail.isPermission"
                             @click="showDetail(4)">课程培训</dd>
                     </dl>
                 </div>
@@ -195,7 +198,8 @@
                                         </div> -->
                                     </div>
                                     <ul>
-                                        <li v-for="(sing,s) in todaySings" :key="s">
+                                        <li v-for="(sing,s) in todaySings"
+                                            :key="s">
                                             <div class="clock-hd">
                                                 <div class="clock-face">
                                                     <img :src="sing.headImage"
@@ -215,7 +219,7 @@
                                                 <!--</div>-->
                                             </div>
                                         </li>
-                                    
+
                                     </ul>
                                 </div>
                             </div>
@@ -539,7 +543,7 @@ import '../../../../html/components/course/course.scss';
 import hQrcode from '../../../../components/h-qrcode/h-qrcode';
 
 import '../../../../html/components/popCommon/popCommon.scss';
-import '../../../../html/components/dynamic/dynamic.css';
+import '../../../../html/components/dynamic/dynamic.scss';
 
 import {
     enterDetail,

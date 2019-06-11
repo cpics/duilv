@@ -251,11 +251,11 @@
 import '../../../../html/components/detailHd/detailHd.scss';
 import '../../../../html/components/tabs/tabs.scss';
 
-import '../../../../html/components/structure/structure.css';
-import '../../../../html/components/enterprise/enterprise.css';
-import '../../../../html/components/picture/picture.css';
-import '../../../../html/components/comments/comments.css';
-import '../../../../html/components/page/page.css';
+import '../../../../html/components/structure/structure.scss';
+import '../../../../html/components/enterprise/enterprise.scss';
+import '../../../../html/components/picture/picture.scss';
+import '../../../../html/components/comments/comments.scss';
+import '../../../../html/components/page/page.scss';
 import '../../../../html/pages/originality/originality/originality.scss';
 import '../../../../html/pages/originality/modifyProject/modifyProject.scss';
 
