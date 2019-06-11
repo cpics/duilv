@@ -114,13 +114,11 @@
       .bomb-com-box.full-bomb .cp-bomb-full .swiper-slide {
         position: relative; }
         .bomb-com-box.full-bomb .cp-bomb-full .swiper-slide img {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          z-index: 12;
-          width: 850px;
-          height: 700px;
-          margin: -350px 0 0 -425px; }
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto; }
   .bomb-com-box .comment-list {
     max-height: 380px;
     overflow-y: auto; }

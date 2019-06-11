@@ -134,7 +134,11 @@
       .swiper-slide{
         position: relative;
         img{
-          @include center(850px, 700px);
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto;
         }
       }
     }
