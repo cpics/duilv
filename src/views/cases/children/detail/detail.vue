@@ -177,7 +177,7 @@
                 <div class="bomb-small-close"
                      @click="closePopimglist"></div>
                 <div class="qe-view-detail">
-                    <div class="cp-column cp-bomb-full cp-swiper">
+                    <div class="cp-column cp-bomb-big cp-swiper">
 
                         <swiper :options="swiperOption3">
 
