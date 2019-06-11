@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <i @click="like" class="like-icon"></i>
-    <span>{{likeNum}}</span>
-  </div>
+    <div>
+        <i @click="like" class="like-icon"></i>
+        <span>{{likeNum}}</span>
+    </div>
 </template>
 
 <script>

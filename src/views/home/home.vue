@@ -17,7 +17,7 @@
                      slot="pagination"></div>
             </swiper>
         </div>
-        
+
         <div class="m-container m-width">
             <div class="ad-slogan-pic">
                 <img :src="bgImg"
@@ -227,10 +227,11 @@ export default {
             cpkc: [], //产品课程
             swiperOption: {
                 pagination: {
-                    el: '.swiper-pagination'
+                    el: '.swiper-pagination',
+                    clickable: true
                 },
                 autoplay: {
-                    delay: 2000
+                    delay: 8000
                 }
             },
             swiperOption3: {

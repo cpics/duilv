@@ -57,10 +57,11 @@
                         联合质保书
                     </div>
                     <div class="quality-pic-list">
-                        <div class="qua-pic-item"
+                        <div class="qua-pic-item" 
+                             @click="openPopImgList(index)"
                              v-for="(item,index) in detail.warrantys"
                              :key="index">
-                            <img :src="item"
+                            <img :src="'https://www.iduilv.com/'+item"
                                  alt>
                         </div>
                     </div>
@@ -169,6 +170,30 @@
                 </div>
             </div>
         </div>
+        <div class="shadow-fixed show"
+             v-if="currentImgShow">
+            <div class="mask"></div>
+            <div class="bomb-com-box full-bomb">
+                <div class="bomb-small-close"
+                     @click="closePopimglist"></div>
+                <div class="qe-view-detail">
+                    <div class="cp-column cp-bomb-full cp-swiper">
+
+                        <swiper :options="swiperOption3">
+
+                            <swiper-slide v-for="(item,index) in currentImgList"
+                                          :key="index">
+                                <img :src="'https://www.iduilv.com/'+item">
+                            </swiper-slide>
+                            <div class="swiper-button-prev"
+                                 slot="button-prev"></div>
+                            <div class="swiper-button-next"
+                                 slot="button-next"></div>
+                        </swiper>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -191,21 +216,48 @@ export default {
             detail: {},
             swiperOption: {
                 pagination: {
-                    el: '.swiper-pagination'
+                    el: '.swiper-pagination',
+                    clickable: true
                 },
                 autoplay: {
-                    delay: 2000
+                    delay: 8000
                 }
-            }
+            },
+            currentImgShow: false,
+            swiperOption3: {
+                initialSlide: 0,
+                simulateTouch: false,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+
+            },
+            currentImgList: [
+
+            ]
         };
     },
     methods: {
+        openPopImgList(i) {
+            this.swiperOption3.initialSlide = i;
+            // console.log(this.currentImgList);
+            this.currentImgShow = true;
+
+        },
+        closePopimglist() {
+            this.currentImgShow = false;
+        },
         async getDetail() {
             let res = await getCaseDetail({
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
                 this.detail = res.Data;
+                if (res.Data.warrantys) {
+                    this.currentImgList = res.Data.warrantys
+                }
             }
         }
     },

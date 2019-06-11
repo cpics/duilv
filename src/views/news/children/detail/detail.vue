@@ -223,7 +223,7 @@ export default {
                 id: this.$route.params.id
             });
             if (res.Type == 'Success') {
-                this.$layer.alert(res.Content);
+                // this.$layer.alert(res.Content);
                 this.info.isLike = !this.info.isLike;
                 if (res.Content.indexOf('点赞') > -1) {
                     this.info.likes++;
@@ -231,7 +231,7 @@ export default {
                     this.info.likes--;
                 }
             } else {
-                this.$layer.alert(res.Content);
+                // this.$layer.alert(res.Content);
             }
         },
         async getData() {

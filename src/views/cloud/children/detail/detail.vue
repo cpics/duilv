@@ -56,7 +56,7 @@
                                         <div class="uqd-row">
                                             <i class="uqd-icon question"></i>
                                             <div class="uqd-info">
-                                                <p v-html="item.problem"></p>
+                                                <p v-html="item.problemStr"></p>
                                             </div>
                                         </div>
                                         <div class="uqd-row">
@@ -420,8 +420,8 @@ export default {
                         c.content = c.content.replace(/\r\n/g, '<br />');
                     });
                     res.Data.precaution.forEach(item => {
-                        item.problem =
-                            '问题' + item.problem.replace(/\r\n/g, '<br />');
+                        item.problemStr =
+                            '问题:' + item.problem.replace(/\r\n/g, '<br />');
                     });
                     // console.log(item.content);
                 });
