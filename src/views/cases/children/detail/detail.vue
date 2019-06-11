@@ -1,15 +1,15 @@
 <template>
     <div class="g-container">
         <!--图片banner-->
-        <div class="m-norm-banner m-slider-banner">
+        <div class="m-slider-banner h-banner-400">
             <swiper :options="swiperOption"
                     ref="mySwiper">
                 <!-- slides -->
                 <swiper-slide v-for="(item,index) in detail.banner"
                               :key="index">
                     <a class="oper-pic"
-                       href="javascript:;">
-                        <img :src="item">
+                       :style="{backgroundImage:'url(' + item + ')'}"
+                       :href="item.outLink">
                     </a>
                 </swiper-slide>
 
