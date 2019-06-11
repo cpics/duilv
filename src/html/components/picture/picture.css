@@ -71,6 +71,9 @@
   height: 100%;
   overflow-y: auto; }
   .qe-view-detail .cp-column.cp-bomb-full {
+    height: 433px;
+    padding-top: 40px; }
+  .qe-view-detail .cp-column.cp-bomb-big {
     position: relative;
     height: 100%;
     top: 0;

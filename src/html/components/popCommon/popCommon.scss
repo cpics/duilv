@@ -127,7 +127,7 @@
       height: 700px;
       margin-top: -350px;
     }
-    .cp-bomb-full{
+    .cp-bomb-big{
       position: relative;
       height: 80%;
       top:10%;
@@ -139,6 +139,17 @@
           width: auto;
           height: auto;
           margin: 0 auto;
+        }
+      }
+    }
+    .cp-bomb-full{
+      position: relative;
+      height: 80%;
+      top:10%;
+      .swiper-slide{
+        position: relative;
+        img{
+          @include center(850px, 700px);
         }
       }
     }
