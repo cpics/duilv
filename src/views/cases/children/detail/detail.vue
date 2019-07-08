@@ -57,8 +57,8 @@
                         联合质保书
                     </div>
                     <div class="quality-pic-list">
-                        <div class="qua-pic-item" 
-                             @click="openPopImgList(index)"
+                        <div class="qua-pic-item"
+                             @click="openPopImgList(index,1)"
                              v-for="(item,index) in detail.warrantys"
                              :key="index">
                             <img :src="'https://www.iduilv.com/'+item"
@@ -86,6 +86,35 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <!--联合质保书-->
+                <div class="case-detail-cols"
+                     v-if="detail.detInfos && detail.detInfos.length>0">
+                    <div class="case-common-title">
+                        <i class="case-title-icon quality1"></i>
+                        联合质保书
+                    </div>
+                    <div class="quality-block-list">
+                        <!--默认显示两行，展开更多 + h-auto-->
+                        <div class="quality-list-box"
+                             :class="{'h-auto':isHauto}">
+                            <div class="quality-item"
+                                 @click="detFunc(item)"
+                                 :style="{backgroundColor:item.bgColor}"
+                                 v-for="(item,i) in detail.detInfos"
+                                 :key="i">
+                                <h4>{{item.title}}</h4>
+                                <p>{{item.detCode}}</p>
+                            </div>
+                        </div>
+                        <!--箭头朝上 + pack-up-->
+                        <div class="view-more-btn"
+                             v-if="detail.detInfos.length>12"
+                             @click="showDetMore"
+                             :class="{'pack-up':isHauto}">
+                            <i class="arrow-double-down"></i>
+                        </div>
                     </div>
                 </div>
                 <!--项目回顾-->
@@ -213,6 +242,8 @@ export default {
     },
     data() {
         return {
+
+            isHauto: false,
             detail: {},
             swiperOption: {
                 pagination: {
@@ -240,11 +271,29 @@ export default {
         };
     },
     methods: {
-        openPopImgList(i) {
-            this.swiperOption3.initialSlide = i;
+        showDetMore() {
+            this.isHauto = !this.isHauto;
+        },
+        openPopImgList(i, type) {
+            if (type == 1) {
+                this.currentImgList = res.Data.warrantys
+                this.swiperOption3.initialSlide = i;
+            } else {
+                this.currentImgList = i;
+                this.swiperOption3.initialSlide = 0;
+
+            }
+
             // console.log(this.currentImgList);
             this.currentImgShow = true;
 
+        },
+        detFunc(det) {
+            if (det.outLink) {
+                window.open(det.outLink, '_blank');
+            } else {
+                this.openPopImgList(det.ImgUrl, 2)
+            }
         },
         closePopimglist() {
             this.currentImgShow = false;
@@ -255,9 +304,9 @@ export default {
             });
             if (res.Type == 'Success') {
                 this.detail = res.Data;
-                if (res.Data.warrantys) {
-                    this.currentImgList = res.Data.warrantys
-                }
+                // if (res.Data.warrantys) {
+                //     this.currentImgList = res.Data.warrantys
+                // }
             }
         }
     },
