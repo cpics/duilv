@@ -17,6 +17,7 @@
 
 .grn-list {
   padding-top: 40px;
+  margin-left: -9px;
   @extend %clearfix;
   .grn-item {
     width: 382px;
@@ -26,12 +27,10 @@
     margin-left: 9px;
     margin-bottom: 40px;
     border: 1px solid #e8e7e7;
-    &:first-child {
-      margin-left: 0;
-    }
   }
   .grn-item-inner {
     padding: 11px;
+    min-height: 526px;
     background: #f0f0f0;
     &:hover {
       background: #fff;
@@ -67,6 +66,12 @@
   }
   .grn-hd-tip {
     font-size: 12px;
+    max-height:36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
   .grn-info {
     color: #333;
